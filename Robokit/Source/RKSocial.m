@@ -68,7 +68,7 @@ static NSString *RKAppName;
 }
 
 + (void)showRateThisAppPopup {
-	[[NSUserDefaults standardUserDefaults] setBool:YES forKey:RKRobocatViewControllerHaveRatedKey];
+	[[NSUserDefaults standardUserDefaults] setBool:YES forKey:kRatedCurrentVersionDate];
 	[[NSUserDefaults standardUserDefaults] synchronize];
 	
 	__block RKRatingViewController *ratingViewController = [RKRatingViewController ratingViewController];

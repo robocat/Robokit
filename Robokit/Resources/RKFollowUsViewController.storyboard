@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="13A584" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="cZf-0X-xhM">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+    </dependencies>
+    <scenes>
+        <!--Follow Us View Controller-->
+        <scene sceneID="Pjt-zH-Lf5">
+            <objects>
+                <viewController id="cZf-0X-xhM" customClass="RKFollowUsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xDT-g9-Fec"/>
+                        <viewControllerLayoutGuide type="bottom" id="wwV-T6-dOf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="m0L-Lp-gGG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4qN-59-Sep">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nOY-DQ-6Tj">
+                                        <rect key="frame" x="20" y="131" width="280" height="306"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Stay updated!" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Mh6-Ld-4FE">
+                                                <rect key="frame" x="20" y="10" width="240" height="36"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="36" id="Iqy-1u-DdX"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="25"/>
+                                                <nil key="highlightedColor"/>
+                                                <size key="shadowOffset" width="0.0" height="2"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WU3-cj-2rC">
+                                                <rect key="frame" x="0.0" y="56" width="280" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="M4Q-MG-vqn"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                                                <inset key="titleEdgeInsets" minX="30" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <inset key="imageEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <state key="normal" title="Follow us" image="follow_twitter_inactive">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="twitter:" destination="cZf-0X-xhM" eventType="touchUpInside" id="gsD-2X-Q3e"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FMK-L6-whb">
+                                                <rect key="frame" x="0.0" y="106" width="280" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.059999999999999998" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                                                <inset key="titleEdgeInsets" minX="30" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <inset key="imageEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <state key="normal" title="Like us" image="follow_facebook_inactive">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="facebook:" destination="cZf-0X-xhM" eventType="touchUpInside" id="Wai-PB-kZJ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YSG-C5-3UO">
+                                                <rect key="frame" x="0.0" y="156" width="280" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.02" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                                                <inset key="titleEdgeInsets" minX="30" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <inset key="imageEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <state key="normal" title="Subscribe to us" image="follow_subscribe_inactive">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="subscribe:" destination="cZf-0X-xhM" eventType="touchUpInside" id="JvL-HP-4ie"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PS8-sN-irp">
+                                                <rect key="frame" x="0.0" y="256" width="280" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                                                <inset key="titleEdgeInsets" minX="30" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <inset key="imageEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <state key="normal" title="No thanks" image="follow_thanks_inactive">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="noThanks:" destination="cZf-0X-xhM" eventType="touchUpInside" id="stk-6A-TNb"/>
+                                                </connections>
+                                            </button>
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Egc-PN-s3b">
+                                                <rect key="frame" x="0.0" y="206" width="280" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name@email.com" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KoZ-qG-xPA">
+                                                        <rect key="frame" x="20" y="10" width="240" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="LRA-wG-T3o"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="done"/>
+                                                    </textField>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.02" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstItem="KoZ-qG-xPA" firstAttribute="leading" secondItem="Egc-PN-s3b" secondAttribute="leading" constant="20" id="9FS-bP-9Qw"/>
+                                                    <constraint firstAttribute="trailing" secondItem="KoZ-qG-xPA" secondAttribute="trailing" constant="20" id="CYi-DI-lwF"/>
+                                                    <constraint firstAttribute="height" constant="50" id="FT6-ob-jT9"/>
+                                                    <constraint firstItem="KoZ-qG-xPA" firstAttribute="top" secondItem="Egc-PN-s3b" secondAttribute="top" constant="10" id="taR-XC-9bT"/>
+                                                </constraints>
+                                            </view>
+                                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="GPk-9T-pNG">
+                                                <rect key="frame" x="24" y="-41" width="20" height="20"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </activityIndicatorView>
+                                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="eMi-tb-0qv">
+                                                <rect key="frame" x="74" y="-52" width="20" height="20"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </activityIndicatorView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="WU3-cj-2rC" secondAttribute="trailing" id="28U-Zk-cLu"/>
+                                            <constraint firstItem="Mh6-Ld-4FE" firstAttribute="leading" secondItem="nOY-DQ-6Tj" secondAttribute="leading" constant="20" id="6X9-SL-1oY"/>
+                                            <constraint firstItem="PS8-sN-irp" firstAttribute="leading" secondItem="nOY-DQ-6Tj" secondAttribute="leading" id="75W-cT-z1z"/>
+                                            <constraint firstItem="YSG-C5-3UO" firstAttribute="top" secondItem="FMK-L6-whb" secondAttribute="bottom" id="7hf-Zy-xhi"/>
+                                            <constraint firstAttribute="trailing" secondItem="Mh6-Ld-4FE" secondAttribute="trailing" constant="20" id="AiJ-I4-HIW"/>
+                                            <constraint firstItem="WU3-cj-2rC" firstAttribute="top" secondItem="Mh6-Ld-4FE" secondAttribute="bottom" constant="10" id="HKp-Ta-4QZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="YSG-C5-3UO" secondAttribute="trailing" id="L3R-Io-tgg"/>
+                                            <constraint firstAttribute="trailing" secondItem="FMK-L6-whb" secondAttribute="trailing" id="Owj-ae-fUC"/>
+                                            <constraint firstItem="WU3-cj-2rC" firstAttribute="height" secondItem="PS8-sN-irp" secondAttribute="height" id="Pdr-yd-49S"/>
+                                            <constraint firstAttribute="width" constant="280" id="S1W-eT-Bze"/>
+                                            <constraint firstItem="Mh6-Ld-4FE" firstAttribute="top" secondItem="nOY-DQ-6Tj" secondAttribute="top" constant="10" id="UMG-IV-RDN"/>
+                                            <constraint firstItem="YSG-C5-3UO" firstAttribute="top" secondItem="FMK-L6-whb" secondAttribute="bottom" id="Vf4-pg-Mb0"/>
+                                            <constraint firstItem="YSG-C5-3UO" firstAttribute="height" secondItem="WU3-cj-2rC" secondAttribute="height" id="aIx-eq-p1B"/>
+                                            <constraint firstItem="Egc-PN-s3b" firstAttribute="top" secondItem="YSG-C5-3UO" secondAttribute="bottom" id="apb-Hj-bkt"/>
+                                            <constraint firstItem="PS8-sN-irp" firstAttribute="top" secondItem="Egc-PN-s3b" secondAttribute="bottom" id="d3h-lj-nyC"/>
+                                            <constraint firstItem="WU3-cj-2rC" firstAttribute="leading" secondItem="nOY-DQ-6Tj" secondAttribute="leading" id="id9-IX-u3M"/>
+                                            <constraint firstItem="FMK-L6-whb" firstAttribute="height" secondItem="WU3-cj-2rC" secondAttribute="height" id="jkW-b7-KTR"/>
+                                            <constraint firstAttribute="trailing" secondItem="Egc-PN-s3b" secondAttribute="trailing" id="lO7-wf-uce"/>
+                                            <constraint firstItem="FMK-L6-whb" firstAttribute="top" secondItem="WU3-cj-2rC" secondAttribute="bottom" id="n8S-nh-N2k"/>
+                                            <constraint firstAttribute="trailing" secondItem="PS8-sN-irp" secondAttribute="trailing" id="p1q-kQ-Hlp"/>
+                                            <constraint firstItem="FMK-L6-whb" firstAttribute="leading" secondItem="nOY-DQ-6Tj" secondAttribute="leading" id="qM2-tu-rOc"/>
+                                            <constraint firstItem="Egc-PN-s3b" firstAttribute="leading" secondItem="nOY-DQ-6Tj" secondAttribute="leading" id="sm5-GB-oNS"/>
+                                            <constraint firstAttribute="bottom" secondItem="PS8-sN-irp" secondAttribute="bottom" id="v8a-FK-47y"/>
+                                            <constraint firstItem="YSG-C5-3UO" firstAttribute="leading" secondItem="nOY-DQ-6Tj" secondAttribute="leading" id="z0z-kE-dhG"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerX" secondItem="nOY-DQ-6Tj" secondAttribute="centerX" id="2yP-MX-V95"/>
+                                    <constraint firstAttribute="centerY" secondItem="nOY-DQ-6Tj" secondAttribute="centerY" id="kjN-jx-ynh"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.25" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="4qN-59-Sep" secondAttribute="trailing" id="26w-s7-e4e"/>
+                            <constraint firstItem="wwV-T6-dOf" firstAttribute="top" secondItem="4qN-59-Sep" secondAttribute="bottom" id="4Pf-YF-o6N"/>
+                            <constraint firstItem="4qN-59-Sep" firstAttribute="leading" secondItem="m0L-Lp-gGG" secondAttribute="leading" id="N9o-nz-P6U"/>
+                            <constraint firstItem="4qN-59-Sep" firstAttribute="top" secondItem="m0L-Lp-gGG" secondAttribute="top" id="NAI-g6-vtI"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="facebookButton" destination="FMK-L6-whb" id="uxY-pl-Vez"/>
+                        <outlet property="followView" destination="nOY-DQ-6Tj" id="AYC-oS-vWQ"/>
+                        <outlet property="nothanksButton" destination="PS8-sN-irp" id="PLv-Rb-6fm"/>
+                        <outlet property="parentViewBottomSpaceConstraint" destination="4Pf-YF-o6N" id="gzy-dZ-e33"/>
+                        <outlet property="subscribeButton" destination="YSG-C5-3UO" id="jv1-OB-NHG"/>
+                        <outlet property="subscribeField" destination="KoZ-qG-xPA" id="Oan-54-iPC"/>
+                        <outlet property="subscribeSpinner" destination="eMi-tb-0qv" id="DqN-t3-kLw"/>
+                        <outlet property="subscribeView" destination="Egc-PN-s3b" id="sPq-bR-y9g"/>
+                        <outlet property="subscribeViewHeightConstraint" destination="FT6-ob-jT9" id="Qkl-Cd-1nx"/>
+                        <outlet property="topLabel" destination="Mh6-Ld-4FE" id="oKQ-j1-KRw"/>
+                        <outlet property="twitterButton" destination="WU3-cj-2rC" id="jlu-Be-GVn"/>
+                        <outlet property="twitterSpinner" destination="GPk-9T-pNG" id="COf-on-KLj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CRb-qZ-Mfi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2" y="730"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="follow_facebook_inactive" width="30" height="30"/>
+        <image name="follow_subscribe_inactive" width="30" height="30"/>
+        <image name="follow_thanks_inactive" width="30" height="30"/>
+        <image name="follow_twitter_inactive" width="30" height="30"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

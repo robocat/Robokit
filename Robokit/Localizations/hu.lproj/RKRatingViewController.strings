@@ -1,0 +1,18 @@
+/* 
+  RKRatingViewController.strings
+  Ultraviolet2
+
+  Created by Ulrik Damm on 26/9/13.
+  Copyright (c) 2013 Robocat. All rights reserved.
+*/
+
+"TITLE_RATE_%@" = "Értékeld %1$@";
+
+"NO_THANKS_BUTTON" = "Köszönöm, nem";
+"RATE_BUTTON" = "Értékelés";
+
+"RATE_1_STAR" = "Utálom";
+"RATE_2_STARS" = "Nem szeretem";
+"RATE_3_STARS" = "Rendben van";
+"RATE_4_STARS" = "Nagyon jó";
+"RATE_5_STARS" = "Kíváló";

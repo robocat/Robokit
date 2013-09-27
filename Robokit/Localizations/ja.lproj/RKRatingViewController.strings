@@ -1,0 +1,18 @@
+/* 
+  RKRatingViewController.strings
+  Ultraviolet2
+
+  Created by Ulrik Damm on 26/9/13.
+  Copyright (c) 2013 Robocat. All rights reserved.
+*/
+
+"TITLE_RATE_%@" = "%1$@を評価する";
+
+"NO_THANKS_BUTTON" = "いいえ";
+"RATE_BUTTON" = "評価する";
+
+"RATE_1_STAR" = "大嫌い";
+"RATE_2_STARS" = "好きじゃない";
+"RATE_3_STARS" = "まあまあ";
+"RATE_4_STARS" = "好き";
+"RATE_5_STARS" = "すごいです！";

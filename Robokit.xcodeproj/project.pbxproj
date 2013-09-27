@@ -10,15 +10,30 @@
 		FF62912817F59F970018AD68 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF62912717F59F970018AD68 /* Foundation.framework */; };
 		FF62912A17F59F970018AD68 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF62912917F59F970018AD68 /* CoreGraphics.framework */; };
 		FF62912C17F59F970018AD68 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF62912B17F59F970018AD68 /* UIKit.framework */; };
-		FF62913217F59F970018AD68 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FF62913017F59F970018AD68 /* InfoPlist.strings */; };
-		FF62913417F59F970018AD68 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FF62913317F59F970018AD68 /* main.m */; };
-		FF62913817F59F970018AD68 /* RKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FF62913717F59F970018AD68 /* RKAppDelegate.m */; };
-		FF62913A17F59F970018AD68 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF62913917F59F970018AD68 /* Images.xcassets */; };
 		FF62914117F59F970018AD68 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF62914017F59F970018AD68 /* XCTest.framework */; };
 		FF62914217F59F970018AD68 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF62912717F59F970018AD68 /* Foundation.framework */; };
 		FF62914317F59F970018AD68 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF62912B17F59F970018AD68 /* UIKit.framework */; };
 		FF62914B17F59F970018AD68 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FF62914917F59F970018AD68 /* InfoPlist.strings */; };
 		FF62914D17F59F970018AD68 /* RobokitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FF62914C17F59F970018AD68 /* RobokitTests.m */; };
+		FFE1DCC617F5A94B0074F75F /* RKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE1DCC517F5A94B0074F75F /* RKAppDelegate.m */; };
+		FFE1DCCA17F5A9540074F75F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE1DCC717F5A9540074F75F /* main.m */; };
+		FFE1DCFD17F5A97B0074F75F /* RKAboutRobocatViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFE1DCE517F5A97B0074F75F /* RKAboutRobocatViewController.storyboard */; };
+		FFE1DCFE17F5A97B0074F75F /* RKAboutRobocatViewController.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFE1DCE617F5A97B0074F75F /* RKAboutRobocatViewController.xcassets */; };
+		FFE1DCFF17F5A97B0074F75F /* RKFollowUsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFE1DCE717F5A97B0074F75F /* RKFollowUsViewController.storyboard */; };
+		FFE1DD0017F5A97B0074F75F /* RKFollowUsViewController.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFE1DCE817F5A97B0074F75F /* RKFollowUsViewController.xcassets */; };
+		FFE1DD0117F5A97B0074F75F /* RKRatingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFE1DCE917F5A97B0074F75F /* RKRatingViewController.storyboard */; };
+		FFE1DD0217F5A97B0074F75F /* RKRatingViewController.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFE1DCEA17F5A97B0074F75F /* RKRatingViewController.xcassets */; };
+		FFE1DD0317F5A97B0074F75F /* RKAboutRobocatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE1DCED17F5A97B0074F75F /* RKAboutRobocatViewController.m */; };
+		FFE1DD0417F5A97B0074F75F /* RKDispatch.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE1DCEF17F5A97B0074F75F /* RKDispatch.m */; };
+		FFE1DD0517F5A97B0074F75F /* RKFollowUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE1DCF117F5A97B0074F75F /* RKFollowUsViewController.m */; };
+		FFE1DD0617F5A97B0074F75F /* RKLocalization.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE1DCF317F5A97B0074F75F /* RKLocalization.m */; };
+		FFE1DD0717F5A97B0074F75F /* RKRatingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE1DCF517F5A97B0074F75F /* RKRatingViewController.m */; };
+		FFE1DD0817F5A97B0074F75F /* RKRobocatNewsletterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE1DCF717F5A97B0074F75F /* RKRobocatNewsletterViewController.m */; };
+		FFE1DD0917F5A97B0074F75F /* RKSocial.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE1DCF917F5A97B0074F75F /* RKSocial.m */; };
+		FFE1DD0F17F5A9ED0074F75F /* Robokit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = FFE1DD0E17F5A9ED0074F75F /* Robokit.podspec */; };
+		FFE1DD1617F5AC180074F75F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFE1DD1517F5AC180074F75F /* Images.xcassets */; };
+		FFE1DD2F17F5AD130074F75F /* RKRatingViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = FFE1DD1817F5AD130074F75F /* RKRatingViewController.strings */; };
+		FFE1DD3017F5AD130074F75F /* RKAboutRobocatViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = FFE1DD1A17F5AD130074F75F /* RKAboutRobocatViewController.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,18 +51,60 @@
 		FF62912717F59F970018AD68 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FF62912917F59F970018AD68 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		FF62912B17F59F970018AD68 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		FF62912F17F59F970018AD68 /* Robokit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Robokit-Info.plist"; sourceTree = "<group>"; };
-		FF62913117F59F970018AD68 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		FF62913317F59F970018AD68 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		FF62913517F59F970018AD68 /* Robokit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Robokit-Prefix.pch"; sourceTree = "<group>"; };
-		FF62913617F59F970018AD68 /* RKAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RKAppDelegate.h; sourceTree = "<group>"; };
-		FF62913717F59F970018AD68 /* RKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RKAppDelegate.m; sourceTree = "<group>"; };
-		FF62913917F59F970018AD68 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FF62913F17F59F970018AD68 /* RobokitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RobokitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF62914017F59F970018AD68 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		FF62914817F59F970018AD68 /* RobokitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RobokitTests-Info.plist"; sourceTree = "<group>"; };
 		FF62914A17F59F970018AD68 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FF62914C17F59F970018AD68 /* RobokitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RobokitTests.m; sourceTree = "<group>"; };
+		FFE1DCC417F5A94B0074F75F /* RKAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKAppDelegate.h; path = RobokitApp/RKAppDelegate.h; sourceTree = SOURCE_ROOT; };
+		FFE1DCC517F5A94B0074F75F /* RKAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RKAppDelegate.m; path = RobokitApp/RKAppDelegate.m; sourceTree = SOURCE_ROOT; };
+		FFE1DCC717F5A9540074F75F /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = RobokitApp/main.m; sourceTree = SOURCE_ROOT; };
+		FFE1DCC817F5A9540074F75F /* Robokit-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Robokit-Info.plist"; path = "RobokitApp/Robokit-Info.plist"; sourceTree = SOURCE_ROOT; };
+		FFE1DCC917F5A9540074F75F /* Robokit-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Robokit-Prefix.pch"; path = "RobokitApp/Robokit-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		FFE1DCE517F5A97B0074F75F /* RKAboutRobocatViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = RKAboutRobocatViewController.storyboard; path = Resources/RKAboutRobocatViewController.storyboard; sourceTree = "<group>"; };
+		FFE1DCE617F5A97B0074F75F /* RKAboutRobocatViewController.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = RKAboutRobocatViewController.xcassets; path = Resources/RKAboutRobocatViewController.xcassets; sourceTree = "<group>"; };
+		FFE1DCE717F5A97B0074F75F /* RKFollowUsViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = RKFollowUsViewController.storyboard; path = Resources/RKFollowUsViewController.storyboard; sourceTree = "<group>"; };
+		FFE1DCE817F5A97B0074F75F /* RKFollowUsViewController.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = RKFollowUsViewController.xcassets; path = Resources/RKFollowUsViewController.xcassets; sourceTree = "<group>"; };
+		FFE1DCE917F5A97B0074F75F /* RKRatingViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = RKRatingViewController.storyboard; path = Resources/RKRatingViewController.storyboard; sourceTree = "<group>"; };
+		FFE1DCEA17F5A97B0074F75F /* RKRatingViewController.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = RKRatingViewController.xcassets; path = Resources/RKRatingViewController.xcassets; sourceTree = "<group>"; };
+		FFE1DCEC17F5A97B0074F75F /* RKAboutRobocatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKAboutRobocatViewController.h; path = Source/RKAboutRobocatViewController.h; sourceTree = "<group>"; };
+		FFE1DCED17F5A97B0074F75F /* RKAboutRobocatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RKAboutRobocatViewController.m; path = Source/RKAboutRobocatViewController.m; sourceTree = "<group>"; };
+		FFE1DCEE17F5A97B0074F75F /* RKDispatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKDispatch.h; path = Source/RKDispatch.h; sourceTree = "<group>"; };
+		FFE1DCEF17F5A97B0074F75F /* RKDispatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RKDispatch.m; path = Source/RKDispatch.m; sourceTree = "<group>"; };
+		FFE1DCF017F5A97B0074F75F /* RKFollowUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKFollowUsViewController.h; path = Source/RKFollowUsViewController.h; sourceTree = "<group>"; };
+		FFE1DCF117F5A97B0074F75F /* RKFollowUsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RKFollowUsViewController.m; path = Source/RKFollowUsViewController.m; sourceTree = "<group>"; };
+		FFE1DCF217F5A97B0074F75F /* RKLocalization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKLocalization.h; path = Source/RKLocalization.h; sourceTree = "<group>"; };
+		FFE1DCF317F5A97B0074F75F /* RKLocalization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RKLocalization.m; path = Source/RKLocalization.m; sourceTree = "<group>"; };
+		FFE1DCF417F5A97B0074F75F /* RKRatingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKRatingViewController.h; path = Source/RKRatingViewController.h; sourceTree = "<group>"; };
+		FFE1DCF517F5A97B0074F75F /* RKRatingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RKRatingViewController.m; path = Source/RKRatingViewController.m; sourceTree = "<group>"; };
+		FFE1DCF617F5A97B0074F75F /* RKRobocatNewsletterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKRobocatNewsletterViewController.h; path = Source/RKRobocatNewsletterViewController.h; sourceTree = "<group>"; };
+		FFE1DCF717F5A97B0074F75F /* RKRobocatNewsletterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RKRobocatNewsletterViewController.m; path = Source/RKRobocatNewsletterViewController.m; sourceTree = "<group>"; };
+		FFE1DCF817F5A97B0074F75F /* RKSocial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKSocial.h; path = Source/RKSocial.h; sourceTree = "<group>"; };
+		FFE1DCF917F5A97B0074F75F /* RKSocial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RKSocial.m; path = Source/RKSocial.m; sourceTree = "<group>"; };
+		FFE1DCFA17F5A97B0074F75F /* Robokit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Robokit.h; path = Source/Robokit.h; sourceTree = "<group>"; };
+		FFE1DD0E17F5A9ED0074F75F /* Robokit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Robokit.podspec; sourceTree = SOURCE_ROOT; };
+		FFE1DD1517F5AC180074F75F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = RobokitApp/Images.xcassets; sourceTree = SOURCE_ROOT; };
+		FFE1DD1917F5AD130074F75F /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/RKRatingViewController.strings; sourceTree = "<group>"; };
+		FFE1DD1B17F5AD130074F75F /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/RKAboutRobocatViewController.strings; sourceTree = "<group>"; };
+		FFE1DD1C17F5AD130074F75F /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/RKRatingViewController.strings; sourceTree = "<group>"; };
+		FFE1DD1D17F5AD130074F75F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/RKAboutRobocatViewController.strings; sourceTree = "<group>"; };
+		FFE1DD1E17F5AD130074F75F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/RKRatingViewController.strings; sourceTree = "<group>"; };
+		FFE1DD1F17F5AD130074F75F /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/RKRatingViewController.strings; sourceTree = "<group>"; };
+		FFE1DD2017F5AD130074F75F /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/RKRatingViewController.strings; sourceTree = "<group>"; };
+		FFE1DD2117F5AD130074F75F /* he */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = he; path = he.lproj/RKRatingViewController.strings; sourceTree = "<group>"; };
+		FFE1DD2217F5AD130074F75F /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/RKRatingViewController.strings; sourceTree = "<group>"; };
+		FFE1DD2317F5AD130074F75F /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/RKRatingViewController.strings; sourceTree = "<group>"; };
+		FFE1DD2417F5AD130074F75F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/RKRatingViewController.strings; sourceTree = "<group>"; };
+		FFE1DD2517F5AD130074F75F /* lt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = lt; path = lt.lproj/RKRatingViewController.strings; sourceTree = "<group>"; };
+		FFE1DD2617F5AD130074F75F /* mk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = mk; path = mk.lproj/RKRatingViewController.strings; sourceTree = "<group>"; };
+		FFE1DD2717F5AD130074F75F /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/RKRatingViewController.strings; sourceTree = "<group>"; };
+		FFE1DD2817F5AD130074F75F /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/RKRatingViewController.strings; sourceTree = "<group>"; };
+		FFE1DD2917F5AD130074F75F /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/RKRatingViewController.strings; sourceTree = "<group>"; };
+		FFE1DD2A17F5AD130074F75F /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/RKRatingViewController.strings; sourceTree = "<group>"; };
+		FFE1DD2B17F5AD130074F75F /* sk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sk; path = sk.lproj/RKRatingViewController.strings; sourceTree = "<group>"; };
+		FFE1DD2C17F5AD130074F75F /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/RKRatingViewController.strings; sourceTree = "<group>"; };
+		FFE1DD2D17F5AD130074F75F /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/RKRatingViewController.strings; sourceTree = "<group>"; };
+		FFE1DD2E17F5AD130074F75F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/RKRatingViewController.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +134,9 @@
 		FF62911B17F59F970018AD68 = {
 			isa = PBXGroup;
 			children = (
-				FF62912D17F59F970018AD68 /* Robokit */,
+				FFE1DCCC17F5A97B0074F75F /* Robokit */,
+				FF62912D17F59F970018AD68 /* Robokit Test App */,
+				FF62912E17F59F970018AD68 /* Supporting Files */,
 				FF62914617F59F970018AD68 /* RobokitTests */,
 				FF62912617F59F970018AD68 /* Frameworks */,
 				FF62912517F59F970018AD68 /* Products */,
@@ -104,26 +163,26 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		FF62912D17F59F970018AD68 /* Robokit */ = {
+		FF62912D17F59F970018AD68 /* Robokit Test App */ = {
 			isa = PBXGroup;
 			children = (
-				FF62913617F59F970018AD68 /* RKAppDelegate.h */,
-				FF62913717F59F970018AD68 /* RKAppDelegate.m */,
-				FF62913917F59F970018AD68 /* Images.xcassets */,
-				FF62912E17F59F970018AD68 /* Supporting Files */,
+				FFE1DCC417F5A94B0074F75F /* RKAppDelegate.h */,
+				FFE1DCC517F5A94B0074F75F /* RKAppDelegate.m */,
+				FFE1DD1517F5AC180074F75F /* Images.xcassets */,
 			);
+			name = "Robokit Test App";
 			path = Robokit;
 			sourceTree = "<group>";
 		};
 		FF62912E17F59F970018AD68 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				FF62912F17F59F970018AD68 /* Robokit-Info.plist */,
-				FF62913017F59F970018AD68 /* InfoPlist.strings */,
-				FF62913317F59F970018AD68 /* main.m */,
-				FF62913517F59F970018AD68 /* Robokit-Prefix.pch */,
+				FFE1DCC717F5A9540074F75F /* main.m */,
+				FFE1DCC817F5A9540074F75F /* Robokit-Info.plist */,
+				FFE1DCC917F5A9540074F75F /* Robokit-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			path = Robokit;
 			sourceTree = "<group>";
 		};
 		FF62914617F59F970018AD68 /* RobokitTests */ = {
@@ -142,6 +201,69 @@
 				FF62914917F59F970018AD68 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FFE1DCCC17F5A97B0074F75F /* Robokit */ = {
+			isa = PBXGroup;
+			children = (
+				FFE1DD0E17F5A9ED0074F75F /* Robokit.podspec */,
+				FFE1DCFA17F5A97B0074F75F /* Robokit.h */,
+				FFE1DD0A17F5A9810074F75F /* Shared */,
+				FFE1DD0D17F5A98F0074F75F /* About Robocat View Controller */,
+				FFE1DD0C17F5A98A0074F75F /* Follow Us View Controller */,
+				FFE1DD0B17F5A9840074F75F /* Rating View Controller */,
+			);
+			path = Robokit;
+			sourceTree = "<group>";
+		};
+		FFE1DD0A17F5A9810074F75F /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				FFE1DCEE17F5A97B0074F75F /* RKDispatch.h */,
+				FFE1DCEF17F5A97B0074F75F /* RKDispatch.m */,
+				FFE1DCF217F5A97B0074F75F /* RKLocalization.h */,
+				FFE1DCF317F5A97B0074F75F /* RKLocalization.m */,
+				FFE1DCF817F5A97B0074F75F /* RKSocial.h */,
+				FFE1DCF917F5A97B0074F75F /* RKSocial.m */,
+			);
+			name = Shared;
+			sourceTree = "<group>";
+		};
+		FFE1DD0B17F5A9840074F75F /* Rating View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FFE1DCF417F5A97B0074F75F /* RKRatingViewController.h */,
+				FFE1DCF517F5A97B0074F75F /* RKRatingViewController.m */,
+				FFE1DCE917F5A97B0074F75F /* RKRatingViewController.storyboard */,
+				FFE1DCEA17F5A97B0074F75F /* RKRatingViewController.xcassets */,
+				FFE1DD1817F5AD130074F75F /* RKRatingViewController.strings */,
+			);
+			name = "Rating View Controller";
+			sourceTree = "<group>";
+		};
+		FFE1DD0C17F5A98A0074F75F /* Follow Us View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FFE1DCF017F5A97B0074F75F /* RKFollowUsViewController.h */,
+				FFE1DCF117F5A97B0074F75F /* RKFollowUsViewController.m */,
+				FFE1DCE717F5A97B0074F75F /* RKFollowUsViewController.storyboard */,
+				FFE1DCE817F5A97B0074F75F /* RKFollowUsViewController.xcassets */,
+			);
+			name = "Follow Us View Controller";
+			sourceTree = "<group>";
+		};
+		FFE1DD0D17F5A98F0074F75F /* About Robocat View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FFE1DCEC17F5A97B0074F75F /* RKAboutRobocatViewController.h */,
+				FFE1DCED17F5A97B0074F75F /* RKAboutRobocatViewController.m */,
+				FFE1DCF617F5A97B0074F75F /* RKRobocatNewsletterViewController.h */,
+				FFE1DCF717F5A97B0074F75F /* RKRobocatNewsletterViewController.m */,
+				FFE1DCE517F5A97B0074F75F /* RKAboutRobocatViewController.storyboard */,
+				FFE1DCE617F5A97B0074F75F /* RKAboutRobocatViewController.xcassets */,
+				FFE1DD1A17F5AD130074F75F /* RKAboutRobocatViewController.strings */,
+			);
+			name = "About Robocat View Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,6 +325,25 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				ar,
+				da,
+				el,
+				es,
+				fr,
+				he,
+				hu,
+				it,
+				ja,
+				lt,
+				mk,
+				nb,
+				nl,
+				pl,
+				ru,
+				sk,
+				sv,
+				tr,
+				"zh-Hans",
 			);
 			mainGroup = FF62911B17F59F970018AD68;
 			productRefGroup = FF62912517F59F970018AD68 /* Products */;
@@ -220,8 +361,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF62913217F59F970018AD68 /* InfoPlist.strings in Resources */,
-				FF62913A17F59F970018AD68 /* Images.xcassets in Resources */,
+				FFE1DD1617F5AC180074F75F /* Images.xcassets in Resources */,
+				FFE1DCFE17F5A97B0074F75F /* RKAboutRobocatViewController.xcassets in Resources */,
+				FFE1DD0117F5A97B0074F75F /* RKRatingViewController.storyboard in Resources */,
+				FFE1DD3017F5AD130074F75F /* RKAboutRobocatViewController.strings in Resources */,
+				FFE1DCFF17F5A97B0074F75F /* RKFollowUsViewController.storyboard in Resources */,
+				FFE1DD0F17F5A9ED0074F75F /* Robokit.podspec in Resources */,
+				FFE1DD2F17F5AD130074F75F /* RKRatingViewController.strings in Resources */,
+				FFE1DD0217F5A97B0074F75F /* RKRatingViewController.xcassets in Resources */,
+				FFE1DD0017F5A97B0074F75F /* RKFollowUsViewController.xcassets in Resources */,
+				FFE1DCFD17F5A97B0074F75F /* RKAboutRobocatViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,8 +389,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF62913417F59F970018AD68 /* main.m in Sources */,
-				FF62913817F59F970018AD68 /* RKAppDelegate.m in Sources */,
+				FFE1DD0917F5A97B0074F75F /* RKSocial.m in Sources */,
+				FFE1DD0417F5A97B0074F75F /* RKDispatch.m in Sources */,
+				FFE1DD0817F5A97B0074F75F /* RKRobocatNewsletterViewController.m in Sources */,
+				FFE1DD0517F5A97B0074F75F /* RKFollowUsViewController.m in Sources */,
+				FFE1DCCA17F5A9540074F75F /* main.m in Sources */,
+				FFE1DD0617F5A97B0074F75F /* RKLocalization.m in Sources */,
+				FFE1DD0317F5A97B0074F75F /* RKAboutRobocatViewController.m in Sources */,
+				FFE1DCC617F5A94B0074F75F /* RKAppDelegate.m in Sources */,
+				FFE1DD0717F5A97B0074F75F /* RKRatingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,20 +420,49 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		FF62913017F59F970018AD68 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FF62913117F59F970018AD68 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 		FF62914917F59F970018AD68 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				FF62914A17F59F970018AD68 /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FFE1DD1817F5AD130074F75F /* RKRatingViewController.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FFE1DD1917F5AD130074F75F /* ar */,
+				FFE1DD1C17F5AD130074F75F /* el */,
+				FFE1DD1E17F5AD130074F75F /* en */,
+				FFE1DD1F17F5AD130074F75F /* es */,
+				FFE1DD2017F5AD130074F75F /* fr */,
+				FFE1DD2117F5AD130074F75F /* he */,
+				FFE1DD2217F5AD130074F75F /* hu */,
+				FFE1DD2317F5AD130074F75F /* it */,
+				FFE1DD2417F5AD130074F75F /* ja */,
+				FFE1DD2517F5AD130074F75F /* lt */,
+				FFE1DD2617F5AD130074F75F /* mk */,
+				FFE1DD2717F5AD130074F75F /* nb */,
+				FFE1DD2817F5AD130074F75F /* nl */,
+				FFE1DD2917F5AD130074F75F /* pl */,
+				FFE1DD2A17F5AD130074F75F /* ru */,
+				FFE1DD2B17F5AD130074F75F /* sk */,
+				FFE1DD2C17F5AD130074F75F /* sv */,
+				FFE1DD2D17F5AD130074F75F /* tr */,
+				FFE1DD2E17F5AD130074F75F /* zh-Hans */,
+			);
+			name = RKRatingViewController.strings;
+			path = Localizations;
+			sourceTree = "<group>";
+		};
+		FFE1DD1A17F5AD130074F75F /* RKAboutRobocatViewController.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FFE1DD1B17F5AD130074F75F /* da */,
+				FFE1DD1D17F5AD130074F75F /* en */,
+			);
+			name = RKAboutRobocatViewController.strings;
+			path = Localizations;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -361,8 +546,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Robokit/Robokit-Prefix.pch";
-				INFOPLIST_FILE = "Robokit/Robokit-Info.plist";
+				GCC_PREFIX_HEADER = "RobokitApp/Robokit-Prefix.pch";
+				INFOPLIST_FILE = "RobokitApp/Robokit-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -374,8 +559,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Robokit/Robokit-Prefix.pch";
-				INFOPLIST_FILE = "Robokit/Robokit-Info.plist";
+				GCC_PREFIX_HEADER = "RobokitApp/Robokit-Prefix.pch";
+				INFOPLIST_FILE = "RobokitApp/Robokit-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -442,6 +627,7 @@
 				FF62915217F59F970018AD68 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FF62915317F59F970018AD68 /* Build configuration list for PBXNativeTarget "RobokitTests" */ = {
 			isa = XCConfigurationList;
@@ -450,6 +636,7 @@
 				FF62915517F59F970018AD68 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

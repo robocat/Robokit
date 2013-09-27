@@ -1,0 +1,18 @@
+/* 
+  RKRatingViewController.strings
+  Ultraviolet2
+
+  Created by Ulrik Damm on 26/9/13.
+  Copyright (c) 2013 Robocat. All rights reserved.
+*/
+
+"TITLE_RATE_%@" = "Betygsätt %1$@";
+
+"NO_THANKS_BUTTON" = "Nej tack";
+"RATE_BUTTON" = "Betygsätt";
+
+"RATE_1_STAR" = "Hatar den";
+"RATE_2_STARS" = "Gillar inte";
+"RATE_3_STARS" = "Den är helt okej";
+"RATE_4_STARS" = "Den är bra";
+"RATE_5_STARS" = "Jätte bra";

@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="13A584" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Nzw-te-0vn">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="geZ-x1-SKZ">
+            <objects>
+                <navigationController storyboardIdentifier="AboutRobocat" definesPresentationContext="YES" id="Nzw-te-0vn" sceneMemberID="viewController">
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="sYX-z6-nIG">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="e26-pJ-Sle" kind="relationship" relationship="rootViewController" id="T79-l0-z2T"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7a2-sE-9jb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-8" y="81"/>
+        </scene>
+        <!--About Robocat View Controller - Robocat-->
+        <scene sceneID="UxL-gf-952">
+            <objects>
+                <viewController id="e26-pJ-Sle" customClass="RKAboutRobocatViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="z9t-Zy-6So"/>
+                        <viewControllerLayoutGuide type="bottom" id="82U-Dl-dUA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kBS-rx-Vio">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Robocat Background" translatesAutoresizingMaskIntoConstraints="NO" id="YHD-iB-JlN">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vwA-4B-dTP">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U7j-eb-QOx">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="664"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Robocat Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Khq-pn-5dP">
+                                                <rect key="frame" x="71" y="74" width="178" height="196"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="178" id="igU-Et-EgZ"/>
+                                                    <constraint firstAttribute="height" constant="196" id="vYg-JB-KFF"/>
+                                                </constraints>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TGf-o2-bCB">
+                                                <rect key="frame" x="7" y="278" width="306" height="56"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="306" id="ODa-bX-oyb"/>
+                                                    <constraint firstAttribute="height" constant="56" id="hgP-LW-Van"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <state key="normal" title="Review on App Store" backgroundImage="Button Grey">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="review:" destination="e26-pJ-Sle" eventType="touchUpInside" id="EE3-8D-xMv"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wal-13-oFh">
+                                                <rect key="frame" x="7" y="342" width="306" height="56"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="306" id="TMO-9a-bD6"/>
+                                                    <constraint firstAttribute="height" constant="56" id="yGf-IM-fco"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <state key="normal" title="Follow us on Twitter" backgroundImage="Button Grey">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="twitter:" destination="e26-pJ-Sle" eventType="touchUpInside" id="afs-bn-fln"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MwN-D3-UQ6">
+                                                <rect key="frame" x="7" y="406" width="306" height="56"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="306" id="Qok-hw-Ket"/>
+                                                    <constraint firstAttribute="height" constant="56" id="ROi-l3-8AU"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <state key="normal" title="Like us on Facebook" backgroundImage="Button Grey">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="facebook:" destination="e26-pJ-Sle" eventType="touchUpInside" id="naB-z0-s8V"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b9J-Uz-tRV">
+                                                <rect key="frame" x="7" y="470" width="306" height="56"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="56" id="MLc-WE-02S"/>
+                                                    <constraint firstAttribute="width" constant="306" id="hYW-MS-HX2"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <state key="normal" title="More Apps" backgroundImage="Button Green">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="moreApps:" destination="e26-pJ-Sle" eventType="touchUpInside" id="giW-7n-QKW"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XZ9-R1-vRM">
+                                                <rect key="frame" x="7" y="534" width="306" height="56"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="56" id="722-6P-6F4"/>
+                                                    <constraint firstAttribute="width" constant="306" id="sMX-p5-EB0"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <state key="normal" title="Receive news from Robocat" backgroundImage="Button Yellow">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="wV6-PL-Mub" kind="push" id="lB1-IO-e4u"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="6" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="b0y-7P-5ML">
+                                                <rect key="frame" x="20" y="598" width="280" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <string key="text">Televised 1.0
+Copyright © 2013 Robocat
+All Rights Reserved</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Dr1-fd-Sfy">
+                                                <rect key="frame" x="20" y="351" width="37" height="37"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </activityIndicatorView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="b9J-Uz-tRV" firstAttribute="top" secondItem="MwN-D3-UQ6" secondAttribute="bottom" constant="8" id="288-cp-Bks"/>
+                                            <constraint firstAttribute="centerX" secondItem="TGf-o2-bCB" secondAttribute="centerX" id="59R-YO-M05"/>
+                                            <constraint firstItem="MwN-D3-UQ6" firstAttribute="top" secondItem="Wal-13-oFh" secondAttribute="bottom" constant="8" id="6PH-dP-1SD"/>
+                                            <constraint firstItem="XZ9-R1-vRM" firstAttribute="top" secondItem="b9J-Uz-tRV" secondAttribute="bottom" constant="8" id="AFt-57-xXQ"/>
+                                            <constraint firstAttribute="centerX" secondItem="XZ9-R1-vRM" secondAttribute="centerX" id="M53-eG-ciH"/>
+                                            <constraint firstItem="TGf-o2-bCB" firstAttribute="top" secondItem="Khq-pn-5dP" secondAttribute="bottom" constant="8" id="NS6-Vt-RjJ"/>
+                                            <constraint firstItem="Khq-pn-5dP" firstAttribute="top" secondItem="U7j-eb-QOx" secondAttribute="top" constant="74" id="T9O-6k-Qyj"/>
+                                            <constraint firstAttribute="height" constant="664" id="TsR-VO-Wat"/>
+                                            <constraint firstAttribute="width" constant="320" id="X0b-LZ-UPt"/>
+                                            <constraint firstAttribute="centerX" secondItem="b9J-Uz-tRV" secondAttribute="centerX" id="ZON-TD-LKJ"/>
+                                            <constraint firstAttribute="centerX" secondItem="Khq-pn-5dP" secondAttribute="centerX" id="ab2-nO-Ioh"/>
+                                            <constraint firstAttribute="centerX" secondItem="Wal-13-oFh" secondAttribute="centerX" id="dVb-TO-eAG"/>
+                                            <constraint firstItem="Wal-13-oFh" firstAttribute="top" secondItem="TGf-o2-bCB" secondAttribute="bottom" constant="8" id="mKD-Vr-JQg"/>
+                                            <constraint firstAttribute="centerX" secondItem="MwN-D3-UQ6" secondAttribute="centerX" id="oWB-yi-m7R"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="U7j-eb-QOx" secondAttribute="trailing" id="5JC-e3-9Kd"/>
+                                    <constraint firstItem="U7j-eb-QOx" firstAttribute="top" secondItem="vwA-4B-dTP" secondAttribute="top" id="MfX-vu-UQL"/>
+                                    <constraint firstItem="U7j-eb-QOx" firstAttribute="leading" secondItem="vwA-4B-dTP" secondAttribute="leading" id="ac9-A2-Hdt"/>
+                                    <constraint firstAttribute="bottom" secondItem="U7j-eb-QOx" secondAttribute="bottom" constant="-96" id="mJw-tH-1zx"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vwA-4B-dTP" firstAttribute="top" secondItem="kBS-rx-Vio" secondAttribute="top" id="HaA-Iy-cHL"/>
+                            <constraint firstItem="vwA-4B-dTP" firstAttribute="leading" secondItem="kBS-rx-Vio" secondAttribute="leading" id="PA8-vb-Flf"/>
+                            <constraint firstItem="82U-Dl-dUA" firstAttribute="top" secondItem="vwA-4B-dTP" secondAttribute="bottom" id="nJN-i3-W7s"/>
+                            <constraint firstAttribute="trailing" secondItem="vwA-4B-dTP" secondAttribute="trailing" id="rxM-bF-aeT"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Robocat" id="4sG-KT-YmR">
+                        <barButtonItem key="leftBarButtonItem" title="Close" id="5Ee-dX-iVl">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="dismiss:" destination="e26-pJ-Sle" id="ECz-jB-1gI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="buttonFacebook" destination="MwN-D3-UQ6" id="nNq-Gs-ghU"/>
+                        <outlet property="buttonMoreApps" destination="b9J-Uz-tRV" id="FZS-gW-CEQ"/>
+                        <outlet property="buttonReceiveNews" destination="XZ9-R1-vRM" id="okh-f7-dgp"/>
+                        <outlet property="buttonReview" destination="TGf-o2-bCB" id="mab-hb-A8G"/>
+                        <outlet property="buttonTwitter" destination="Wal-13-oFh" id="WBw-I0-HRR"/>
+                        <outlet property="closeButton" destination="5Ee-dX-iVl" id="EUb-0E-gM0"/>
+                        <outlet property="scrollView" destination="vwA-4B-dTP" id="rYK-KO-46C"/>
+                        <outlet property="spinnerView" destination="Dr1-fd-Sfy" id="kpR-1R-Wu6"/>
+                        <outlet property="versionLabel" destination="b0y-7P-5ML" id="1m4-9A-mSJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X3K-m8-iZp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="396" y="85"/>
+        </scene>
+        <!--Robocat Newsletter View Controller - Robocat-->
+        <scene sceneID="R31-4V-Jgc">
+            <objects>
+                <viewController id="wV6-PL-Mub" customClass="RKRobocatNewsletterViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="O7e-Ng-6oI"/>
+                        <viewControllerLayoutGuide type="bottom" id="Og5-vi-z7I"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IBz-ye-BM0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Robocat Background" translatesAutoresizingMaskIntoConstraints="NO" id="xhk-oZ-SXg">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Robocat Stamp" translatesAutoresizingMaskIntoConstraints="NO" id="T2v-SQ-cFl">
+                                <rect key="frame" x="110" y="74" width="100" height="105"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Dhg-96-pcg"/>
+                                    <constraint firstAttribute="height" constant="105" id="PKl-Cb-sXt"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your Email Address" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="r9t-RF-IEi">
+                                <rect key="frame" x="20" y="188" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" keyboardAppearance="alert" returnKeyType="join"/>
+                                <connections>
+                                    <outlet property="delegate" destination="wV6-PL-Mub" id="5h2-ua-ubI"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="v6g-JN-4tI">
+                                <rect key="frame" x="20" y="221" width="280" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">Enter yout email to receive the occasional Robocat news. We only send out emails a few times a year and you can unsubscribe whenever you feel like it.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="v6g-JN-4tI" firstAttribute="top" secondItem="r9t-RF-IEi" secondAttribute="bottom" constant="3" id="76c-4q-moa"/>
+                            <constraint firstItem="r9t-RF-IEi" firstAttribute="top" secondItem="T2v-SQ-cFl" secondAttribute="bottom" constant="9" id="7Bg-4i-hNz"/>
+                            <constraint firstItem="xhk-oZ-SXg" firstAttribute="leading" secondItem="v6g-JN-4tI" secondAttribute="leading" constant="-20" id="7IH-ZA-HaF"/>
+                            <constraint firstAttribute="bottom" secondItem="xhk-oZ-SXg" secondAttribute="bottom" id="9xs-uH-JK9"/>
+                            <constraint firstItem="xhk-oZ-SXg" firstAttribute="top" secondItem="T2v-SQ-cFl" secondAttribute="top" constant="-74" id="Eza-G8-zct"/>
+                            <constraint firstItem="xhk-oZ-SXg" firstAttribute="leading" secondItem="IBz-ye-BM0" secondAttribute="leading" id="GsS-2a-8ej"/>
+                            <constraint firstAttribute="trailing" secondItem="xhk-oZ-SXg" secondAttribute="trailing" id="Nmq-Yu-vcm"/>
+                            <constraint firstItem="xhk-oZ-SXg" firstAttribute="leading" secondItem="r9t-RF-IEi" secondAttribute="leading" constant="-20" id="R3J-u0-m0Q"/>
+                            <constraint firstItem="xhk-oZ-SXg" firstAttribute="centerX" secondItem="T2v-SQ-cFl" secondAttribute="centerX" id="WtQ-hO-HYX"/>
+                            <constraint firstItem="xhk-oZ-SXg" firstAttribute="trailing" secondItem="r9t-RF-IEi" secondAttribute="trailing" constant="20" id="b1t-y3-yd3"/>
+                            <constraint firstItem="xhk-oZ-SXg" firstAttribute="top" secondItem="IBz-ye-BM0" secondAttribute="top" id="hSl-hi-f0I"/>
+                            <constraint firstItem="xhk-oZ-SXg" firstAttribute="trailing" secondItem="v6g-JN-4tI" secondAttribute="trailing" constant="20" id="p8G-Og-zt7"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Robocat" id="fkp-3C-SAV">
+                        <barButtonItem key="rightBarButtonItem" title="Join" id="S7S-GB-EAd">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="join:" destination="wV6-PL-Mub" id="HIN-H3-rZI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="disclaimerLabel" destination="v6g-JN-4tI" id="1B1-yv-qwz"/>
+                        <outlet property="emailField" destination="r9t-RF-IEi" id="2M3-Gh-apu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DC9-f0-Dc2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="889" y="85"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Button Green" width="309" height="55"/>
+        <image name="Button Grey" width="309" height="55"/>
+        <image name="Button Yellow" width="309" height="55"/>
+        <image name="Robocat Background" width="320" height="480"/>
+        <image name="Robocat Logo" width="178" height="196"/>
+        <image name="Robocat Stamp" width="100" height="105"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

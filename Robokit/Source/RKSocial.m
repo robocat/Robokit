@@ -68,6 +68,9 @@ static NSString *RKAppName;
 }
 
 + (void)showRateThisAppPopup {
+	[[NSUserDefaults standardUserDefaults] setBool:YES forKey:RKRobocatViewControllerHaveRatedKey];
+	[[NSUserDefaults standardUserDefaults] synchronize];
+	
 	__block RKRatingViewController *ratingViewController = [RKRatingViewController ratingViewController];
 	
 	[ratingViewController presentInWindow:[[UIApplication sharedApplication] keyWindow] withCloseHandler:^{
@@ -76,6 +79,9 @@ static NSString *RKAppName;
 }
 
 + (void)showFollowUsPopup {
+	[[NSUserDefaults standardUserDefaults] setBool:YES forKey:kHaveFollowed];
+	[[NSUserDefaults standardUserDefaults] synchronize];
+	
 	__block RKFollowUsViewController *followUsViewController = [RKFollowUsViewController followUsViewControllerWithMailchimpId:kMailchimpListId APIKey:kMailchimpAPIKey];
 	
 	[followUsViewController presentInWindow:[[UIApplication sharedApplication] keyWindow] withCloseHandler:^{

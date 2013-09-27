@@ -48,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		FF3E7BD717F5CF5A004AB9D5 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/RKRatingViewController.strings; sourceTree = "<group>"; };
+		FF3E7BD817F5D3C6004AB9D5 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/RKRatingViewController.strings; sourceTree = "<group>"; };
 		FF62912417F59F970018AD68 /* Robokit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Robokit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF62912717F59F970018AD68 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FF62912917F59F970018AD68 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -453,6 +454,7 @@
 				FFE1DD2D17F5AD130074F75F /* tr */,
 				FFE1DD2E17F5AD130074F75F /* zh-Hans */,
 				FF3E7BD717F5CF5A004AB9D5 /* de */,
+				FF3E7BD817F5D3C6004AB9D5 /* da */,
 			);
 			name = RKRatingViewController.strings;
 			path = Localizations;

@@ -82,7 +82,7 @@
 		FFE1DCF817F5A97B0074F75F /* RKSocial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKSocial.h; path = Source/RKSocial.h; sourceTree = "<group>"; };
 		FFE1DCF917F5A97B0074F75F /* RKSocial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RKSocial.m; path = Source/RKSocial.m; sourceTree = "<group>"; };
 		FFE1DCFA17F5A97B0074F75F /* Robokit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Robokit.h; path = Source/Robokit.h; sourceTree = "<group>"; };
-		FFE1DD0E17F5A9ED0074F75F /* Robokit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Robokit.podspec; sourceTree = SOURCE_ROOT; };
+		FFE1DD0E17F5A9ED0074F75F /* Robokit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = Robokit.podspec; sourceTree = SOURCE_ROOT; };
 		FFE1DD1517F5AC180074F75F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = RobokitApp/Images.xcassets; sourceTree = SOURCE_ROOT; };
 		FFE1DD1917F5AD130074F75F /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/RKRatingViewController.strings; sourceTree = "<group>"; };
 		FFE1DD1B17F5AD130074F75F /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/RKAboutRobocatViewController.strings; sourceTree = "<group>"; };

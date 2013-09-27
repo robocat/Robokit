@@ -1,9 +1,13 @@
 Pod::Spec.new do |s|
   s.name = 'Robokit'
-  s.version = '1.0'
-  s.license = :type => 'BSD'
+  s.version = '1.0.1'
+  s.license = {
+    :type => 'MIT',
+    :file => 'LICENSE'
+  }
   s.summary = 'The shared Robocat iOS toolkit'
-  s.platform = :ios
+  s.platform = :ios, "7.0"
+  s.homepage = 'robo.cat'
   s.author = {
     'Ulrik Flænø Damm' => 'ulrik@robo.cat',
     'Kristian Andersen' => 'kristian@robo.cat'

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'Robokit'
-  s.version = '1.0.3'
+  s.version = '1.0.4'
   s.license = {
     :type => 'MIT',
     :file => 'LICENSE'
@@ -18,7 +18,6 @@ Pod::Spec.new do |s|
   }
   s.source_files = "Robokit/Source/*.{h,m}"
   s.resources = ['Robokit/Localizations/**', 'Robokit/Resources/**']
-  }
   s.frameworks = 'Accounts', 'Social', 'Foundation', 'UIKit'
   s.requires_arc = true
 end

@@ -51,6 +51,10 @@
     if ([RKSocial hasLikedOnFacebook]) {
         [self haveLikedOnFacebook];
     }
+	
+	if ([RKSocial hasRated]) {
+		[self haveRated];
+	}
     
 	self.closeButton.title = RKLocalizedFromTable(@"RC_ABOUT_BUTTON_CLOSE", NSStringFromClass(self.class));
     [self.buttonReview setTitle:RKLocalizedFromTable(@"RC_ABOUT_BUTTON_REVIEW", NSStringFromClass(self.class)) forState:UIControlStateNormal];

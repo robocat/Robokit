@@ -87,7 +87,7 @@
 	UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTap:)];
 	[self.starsView addGestureRecognizer:tapGesture];
 	
-	[self setStarCount:4];
+	[self setStarCount:5];
 }
 
 - (void)didPan:(UIPanGestureRecognizer *)panGesture {

@@ -197,12 +197,14 @@
 		[followRequest setAccount:twitterAccount];
 		
 		[followRequest performRequestWithHandler:^(NSData *responseData, NSHTTPURLResponse *urlResponse, NSError *error) {
-			if (!error) {
-				[[NSUserDefaults standardUserDefaults] setBool:YES forKey:RKRobocatViewControllerHaveFollowedKey];
-				[[NSUserDefaults standardUserDefaults] synchronize];
-			}
-			
-			if (completion) completion(error == nil);
+			[RKDispatch mainQueue:^{
+				if (!error) {
+					[[NSUserDefaults standardUserDefaults] setBool:YES forKey:RKRobocatViewControllerHaveFollowedKey];
+					[[NSUserDefaults standardUserDefaults] synchronize];
+				}
+				
+				if (completion) completion(error == nil);
+			}];
 		}];
 	}];
 }
@@ -284,7 +286,9 @@
 #pragma mark - Alert view delegate
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-	[RKSocial rateAppWithCompletion:nil];
+	if (buttonIndex == 1) {
+		[RKSocial rateAppWithCompletion:nil];
+	}
 }
 
 @end

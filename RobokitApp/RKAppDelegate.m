@@ -29,6 +29,8 @@
 	[self.window addSubview:adView];
 	[adView loadAd];
 	
+	[RKSocial showFollowUsPopup];
+	
     return YES;
 }
 

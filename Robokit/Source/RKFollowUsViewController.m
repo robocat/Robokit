@@ -110,6 +110,8 @@
 	[self.twitterButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 	[self.twitterButton setImage:[UIImage imageNamed:@"follow_twitter_active"] forState:UIControlStateNormal];
 	[self goHappyFace];
+	
+	[self.view setNeedsDisplay];
 }
 
 - (void)didLike {

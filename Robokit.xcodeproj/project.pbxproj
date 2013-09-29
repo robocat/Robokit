@@ -15,6 +15,7 @@
 		FF3F8CD417F8CEB30024EA07 /* RKAdView.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF3F8CD317F8CEB30024EA07 /* RKAdView.xcassets */; };
 		FF3F8CD817F8DD130024EA07 /* RevMobAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF3F8CD717F8DD130024EA07 /* RevMobAds.framework */; };
 		FF3F8CDA17F8DDEC0024EA07 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF3F8CD917F8DDEC0024EA07 /* SystemConfiguration.framework */; };
+		FF3F8CDC17F8EC430024EA07 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF3F8CDB17F8EC430024EA07 /* AdSupport.framework */; };
 		FF62912817F59F970018AD68 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF62912717F59F970018AD68 /* Foundation.framework */; };
 		FF62912A17F59F970018AD68 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF62912917F59F970018AD68 /* CoreGraphics.framework */; };
 		FF62912C17F59F970018AD68 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF62912B17F59F970018AD68 /* UIKit.framework */; };
@@ -69,6 +70,7 @@
 		FF3F8CD317F8CEB30024EA07 /* RKAdView.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = RKAdView.xcassets; path = Resources/RKAdView.xcassets; sourceTree = "<group>"; };
 		FF3F8CD717F8DD130024EA07 /* RevMobAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RevMobAds.framework; path = Frameworks/RevMobAds.framework; sourceTree = "<group>"; };
 		FF3F8CD917F8DDEC0024EA07 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		FF3F8CDB17F8EC430024EA07 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		FF62912417F59F970018AD68 /* Robokit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Robokit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF62912717F59F970018AD68 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FF62912917F59F970018AD68 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -134,6 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF3F8CDC17F8EC430024EA07 /* AdSupport.framework in Frameworks */,
 				FF3F8CDA17F8DDEC0024EA07 /* SystemConfiguration.framework in Frameworks */,
 				FF62912A17F59F970018AD68 /* CoreGraphics.framework in Frameworks */,
 				FF62912C17F59F970018AD68 /* UIKit.framework in Frameworks */,
@@ -197,6 +200,7 @@
 		FF62912617F59F970018AD68 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FF3F8CDB17F8EC430024EA07 /* AdSupport.framework */,
 				FF3F8CD917F8DDEC0024EA07 /* SystemConfiguration.framework */,
 				FF62912717F59F970018AD68 /* Foundation.framework */,
 				FF62912917F59F970018AD68 /* CoreGraphics.framework */,

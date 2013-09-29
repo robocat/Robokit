@@ -81,6 +81,7 @@
 
 + (void)showRateThisAppPopup {
 	[[NSUserDefaults standardUserDefaults] setBool:YES forKey:kRatedCurrentVersion];
+	[[NSUserDefaults standardUserDefaults] setDouble:[[NSDate date] timeIntervalSince1970] forKey:kRatedCurrentVersionDate];
 	[[NSUserDefaults standardUserDefaults] synchronize];
 	
 	__block RKRatingViewController *ratingViewController = [RKRatingViewController ratingViewController];

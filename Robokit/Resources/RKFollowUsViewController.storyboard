@@ -48,6 +48,9 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <state key="highlighted" image="follow_twitter_active" backgroundImage="follow_selected_button">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="twitter:" destination="cZf-0X-xhM" eventType="touchUpInside" id="gsD-2X-Q3e"/>
                                                 </connections>
@@ -62,6 +65,9 @@
                                                 <state key="normal" title="Like us" image="follow_facebook_inactive">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="highlighted" image="follow_facebook_active" backgroundImage="follow_selected_button">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="facebook:" destination="cZf-0X-xhM" eventType="touchUpInside" id="Wai-PB-kZJ"/>
@@ -78,6 +84,9 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <state key="highlighted" image="follow_subscribe_active" backgroundImage="follow_selected_button">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="subscribe:" destination="cZf-0X-xhM" eventType="touchUpInside" id="JvL-HP-4ie"/>
                                                 </connections>
@@ -91,6 +100,9 @@
                                                 <state key="normal" title="No thanks" image="follow_thanks_inactive">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="highlighted" image="follow_thanks_active" backgroundImage="follow_selected_button">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="noThanks:" destination="cZf-0X-xhM" eventType="touchUpInside" id="stk-6A-TNb"/>
@@ -194,9 +206,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="follow_facebook_active" width="30" height="30"/>
         <image name="follow_facebook_inactive" width="30" height="30"/>
+        <image name="follow_selected_button" width="280" height="50"/>
+        <image name="follow_subscribe_active" width="30" height="30"/>
         <image name="follow_subscribe_inactive" width="30" height="30"/>
+        <image name="follow_thanks_active" width="30" height="30"/>
         <image name="follow_thanks_inactive" width="30" height="30"/>
+        <image name="follow_twitter_active" width="30" height="30"/>
         <image name="follow_twitter_inactive" width="30" height="30"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

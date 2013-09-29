@@ -56,7 +56,7 @@
 		FF3E7BE917F899B5004AB9D5 /* da */ = {isa = PBXFileReference; lastKnownFileType = file; name = da; path = da.lproj/RKFollowUsViewController.strings; sourceTree = "<group>"; };
 		FF3E7BEA17F89A1A004AB9D5 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = SOURCE_ROOT; };
 		FF3E7BEC17F89A1F004AB9D5 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
-		FF3E7BEE17F89B3F004AB9D5 /* RKMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RKMacros.h; sourceTree = "<group>"; };
+		FF3E7BEF17F8A1EA004AB9D5 /* RKMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RKMacros.h; path = Source/RKMacros.h; sourceTree = "<group>"; };
 		FF62912417F59F970018AD68 /* Robokit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Robokit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF62912717F59F970018AD68 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FF62912917F59F970018AD68 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -237,7 +237,7 @@
 				FFE1DCF317F5A97B0074F75F /* RKLocalization.m */,
 				FFE1DCF817F5A97B0074F75F /* RKSocial.h */,
 				FFE1DCF917F5A97B0074F75F /* RKSocial.m */,
-				FF3E7BEE17F89B3F004AB9D5 /* RKMacros.h */,
+				FF3E7BEF17F8A1EA004AB9D5 /* RKMacros.h */,
 			);
 			name = Shared;
 			sourceTree = "<group>";

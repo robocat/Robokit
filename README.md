@@ -6,8 +6,5 @@ Usage: add this to applicationDidFinishLaunching
 [RKSocial initializeSocialFeaturesWithAppId:@"appId" appName:@"App Name" newInThisVersion:@"· what's new"];
 ```
 
-NOTE: add this line to Pods-resources.sh to add cocoapods support for xcassets
-```bash
-actool --output-format human-readable-text --notices --warnings --platform iphonesimulator --minimum-deployment-target 7.0 --target-device iphone --compress-pngs --compile "${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app" `find . -name '*.xcassets'`
-```
+NOTE: The official Cocoapods doesn't yet support xcassets in pods; install this version for support: https://github.com/ulrikdamm/CocoaPods
 

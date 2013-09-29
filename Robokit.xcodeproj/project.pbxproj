@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FF3E7BDB17F88E15004AB9D5 /* RKFollowUsViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = FF3E7BDD17F88E15004AB9D5 /* RKFollowUsViewController.strings */; };
+		FF3E7BE617F899B3004AB9D5 /* RKFollowUsViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = FF3E7BE817F899B3004AB9D5 /* RKFollowUsViewController.strings */; };
 		FF62912817F59F970018AD68 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF62912717F59F970018AD68 /* Foundation.framework */; };
 		FF62912A17F59F970018AD68 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF62912917F59F970018AD68 /* CoreGraphics.framework */; };
 		FF62912C17F59F970018AD68 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF62912B17F59F970018AD68 /* UIKit.framework */; };
@@ -50,8 +50,8 @@
 /* Begin PBXFileReference section */
 		FF3E7BD717F5CF5A004AB9D5 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/RKRatingViewController.strings; sourceTree = "<group>"; };
 		FF3E7BD817F5D3C6004AB9D5 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/RKRatingViewController.strings; sourceTree = "<group>"; };
-		FF3E7BDC17F88E15004AB9D5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/RKFollowUsViewController.strings; sourceTree = "<group>"; };
-		FF3E7BDE17F88E18004AB9D5 /* da */ = {isa = PBXFileReference; lastKnownFileType = file; name = da; path = da.lproj/RKFollowUsViewController.strings; sourceTree = "<group>"; };
+		FF3E7BE717F899B3004AB9D5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/RKFollowUsViewController.strings; sourceTree = "<group>"; };
+		FF3E7BE917F899B5004AB9D5 /* da */ = {isa = PBXFileReference; lastKnownFileType = file; name = da; path = da.lproj/RKFollowUsViewController.strings; sourceTree = "<group>"; };
 		FF62912417F59F970018AD68 /* Robokit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Robokit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF62912717F59F970018AD68 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FF62912917F59F970018AD68 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -253,7 +253,7 @@
 				FFE1DCF117F5A97B0074F75F /* RKFollowUsViewController.m */,
 				FFE1DCE717F5A97B0074F75F /* RKFollowUsViewController.storyboard */,
 				FFE1DCE817F5A97B0074F75F /* RKFollowUsViewController.xcassets */,
-				FF3E7BDD17F88E15004AB9D5 /* RKFollowUsViewController.strings */,
+				FF3E7BE817F899B3004AB9D5 /* RKFollowUsViewController.strings */,
 			);
 			name = "Follow Us View Controller";
 			sourceTree = "<group>";
@@ -376,7 +376,7 @@
 				FFE1DD0F17F5A9ED0074F75F /* Robokit.podspec in Resources */,
 				FFE1DD2F17F5AD130074F75F /* RKRatingViewController.strings in Resources */,
 				FFE1DD0217F5A97B0074F75F /* RKRatingViewController.xcassets in Resources */,
-				FF3E7BDB17F88E15004AB9D5 /* RKFollowUsViewController.strings in Resources */,
+				FF3E7BE617F899B3004AB9D5 /* RKFollowUsViewController.strings in Resources */,
 				FFE1DD0017F5A97B0074F75F /* RKFollowUsViewController.xcassets in Resources */,
 				FFE1DCFD17F5A97B0074F75F /* RKAboutRobocatViewController.storyboard in Resources */,
 			);
@@ -428,13 +428,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		FF3E7BDD17F88E15004AB9D5 /* RKFollowUsViewController.strings */ = {
+		FF3E7BE817F899B3004AB9D5 /* RKFollowUsViewController.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				FF3E7BDC17F88E15004AB9D5 /* en */,
-				FF3E7BDE17F88E18004AB9D5 /* da */,
+				FF3E7BE717F899B3004AB9D5 /* en */,
+				FF3E7BE917F899B5004AB9D5 /* da */,
 			);
 			name = RKFollowUsViewController.strings;
+			path = Localizations;
 			sourceTree = "<group>";
 		};
 		FF62914917F59F970018AD68 /* InfoPlist.strings */ = {

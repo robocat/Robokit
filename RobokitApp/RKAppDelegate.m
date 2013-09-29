@@ -23,7 +23,7 @@
 	
 	[RKSocial initializeSocialFeaturesWithAppId:@"" appName:@"Test app" newInThisVersion:@"· news"];
 	
-	[RKSocial showRateThisAppPopup];
+	[RKSocial showFollowUsPopup];
 	
     return YES;
 }

@@ -9,6 +9,7 @@
 #import "RKFollowUsViewController.h"
 #import "RKSocial.h"
 #import "RKLocalization.h"
+#import "RKMacros.h"
 
 @interface RKFollowUsViewController () <UITextFieldDelegate>
 
@@ -176,7 +177,7 @@
 	
 	[UIView animateWithDuration:.3 animations:^{
 		self.subscribeViewHeightConstraint.constant = 50;
-		self.parentViewBottomSpaceConstraint.constant = 90;
+		self.parentViewBottomSpaceConstraint.constant = (RK_IS_IPHONE_5? 90: 155);
 		[self.view layoutIfNeeded];
 	} completion:nil];
 }

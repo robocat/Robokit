@@ -31,14 +31,31 @@
 #define kMailchimpAPIKey @"0707e00bae61425cb207a028f7730a89-us1"
 #define kMailchimpListId @"f864e02a1c"
 
-static NSString *RKAppId;
-static NSString *RKAppName;
+@interface RKSocial () <UIAlertViewDelegate>
+
+@property (strong, nonatomic) NSString *appId;
+@property (strong, nonatomic) NSString *appName;
+@property (strong, nonatomic) NSString *whatsNew;
+
+@end
 
 @implementation RKSocial
 
++ (RKSocial *)sharedInstance {
+	static RKSocial *instance;
+	
+	static dispatch_once_t onceToken;
+	dispatch_once(&onceToken, ^{
+		instance = [[RKSocial alloc] init];
+	});
+	
+	return instance;
+}
+
 + (void)initializeSocialFeaturesWithAppId:(NSString *)appId appName:(NSString *)appName newInThisVersion:(NSString *)newsString {
-	RKAppId = appId;
-	RKAppName = appName;
+	[[self sharedInstance] setWhatsNew:newsString];
+	[[self sharedInstance] setAppId:appId];
+	[[self sharedInstance] setAppName:appName];
 	
 	NSString *versionString = [[NSBundle mainBundle] infoDictionary][@"CFBundleVersion"];
 	
@@ -48,10 +65,7 @@ static NSString *RKAppName;
 			[[NSUserDefaults standardUserDefaults] setBool:NO forKey:kFollowShown];
 			[[NSUserDefaults standardUserDefaults] setBool:NO forKey:kHaveFollowed];
 			[[NSUserDefaults standardUserDefaults] setDouble:[[NSDate date] timeIntervalSince1970] forKey:kFirstUseDate];
-			NSString *versionString = [[NSBundle mainBundle] infoDictionary][@"CFBundleVersion"];
-			NSString *title = [NSString stringWithFormat:@"What's New in %@ %@?", RKAppName, versionString];
-			
-			[[[UIAlertView alloc] initWithTitle:title message:newsString delegate:self cancelButtonTitle:@"Continue" otherButtonTitles:@"Rate ★", nil] show];
+			[self showWhatsNewPopup];
 		}
 	}
 	
@@ -89,12 +103,19 @@ static NSString *RKAppName;
 	}];
 }
 
++ (void)showWhatsNewPopup {
+	NSString *versionString = [[NSBundle mainBundle] infoDictionary][@"CFBundleVersion"];
+	NSString *title = [NSString stringWithFormat:@"What's New in %@ %@?", [[self sharedInstance] appName], versionString];
+	
+	[[[UIAlertView alloc] initWithTitle:title message:[[self sharedInstance] whatsNew] delegate:[self sharedInstance] cancelButtonTitle:@"Continue" otherButtonTitles:@"Rate ★", nil] show];
+}
+
 + (NSString *)appId {
-	return RKAppId;
+	return [[self sharedInstance] appId];
 }
 
 + (NSString *)appName {
-	return RKAppName;
+	return [[self sharedInstance] appName];
 }
 
 + (BOOL)hasLikedOnFacebook {
@@ -259,6 +280,12 @@ static NSString *RKAppName;
 		NSURL *safariURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://mobile.twitter.com/%@", username]];
 		[[UIApplication sharedApplication] openURL:safariURL];
 	}
+}
+
+#pragma mark - Alert view delegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+	[RKSocial rateAppWithCompletion:nil];
 }
 
 @end

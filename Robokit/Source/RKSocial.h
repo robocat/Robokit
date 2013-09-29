@@ -28,5 +28,6 @@
 
 + (void)showRateThisAppPopup;
 + (void)showFollowUsPopup;
++ (void)showWhatsNewPopup;
 
 @end

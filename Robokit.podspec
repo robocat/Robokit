@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'Robokit'
-  s.version = '1.1.8'
+  s.version = '1.1.9'
   s.license = {
     :type => 'MIT',
     :file => 'LICENSE'
@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   }
   s.source = {
     :git => 'https://github.com/robocat/Robokit.git',
-    :tag => '1.1.8'
+    :tag => '1.1.9'
   }
   s.source_files = 'Robokit/Source/*.{h,m}', 'Robokit/Frameworks/RevMobAds.framework/Versions/A/Headers/*.h'
   s.resources = ['Robokit/Localizations/**', 'Robokit/Resources/**']

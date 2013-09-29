@@ -21,7 +21,6 @@
 #define kFirstUseDate @"kFirstUseDate"
 #define kRatedCurrentVersion @"kRatedCurrentVersion"
 #define kRatedCurrentVersionDate @"kRatedCurrentVersionDate"
-#define kFollowShown @"kFollowShown"
 #define kHaveFollowed @"kHaveFollowed"
 #define kUserDefaultAppVersion @"kUserDefaultAppVersion"
 
@@ -62,7 +61,6 @@
 	if ([[NSUserDefaults standardUserDefaults] objectForKey:kUserDefaultAppVersion]) {
 		if (![[[NSUserDefaults standardUserDefaults] objectForKey:kUserDefaultAppVersion] isEqualToString:versionString]) {
 			[[NSUserDefaults standardUserDefaults] setBool:NO forKey:kRatedCurrentVersion];
-			[[NSUserDefaults standardUserDefaults] setBool:NO forKey:kFollowShown];
 			[[NSUserDefaults standardUserDefaults] setBool:NO forKey:kHaveFollowed];
 			[[NSUserDefaults standardUserDefaults] setDouble:[[NSDate date] timeIntervalSince1970] forKey:kFirstUseDate];
 			[self showWhatsNewPopup];
@@ -243,7 +241,7 @@
 }
 
 + (BOOL)shouldShowFollowView {
-	if ([[NSUserDefaults standardUserDefaults] boolForKey:kFollowShown] == YES || [[NSUserDefaults standardUserDefaults] boolForKey:kRatedCurrentVersion] == NO || [[NSUserDefaults standardUserDefaults] boolForKey:kHaveFollowed] == YES) {
+	if ([[NSUserDefaults standardUserDefaults] boolForKey:kRatedCurrentVersion] == NO || [[NSUserDefaults standardUserDefaults] boolForKey:kHaveFollowed] == YES) {
 		return NO;
 	}
 	

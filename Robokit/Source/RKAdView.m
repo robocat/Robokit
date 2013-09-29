@@ -7,7 +7,12 @@
 //
 
 #import "RKAdView.h"
+
+#ifdef COCOAPODS
+#import <RevMobAds.h>
+#else
 #import <RevMobAds/RevMobAds.h>
+#endif
 
 @interface RKAdView ()
 

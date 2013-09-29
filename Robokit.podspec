@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'Robokit'
-  s.version = '1.1.5'
+  s.version = '1.1.6'
   s.license = {
     :type => 'MIT',
     :file => 'LICENSE'
@@ -14,11 +14,11 @@ Pod::Spec.new do |s|
   }
   s.source = {
     :git => 'https://github.com/robocat/Robokit.git',
-    :tag => '1.1.5'
+    :tag => '1.1.6'
   }
   s.source_files = 'Robokit/Source/*.{h,m}', 'Robokit/Frameworks/RevMobAds.framework/Versions/A/Headers/*.h'
   s.resources = ['Robokit/Localizations/**', 'Robokit/Resources/**']
-  s.frameworks = 'Accounts', 'Social', 'Foundation', 'UIKit', 'SystemConfiguration', 'RevMobAds'
+  s.frameworks = 'Accounts', 'Social', 'Foundation', 'UIKit', 'SystemConfiguration', 'RevMobAds', 'AdSupport'
   s.requires_arc = true
   s.preserve_paths = 'Robokit/Frameworks/RevMobAds.framework/*'
   s.xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => '"$(PODS_ROOT)/Robokit/Robokit/Frameworks/RevMobAds"' }

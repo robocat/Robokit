@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'Robokit'
-  s.version = '1.0.11'
+  s.version = '1.0.12'
   s.license = {
     :type => 'MIT',
     :file => 'LICENSE'

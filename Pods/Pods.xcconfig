@@ -1,0 +1,5 @@
+FRAMEWORK_SEARCH_PATHS = "$(PODS_ROOT)/RevMob"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/RevMob"
+OTHER_LDFLAGS = -ObjC -framework AdSupport -framework RevMobAds -framework StoreKit -framework SystemConfiguration -weak_framework AdSupport -weak_framework StoreKit
+PODS_ROOT = ${SRCROOT}/Pods

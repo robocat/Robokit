@@ -7,9 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E1C329C3A1A4448DBFCDDDB3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D7BFA784E74582ABD62096 /* libPods.a */; };
 		FF3E7BE617F899B3004AB9D5 /* RKFollowUsViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = FF3E7BE817F899B3004AB9D5 /* RKFollowUsViewController.strings */; };
 		FF3E7BEB17F89A1A004AB9D5 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FF3E7BEA17F89A1A004AB9D5 /* README.md */; };
 		FF3E7BED17F89A1F004AB9D5 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = FF3E7BEC17F89A1F004AB9D5 /* LICENSE */; };
+		FF3F8CC817F8C1460024EA07 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = FF3F8CC717F8C1460024EA07 /* Podfile */; };
+		FF3F8CCB17F8C1840024EA07 /* RKAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3F8CCA17F8C1840024EA07 /* RKAdView.m */; };
+		FF3F8CD117F8C4A40024EA07 /* RKPurchaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3F8CD017F8C4A40024EA07 /* RKPurchaseManager.m */; };
+		FF3F8CD417F8CEB30024EA07 /* RKAdView.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF3F8CD317F8CEB30024EA07 /* RKAdView.xcassets */; };
 		FF62912817F59F970018AD68 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF62912717F59F970018AD68 /* Foundation.framework */; };
 		FF62912A17F59F970018AD68 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF62912917F59F970018AD68 /* CoreGraphics.framework */; };
 		FF62912C17F59F970018AD68 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF62912B17F59F970018AD68 /* UIKit.framework */; };
@@ -50,13 +55,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		07D7BFA784E74582ABD62096 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B8796A98DA04A1FB80AB915 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		FF3E7BD717F5CF5A004AB9D5 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/RKRatingViewController.strings; sourceTree = "<group>"; };
 		FF3E7BD817F5D3C6004AB9D5 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/RKRatingViewController.strings; sourceTree = "<group>"; };
-		FF3E7BE717F899B3004AB9D5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/RKFollowUsViewController.strings; sourceTree = "<group>"; };
-		FF3E7BE917F899B5004AB9D5 /* da */ = {isa = PBXFileReference; lastKnownFileType = file; name = da; path = da.lproj/RKFollowUsViewController.strings; sourceTree = "<group>"; };
+		FF3E7BE717F899B3004AB9D5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/RKFollowUsViewController.strings; sourceTree = "<group>"; };
+		FF3E7BE917F899B5004AB9D5 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/RKFollowUsViewController.strings; sourceTree = "<group>"; };
 		FF3E7BEA17F89A1A004AB9D5 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = SOURCE_ROOT; };
 		FF3E7BEC17F89A1F004AB9D5 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
 		FF3E7BEF17F8A1EA004AB9D5 /* RKMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RKMacros.h; path = Source/RKMacros.h; sourceTree = "<group>"; };
+		FF3F8CC717F8C1460024EA07 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
+		FF3F8CC917F8C1840024EA07 /* RKAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKAdView.h; path = Source/RKAdView.h; sourceTree = "<group>"; };
+		FF3F8CCA17F8C1840024EA07 /* RKAdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RKAdView.m; path = Source/RKAdView.m; sourceTree = "<group>"; };
+		FF3F8CCF17F8C4A40024EA07 /* RKPurchaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKPurchaseManager.h; path = Source/RKPurchaseManager.h; sourceTree = "<group>"; };
+		FF3F8CD017F8C4A40024EA07 /* RKPurchaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RKPurchaseManager.m; path = Source/RKPurchaseManager.m; sourceTree = "<group>"; };
+		FF3F8CD317F8CEB30024EA07 /* RKAdView.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = RKAdView.xcassets; path = Resources/RKAdView.xcassets; sourceTree = "<group>"; };
 		FF62912417F59F970018AD68 /* Robokit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Robokit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF62912717F59F970018AD68 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FF62912917F59F970018AD68 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -125,6 +138,7 @@
 				FF62912A17F59F970018AD68 /* CoreGraphics.framework in Frameworks */,
 				FF62912C17F59F970018AD68 /* UIKit.framework in Frameworks */,
 				FF62912817F59F970018AD68 /* Foundation.framework in Frameworks */,
+				E1C329C3A1A4448DBFCDDDB3 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +155,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FF3F8CD217F8CE910024EA07 /* Ad View */ = {
+			isa = PBXGroup;
+			children = (
+				FF3F8CC917F8C1840024EA07 /* RKAdView.h */,
+				FF3F8CCA17F8C1840024EA07 /* RKAdView.m */,
+				FF3F8CD317F8CEB30024EA07 /* RKAdView.xcassets */,
+			);
+			name = "Ad View";
+			sourceTree = "<group>";
+		};
 		FF62911B17F59F970018AD68 = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +174,7 @@
 				FF62914617F59F970018AD68 /* RobokitTests */,
 				FF62912617F59F970018AD68 /* Frameworks */,
 				FF62912517F59F970018AD68 /* Products */,
+				2B8796A98DA04A1FB80AB915 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -169,6 +194,7 @@
 				FF62912917F59F970018AD68 /* CoreGraphics.framework */,
 				FF62912B17F59F970018AD68 /* UIKit.framework */,
 				FF62914017F59F970018AD68 /* XCTest.framework */,
+				07D7BFA784E74582ABD62096 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -176,6 +202,7 @@
 		FF62912D17F59F970018AD68 /* Robokit Test App */ = {
 			isa = PBXGroup;
 			children = (
+				FF3F8CC717F8C1460024EA07 /* Podfile */,
 				FFE1DCC417F5A94B0074F75F /* RKAppDelegate.h */,
 				FFE1DCC517F5A94B0074F75F /* RKAppDelegate.m */,
 				FFE1DD1517F5AC180074F75F /* Images.xcassets */,
@@ -221,6 +248,7 @@
 				FFE1DD0E17F5A9ED0074F75F /* Robokit.podspec */,
 				FFE1DCFA17F5A97B0074F75F /* Robokit.h */,
 				FFE1DD0A17F5A9810074F75F /* Shared */,
+				FF3F8CD217F8CE910024EA07 /* Ad View */,
 				FFE1DD0D17F5A98F0074F75F /* About Robocat View Controller */,
 				FFE1DD0C17F5A98A0074F75F /* Follow Us View Controller */,
 				FFE1DD0B17F5A9840074F75F /* Rating View Controller */,
@@ -231,13 +259,15 @@
 		FFE1DD0A17F5A9810074F75F /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				FF3E7BEF17F8A1EA004AB9D5 /* RKMacros.h */,
 				FFE1DCEE17F5A97B0074F75F /* RKDispatch.h */,
 				FFE1DCEF17F5A97B0074F75F /* RKDispatch.m */,
 				FFE1DCF217F5A97B0074F75F /* RKLocalization.h */,
 				FFE1DCF317F5A97B0074F75F /* RKLocalization.m */,
 				FFE1DCF817F5A97B0074F75F /* RKSocial.h */,
 				FFE1DCF917F5A97B0074F75F /* RKSocial.m */,
-				FF3E7BEF17F8A1EA004AB9D5 /* RKMacros.h */,
+				FF3F8CCF17F8C4A40024EA07 /* RKPurchaseManager.h */,
+				FF3F8CD017F8C4A40024EA07 /* RKPurchaseManager.m */,
 			);
 			name = Shared;
 			sourceTree = "<group>";
@@ -287,9 +317,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FF62915017F59F970018AD68 /* Build configuration list for PBXNativeTarget "Robokit" */;
 			buildPhases = (
+				8BA47C4FF88546C69AE0F4DF /* Check Pods Manifest.lock */,
 				FF62912017F59F970018AD68 /* Sources */,
 				FF62912117F59F970018AD68 /* Frameworks */,
 				FF62912217F59F970018AD68 /* Resources */,
+				978C042334C9416BA94AA910 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -380,6 +412,7 @@
 				FFE1DCFE17F5A97B0074F75F /* RKAboutRobocatViewController.xcassets in Resources */,
 				FF3E7BED17F89A1F004AB9D5 /* LICENSE in Resources */,
 				FFE1DD0117F5A97B0074F75F /* RKRatingViewController.storyboard in Resources */,
+				FF3F8CD417F8CEB30024EA07 /* RKAdView.xcassets in Resources */,
 				FFE1DD3017F5AD130074F75F /* RKAboutRobocatViewController.strings in Resources */,
 				FFE1DCFF17F5A97B0074F75F /* RKFollowUsViewController.storyboard in Resources */,
 				FFE1DD0F17F5A9ED0074F75F /* Robokit.podspec in Resources */,
@@ -388,6 +421,7 @@
 				FFE1DD0217F5A97B0074F75F /* RKRatingViewController.xcassets in Resources */,
 				FF3E7BE617F899B3004AB9D5 /* RKFollowUsViewController.strings in Resources */,
 				FFE1DD0017F5A97B0074F75F /* RKFollowUsViewController.xcassets in Resources */,
+				FF3F8CC817F8C1460024EA07 /* Podfile in Resources */,
 				FFE1DCFD17F5A97B0074F75F /* RKAboutRobocatViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -402,6 +436,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8BA47C4FF88546C69AE0F4DF /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		978C042334C9416BA94AA910 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FF62912017F59F970018AD68 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -412,7 +479,9 @@
 				FFE1DD0817F5A97B0074F75F /* RKRobocatNewsletterViewController.m in Sources */,
 				FFE1DD0517F5A97B0074F75F /* RKFollowUsViewController.m in Sources */,
 				FFE1DCCA17F5A9540074F75F /* main.m in Sources */,
+				FF3F8CD117F8C4A40024EA07 /* RKPurchaseManager.m in Sources */,
 				FFE1DD0617F5A97B0074F75F /* RKLocalization.m in Sources */,
+				FF3F8CCB17F8C1840024EA07 /* RKAdView.m in Sources */,
 				FFE1DD0317F5A97B0074F75F /* RKAboutRobocatViewController.m in Sources */,
 				FFE1DCC617F5A94B0074F75F /* RKAppDelegate.m in Sources */,
 				FFE1DD0717F5A97B0074F75F /* RKRatingViewController.m in Sources */,
@@ -572,6 +641,7 @@
 		};
 		FF62915117F59F970018AD68 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B8796A98DA04A1FB80AB915 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -585,6 +655,7 @@
 		};
 		FF62915217F59F970018AD68 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B8796A98DA04A1FB80AB915 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

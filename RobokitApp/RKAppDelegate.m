@@ -7,7 +7,7 @@
 //
 
 #import "RKAppDelegate.h"
-#import "RKSocial.h"
+#import "Robokit.h"
 
 @implementation RKAppDelegate
 
@@ -22,6 +22,12 @@
 	[self.window addSubview:background];
 	
 	[RKSocial initializeSocialFeaturesWithAppId:@"" appName:@"Test app" newInThisVersion:@"· news"];
+	
+	[RKAdView initializeAdsWithRevMobAppId:@"52308b3d41cc3374b0000003" testingMode:YES];
+	
+	RKAdView *adView = [[RKAdView alloc] initWithFrame:CGRectMake(0, self.window.frame.size.height - 50, 320, 50)];
+	[self.window addSubview:adView];
+	[adView loadAd];
 	
     return YES;
 }

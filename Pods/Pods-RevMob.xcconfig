@@ -1,0 +1,2 @@
+PODS_REVMOB_FRAMEWORK_SEARCH_PATHS = "$(PODS_ROOT)/RevMob"
+PODS_REVMOB_OTHER_LDFLAGS = -framework AdSupport -framework RevMobAds -framework StoreKit -framework SystemConfiguration -weak_framework AdSupport -weak_framework StoreKit

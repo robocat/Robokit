@@ -16,6 +16,7 @@
 
 "RC_ABOUT_BUTTON_FOLLOWED" = "Following @robocat";
 "RC_ABOUT_BUTTON_LIKED" = "Liked on Facebook";
+"RC_ABOUT_BUTTON_REVIEWED" = "Rated";
 
 "RC_NEWSLETTER_EMAIL_INPUT" = "Your Email Address";
 "RC_NEWSLETTER_DISCLAIMER" = "Enter yout email to receive the occasional Robocat news. We only send out emails a few times a year and you can unsubscribe whenever you feel like it.";

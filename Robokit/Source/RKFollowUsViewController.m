@@ -132,9 +132,8 @@
 
 - (void)goHappyFace {
 	[self.nothanksButton setTitle:RKLocalizedFromTable(@"NO_THANKS_BUTTON_THANKS", NSStringFromClass(self.class)) forState:UIControlStateNormal];
-	[self.nothanksButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-	[self.nothanksButton setImage:[UIImage imageNamed:@"follow_thanks_active"] forState:UIControlStateNormal];
-	[self.nothanksButton setBackgroundColor:[UIColor colorWithRed:0.000000 green:1.000000 blue:0.000000 alpha:0.500000]];
+	[self.nothanksButton setImage:[UIImage imageNamed:@"follow_thanks_inactive"] forState:UIControlStateNormal];
+	[self.nothanksButton setImage:[UIImage imageNamed:@"follow_thanks_active"] forState:UIControlStateHighlighted];
 }
 
 - (IBAction)twitter:(id)sender {

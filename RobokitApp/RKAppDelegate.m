@@ -29,7 +29,7 @@
 	[self.window addSubview:adView];
 	[adView loadAd];
 	
-	[RKSocial showFollowUsPopup];
+	[RKSocial showRateThisAppPopup];
 	
     return YES;
 }

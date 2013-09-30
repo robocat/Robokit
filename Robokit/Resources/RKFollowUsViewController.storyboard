@@ -97,11 +97,11 @@
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
                                                 <inset key="titleEdgeInsets" minX="30" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 <inset key="imageEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                <state key="normal" title="No thanks" image="follow_thanks_inactive">
+                                                <state key="normal" title="No thanks" image="follow_nothanks_inactive">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
-                                                <state key="highlighted" image="follow_thanks_active" backgroundImage="follow_selected_button">
+                                                <state key="highlighted" image="follow_nothanks_active" backgroundImage="follow_selected_button">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
@@ -208,11 +208,11 @@
     <resources>
         <image name="follow_facebook_active" width="30" height="30"/>
         <image name="follow_facebook_inactive" width="30" height="30"/>
+        <image name="follow_nothanks_active" width="30" height="30"/>
+        <image name="follow_nothanks_inactive" width="30" height="30"/>
         <image name="follow_selected_button" width="280" height="50"/>
         <image name="follow_subscribe_active" width="30" height="30"/>
         <image name="follow_subscribe_inactive" width="30" height="30"/>
-        <image name="follow_thanks_active" width="30" height="30"/>
-        <image name="follow_thanks_inactive" width="30" height="30"/>
         <image name="follow_twitter_active" width="30" height="30"/>
         <image name="follow_twitter_inactive" width="30" height="30"/>
     </resources>

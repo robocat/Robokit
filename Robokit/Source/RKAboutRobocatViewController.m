@@ -9,6 +9,7 @@
 #import "RKAboutRobocatViewController.h"
 #import "RKLocalization.h"
 #import "RKSocial.h"
+#import "Flurry.h"
 
 @interface RKAboutRobocatViewController ()
 
@@ -43,6 +44,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+	
+	[Flurry logEvent:@"Did open About Robocat" timed:YES];
     
     if ([RKSocial hasFollowedOnTwitter]) {
         [self haveFollowedOnTwitter];
@@ -100,6 +103,8 @@
 #pragma mark - Actions
 
 - (IBAction)review:(id)sender {
+	[Flurry logEvent:@"Did review from About Robocat"];
+	
 	[RKSocial rateAppWithCompletion:^(BOOL success) {
 		if (success) {
 			[self haveRated];
@@ -109,6 +114,8 @@
 
 - (IBAction)twitter:(id)sender {
     [self.spinnerView startAnimating];
+	
+	[Flurry logEvent:@"Did follow on Twitter from About Robocat"];
     
     [RKSocial followOnTwitterWithCompletion:^(BOOL success) {
 		[self.spinnerView stopAnimating];
@@ -120,6 +127,8 @@
 }
 
 - (IBAction)facebook:(id)sender {
+	[Flurry logEvent:@"Did like on Facebook from About Robocat"];
+	
 	[RKSocial likeOnFacebookWithCompletion:^(BOOL success) {
 		if (success) {
 			[self haveLikedOnFacebook];
@@ -128,10 +137,14 @@
 }
 
 - (IBAction)moreApps:(id)sender {
+	[Flurry logEvent:@"Did open 'more apps' from About Robocat"];
+	
 	[RKSocial showMoreAppsFromRobocat];
 }
 
 - (IBAction)dismiss:(id)sender {
+	[Flurry logEvent:@"Did open About Robocat"];
+	
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

@@ -8,6 +8,7 @@
 
 #import "RKPurchaseManager.h"
 #import <StoreKit/StoreKit.h>
+#import "Flurry.h"
 
 NSString * const kRKPurchasesManagerDidLoadProductInfoNotification = @"cat.robo.kRKPurchasesManagerDidLoadProductInfoNotification";
 NSString * const kRKPurchasesManagerDidPurchaseFeatureNotification = @"cat.robo.kRKPurchasesManagerDidPurchaseFeatureNotification";
@@ -77,6 +78,8 @@ NSString * const kRKPurchasesManagerErrorKey = @"kRKPurchasesManagerErrorKey";
 }
 
 + (void)purchaseFeature:(NSString *)featureId {
+	[Flurry logEvent:@"Did attempt to purchase something" withParameters:@{ @"Feature ID": featureId }];
+	
 	if (![SKPaymentQueue canMakePayments]) {
 		NSDictionary *userInfo = @{ kRKPurchasesManagerFeatureIdKey: featureId };
 		[[NSNotificationCenter defaultCenter] postNotificationName:kRKPurchasesManagerPurchaseNotAvailableNotification object:nil userInfo:userInfo];
@@ -99,6 +102,8 @@ NSString * const kRKPurchasesManagerErrorKey = @"kRKPurchasesManagerErrorKey";
 #pragma mark - Store Kit Callbacks
 
 + (void)productWasPurchased:(NSString *)featureId {
+	[Flurry logEvent:@"Did actually purchase something" withParameters:@{ @"Feature ID": featureId }];
+	
 	[[NSUserDefaults standardUserDefaults] setBool:YES forKey:featureId];
 	[[NSUserDefaults standardUserDefaults] synchronize];
 	

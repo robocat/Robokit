@@ -24,6 +24,7 @@
 		FF62914317F59F970018AD68 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF62912B17F59F970018AD68 /* UIKit.framework */; };
 		FF62914B17F59F970018AD68 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FF62914917F59F970018AD68 /* InfoPlist.strings */; };
 		FF62914D17F59F970018AD68 /* RobokitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FF62914C17F59F970018AD68 /* RobokitTests.m */; };
+		FFB5874E17F9BBE2007D9485 /* libFlurry_4.2.4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FFB5874D17F9BBE2007D9485 /* libFlurry_4.2.4.a */; };
 		FFE1DCC617F5A94B0074F75F /* RKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE1DCC517F5A94B0074F75F /* RKAppDelegate.m */; };
 		FFE1DCCA17F5A9540074F75F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE1DCC717F5A9540074F75F /* main.m */; };
 		FFE1DCFD17F5A97B0074F75F /* RKAboutRobocatViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFE1DCE517F5A97B0074F75F /* RKAboutRobocatViewController.storyboard */; };
@@ -80,6 +81,13 @@
 		FF62914817F59F970018AD68 /* RobokitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RobokitTests-Info.plist"; sourceTree = "<group>"; };
 		FF62914A17F59F970018AD68 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FF62914C17F59F970018AD68 /* RobokitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RobokitTests.m; sourceTree = "<group>"; };
+		FFB5874C17F9BBE2007D9485 /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Flurry.h; path = Frameworks/Flurry.h; sourceTree = "<group>"; };
+		FFB5874D17F9BBE2007D9485 /* libFlurry_4.2.4.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFlurry_4.2.4.a; path = Frameworks/libFlurry_4.2.4.a; sourceTree = "<group>"; };
+		FFB5874F17F9C818007D9485 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/RKAboutRobocatViewController.strings; sourceTree = "<group>"; };
+		FFB5875017F9C818007D9485 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/RKFollowUsViewController.strings; sourceTree = "<group>"; };
+		FFB5875117F9C818007D9485 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/RKRatingViewController.strings; sourceTree = "<group>"; };
+		FFB5875317F9D4BF007D9485 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/RKAboutRobocatViewController.strings; sourceTree = "<group>"; };
+		FFB5875417F9D51E007D9485 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/RKFollowUsViewController.strings; sourceTree = "<group>"; };
 		FFE1DCC417F5A94B0074F75F /* RKAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKAppDelegate.h; path = RobokitApp/RKAppDelegate.h; sourceTree = SOURCE_ROOT; };
 		FFE1DCC517F5A94B0074F75F /* RKAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RKAppDelegate.m; path = RobokitApp/RKAppDelegate.m; sourceTree = SOURCE_ROOT; };
 		FFE1DCC717F5A9540074F75F /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = RobokitApp/main.m; sourceTree = SOURCE_ROOT; };
@@ -137,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF3F8CDC17F8EC430024EA07 /* AdSupport.framework in Frameworks */,
+				FFB5874E17F9BBE2007D9485 /* libFlurry_4.2.4.a in Frameworks */,
 				FF3F8CDA17F8DDEC0024EA07 /* SystemConfiguration.framework in Frameworks */,
 				FF62912A17F59F970018AD68 /* CoreGraphics.framework in Frameworks */,
 				FF62912C17F59F970018AD68 /* UIKit.framework in Frameworks */,
@@ -171,6 +180,8 @@
 		FF3F8CD617F8DD0B0024EA07 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FFB5874C17F9BBE2007D9485 /* Flurry.h */,
+				FFB5874D17F9BBE2007D9485 /* libFlurry_4.2.4.a */,
 				FF3F8CD717F8DD130024EA07 /* RevMobAds.framework */,
 			);
 			name = Frameworks;
@@ -400,6 +411,7 @@
 				tr,
 				"zh-Hans",
 				de,
+				ro,
 			);
 			mainGroup = FF62911B17F59F970018AD68;
 			productRefGroup = FF62912517F59F970018AD68 /* Products */;
@@ -487,6 +499,8 @@
 			children = (
 				FF3E7BE717F899B3004AB9D5 /* en */,
 				FF3E7BE917F899B5004AB9D5 /* da */,
+				FFB5875017F9C818007D9485 /* ro */,
+				FFB5875417F9D51E007D9485 /* de */,
 			);
 			name = RKFollowUsViewController.strings;
 			path = Localizations;
@@ -524,6 +538,7 @@
 				FFE1DD2E17F5AD130074F75F /* zh-Hans */,
 				FF3E7BD717F5CF5A004AB9D5 /* de */,
 				FF3E7BD817F5D3C6004AB9D5 /* da */,
+				FFB5875117F9C818007D9485 /* ro */,
 			);
 			name = RKRatingViewController.strings;
 			path = Localizations;
@@ -534,6 +549,8 @@
 			children = (
 				FFE1DD1B17F5AD130074F75F /* da */,
 				FFE1DD1D17F5AD130074F75F /* en */,
+				FFB5874F17F9C818007D9485 /* ro */,
+				FFB5875317F9D4BF007D9485 /* de */,
 			);
 			name = RKAboutRobocatViewController.strings;
 			path = Localizations;
@@ -626,6 +643,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RobokitApp/Robokit-Prefix.pch";
 				INFOPLIST_FILE = "RobokitApp/Robokit-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/ulrikdamm/Developer/Robokit/Robokit,
+					/Users/ulrikdamm/Developer/Robokit/Robokit/Frameworks,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -643,6 +665,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RobokitApp/Robokit-Prefix.pch";
 				INFOPLIST_FILE = "RobokitApp/Robokit-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/ulrikdamm/Developer/Robokit/Robokit,
+					/Users/ulrikdamm/Developer/Robokit/Robokit/Frameworks,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

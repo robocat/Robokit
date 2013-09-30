@@ -12,6 +12,7 @@
 #import "RKRatingViewController.h"
 #import "RKFollowUsViewController.h"
 #import "RKDispatch.h"
+#import "Flurry.h"
 
 #define RKRobocatViewControllerHaveFollowedKey @"RKRobocatViewControllerHaveFollowedKey"
 #define RKRobocatViewControllerHaveLikedKey @"RKRobocatViewControllerHaveLikedKey"
@@ -77,6 +78,16 @@
 			[self showFollowUsPopup];
 		}
 	}];
+	
+	[[NSNotificationCenter defaultCenter] addObserver:[self sharedInstance] selector:@selector(applicationDidBecomeActive:) name:UIApplicationDidBecomeActiveNotification object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:[self sharedInstance] selector:@selector(applicationDidEnterBackground:) name:UIApplicationDidEnterBackgroundNotification object:nil];
+	[[self sharedInstance] applicationDidBecomeActive:nil];
+}
+
++ (void)initializeFlurryWithAppId:(NSString *)flurryAppId {
+	[Flurry setAppVersion:[[NSBundle mainBundle] infoDictionary][@"CFBundleVersion"]];
+	[Flurry setSecureTransportEnabled:YES];
+	[Flurry startSession:flurryAppId];
 }
 
 + (void)showRateThisAppPopup {
@@ -281,6 +292,16 @@
 		NSURL *safariURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://mobile.twitter.com/%@", username]];
 		[[UIApplication sharedApplication] openURL:safariURL];
 	}
+}
+
+#pragma mark - Observers
+
+- (void)applicationDidBecomeActive:(NSNotification *)notification {
+	[Flurry logEvent:@"Did open application" timed:YES];
+}
+
+- (void)applicationDidEnterBackground:(NSNotification *)notification {
+	[Flurry logEvent:@"Did open application"];
 }
 
 #pragma mark - Alert view delegate

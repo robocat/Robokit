@@ -34,7 +34,7 @@
 	[viewController.view addSubview:adView];
 	[adView loadAd];
 	
-	[RKSocial showRateThisAppPopup];
+	[RKSocial showFollowUsPopup];
 	
     return YES;
 }

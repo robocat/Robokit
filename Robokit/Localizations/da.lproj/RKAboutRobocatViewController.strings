@@ -10,7 +10,7 @@
 
 "RC_ABOUT_BUTTON_REVIEW" = "Anmeld på App Storen";
 "RC_ABOUT_BUTTON_TWITTER" = "Følg os på Twitter";
-"RC_ABOUT_BUTTON_FACEBOOK" = "Syntes om os på Facebook";
+"RC_ABOUT_BUTTON_FACEBOOK" = "Synes om os på Facebook";
 "RC_ABOUT_BUTTON_MORE_APPS" = "Flere apps";
 "RC_ABOUT_BUTTON_NEWSLETTER" = "Få nyheder fra Robocat";
 
@@ -18,5 +18,5 @@
 "RC_ABOUT_BUTTON_LIKED" = "Syntes om på Facebook";
 
 "RC_NEWSLETTER_EMAIL_INPUT" = "Din email addresse";
-"RC_NEWSLETTER_DISCLAIMER" = "Indtast din email for at modtage Robocat nyhedsbrevet. Vi sender kun nogle gange om året, og du kan afmelde dig hvornår du vil.";
+"RC_NEWSLETTER_DISCLAIMER" = "Indtast din email for at modtage Robocat nyhedsbrevet. Vi sender kun nogle få gange om året, og du kan afmelde dig hvornår du vil.";
 "RC_NEWSLETTER_BUTTON_JOIN" = "Tilmeld";

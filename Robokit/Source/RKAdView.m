@@ -7,6 +7,7 @@
 //
 
 #import "RKAdView.h"
+#import <iAd/iAd.h>
 
 #ifdef COCOAPODS
 #import <RevMobAds.h>
@@ -14,9 +15,10 @@
 #import <RevMobAds/RevMobAds.h>
 #endif
 
-@interface RKAdView ()
+@interface RKAdView () <ADBannerViewDelegate>
 
 @property (strong, nonatomic) RevMobBannerView *banner;
+@property (strong, nonatomic) ADBannerView *iAdBanner;
 
 @end
 
@@ -28,6 +30,16 @@
 }
 
 - (void)loadAd {
+	if ([self.class iAdsAvailable]) {
+		self.iAdBanner = [[ADBannerView alloc] initWithAdType:ADAdTypeBanner];
+		self.iAdBanner.delegate = self;
+		[self addSubview:self.iAdBanner];
+	} else {
+		[self loadRevMob];
+	}
+}
+
+- (void)loadRevMob {
 	self.banner = [[RevMobAds session] bannerView];
 	self.banner.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
 	[self addSubview:self.banner];
@@ -51,6 +63,20 @@
 
 - (void)thermoAdPressed:(id)sender {
 	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=414215658"]];
+}
+
++ (BOOL)iAdsAvailable {
+    NSArray *supportedCountries = @[ @"ES", @"US", @"UK", @"CA", @"FR", @"DE", @"IT", @"JP" ];
+    NSString *countryCode = [[NSLocale currentLocale] objectForKey:NSLocaleCountryCode];
+	
+    return [supportedCountries containsObject:countryCode];
+}
+
+#pragma mark - iAd delegate
+
+- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error {
+	[self.iAdBanner removeFromSuperview];
+	[self loadRevMob];
 }
 
 @end

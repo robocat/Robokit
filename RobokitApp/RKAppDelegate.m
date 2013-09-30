@@ -25,8 +25,13 @@
 	
 	[RKAdView initializeAdsWithRevMobAppId:@"52308b3d41cc3374b0000003" testingMode:YES];
 	
+	
+	UIViewController *viewController = [[UIViewController alloc] init];
+	self.window.rootViewController = viewController;
+	[self.window addSubview:viewController.view];
+	
 	RKAdView *adView = [[RKAdView alloc] initWithFrame:CGRectMake(0, self.window.frame.size.height - 50, 320, 50)];
-	[self.window addSubview:adView];
+	[viewController.view addSubview:adView];
 	[adView loadAd];
 	
 	[RKSocial showRateThisAppPopup];

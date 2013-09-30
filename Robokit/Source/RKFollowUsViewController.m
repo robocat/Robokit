@@ -10,6 +10,7 @@
 #import "RKSocial.h"
 #import "RKLocalization.h"
 #import "RKMacros.h"
+#import "Flurry.h"
 
 @interface RKFollowUsViewController () <UITextFieldDelegate>
 
@@ -30,6 +31,10 @@
 @property (strong, nonatomic) NSString *mailchimpId;
 @property (strong, nonatomic) NSString *mailchimpApiKey;
 @property (copy, nonatomic) void (^closeHandler)(void);
+
+@property (assign, nonatomic) BOOL hasFollowed;
+@property (assign, nonatomic) BOOL hasLiked;
+@property (assign, nonatomic) BOOL hasSubscribed;
 
 - (IBAction)twitter:(id)sender;
 - (IBAction)facebook:(id)sender;
@@ -63,6 +68,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+	
+	[Flurry logEvent:@"Follow us – popup displayed"];
 	
 	self.subscribeViewHeightConstraint.constant = 0;
 	self.subscribeField.delegate = self;
@@ -105,6 +112,8 @@
 }
 
 - (void)didFollow {
+	self.hasFollowed = YES;
+	
 	self.twitterButton.backgroundColor = [UIColor colorWithRed:0.000000 green:0.650980 blue:0.972549 alpha:1.000000];
 	[self.twitterButton setTitle:RKLocalizedFromTable(@"TWITTER_FOLLOW_BUTTON_FOLLOWING", NSStringFromClass(self.class)) forState:UIControlStateNormal];
 	[self.twitterButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -115,6 +124,8 @@
 }
 
 - (void)didLike {
+	self.hasLiked = YES;
+	
 	self.facebookButton.backgroundColor = [UIColor colorWithRed:0.250980 green:0.282353 blue:0.619608 alpha:1.000000];
 	[self.facebookButton setTitle:RKLocalizedFromTable(@"FACEBOOK_LIKE_BUTTON_LIKED", NSStringFromClass(self.class)) forState:UIControlStateNormal];
 	[self.facebookButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -123,6 +134,8 @@
 }
 
 - (void)didSubscribe {
+	self.hasSubscribed = YES;
+	
 	self.subscribeButton.backgroundColor = [UIColor colorWithRed:1.000000 green:0.686275 blue:0.000000 alpha:1.000000];
 	[self.subscribeButton setTitle:RKLocalizedFromTable(@"SUBSCRIBE_BUTTON_SUBSCRIBED", NSStringFromClass(self.class)) forState:UIControlStateNormal];
 	[self.subscribeButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -165,6 +178,10 @@
 }
 
 - (void)close {
+	[Flurry logEvent:@"Follow popup" withParameters:@{ @"didFollow": @( self.hasFollowed ),
+													   @"didLike": @( self.hasLiked ),
+													   @"didSubscribe": @( self.hasSubscribed ) }];
+	
 	[UIView animateWithDuration:.3 animations:^{
 		self.view.alpha = 0;
 	} completion:^(BOOL finished) {

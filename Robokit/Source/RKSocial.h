@@ -11,6 +11,7 @@
 @interface RKSocial : NSObject
 
 + (void)initializeSocialFeaturesWithAppId:(NSString *)appId appName:(NSString *)appName newInThisVersion:(NSString *)newsString;
++ (void)initializeFlurryWithAppId:(NSString *)flurryAppId;
 
 + (NSString *)appId;
 + (NSString *)appName;

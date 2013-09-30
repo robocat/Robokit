@@ -4,7 +4,7 @@ Robokit – The shared Robocat iOS toolkit
 Edit your ``Podfile`` and add the following line:
 
 ```
-pod 'https://github.com/robocat/Robokit.git', :branch => 'master'
+pod 'Robokit', :git => 'git@github.com:robocat/Robokit.git', :branch => 'master'
 ```
 
 Usage: add this to applicationDidFinishLaunching

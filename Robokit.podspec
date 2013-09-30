@@ -23,5 +23,4 @@ Pod::Spec.new do |s|
   s.preserve_paths = 'Robokit/Frameworks/RevMobAds.framework/*'
   s.vendored_libraries = 'Robokit/Frameworks/libFlurry_4.2.4.a'
   s.vendored_frameworks = 'Robokit/Frameworks/RevMobAds.framework'
-  s.xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => '"$(PODS_ROOT)/Robokit/Robokit/Frameworks/RevMobAds"' }
 end

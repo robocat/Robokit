@@ -83,6 +83,9 @@
 		FF62914C17F59F970018AD68 /* RobokitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RobokitTests.m; sourceTree = "<group>"; };
 		FFB5874C17F9BBE2007D9485 /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Flurry.h; path = Frameworks/Flurry.h; sourceTree = "<group>"; };
 		FFB5874D17F9BBE2007D9485 /* libFlurry_4.2.4.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFlurry_4.2.4.a; path = Frameworks/libFlurry_4.2.4.a; sourceTree = "<group>"; };
+		FFB5874F17F9C818007D9485 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/RKAboutRobocatViewController.strings; sourceTree = "<group>"; };
+		FFB5875017F9C818007D9485 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/RKFollowUsViewController.strings; sourceTree = "<group>"; };
+		FFB5875117F9C818007D9485 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/RKRatingViewController.strings; sourceTree = "<group>"; };
 		FFE1DCC417F5A94B0074F75F /* RKAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKAppDelegate.h; path = RobokitApp/RKAppDelegate.h; sourceTree = SOURCE_ROOT; };
 		FFE1DCC517F5A94B0074F75F /* RKAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RKAppDelegate.m; path = RobokitApp/RKAppDelegate.m; sourceTree = SOURCE_ROOT; };
 		FFE1DCC717F5A9540074F75F /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = RobokitApp/main.m; sourceTree = SOURCE_ROOT; };
@@ -406,6 +409,7 @@
 				tr,
 				"zh-Hans",
 				de,
+				ro,
 			);
 			mainGroup = FF62911B17F59F970018AD68;
 			productRefGroup = FF62912517F59F970018AD68 /* Products */;
@@ -493,6 +497,7 @@
 			children = (
 				FF3E7BE717F899B3004AB9D5 /* en */,
 				FF3E7BE917F899B5004AB9D5 /* da */,
+				FFB5875017F9C818007D9485 /* ro */,
 			);
 			name = RKFollowUsViewController.strings;
 			path = Localizations;
@@ -530,6 +535,7 @@
 				FFE1DD2E17F5AD130074F75F /* zh-Hans */,
 				FF3E7BD717F5CF5A004AB9D5 /* de */,
 				FF3E7BD817F5D3C6004AB9D5 /* da */,
+				FFB5875117F9C818007D9485 /* ro */,
 			);
 			name = RKRatingViewController.strings;
 			path = Localizations;
@@ -540,6 +546,7 @@
 			children = (
 				FFE1DD1B17F5AD130074F75F /* da */,
 				FFE1DD1D17F5AD130074F75F /* en */,
+				FFB5874F17F9C818007D9485 /* ro */,
 			);
 			name = RKAboutRobocatViewController.strings;
 			path = Localizations;

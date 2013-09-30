@@ -1,0 +1,18 @@
+/* 
+  RKRatingViewController.strings
+  Ultraviolet2
+
+  Created by Ulrik Damm on 26/9/13.
+  Copyright (c) 2013 Robocat. All rights reserved.
+*/
+
+"TITLE_RATE_%@" = "Apreciază %1$@";
+
+"NO_THANKS_BUTTON" = "Nu, mulțumesc";
+"RATE_BUTTON" = "Apreciază";
+
+"RATE_1_STAR" = "Urăsc";
+"RATE_2_STARS" = "Nu îmi place";
+"RATE_3_STARS" = "E ok";
+"RATE_4_STARS" = "E bună";
+"RATE_5_STARS" = "E fantastică";

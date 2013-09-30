@@ -16,9 +16,10 @@ Pod::Spec.new do |s|
     :git => 'https://github.com/robocat/Robokit.git',
     :tag => '1.1.10'
   }
-  s.source_files = 'Robokit/Source/*.{h,m}', 'Robokit/Frameworks/RevMobAds.framework/Versions/A/Headers/*.h'
+  s.source_files = 'Robokit/Source/*.{h,m}', 'Robokit/Frameworks/RevMobAds.framework/Versions/A/Headers/*.h', 'Robokit/Frameworks/Flurry.h'
   s.resources = ['Robokit/Localizations/**', 'Robokit/Resources/**']
   s.frameworks = 'Accounts', 'Social', 'Foundation', 'UIKit', 'SystemConfiguration', 'RevMobAds', 'AdSupport', 'iAd'
   s.requires_arc = true
   s.preserve_paths = 'Robokit/Frameworks/RevMobAds.framework/*'
+  s.vendored_libraries = 'Robokit/Frameworks/libFlurry_4.2.4.a'
 end

@@ -85,9 +85,9 @@
 }
 
 + (void)initializeFlurryWithAppId:(NSString *)flurryAppId {
-	[Flurry startSession:flurryAppId];
 	[Flurry setAppVersion:[[NSBundle mainBundle] infoDictionary][@"CFBundleVersion"]];
 	[Flurry setSecureTransportEnabled:YES];
+	[Flurry startSession:flurryAppId];
 }
 
 + (void)showRateThisAppPopup {

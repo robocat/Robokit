@@ -29,6 +29,10 @@
 	if (testingMode) [[RevMobAds session] setTestingMode:RevMobAdsTestingModeWithAds];
 }
 
++ (void)setUserLocation:(CLLocationCoordinate2D)coordinate {
+	[[RevMobAds session] setUserLatitude:coordinate.latitude userLongitude:coordinate.longitude userAccuracy:1];
+}
+
 - (void)loadAd {
 	if ([self.class iAdsAvailable]) {
 		self.iAdBanner = [[ADBannerView alloc] initWithAdType:ADAdTypeBanner];

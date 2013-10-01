@@ -31,7 +31,8 @@ Pod::Spec.new do |s|
     ss.source_files =         'Robokit/Source/{Robokit,RKPurchaseManager,RKAdView}.{h,m}',
                               'Robokit/Frameworks/RevMobAds.framework/**/*.h'
     ss.frameworks =           'iAd',
-                              'StoreKit'
+                              'StoreKit',
+							  'SystemConfiguration'
     ss.weak_frameworks =      'AdSupport'
 
     ss.vendored_frameworks =  'Robokit/Frameworks/RevMobAds.framework'

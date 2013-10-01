@@ -10,3 +10,5 @@
 #import "RKDispatch.h"
 #import "RKLocalization.h"
 #import "RKMacros.h"
+#import "RKAdView.h"
+#import "RKPurchaseManager.h"

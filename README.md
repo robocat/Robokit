@@ -1,11 +1,21 @@
 Robokit – The shared Robocat iOS toolkit
 ========================================
 
-Edit your ``Podfile`` and add the following line:
+The toolkit is split into smaller subsoecs so you only have to specify the parts needed:
+
+```
+Robokit/Social	# All utility classes including follow us and rating popups
+Robokit/About	# About Us and Newsletter signup
+Robokit/Ads	# Ad banner and IAP
+```
+
+You can add either one or more of the subspecs or all of them by using just ``'Robokit'``. Edit your ``Podfile`` and add the following line:
 
 ```
 pod 'Robokit', :git => 'git@github.com:robocat/Robokit.git', :branch => 'master'
 ```
+
+If you add the ``Robokit/Ads`` spec you will need to manually link the ``iAd``, ``StoreKit`` and ``AdSupport`` frameworks with your target.
 
 Usage: add this to applicationDidFinishLaunching
 ```objective-c

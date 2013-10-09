@@ -1,0 +1,17 @@
+/*
+ RKFollowUsViewController.strings
+ Robokit
+ 
+ Created by Ulrik Damm on 29/9/13.
+ Copyright (c) 2013 Robocat. All rights reserved.
+ */
+
+"STAY_UPDATED_LABEL" = "常に最新情報を得る!";
+"TWITTER_FOLLOW_BUTTON" = "フォロー";
+"FACEBOOK_LIKE_BUTTON" = "いいね！";
+"SUBSCRIBE_BUTTON" = "メール購読";
+"NO_THANKS_BUTTON" = "いいえ、結構";
+"TWITTER_FOLLOW_BUTTON_FOLLOWING" = "フォロー中";
+"FACEBOOK_LIKE_BUTTON_LIKED" = "いいね！";
+"SUBSCRIBE_BUTTON_SUBSCRIBED" = "購読完了しました";
+"NO_THANKS_BUTTON_THANKS" = "ありがとうございました!";

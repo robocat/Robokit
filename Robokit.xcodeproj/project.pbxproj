@@ -57,6 +57,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		78B1EA55180410BE00C0FC9E /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/RKAboutRobocatViewController.strings"; sourceTree = "<group>"; };
+		78B1EA56180410BE00C0FC9E /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/RKFollowUsViewController.strings"; sourceTree = "<group>"; };
+		78B1EA57180410BE00C0FC9E /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/RKRatingViewController.strings"; sourceTree = "<group>"; };
+		78B1EA58180410E000C0FC9E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/RKAboutRobocatViewController.strings"; sourceTree = "<group>"; };
+		78B1EA59180410F400C0FC9E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/RKFollowUsViewController.strings"; sourceTree = "<group>"; };
+		78B1EA5B1804187900C0FC9E /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/RKAboutRobocatViewController.strings; sourceTree = "<group>"; };
+		78B1EA5C18041AA700C0FC9E /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/RKFollowUsViewController.strings; sourceTree = "<group>"; };
+		78B1EA5F18041BFB00C0FC9E /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/RKAboutRobocatViewController.strings; sourceTree = "<group>"; };
+		78B1EA6018041BFC00C0FC9E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/RKAboutRobocatViewController.strings; sourceTree = "<group>"; };
+		78B1EA6118041C0300C0FC9E /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/RKFollowUsViewController.strings; sourceTree = "<group>"; };
+		78B1EA6218041C0400C0FC9E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/RKFollowUsViewController.strings; sourceTree = "<group>"; };
+		78B1EA631804223000C0FC9E /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/RKAboutRobocatViewController.strings; sourceTree = "<group>"; };
+		78B1EA641804223000C0FC9E /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/RKFollowUsViewController.strings; sourceTree = "<group>"; };
+		78B1EA651804223000C0FC9E /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/RKRatingViewController.strings; sourceTree = "<group>"; };
 		FF3E7BD717F5CF5A004AB9D5 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/RKRatingViewController.strings; sourceTree = "<group>"; };
 		FF3E7BD817F5D3C6004AB9D5 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/RKRatingViewController.strings; sourceTree = "<group>"; };
 		FF3E7BE717F899B3004AB9D5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/RKFollowUsViewController.strings; sourceTree = "<group>"; };
@@ -412,6 +426,8 @@
 				"zh-Hans",
 				de,
 				ro,
+				"zh-Hant",
+				pt,
 			);
 			mainGroup = FF62911B17F59F970018AD68;
 			productRefGroup = FF62912517F59F970018AD68 /* Products */;
@@ -501,6 +517,12 @@
 				FF3E7BE917F899B5004AB9D5 /* da */,
 				FFB5875017F9C818007D9485 /* ro */,
 				FFB5875417F9D51E007D9485 /* de */,
+				78B1EA56180410BE00C0FC9E /* zh-Hant */,
+				78B1EA59180410F400C0FC9E /* zh-Hans */,
+				78B1EA5C18041AA700C0FC9E /* ja */,
+				78B1EA6118041C0300C0FC9E /* sv */,
+				78B1EA6218041C0400C0FC9E /* ru */,
+				78B1EA641804223000C0FC9E /* pt */,
 			);
 			name = RKFollowUsViewController.strings;
 			path = Localizations;
@@ -539,6 +561,8 @@
 				FF3E7BD717F5CF5A004AB9D5 /* de */,
 				FF3E7BD817F5D3C6004AB9D5 /* da */,
 				FFB5875117F9C818007D9485 /* ro */,
+				78B1EA57180410BE00C0FC9E /* zh-Hant */,
+				78B1EA651804223000C0FC9E /* pt */,
 			);
 			name = RKRatingViewController.strings;
 			path = Localizations;
@@ -551,6 +575,12 @@
 				FFE1DD1D17F5AD130074F75F /* en */,
 				FFB5874F17F9C818007D9485 /* ro */,
 				FFB5875317F9D4BF007D9485 /* de */,
+				78B1EA55180410BE00C0FC9E /* zh-Hant */,
+				78B1EA58180410E000C0FC9E /* zh-Hans */,
+				78B1EA5B1804187900C0FC9E /* ja */,
+				78B1EA5F18041BFB00C0FC9E /* sv */,
+				78B1EA6018041BFC00C0FC9E /* ru */,
+				78B1EA631804223000C0FC9E /* pt */,
 			);
 			name = RKAboutRobocatViewController.strings;
 			path = Localizations;

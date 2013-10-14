@@ -1,0 +1,23 @@
+/*
+ RKAboutRobocatViewController.strings
+ Ultraviolet2
+ 
+ Created by Ulrik Damm on 26/9/13.
+ Copyright (c) 2013 Robocat. All rights reserved.
+ */
+
+"RC_ABOUT_BUTTON_CLOSE" = "Fechar";
+
+"RC_ABOUT_BUTTON_REVIEW" = "Avalie na App Store";
+"RC_ABOUT_BUTTON_TWITTER" = "Siga-nos no Twitter";
+"RC_ABOUT_BUTTON_FACEBOOK" = "Curta-nos no Facebook";
+"RC_ABOUT_BUTTON_MORE_APPS" = "Mais Apps";
+"RC_ABOUT_BUTTON_NEWSLETTER" = "Receba notícias da Robocat";
+
+"RC_ABOUT_BUTTON_FOLLOWED" = "Seguindo @robocat";
+"RC_ABOUT_BUTTON_LIKED" = "Gostei no Facebook";
+"RC_ABOUT_BUTTON_REVIEWED" = "Avaliado";
+
+"RC_NEWSLETTER_EMAIL_INPUT" = "Seu endereço de e-mail";
+"RC_NEWSLETTER_DISCLAIMER" = "Entre seu e-mail para receber notícias da Robocat. Nós só mandamos e-mails algumas vezes no ano e você pode se descadastrar quando você quiser.";
+"RC_NEWSLETTER_BUTTON_JOIN" = "Participar";

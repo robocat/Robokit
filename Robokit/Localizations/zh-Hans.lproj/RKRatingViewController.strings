@@ -1,10 +1,10 @@
-/* 
-  RKRatingViewController.strings
-  Ultraviolet2
-
-  Created by Ulrik Damm on 26/9/13.
-  Copyright (c) 2013 Robocat. All rights reserved.
-*/
+/*
+ RKRatingViewController.strings
+ Ultraviolet2
+ 
+ Created by Ulrik Damm on 26/9/13.
+ Copyright (c) 2013 Robocat. All rights reserved.
+ */
 
 "TITLE_RATE_%@" = "评价%1$@";
 

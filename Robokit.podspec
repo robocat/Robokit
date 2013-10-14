@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.platform = :ios, "7.0"
   s.requires_arc = true
 
-  s.subspec 'Social' do |ss|
+  s.subspec 'Shared' do |ss|
     ss.source_files =         'Robokit/Source/{Robokit,RKMacros,RKDispatch,RKLocalization,RKSocial,RKRatingViewController,RKFollowUsViewController}.{h,m}',
                               'Robokit/Frameworks/Flurry.h'
     ss.resources =            [ 'Robokit/Localizations/**',
@@ -24,14 +24,20 @@ Pod::Spec.new do |s|
                               'Social'
     ss.vendored_libraries =   'Robokit/Frameworks/libFlurry_4.2.4.a'
   end
+  
+  s.subspec 'IAP' do |ss|
+    ss.dependency             'Robokit/Shared'
+    
+    ss.source_files =         'Robokit/Source/RKPurchaseManager.{h,m}'
+    ss.frameworks =           'StoreKit'
+  end
 
   s.subspec 'Ads' do |ss|
-    ss.dependency             'Robokit/Social'
+    ss.dependency             'Robokit/IAP'
 
-    ss.source_files =         'Robokit/Source/{Robokit,RKPurchaseManager,RKAdView}.{h,m}',
+    ss.source_files =         'Robokit/Source/RKAdView.{h,m}',
                               'Robokit/Frameworks/RevMobAds.framework/**/*.h'
     ss.frameworks =           'iAd',
-                              'StoreKit',
 							  'SystemConfiguration'
     ss.weak_frameworks =      'AdSupport'
 
@@ -42,7 +48,7 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'About' do |ss|
-    ss.dependency             'Robokit/Social'
+    ss.dependency             'Robokit/Shared'
 
     ss.source_files =         'Robokit/Source/{RKAboutRobocatViewController,RKRobocatNewsletterViewController}.{h,m}'
     ss.frameworks =           'UIKit'

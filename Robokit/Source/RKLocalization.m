@@ -44,3 +44,33 @@ NSString *RKLocalizedFromTableWithFormat(NSString *str, NSString *table, ...) {
 	va_end(vars);
 	return string;
 }
+
+void RKLocalizedButton(UIButton *button, NSString *str) {
+    RKLocalizedButtonFromTable(button, str, nil);
+}
+
+void RKLocalizedButtonFromTable(UIButton *button, NSString *str, NSString *table) {
+    NSString *string = RKLocalizedFromTable(str, table);
+    
+    [button setTitle:string forState:UIControlStateNormal];
+}
+
+void RKLocalizedButtonWithFormat(UIButton *button, NSString *str, ...) {
+    va_list vars;
+    va_start(vars, str);
+    
+    NSString *string = [[NSString alloc] initWithFormat:RKLocalized(str) arguments:vars];
+    [button setTitle:string forState:UIControlStateNormal];
+    
+    va_end(vars);
+}
+
+void RKLocalizedButtonFromTableWithFormat(UIButton *button, NSString *str, NSString *table, ...) {
+    va_list vars;
+    va_start(vars, table);
+    
+    NSString *string = [[NSString alloc] initWithFormat:RKLocalizedFromTableWithFormat(str, table) arguments:vars];
+    [button setTitle:string forState:UIControlStateNormal];
+    
+    va_end(vars);
+}

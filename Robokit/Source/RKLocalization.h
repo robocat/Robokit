@@ -13,3 +13,8 @@ NSString *RKLocalizedFromTable(NSString *str, NSString *table);
 
 NSString *RKLocalizedWithFormat(NSString *str, ...);
 NSString *RKLocalizedFromTableWithFormat(NSString *str, NSString *table, ...);
+
+void RKLocalizedButton(UIButton *button, NSString *str);
+void RKLocalizedButtonFromTable(UIButton *button, NSString *str, NSString *table);
+void RKLocalizedButtonWithFormat(UIButton *button, NSString *str, ...);
+void RKLocalizedButtonFromTableWithFormat(UIButton *button, NSString *str, NSString *table, ...);

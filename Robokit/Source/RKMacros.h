@@ -25,3 +25,11 @@
 #ifndef RGBA
 #define RGBA(r, g, b, a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
 #endif
+
+#ifndef MAIN_QUEUE_ONLY
+#define MAIN_QUEUE_ONLY \
+_Pragma("clang diagnostic push") \
+_Pragma("clang diagnostic ignored \"-Wdeprecated-declarations\"") \
+NSAssert(dispatch_get_current_queue() == dispatch_get_main_queue(), @"-[%@ %@] -> Not on main queue", NSStringFromClass(self.class), NSStringFromSelector(_cmd)); \
+_Pragma("clang diagnostic pop")
+#endif

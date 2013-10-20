@@ -66,7 +66,7 @@
     [self.buttonMoreApps setTitle:RKLocalizedFromTable(@"RC_ABOUT_BUTTON_MORE_APPS", NSStringFromClass(self.class)) forState:UIControlStateNormal];
     [self.buttonReceiveNews setTitle:RKLocalizedFromTable(@"RC_ABOUT_BUTTON_NEWSLETTER", NSStringFromClass(self.class)) forState:UIControlStateNormal];
     
-    [self.versionLabel setText:[NSString stringWithFormat:@"%@ %@\nCopyright © 2013 Robocat\nAll rights reserved", [[NSBundle mainBundle] infoDictionary][@"CFBundleDisplayName"], [[NSBundle mainBundle] infoDictionary][@"CFBundleVersion"]]];
+    [self.versionLabel setText:[NSString stringWithFormat:@"%@ %@\nCopyright © 2013 Robocat\nAll rights reserved", [[NSBundle mainBundle] infoDictionary][@"CFBundleDisplayName"], [[NSBundle mainBundle] infoDictionary][@"CFBundleShortVersionString"]]];
 	
 	[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
 }

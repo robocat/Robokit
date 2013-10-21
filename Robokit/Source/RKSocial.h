@@ -8,10 +8,20 @@
 
 #import <Foundation/Foundation.h>
 
+enum {
+    RKModalBackgroundStyleLight = 0,
+    RKModalBackgroundStyleDark
+};
+
+typedef NSInteger RKModalBackgroundStyle;
+
 @interface RKSocial : NSObject
 
 + (void)initializeSocialFeaturesWithAppId:(NSString *)appId appName:(NSString *)appName newInThisVersion:(NSString *)newsString;
 + (void)initializeFlurryWithAppId:(NSString *)flurryAppId;
+
++ (void)setModalBackgroundStyle:(RKModalBackgroundStyle)modalBackgroundStyle;
++ (RKModalBackgroundStyle)modalBackgroundStyle;
 
 + (NSString *)appId;
 + (NSString *)appName;

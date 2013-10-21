@@ -36,6 +36,7 @@
 @property (strong, nonatomic) NSString *appId;
 @property (strong, nonatomic) NSString *appName;
 @property (strong, nonatomic) NSString *whatsNew;
+@property (assign, nonatomic) RKModalBackgroundStyle backgroundStyle;
 
 @end
 
@@ -88,6 +89,14 @@
 	[Flurry setAppVersion:[[NSBundle mainBundle] infoDictionary][@"CFBundleVersion"]];
 	[Flurry setSecureTransportEnabled:YES];
 	[Flurry startSession:flurryAppId];
+}
+
++ (void)setModalBackgroundStyle:(RKModalBackgroundStyle)backgroundStyle {
+    [[[self class] sharedInstance] setBackgroundStyle:backgroundStyle];
+}
+
++ (RKModalBackgroundStyle)modalBackgroundStyle {
+    return [[[self class] sharedInstance] backgroundStyle];
 }
 
 + (void)showRateThisAppPopup {

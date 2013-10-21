@@ -64,10 +64,12 @@
 	
 	self.stars = @[ self.star1, self.star2, self.star3, self.star4, self.star5 ];
 	
-	UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:self.rateView.bounds];
-	toolbar.translucent = YES;
-	[self.rateView insertSubview:toolbar atIndex:0];
-	self.rateView.backgroundColor = [UIColor clearColor];
+    if ([RKSocial modalBackgroundStyle] == RKModalBackgroundStyleLight) {
+        UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:self.rateView.bounds];
+        toolbar.translucent = YES;
+        [self.rateView insertSubview:toolbar atIndex:0];
+        self.rateView.backgroundColor = [UIColor clearColor];
+    }
 	
 	self.rateView.clipsToBounds = YES;
 	self.rateView.layer.cornerRadius = 10;

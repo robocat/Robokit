@@ -80,10 +80,12 @@
 	[self.subscribeButton setTitle:RKLocalizedFromTable(@"SUBSCRIBE_BUTTON", NSStringFromClass(self.class)) forState:UIControlStateNormal];
 	[self.nothanksButton setTitle:RKLocalizedFromTable(@"NO_THANKS_BUTTON", NSStringFromClass(self.class)) forState:UIControlStateNormal];
 	
-	UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:self.followView.bounds];
-	toolbar.translucent = YES;
-	[self.followView insertSubview:toolbar atIndex:0];
-	self.followView.backgroundColor = [UIColor clearColor];
+    if ([RKSocial modalBackgroundStyle] == RKModalBackgroundStyleLight) {
+        UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:self.followView.bounds];
+        toolbar.translucent = YES;
+        [self.followView insertSubview:toolbar atIndex:0];
+        self.followView.backgroundColor = [UIColor clearColor];
+    }
 	
 	self.followView.clipsToBounds = YES;
 	self.followView.layer.cornerRadius = 10;

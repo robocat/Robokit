@@ -1,9 +1,136 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4443" systemVersion="13A451" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="9Xt-bT-T1X">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3666"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Feedback View Controller-->
+        <scene sceneID="Dfl-k2-jtK">
+            <objects>
+                <viewController storyboardIdentifier="FeedbackViewController" id="9Xt-bT-T1X" customClass="RKFeedbackViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LJc-xd-atd"/>
+                        <viewControllerLayoutGuide type="bottom" id="ut4-wk-BtO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Nu1-rO-yqb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6K5-MH-k9e">
+                                <rect key="frame" x="14" y="173" width="292" height="222"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lines" translatesAutoresizingMaskIntoConstraints="NO" id="iRt-cD-FMe">
+                                        <rect key="frame" x="0.0" y="166" width="292" height="56"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="56" id="PjW-v8-83i"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rBK-k5-Qj9">
+                                        <rect key="frame" x="0.0" y="167" width="146" height="55"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="sBY-ol-Gyf"/>
+                                            <constraint firstAttribute="width" constant="146" id="yHh-yz-Xaq"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                                        <size key="titleShadowOffset" width="0.0" height="1"/>
+                                        <state key="normal" title="No Thanks">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted" backgroundImage="leftbutton">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="noThanks:" destination="9Xt-bT-T1X" eventType="touchUpInside" id="ntj-En-CwE"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h2v-uw-VGd">
+                                        <rect key="frame" x="146" y="167" width="146" height="55"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="146" id="PXU-w2-Gmp"/>
+                                            <constraint firstAttribute="height" constant="55" id="WPW-Wd-als"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                                        <size key="titleShadowOffset" width="0.0" height="1"/>
+                                        <state key="normal" title="Send Feedback">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted" backgroundImage="rightbutton">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="rate:" destination="9Xt-bT-T1X" eventType="touchUpInside" id="LJE-0U-i9q"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Send Feedback" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Wzr-oQ-YJs">
+                                        <rect key="frame" x="10" y="20" width="272" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="KJh-KK-NZl"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="25"/>
+                                        <nil key="highlightedColor"/>
+                                        <size key="shadowOffset" width="0.0" height="1"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" text="Tell us what we can do better" translatesAutoresizingMaskIntoConstraints="NO" id="8Qz-oz-kHc">
+                                        <rect key="frame" x="10" y="58" width="272" height="101"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" keyboardType="alphabet" returnKeyType="send"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="rBK-k5-Qj9" firstAttribute="top" secondItem="8Qz-oz-kHc" secondAttribute="bottom" constant="8" id="0gL-zl-ups"/>
+                                    <constraint firstAttribute="trailing" secondItem="8Qz-oz-kHc" secondAttribute="trailing" constant="10" id="CWE-Ki-Yv2"/>
+                                    <constraint firstItem="Wzr-oQ-YJs" firstAttribute="leading" secondItem="6K5-MH-k9e" secondAttribute="leading" constant="10" id="HmV-IK-S88"/>
+                                    <constraint firstItem="8Qz-oz-kHc" firstAttribute="top" secondItem="Wzr-oQ-YJs" secondAttribute="bottom" constant="8" id="LRN-B5-yz4"/>
+                                    <constraint firstAttribute="bottom" secondItem="iRt-cD-FMe" secondAttribute="bottom" id="OHI-mc-ycA"/>
+                                    <constraint firstItem="iRt-cD-FMe" firstAttribute="leading" secondItem="6K5-MH-k9e" secondAttribute="leading" id="Ous-Q6-AJt"/>
+                                    <constraint firstAttribute="trailing" secondItem="iRt-cD-FMe" secondAttribute="trailing" id="QOk-Ta-QYF"/>
+                                    <constraint firstAttribute="height" constant="222" id="Quy-jA-DyZ"/>
+                                    <constraint firstItem="rBK-k5-Qj9" firstAttribute="leading" secondItem="6K5-MH-k9e" secondAttribute="leading" id="RIf-iL-pNc"/>
+                                    <constraint firstItem="Wzr-oQ-YJs" firstAttribute="top" secondItem="6K5-MH-k9e" secondAttribute="top" constant="20" id="ZsX-Wk-T3o"/>
+                                    <constraint firstAttribute="trailing" secondItem="Wzr-oQ-YJs" secondAttribute="trailing" constant="10" id="dDe-XG-ZEW"/>
+                                    <constraint firstItem="h2v-uw-VGd" firstAttribute="leading" secondItem="rBK-k5-Qj9" secondAttribute="trailing" id="eeP-Se-vye"/>
+                                    <constraint firstAttribute="width" constant="292" id="hBl-D3-Vsr"/>
+                                    <constraint firstAttribute="bottom" secondItem="h2v-uw-VGd" secondAttribute="bottom" id="jfh-zi-ypz"/>
+                                    <constraint firstAttribute="bottom" secondItem="rBK-k5-Qj9" secondAttribute="bottom" id="wqQ-GI-Mma"/>
+                                    <constraint firstItem="8Qz-oz-kHc" firstAttribute="leading" secondItem="6K5-MH-k9e" secondAttribute="leading" constant="10" id="yLM-Ta-6nb"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.25" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="6K5-MH-k9e" secondAttribute="centerY" id="4IF-DM-dG0"/>
+                            <constraint firstAttribute="centerX" secondItem="6K5-MH-k9e" secondAttribute="centerX" id="cEa-RN-CCe"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="feedbackTextView" destination="8Qz-oz-kHc" id="AzJ-8I-s5P"/>
+                        <outlet property="noThanksButton" destination="rBK-k5-Qj9" id="Ldz-r8-q4H"/>
+                        <outlet property="rateButton" destination="h2v-uw-VGd" id="vaM-wA-gll"/>
+                        <outlet property="rateTitle" destination="Wzr-oQ-YJs" id="Tbl-7v-Qth"/>
+                        <outlet property="rateView" destination="6K5-MH-k9e" id="nq8-3P-HiS"/>
+                        <outlet property="sendFeedbackButton" destination="h2v-uw-VGd" id="gp7-pc-I6f"/>
+                        <outlet property="sendFeedbackTitle" destination="Wzr-oQ-YJs" id="72S-WA-gTk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RuP-Pi-26r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="156" y="36"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="leftbutton" width="146" height="55"/>
+        <image name="lines" width="293" height="55"/>
+        <image name="rightbutton" width="146" height="55"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

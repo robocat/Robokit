@@ -10,6 +10,7 @@
 #import "RKLocalization.h"
 #import "RKSocial.h"
 #import "Flurry.h"
+#import "UIViewController+Robokit.h"
 
 @interface RKAboutRobocatViewController ()
 
@@ -37,9 +38,7 @@
 #pragma mark - UIViewController
 
 + (RKAboutRobocatViewController *)aboutRobocatViewController {
-	UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"RKAboutRobocatViewController" bundle:nil];
-	RKAboutRobocatViewController *aboutRobocatViewController = [storyboard instantiateInitialViewController];
-	return aboutRobocatViewController;
+    return [self initialViewControllerFromStoryboardWithName:@"RKAboutRobocatViewController"];
 }
 
 - (void)viewDidLoad {

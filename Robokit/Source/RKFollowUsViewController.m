@@ -46,24 +46,10 @@
 @implementation RKFollowUsViewController
 
 + (RKFollowUsViewController *)followUsViewControllerWithMailchimpId:(NSString *)mailchimpId APIKey:(NSString *)apiKey {
-	UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"RKFollowUsViewController" bundle:nil];
-	RKFollowUsViewController *followUsViewController = [storyboard instantiateInitialViewController];
+	RKFollowUsViewController *followUsViewController = [self initialViewControllerFromStoryboardWithName:@"RKFollowUsViewController"];
 	followUsViewController.mailchimpId = mailchimpId;
 	followUsViewController.mailchimpApiKey = apiKey;
 	return followUsViewController;
-}
-
-- (void)presentInWindow:(UIWindow *)window withCloseHandler:(void (^)(void))closeHandler {
-	self.view.alpha = 0;
-	
-	self.view.frame = window.bounds;
-	[window addSubview:self.view];
-	
-	[UIView animateWithDuration:.3 animations:^{
-		self.view.alpha = 1;
-	}];
-	
-	self.closeHandler = closeHandler;
 }
 
 - (void)viewDidLoad {
@@ -183,13 +169,7 @@
 	[Flurry logEvent:@"Follow popup" withParameters:@{ @"didFollow": @( self.hasFollowed ),
 													   @"didLike": @( self.hasLiked ),
 													   @"didSubscribe": @( self.hasSubscribed ) }];
-	
-	[UIView animateWithDuration:.3 animations:^{
-		self.view.alpha = 0;
-	} completion:^(BOOL finished) {
-		[self.view removeFromSuperview];
-		if (self.closeHandler) self.closeHandler();
-	}];
+	[super close];
 }
 
 - (void)openSubscriptionView {

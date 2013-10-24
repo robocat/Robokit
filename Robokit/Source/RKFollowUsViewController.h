@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RKDialogViewController.h"
 
-@interface RKFollowUsViewController : UIViewController
+@interface RKFollowUsViewController : RKDialogViewController
 
 + (RKFollowUsViewController *)followUsViewControllerWithMailchimpId:(NSString *)mailchimpId APIKey:(NSString *)apiKey;
-- (void)presentInWindow:(UIWindow *)window withCloseHandler:(void (^)(void))closeHandler;
 
 @end

@@ -7,11 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RKDialogViewController.h"
 
-@interface RKRatingViewController : UIViewController
+@interface RKRatingViewController : RKDialogViewController
 
 + (RKRatingViewController *)ratingViewController;
-
-- (void)presentInWindow:(UIWindow *)window withCloseHandler:(void (^)(void))closeHandler;
 
 @end

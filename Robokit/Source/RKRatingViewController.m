@@ -28,8 +28,6 @@
 @property (strong, nonatomic) NSArray *stars;
 @property (assign, nonatomic) NSInteger starCount;
 
-@property (copy, nonatomic) void (^closeHandler)(void);
-
 @end
 
 @implementation RKRatingViewController
@@ -37,22 +35,7 @@
 #pragma mark - View lifecycle
 
 + (RKRatingViewController *)ratingViewController {
-	UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"RKRatingViewController" bundle:nil];
-	RKRatingViewController *ratingViewController = [storyboard instantiateInitialViewController];
-	return ratingViewController;
-}
-
-- (void)presentInWindow:(UIWindow *)window withCloseHandler:(void (^)(void))closeHandler {
-	self.view.alpha = 0;
-	
-	self.view.frame = window.bounds;
-	[window addSubview:self.view];
-	
-	[UIView animateWithDuration:.3 animations:^{
-		self.view.alpha = 1;
-	}];
-	
-	self.closeHandler = closeHandler;
+    return [self initialViewControllerFromStoryboardWithName:@"RKRatingViewController"];
 }
 
 - (void)viewDidLoad {
@@ -130,15 +113,6 @@
 	}
 	
 	[self close];
-}
-
-- (void)close {
-	[UIView animateWithDuration:.3 animations:^{
-		self.view.alpha = 0;
-	} completion:^(BOOL finished) {
-		[self.view removeFromSuperview];
-		if (self.closeHandler) self.closeHandler();
-	}];
 }
 
 - (NSString *)stringForRating:(NSInteger)rating {

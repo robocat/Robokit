@@ -8,7 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-#define kUserDefaultAppVersion @"kUserDefaultAppVersion"
+extern NSString * const kRKSocialDidUpdateFromPreviousVersionNotification;
+
+extern NSString * const kRKSocialUpdatePreviousVersionKey;
+extern NSString * const kRKSocialUpdateCurrentVersionKey;
 
 enum {
     RKModalBackgroundStyleLight = 0,

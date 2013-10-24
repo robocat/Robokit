@@ -14,6 +14,11 @@
 #import "RKDispatch.h"
 #import "Flurry.h"
 
+NSString * const kRKSocialDidUpdateFromPreviousVersionNotification = @"cat.robo.kRKSocialDidUpdateFromPreviousVersionNotification";
+
+NSString * const kRKSocialUpdatePreviousVersionKey = @"cat.robo.kRKSocialUpdatePreviousVersionKey";
+NSString * const kRKSocialUpdateCurrentVersionKey = @"cat.robo.kRKSocialUpdateCurrentVersionKey";
+
 #define RKRobocatViewControllerHaveFollowedKey @"RKRobocatViewControllerHaveFollowedKey"
 #define RKRobocatViewControllerHaveLikedKey @"RKRobocatViewControllerHaveLikedKey"
 #define RKRobocatViewControllerHaveSubscribedKey @"RKRobocatViewControllerHaveSubscribedKey"
@@ -22,6 +27,7 @@
 #define kFirstUseDate @"kFirstUseDate"
 #define kRatedCurrentVersion @"kRatedCurrentVersion"
 #define kRatedCurrentVersionDate @"kRatedCurrentVersionDate"
+#define kUserDefaultAppVersion @"kUserDefaultAppVersion"
 #define kHaveFollowed @"kHaveFollowed"
 
 #define kDaysToRatePrompt 2
@@ -58,18 +64,21 @@
 	[[self sharedInstance] setAppName:appName];
 	
 	NSString *versionString = [[NSBundle mainBundle] infoDictionary][@"CFBundleVersion"];
+    NSString *previousVersionString = [[NSUserDefaults standardUserDefaults] objectForKey:kUserDefaultAppVersion];
 	
-	if ([[NSUserDefaults standardUserDefaults] objectForKey:kUserDefaultAppVersion]) {
-		if (![[[NSUserDefaults standardUserDefaults] objectForKey:kUserDefaultAppVersion] isEqualToString:versionString]) {
-			[[NSUserDefaults standardUserDefaults] setBool:NO forKey:kRatedCurrentVersion];
-			[[NSUserDefaults standardUserDefaults] setBool:NO forKey:kHaveFollowed];
-			[[NSUserDefaults standardUserDefaults] setDouble:[[NSDate date] timeIntervalSince1970] forKey:kFirstUseDate];
-			[self showWhatsNewPopup];
-		}
-	}
-	
+    if (previousVersionString && ![previousVersionString isEqualToString:versionString]) {
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:kRatedCurrentVersion];
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:kHaveFollowed];
+        [[NSUserDefaults standardUserDefaults] setDouble:[[NSDate date] timeIntervalSince1970] forKey:kFirstUseDate];
+        [self showWhatsNewPopup];
+    }
+    
 	[[NSUserDefaults standardUserDefaults] setValue:versionString forKey:kUserDefaultAppVersion];
 	[[NSUserDefaults standardUserDefaults] synchronize];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:kRKSocialDidUpdateFromPreviousVersionNotification
+                                                        object:nil
+                                                      userInfo:@{kRKSocialUpdatePreviousVersionKey: previousVersionString, kRKSocialUpdateCurrentVersionKey: versionString}];
 	
 	[RKDispatch after:5 callback:^{
 		if ([self shouldShowRateView]) {

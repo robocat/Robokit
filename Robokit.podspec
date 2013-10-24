@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.summary = 'The shared Robocat iOS toolkit'
   s.homepage = 'robo.cat'
   s.authors = { 'Ulrik Flænø Damm' => 'ulrik@robo.cat', 'Kristian Andersen' => 'kristian@robo.cat' }
-  s.source = { :git => 'https://github.com/robocat/Robokit.git', :head }
+  s.source = { :git => 'https://github.com/robocat/Robokit.git', :branch => :master }
 
   s.platform = :ios, "7.0"
   s.requires_arc = true

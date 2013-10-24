@@ -45,6 +45,36 @@ NSString *RKLocalizedFromTableWithFormat(NSString *str, NSString *table, ...) {
 	return string;
 }
 
+void RKLocalizedLabel(UILabel *label, NSString *str) {;
+    RKLocalizedLabelFromTable(label, str, nil);
+}
+
+void RKLocalizedLabelFromTable(UILabel *label, NSString *str, NSString *table) {
+    NSString *string = RKLocalizedFromTable(str, table);
+    
+    [label setText:string];
+}
+
+void RKLocalizedLabelWithFormat(UILabel *label, NSString *str, ...) {
+    va_list vars;
+    va_start(vars, str);
+    
+    NSString *string = [[NSString alloc] initWithFormat:RKLocalized(str) arguments:vars];
+    [label setText:string];
+    
+    va_end(vars);
+}
+
+void RKLocalizedLabelFromTableWithFormat(UILabel *label, NSString *str, NSString *table, ...) {
+    va_list vars;
+    va_start(vars, table);
+    
+    NSString *string = [[NSString alloc] initWithFormat:RKLocalizedFromTable(str, table) arguments:vars];
+    [label setText:string];
+    
+    va_end(vars);
+}
+
 void RKLocalizedButton(UIButton *button, NSString *str) {
     RKLocalizedButtonFromTable(button, str, nil);
 }

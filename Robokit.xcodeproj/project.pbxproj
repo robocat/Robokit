@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		783CE17F1819D8EA0063F3DD /* RKDialogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 783CE17C1819D8EA0063F3DD /* RKDialogViewController.m */; };
+		783CE1801819D8EA0063F3DD /* UIViewController+Robokit.m in Sources */ = {isa = PBXBuildFile; fileRef = 783CE17E1819D8EA0063F3DD /* UIViewController+Robokit.m */; };
 		FF3E7BE617F899B3004AB9D5 /* RKFollowUsViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = FF3E7BE817F899B3004AB9D5 /* RKFollowUsViewController.strings */; };
 		FF3E7BEB17F89A1A004AB9D5 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FF3E7BEA17F89A1A004AB9D5 /* README.md */; };
 		FF3E7BED17F89A1F004AB9D5 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = FF3E7BEC17F89A1F004AB9D5 /* LICENSE */; };
@@ -57,6 +59,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		783CE17B1819D8EA0063F3DD /* RKDialogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKDialogViewController.h; path = Source/RKDialogViewController.h; sourceTree = "<group>"; };
+		783CE17C1819D8EA0063F3DD /* RKDialogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RKDialogViewController.m; path = Source/RKDialogViewController.m; sourceTree = "<group>"; };
+		783CE17D1819D8EA0063F3DD /* UIViewController+Robokit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+Robokit.h"; path = "Source/UIViewController+Robokit.h"; sourceTree = "<group>"; };
+		783CE17E1819D8EA0063F3DD /* UIViewController+Robokit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+Robokit.m"; path = "Source/UIViewController+Robokit.m"; sourceTree = "<group>"; };
 		78B1EA55180410BE00C0FC9E /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/RKAboutRobocatViewController.strings"; sourceTree = "<group>"; };
 		78B1EA56180410BE00C0FC9E /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/RKFollowUsViewController.strings"; sourceTree = "<group>"; };
 		78B1EA57180410BE00C0FC9E /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/RKRatingViewController.strings"; sourceTree = "<group>"; };
@@ -295,6 +301,10 @@
 		FFE1DD0A17F5A9810074F75F /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				783CE17B1819D8EA0063F3DD /* RKDialogViewController.h */,
+				783CE17C1819D8EA0063F3DD /* RKDialogViewController.m */,
+				783CE17D1819D8EA0063F3DD /* UIViewController+Robokit.h */,
+				783CE17E1819D8EA0063F3DD /* UIViewController+Robokit.m */,
 				FF3E7BEF17F8A1EA004AB9D5 /* RKMacros.h */,
 				FFE1DCEE17F5A97B0074F75F /* RKDispatch.h */,
 				FFE1DCEF17F5A97B0074F75F /* RKDispatch.m */,
@@ -488,6 +498,8 @@
 				FFE1DD0317F5A97B0074F75F /* RKAboutRobocatViewController.m in Sources */,
 				FFE1DCC617F5A94B0074F75F /* RKAppDelegate.m in Sources */,
 				FFE1DD0717F5A97B0074F75F /* RKRatingViewController.m in Sources */,
+				783CE1801819D8EA0063F3DD /* UIViewController+Robokit.m in Sources */,
+				783CE17F1819D8EA0063F3DD /* RKDialogViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -675,8 +687,8 @@
 				INFOPLIST_FILE = "RobokitApp/Robokit-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/ulrikdamm/Developer/Robokit/Robokit,
-					/Users/ulrikdamm/Developer/Robokit/Robokit/Frameworks,
+					./Robokit,
+					./Robokit/Frameworks,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -697,8 +709,8 @@
 				INFOPLIST_FILE = "RobokitApp/Robokit-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/ulrikdamm/Developer/Robokit/Robokit,
-					/Users/ulrikdamm/Developer/Robokit/Robokit/Frameworks,
+					./Robokit,
+					./Robokit/Frameworks,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

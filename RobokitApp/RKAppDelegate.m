@@ -8,6 +8,7 @@
 
 #import "RKAppDelegate.h"
 #import "Robokit.h"
+#import "RKAdView.h"
 
 @implementation RKAppDelegate
 
@@ -35,6 +36,7 @@
 	[adView loadAd];
 	
 	[RKSocial showFollowUsPopup];
+//    [RKSocial showRateThisAppPopup];
 	
     return YES;
 }

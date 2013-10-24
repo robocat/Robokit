@@ -1,4 +1,4 @@
-/* 
+/*
  RKAboutRobocatViewController.strings
  Ultraviolet2
  
@@ -8,16 +8,16 @@
 
 "RC_ABOUT_BUTTON_CLOSE" = "Schliessen";
 
-"RC_ABOUT_BUTTON_REVIEW" = "Review on App Store";
+"RC_ABOUT_BUTTON_REVIEW" = "Bewerte ins App Store";
 "RC_ABOUT_BUTTON_TWITTER" = "Folge uns auf Twitter";
 "RC_ABOUT_BUTTON_FACEBOOK" = "Like uns auf Facebook";
 "RC_ABOUT_BUTTON_MORE_APPS" = "Mehr Apps";
-"RC_ABOUT_BUTTON_NEWSLETTER" = "Aboniere Robocat News";
+"RC_ABOUT_BUTTON_NEWSLETTER" = "Abonniere Robocat News";
 
 "RC_ABOUT_BUTTON_FOLLOWED" = "Folge @robocat";
 "RC_ABOUT_BUTTON_LIKED" = "Liked auf Facebook";
 "RC_ABOUT_BUTTON_REVIEWED" = "Bewertet";
 
 "RC_NEWSLETTER_EMAIL_INPUT" = "Deine Email Adresse";
-"RC_NEWSLETTER_DISCLAIMER" = "Gib und Deine email Adresse um Robocat News zu abonieren. Robocat news emails gibts es nur ein paar mal pro Jahr und Du kannst dein Abo jeder Zeit kündigen.";
+"RC_NEWSLETTER_DISCLAIMER" = "Gib uns Deine email Adresse um Robocat News zu abonnieren. Robocat news emails gibts es nur ein paar mal pro Jahr und Du kannst dein Abo jeder Zeit kündigen.";
 "RC_NEWSLETTER_BUTTON_JOIN" = "Anmelden";

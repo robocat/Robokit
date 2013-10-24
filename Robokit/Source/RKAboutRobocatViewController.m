@@ -59,6 +59,12 @@
 		[self haveRated];
 	}
     
+    [self.buttonReview.titleLabel setAdjustsFontSizeToFitWidth:YES];
+    [self.buttonTwitter.titleLabel setAdjustsFontSizeToFitWidth:YES];
+    [self.buttonFacebook.titleLabel setAdjustsFontSizeToFitWidth:YES];
+    [self.buttonMoreApps.titleLabel setAdjustsFontSizeToFitWidth:YES];
+    [self.buttonReceiveNews.titleLabel setAdjustsFontSizeToFitWidth:YES];
+    
 	self.closeButton.title = RKLocalizedFromTable(@"RC_ABOUT_BUTTON_CLOSE", NSStringFromClass(self.class));
     [self.buttonReview setTitle:RKLocalizedFromTable(@"RC_ABOUT_BUTTON_REVIEW", NSStringFromClass(self.class)) forState:UIControlStateNormal];
     [self.buttonTwitter setTitle:RKLocalizedFromTable(@"RC_ABOUT_BUTTON_TWITTER", NSStringFromClass(self.class)) forState:UIControlStateNormal];

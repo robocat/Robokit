@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.subspec 'Shared' do |ss|
-    ss.source_files =         'Robokit/Source/{Robokit,RKMacros,RKDispatch,RKLocalization,RKSocial,RKRatingViewController,RKFollowUsViewController}.{h,m}',
+    ss.source_files =         'Robokit/Source/{Robokit,RKMacros,RKDispatch,RKLocalization,RKSocial,RKRatingViewController,RKFollowUsViewController,RKDialogViewController,UIViewContoller+Robokit}.{h,m}',
                               'Robokit/Frameworks/Flurry.h'
     ss.resources =            [ 'Robokit/Localizations/**',
                                 'Robokit/Resources/RKRatingViewController.xcassets/**/*',

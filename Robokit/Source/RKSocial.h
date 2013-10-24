@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#define kUserDefaultAppVersion @"kUserDefaultAppVersion"
+
 enum {
     RKModalBackgroundStyleLight = 0,
     RKModalBackgroundStyleDark

@@ -23,7 +23,6 @@
 #define kRatedCurrentVersion @"kRatedCurrentVersion"
 #define kRatedCurrentVersionDate @"kRatedCurrentVersionDate"
 #define kHaveFollowed @"kHaveFollowed"
-#define kUserDefaultAppVersion @"kUserDefaultAppVersion"
 
 #define kDaysToRatePrompt 2
 #define kDaysToFollowPrompt 2

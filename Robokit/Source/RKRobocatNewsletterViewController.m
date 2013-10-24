@@ -45,7 +45,7 @@
 }
 
 - (BOOL)isValidEmail:(NSString *)email {
-    return [email length] > 1;
+    return [email length] > 1 && [email rangeOfString:@"@"].location != NSNotFound;
 }
 
 - (IBAction)join:(id)sender {

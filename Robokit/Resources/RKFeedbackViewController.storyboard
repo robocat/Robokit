@@ -43,7 +43,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="noThanks:" destination="9Xt-bT-T1X" eventType="touchUpInside" id="ntj-En-CwE"/>
+                                            <action selector="noThanks:" destination="9Xt-bT-T1X" eventType="touchUpInside" id="K5J-Bs-Ywf"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h2v-uw-VGd">
@@ -62,7 +62,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="rate:" destination="9Xt-bT-T1X" eventType="touchUpInside" id="LJE-0U-i9q"/>
+                                            <action selector="sendFeedback:" destination="9Xt-bT-T1X" eventType="touchUpInside" id="jmS-Za-8VQ"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Send Feedback" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Wzr-oQ-YJs">
@@ -106,19 +106,18 @@
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.25" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="6K5-MH-k9e" secondAttribute="centerY" id="4IF-DM-dG0"/>
-                            <constraint firstAttribute="centerX" secondItem="6K5-MH-k9e" secondAttribute="centerX" id="cEa-RN-CCe"/>
+                            <constraint firstAttribute="centerX" secondItem="6K5-MH-k9e" secondAttribute="centerX" id="FV7-Lc-jjK"/>
+                            <constraint firstItem="6K5-MH-k9e" firstAttribute="top" secondItem="LJc-xd-atd" secondAttribute="bottom" constant="173" id="fx9-b4-FxW"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
-                        <outlet property="feedbackTextView" destination="8Qz-oz-kHc" id="AzJ-8I-s5P"/>
-                        <outlet property="noThanksButton" destination="rBK-k5-Qj9" id="Ldz-r8-q4H"/>
-                        <outlet property="rateButton" destination="h2v-uw-VGd" id="vaM-wA-gll"/>
-                        <outlet property="rateTitle" destination="Wzr-oQ-YJs" id="Tbl-7v-Qth"/>
-                        <outlet property="rateView" destination="6K5-MH-k9e" id="nq8-3P-HiS"/>
-                        <outlet property="sendFeedbackButton" destination="h2v-uw-VGd" id="gp7-pc-I6f"/>
-                        <outlet property="sendFeedbackTitle" destination="Wzr-oQ-YJs" id="72S-WA-gTk"/>
+                        <outlet property="feedbackTextView" destination="8Qz-oz-kHc" id="jIP-7a-rhG"/>
+                        <outlet property="feedbackView" destination="6K5-MH-k9e" id="kXO-tF-i0b"/>
+                        <outlet property="feedbackViewTopSpaceConstraint" destination="fx9-b4-FxW" id="f8U-Qv-ylI"/>
+                        <outlet property="noThanksButton" destination="rBK-k5-Qj9" id="aZW-2d-WJr"/>
+                        <outlet property="sendFeedbackButton" destination="h2v-uw-VGd" id="QWf-3R-CaZ"/>
+                        <outlet property="sendFeedbackTitle" destination="Wzr-oQ-YJs" id="Nlb-WR-h91"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RuP-Pi-26r" userLabel="First Responder" sceneMemberID="firstResponder"/>

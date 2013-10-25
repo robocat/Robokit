@@ -45,5 +45,6 @@ typedef NSInteger RKModalBackgroundStyle;
 + (void)showRateThisAppPopup;
 + (void)showFollowUsPopup;
 + (void)showWhatsNewPopup;
++ (void)showSendFeedbackPopup;
 
 @end

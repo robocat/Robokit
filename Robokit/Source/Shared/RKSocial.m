@@ -11,6 +11,7 @@
 #import <Social/Social.h>
 #import "RKRatingViewController.h"
 #import "RKFollowUsViewController.h"
+#import "RKFeedbackViewController.h"
 #import "RKDispatch.h"
 #import "Flurry.h"
 
@@ -71,6 +72,8 @@ NSString * const kRKSocialUpdateCurrentVersionKey = @"cat.robo.kRKSocialUpdateCu
         [[NSUserDefaults standardUserDefaults] setBool:NO forKey:kHaveFollowed];
         [[NSUserDefaults standardUserDefaults] setDouble:[[NSDate date] timeIntervalSince1970] forKey:kFirstUseDate];
         [self showWhatsNewPopup];
+    } else if (!previousVersionString) {
+        previousVersionString = @"";
     }
     
 	[[NSUserDefaults standardUserDefaults] setValue:versionString forKey:kUserDefaultAppVersion];
@@ -248,6 +251,17 @@ NSString * const kRKSocialUpdateCurrentVersionKey = @"cat.robo.kRKSocialUpdateCu
 + (void)showMoreAppsFromRobocat {
 	NSString *appsURL = @"itms-apps://itunes.com/apps/robocat";
 	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:appsURL]];
+}
+
++ (void)showSendFeedbackPopup {
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kHaveFollowed];
+	[[NSUserDefaults standardUserDefaults] synchronize];
+	
+	__block RKFeedbackViewController *feedbackViewController = [RKFeedbackViewController feedbackViewController];
+	
+	[feedbackViewController presentInWindow:[[UIApplication sharedApplication] keyWindow] withCloseHandler:^{
+		feedbackViewController = nil;
+	}];
 }
 
 + (BOOL)shouldShowRateView {

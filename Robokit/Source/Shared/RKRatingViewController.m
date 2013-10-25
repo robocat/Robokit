@@ -110,9 +110,13 @@
 	
 	if (self.starCount >= 4) {
 		[RKSocial rateAppWithCompletion:nil];
-	}
-	
-	[self close];
+	} else {
+        [RKDispatch after:0.8f callback:^{
+            [RKSocial showSendFeedbackPopup];
+        }];
+    }
+    
+    [self close];
 }
 
 - (NSString *)stringForRating:(NSInteger)rating {

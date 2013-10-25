@@ -5,3 +5,8 @@
   Created by Kristian Andersen on 25/10/13.
   Copyright (c) 2013 Robocat. All rights reserved.
 */
+
+"SEND_FEEDBACK_TITLE" = "Send Feedback";
+"FEEDBACK_TEXT_PLACEHOLDER" = "Tell us what we can do better";
+"NO_THANKS_BUTTON" = "No Thanks";
+"SEND_FEEDBACK_BUTTON" = "Send Feedback";

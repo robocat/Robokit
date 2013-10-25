@@ -4,15 +4,16 @@ Robokit – The shared Robocat iOS toolkit
 The toolkit is split into smaller subsoecs so you only have to specify the parts needed:
 
 ```
-Robokit/Social	# All utility classes including follow us and rating popups
+Robokit/Shared	# All utility classes including follow us and rating popups
 Robokit/About	# About Us and Newsletter signup
-Robokit/Ads	# Ad banner and IAP
+Robokit/IAP # In-app Purchase support
+Robokit/Ads	# Ad banner support
 ```
 
 You can add either one or more of the subspecs or all of them by using just ``'Robokit'``. Edit your ``Podfile`` and add the following line:
 
 ```
-pod 'Robokit', :git => 'git@github.com:robocat/Robokit.git', :branch => 'master'
+pod 'Robokit', :git => 'git@github.com:robocat/Robokit.git'
 ```
 
 If you add the ``Robokit/Ads`` spec you will need to manually link the ``iAd``, ``StoreKit`` and ``AdSupport`` frameworks with your target.
@@ -21,9 +22,6 @@ Usage: add this to applicationDidFinishLaunching
 ```objective-c
 [RKSocial initializeSocialFeaturesWithAppId:@"appId" appName:@"App Name" newInThisVersion:@"· what's new"];
 ```
-
-**NOTE:** 
-The official Cocoapods doesn't yet support xcassets in pods. Install this version for support: [https://github.com/ulrikdamm/CocoaPods](https://github.com/ulrikdamm/CocoaPods)
 
 Features
 ========

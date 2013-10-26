@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		783CE1771819D3E40063F3DD /* RKFeedbackViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 783CE1761819D3E40063F3DD /* RKFeedbackViewController.storyboard */; };
-		783CE17A1819D4120063F3DD /* RKFeedbackViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 783CE1781819D4120063F3DD /* RKFeedbackViewController.strings */; };
 		7847E6791819FCF7008A034E /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7847E6751819FCF7008A034E /* libTestFlight.a */; };
 		7847E6871819FD63008A034E /* RKDialogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7847E67C1819FD63008A034E /* RKDialogViewController.m */; };
 		7847E6881819FD63008A034E /* RKDispatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 7847E67E1819FD63008A034E /* RKDispatch.m */; };
@@ -22,6 +21,7 @@
 		7847E69D1819FED1008A034E /* RKPurchaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7847E69C1819FED1008A034E /* RKPurchaseManager.m */; };
 		7847E6A31819FEEB008A034E /* RKAboutRobocatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7847E6A01819FEEB008A034E /* RKAboutRobocatViewController.m */; };
 		7847E6A41819FEEB008A034E /* RKRobocatNewsletterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7847E6A21819FEEB008A034E /* RKRobocatNewsletterViewController.m */; };
+		78B63E80181BBCBA002C21CB /* RKFeedbackViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 78B63E7E181BBCBA002C21CB /* RKFeedbackViewController.strings */; };
 		FF3E7BE617F899B3004AB9D5 /* RKFollowUsViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = FF3E7BE817F899B3004AB9D5 /* RKFollowUsViewController.strings */; };
 		FF3E7BEB17F89A1A004AB9D5 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FF3E7BEA17F89A1A004AB9D5 /* README.md */; };
 		FF3E7BED17F89A1F004AB9D5 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = FF3E7BEC17F89A1F004AB9D5 /* LICENSE */; };
@@ -64,7 +64,6 @@
 
 /* Begin PBXFileReference section */
 		783CE1761819D3E40063F3DD /* RKFeedbackViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = RKFeedbackViewController.storyboard; path = Resources/RKFeedbackViewController.storyboard; sourceTree = "<group>"; };
-		783CE1791819D4120063F3DD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizations/en.lproj/RKFeedbackViewController.strings; sourceTree = "<group>"; };
 		7847E6751819FCF7008A034E /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTestFlight.a; path = Frameworks/libTestFlight.a; sourceTree = "<group>"; };
 		7847E6761819FCF7008A034E /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestFlight.h; path = Frameworks/TestFlight.h; sourceTree = "<group>"; };
 		7847E6771819FCF7008A034E /* TestFlight+AsyncLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "TestFlight+AsyncLogging.h"; path = "Frameworks/TestFlight+AsyncLogging.h"; sourceTree = "<group>"; };
@@ -109,6 +108,9 @@
 		78B1EA631804223000C0FC9E /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/RKAboutRobocatViewController.strings; sourceTree = "<group>"; };
 		78B1EA641804223000C0FC9E /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/RKFollowUsViewController.strings; sourceTree = "<group>"; };
 		78B1EA651804223000C0FC9E /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/RKRatingViewController.strings; sourceTree = "<group>"; };
+		78B63E7F181BBCBA002C21CB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizations/en.lproj/RKFeedbackViewController.strings; sourceTree = "<group>"; };
+		78B63E81181BBCF0002C21CB /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = Localizations/da.lproj/RKFeedbackViewController.strings; sourceTree = "<group>"; };
+		78B63E83181BBD55002C21CB /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = Localizations/de.lproj/RKFeedbackViewController.strings; sourceTree = "<group>"; };
 		FF3E7BD717F5CF5A004AB9D5 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/RKRatingViewController.strings; sourceTree = "<group>"; };
 		FF3E7BD817F5D3C6004AB9D5 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/RKRatingViewController.strings; sourceTree = "<group>"; };
 		FF3E7BE717F899B3004AB9D5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/RKFollowUsViewController.strings; sourceTree = "<group>"; };
@@ -203,8 +205,8 @@
 		783CE1751819D3990063F3DD /* RKFeedbackViewController */ = {
 			isa = PBXGroup;
 			children = (
+				78B63E7E181BBCBA002C21CB /* RKFeedbackViewController.strings */,
 				783CE1761819D3E40063F3DD /* RKFeedbackViewController.storyboard */,
-				783CE1781819D4120063F3DD /* RKFeedbackViewController.strings */,
 			);
 			name = RKFeedbackViewController;
 			path = ..;
@@ -531,7 +533,7 @@
 			files = (
 				FFE1DD1617F5AC180074F75F /* Images.xcassets in Resources */,
 				FFE1DCFE17F5A97B0074F75F /* RKAboutRobocatViewController.xcassets in Resources */,
-				783CE17A1819D4120063F3DD /* RKFeedbackViewController.strings in Resources */,
+				78B63E80181BBCBA002C21CB /* RKFeedbackViewController.strings in Resources */,
 				FF3E7BED17F89A1F004AB9D5 /* LICENSE in Resources */,
 				FFE1DD0117F5A97B0074F75F /* RKRatingViewController.storyboard in Resources */,
 				FF3F8CD417F8CEB30024EA07 /* RKAdView.xcassets in Resources */,
@@ -599,10 +601,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		783CE1781819D4120063F3DD /* RKFeedbackViewController.strings */ = {
+		78B63E7E181BBCBA002C21CB /* RKFeedbackViewController.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				783CE1791819D4120063F3DD /* en */,
+				78B63E7F181BBCBA002C21CB /* en */,
+				78B63E81181BBCF0002C21CB /* da */,
+				78B63E83181BBD55002C21CB /* de */,
 			);
 			name = RKFeedbackViewController.strings;
 			sourceTree = "<group>";

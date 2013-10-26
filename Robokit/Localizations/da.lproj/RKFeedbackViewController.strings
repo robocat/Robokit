@@ -1,0 +1,12 @@
+/* 
+  RKFeedbackViewController.strings
+  Robokit
+
+  Created by Kristian Andersen on 25/10/13.
+  Copyright (c) 2013 Robocat. All rights reserved.
+*/
+
+"SEND_FEEDBACK_TITLE" = "Send Feedback";
+"FEEDBACK_TEXT_PLACEHOLDER" = "Fortæl os hvad vi kan gøre bedre";
+"NO_THANKS_BUTTON" = "Nej tak";
+"SEND_FEEDBACK_BUTTON" = "Send Feedback";

@@ -21,6 +21,12 @@
 		7847E69D1819FED1008A034E /* RKPurchaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7847E69C1819FED1008A034E /* RKPurchaseManager.m */; };
 		7847E6A31819FEEB008A034E /* RKAboutRobocatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7847E6A01819FEEB008A034E /* RKAboutRobocatViewController.m */; };
 		7847E6A41819FEEB008A034E /* RKRobocatNewsletterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7847E6A21819FEEB008A034E /* RKRobocatNewsletterViewController.m */; };
+		78568422181EA40000E4710C /* RKCatnipSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 78568421181EA40000E4710C /* RKCatnipSDK.m */; };
+		78568425181EA41500E4710C /* RKCatnipStoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78568424181EA41500E4710C /* RKCatnipStoryViewController.m */; };
+		78568428181EA56800E4710C /* RKCatnipStory.m in Sources */ = {isa = PBXBuildFile; fileRef = 78568427181EA56800E4710C /* RKCatnipStory.m */; };
+		7856842D181EA72800E4710C /* CNBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7856842A181EA72800E4710C /* CNBlurView.m */; };
+		7856842E181EA72800E4710C /* CNNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 7856842C181EA72800E4710C /* CNNavigationBar.m */; };
+		78568430181EAA2200E4710C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7856842F181EAA2200E4710C /* libz.dylib */; };
 		78B63E80181BBCBA002C21CB /* RKFeedbackViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 78B63E7E181BBCBA002C21CB /* RKFeedbackViewController.strings */; };
 		FF3E7BE617F899B3004AB9D5 /* RKFollowUsViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = FF3E7BE817F899B3004AB9D5 /* RKFollowUsViewController.strings */; };
 		FF3E7BEB17F89A1A004AB9D5 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FF3E7BEA17F89A1A004AB9D5 /* README.md */; };
@@ -94,6 +100,17 @@
 		7847E6A01819FEEB008A034E /* RKAboutRobocatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKAboutRobocatViewController.m; sourceTree = "<group>"; };
 		7847E6A11819FEEB008A034E /* RKRobocatNewsletterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKRobocatNewsletterViewController.h; sourceTree = "<group>"; };
 		7847E6A21819FEEB008A034E /* RKRobocatNewsletterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKRobocatNewsletterViewController.m; sourceTree = "<group>"; };
+		78568420181EA40000E4710C /* RKCatnipSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKCatnipSDK.h; sourceTree = "<group>"; };
+		78568421181EA40000E4710C /* RKCatnipSDK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKCatnipSDK.m; sourceTree = "<group>"; };
+		78568423181EA41500E4710C /* RKCatnipStoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKCatnipStoryViewController.h; sourceTree = "<group>"; };
+		78568424181EA41500E4710C /* RKCatnipStoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKCatnipStoryViewController.m; sourceTree = "<group>"; };
+		78568426181EA56800E4710C /* RKCatnipStory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKCatnipStory.h; sourceTree = "<group>"; };
+		78568427181EA56800E4710C /* RKCatnipStory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKCatnipStory.m; sourceTree = "<group>"; };
+		78568429181EA72800E4710C /* CNBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNBlurView.h; sourceTree = "<group>"; };
+		7856842A181EA72800E4710C /* CNBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNBlurView.m; sourceTree = "<group>"; };
+		7856842B181EA72800E4710C /* CNNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNNavigationBar.h; sourceTree = "<group>"; };
+		7856842C181EA72800E4710C /* CNNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNNavigationBar.m; sourceTree = "<group>"; };
+		7856842F181EAA2200E4710C /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		78B1EA55180410BE00C0FC9E /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/RKAboutRobocatViewController.strings"; sourceTree = "<group>"; };
 		78B1EA56180410BE00C0FC9E /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/RKFollowUsViewController.strings"; sourceTree = "<group>"; };
 		78B1EA57180410BE00C0FC9E /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/RKRatingViewController.strings"; sourceTree = "<group>"; };
@@ -178,6 +195,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78568430181EAA2200E4710C /* libz.dylib in Frameworks */,
 				FF3F8CDC17F8EC430024EA07 /* AdSupport.framework in Frameworks */,
 				FFB5874E17F9BBE2007D9485 /* libFlurry_4.2.4.a in Frameworks */,
 				FF3F8CDA17F8DDEC0024EA07 /* SystemConfiguration.framework in Frameworks */,
@@ -215,6 +233,7 @@
 		7847E67A1819FD3F008A034E /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				7856841F181EA3B900E4710C /* Catnip */,
 				7847E69E1819FEDD008A034E /* About */,
 				7847E69A1819FEC2008A034E /* IAP */,
 				7847E68C1819FD76008A034E /* Ads */,
@@ -264,6 +283,23 @@
 			path = About;
 			sourceTree = "<group>";
 		};
+		7856841F181EA3B900E4710C /* Catnip */ = {
+			isa = PBXGroup;
+			children = (
+				78568429181EA72800E4710C /* CNBlurView.h */,
+				7856842A181EA72800E4710C /* CNBlurView.m */,
+				7856842B181EA72800E4710C /* CNNavigationBar.h */,
+				7856842C181EA72800E4710C /* CNNavigationBar.m */,
+				78568420181EA40000E4710C /* RKCatnipSDK.h */,
+				78568421181EA40000E4710C /* RKCatnipSDK.m */,
+				78568423181EA41500E4710C /* RKCatnipStoryViewController.h */,
+				78568424181EA41500E4710C /* RKCatnipStoryViewController.m */,
+				78568426181EA56800E4710C /* RKCatnipStory.h */,
+				78568427181EA56800E4710C /* RKCatnipStory.m */,
+			);
+			path = Catnip;
+			sourceTree = "<group>";
+		};
 		FF3F8CD217F8CE910024EA07 /* RKAdView */ = {
 			isa = PBXGroup;
 			children = (
@@ -311,6 +347,7 @@
 		FF62912617F59F970018AD68 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7856842F181EAA2200E4710C /* libz.dylib */,
 				FF3F8CDB17F8EC430024EA07 /* AdSupport.framework */,
 				FF3F8CD917F8DDEC0024EA07 /* SystemConfiguration.framework */,
 				FF62912717F59F970018AD68 /* Foundation.framework */,
@@ -569,15 +606,20 @@
 				FFE1DCCA17F5A9540074F75F /* main.m in Sources */,
 				7847E6881819FD63008A034E /* RKDispatch.m in Sources */,
 				7847E6A41819FEEB008A034E /* RKRobocatNewsletterViewController.m in Sources */,
+				78568425181EA41500E4710C /* RKCatnipStoryViewController.m in Sources */,
 				7847E6891819FD63008A034E /* RKLocalization.m in Sources */,
+				7856842D181EA72800E4710C /* CNBlurView.m in Sources */,
 				7847E68F1819FDB2008A034E /* RKAdView.m in Sources */,
 				7847E6A31819FEEB008A034E /* RKAboutRobocatViewController.m in Sources */,
 				7847E69D1819FED1008A034E /* RKPurchaseManager.m in Sources */,
 				FFE1DCC617F5A94B0074F75F /* RKAppDelegate.m in Sources */,
+				78568422181EA40000E4710C /* RKCatnipSDK.m in Sources */,
 				7847E68A1819FD63008A034E /* RKSocial.m in Sources */,
+				7856842E181EA72800E4710C /* CNNavigationBar.m in Sources */,
 				7847E6971819FDBE008A034E /* RKFollowUsViewController.m in Sources */,
 				7847E68B1819FD63008A034E /* UIViewController+Robokit.m in Sources */,
 				7847E6871819FD63008A034E /* RKDialogViewController.m in Sources */,
+				78568428181EA56800E4710C /* RKCatnipStory.m in Sources */,
 				7847E6981819FDBE008A034E /* RKRatingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

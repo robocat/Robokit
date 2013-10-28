@@ -12,6 +12,9 @@
 @interface RKDialogViewController : UIViewController
 
 - (void)presentInWindow:(UIWindow *)window withCloseHandler:(void (^)(void))closeHandler;
+- (void)presentModalInWindow:(UIWindow *)window withColseHandler:(void (^)(void))closeHandler;
+
 - (void)close;
+- (void)closeModal;
 
 @end

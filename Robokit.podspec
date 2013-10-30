@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
 
   s.platform = :ios, "7.0"
   s.requires_arc = true
-
+  
   s.subspec 'Shared' do |ss|
     ss.source_files =         'Robokit/Source/Shared/*.{h,m}','Robokit/Frameworks/*.h'
     ss.resources =            [ 'Robokit/Localizations/**',
@@ -25,8 +25,8 @@ Pod::Spec.new do |s|
                               'Social',
                               'UIKit'
     ss.vendored_libraries =   'Robokit/Frameworks/libFlurry_4.2.4.a', 'Robokit/Frameworks/libTestFlight.a'
+    ss.library = 'z'
     ss.preserve_paths =       'Robokit/Frameworks/libFlurry_4.2.4.a', 'Robokit/Frameworks/libTestFlight.a'
-    ss.library =              'TestFlight', 'z'
   end
   
   s.subspec 'IAP' do |ss|
@@ -64,7 +64,7 @@ Pod::Spec.new do |s|
   
   s.subspec 'Catnip' do |ss|
     ss.dependency             'Robokit/Shared'
-    ss.source_files           'Robokit/Source/Catnip/*.{h,m}'
+    ss.source_files =         'Robokit/Source/Catnip/*.{h,m}'
   end
 
 end

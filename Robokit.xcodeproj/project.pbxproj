@@ -43,6 +43,8 @@
 		FF62914317F59F970018AD68 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF62912B17F59F970018AD68 /* UIKit.framework */; };
 		FF62914B17F59F970018AD68 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FF62914917F59F970018AD68 /* InfoPlist.strings */; };
 		FF62914D17F59F970018AD68 /* RobokitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FF62914C17F59F970018AD68 /* RobokitTests.m */; };
+		FFA679D0181EAAAB008E21A9 /* RKSoundPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA679CF181EAAAB008E21A9 /* RKSoundPlayer.m */; };
+		FFA679D2181EB186008E21A9 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FFA679D1181EB186008E21A9 /* libz.dylib */; };
 		FFB5874E17F9BBE2007D9485 /* libFlurry_4.2.4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FFB5874D17F9BBE2007D9485 /* libFlurry_4.2.4.a */; };
 		FFE1DCC617F5A94B0074F75F /* RKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE1DCC517F5A94B0074F75F /* RKAppDelegate.m */; };
 		FFE1DCCA17F5A9540074F75F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE1DCC717F5A9540074F75F /* main.m */; };
@@ -147,6 +149,9 @@
 		FF62914817F59F970018AD68 /* RobokitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RobokitTests-Info.plist"; sourceTree = "<group>"; };
 		FF62914A17F59F970018AD68 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FF62914C17F59F970018AD68 /* RobokitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RobokitTests.m; sourceTree = "<group>"; };
+		FFA679CE181EAAAB008E21A9 /* RKSoundPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKSoundPlayer.h; sourceTree = "<group>"; };
+		FFA679CF181EAAAB008E21A9 /* RKSoundPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKSoundPlayer.m; sourceTree = "<group>"; };
+		FFA679D1181EB186008E21A9 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		FFB5874C17F9BBE2007D9485 /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Flurry.h; path = Frameworks/Flurry.h; sourceTree = "<group>"; };
 		FFB5874D17F9BBE2007D9485 /* libFlurry_4.2.4.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFlurry_4.2.4.a; path = Frameworks/libFlurry_4.2.4.a; sourceTree = "<group>"; };
 		FFB5874F17F9C818007D9485 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/RKAboutRobocatViewController.strings; sourceTree = "<group>"; };
@@ -432,6 +437,8 @@
 				7847E6951819FDBE008A034E /* RKRatingViewController.m */,
 				7847E6851819FD63008A034E /* UIViewController+Robokit.h */,
 				7847E6861819FD63008A034E /* UIViewController+Robokit.m */,
+				FFA679CE181EAAAB008E21A9 /* RKSoundPlayer.h */,
+				FFA679CF181EAAAB008E21A9 /* RKSoundPlayer.m */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -605,6 +612,7 @@
 				7847E6961819FDBE008A034E /* RKFeedbackViewController.m in Sources */,
 				FFE1DCCA17F5A9540074F75F /* main.m in Sources */,
 				7847E6881819FD63008A034E /* RKDispatch.m in Sources */,
+				FFA679D0181EAAAB008E21A9 /* RKSoundPlayer.m in Sources */,
 				7847E6A41819FEEB008A034E /* RKRobocatNewsletterViewController.m in Sources */,
 				78568425181EA41500E4710C /* RKCatnipStoryViewController.m in Sources */,
 				7847E6891819FD63008A034E /* RKLocalization.m in Sources */,
@@ -807,6 +815,7 @@
 		FF62915117F59F970018AD68 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -820,7 +829,6 @@
 					"$(inherited)",
 					./Robokit,
 					./Robokit/Frameworks,
-					/Users/ksma/Robocat/Robokit/Robokit/Frameworks,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -830,6 +838,7 @@
 		FF62915217F59F970018AD68 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -843,7 +852,6 @@
 					"$(inherited)",
 					./Robokit,
 					./Robokit/Frameworks,
-					/Users/ksma/Robocat/Robokit/Robokit/Frameworks,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

@@ -1,4 +1,4 @@
-# Robokit – Robocat iOS Toolkit
+# Robokit – The Robocat iOS Toolkit
 
 This is the shared Robocat toolkit for iOS. The toolkit is managed using CocoaPods and is split up into several
 small subspecs.

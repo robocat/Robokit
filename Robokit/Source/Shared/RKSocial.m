@@ -43,6 +43,7 @@ NSString * const kRKSocialUpdateCurrentVersionKey = @"cat.robo.kRKSocialUpdateCu
 @property (strong, nonatomic) NSString *appName;
 @property (strong, nonatomic) NSString *appVersion;
 @property (strong, nonatomic) NSString *whatsNew;
+@property (assign, nonatomic) BOOL isFirstLaunch;
 @property (assign, nonatomic) RKModalBackgroundStyle backgroundStyle;
 
 @end
@@ -64,21 +65,27 @@ NSString * const kRKSocialUpdateCurrentVersionKey = @"cat.robo.kRKSocialUpdateCu
 	[[self sharedInstance] setWhatsNew:newsString];
 	[[self sharedInstance] setAppId:appId];
 	[[self sharedInstance] setAppName:appName];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if ([defaults doubleForKey:kFirstUseDate] == 0) {
+		[defaults setDouble:[[NSDate date] timeIntervalSince1970] forKey:kFirstUseDate];
+        [[self sharedInstance] setIsFirstLaunch:YES];
+	}
 	
 	NSString *versionString = [[NSBundle mainBundle] infoDictionary][@"CFBundleVersion"];
-    NSString *previousVersionString = [[NSUserDefaults standardUserDefaults] objectForKey:kUserDefaultAppVersion];
+    NSString *previousVersionString = [defaults objectForKey:kUserDefaultAppVersion];
 	
     if (previousVersionString && ![previousVersionString isEqualToString:versionString]) {
-        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:kRatedCurrentVersion];
-        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:kHaveFollowed];
-        [[NSUserDefaults standardUserDefaults] setDouble:[[NSDate date] timeIntervalSince1970] forKey:kFirstUseDate];
+        [defaults setBool:NO forKey:kRatedCurrentVersion];
+        [defaults setBool:NO forKey:kHaveFollowed];
+        [defaults setDouble:[[NSDate date] timeIntervalSince1970] forKey:kFirstUseDate];
         [self showWhatsNewPopup];
     } else if (!previousVersionString) {
         previousVersionString = @"";
     }
     
-	[[NSUserDefaults standardUserDefaults] setValue:versionString forKey:kUserDefaultAppVersion];
-	[[NSUserDefaults standardUserDefaults] synchronize];
+	[defaults setValue:versionString forKey:kUserDefaultAppVersion];
+	[defaults synchronize];
     
     [[self sharedInstance] setAppVersion:versionString];
     
@@ -271,16 +278,17 @@ NSString * const kRKSocialUpdateCurrentVersionKey = @"cat.robo.kRKSocialUpdateCu
 }
 
 + (BOOL)shouldShowRateView {
-	if ([[NSUserDefaults standardUserDefaults] doubleForKey:kFirstUseDate] == 0) {
-		[[NSUserDefaults standardUserDefaults] setDouble:[[NSDate date] timeIntervalSince1970] forKey:kFirstUseDate];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    if ([[self sharedInstance] isFirstLaunch]) {
+        return NO;
+    }
+    
+	if ([defaults boolForKey:kRatedCurrentVersion]) {
 		return NO;
 	}
 	
-	if ([[NSUserDefaults standardUserDefaults] boolForKey:kRatedCurrentVersion]) {
-		return NO;
-	}
-	
-	NSDate *dateOfFirstLaunch = [NSDate dateWithTimeIntervalSince1970:[[NSUserDefaults standardUserDefaults] doubleForKey:kFirstUseDate]];
+	NSDate *dateOfFirstLaunch = [NSDate dateWithTimeIntervalSince1970:[defaults doubleForKey:kFirstUseDate]];
 	NSTimeInterval timeSinceFirstLaunch = [[NSDate date] timeIntervalSinceDate:dateOfFirstLaunch];
 	NSTimeInterval timeUntilRate = 60 * 60 * 24 * kDaysToRatePrompt;
 	
@@ -292,21 +300,23 @@ NSString * const kRKSocialUpdateCurrentVersionKey = @"cat.robo.kRKSocialUpdateCu
 }
 
 + (BOOL)shouldShowFollowView {
-	if ([[NSUserDefaults standardUserDefaults] boolForKey:kRatedCurrentVersion] == NO || [[NSUserDefaults standardUserDefaults] boolForKey:kHaveFollowed] == YES) {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+	if ([defaults boolForKey:kRatedCurrentVersion] == NO || [defaults boolForKey:kHaveFollowed] == YES) {
 		return NO;
 	}
 	
-	if ([[NSUserDefaults standardUserDefaults] boolForKey:RKRobocatViewControllerHaveFollowedKey] == YES
-		&& [[NSUserDefaults standardUserDefaults] boolForKey:RKRobocatViewControllerHaveLikedKey] == YES) {
+	if ([defaults boolForKey:RKRobocatViewControllerHaveFollowedKey] == YES
+		&& [defaults boolForKey:RKRobocatViewControllerHaveLikedKey] == YES) {
 		return NO;
 	}
 	
-	if ([[NSUserDefaults standardUserDefaults] objectForKey:kRatedCurrentVersionDate] == nil) {
-		[[NSUserDefaults standardUserDefaults] setDouble:[[NSDate date] timeIntervalSince1970] forKey:kRatedCurrentVersionDate];
+	if ([defaults objectForKey:kRatedCurrentVersionDate] == nil) {
+		[defaults setDouble:[[NSDate date] timeIntervalSince1970] forKey:kRatedCurrentVersionDate];
 		return NO;
 	}
 	
-	NSDate *dateOfRate = [NSDate dateWithTimeIntervalSince1970:[[NSUserDefaults standardUserDefaults] doubleForKey:kRatedCurrentVersionDate]];
+	NSDate *dateOfRate = [NSDate dateWithTimeIntervalSince1970:[defaults doubleForKey:kRatedCurrentVersionDate]];
 	NSTimeInterval timeSinceRate = [[NSDate date] timeIntervalSinceDate:dateOfRate];
 	NSTimeInterval timeUntilFollow = 60 * 60 * 24 * kDaysToFollowPrompt;
 	

@@ -30,6 +30,7 @@ typedef NSInteger RKModalBackgroundStyle;
 
 + (NSString *)appId;
 + (NSString *)appName;
++ (NSString *)appVersion;
 
 + (BOOL)hasLikedOnFacebook;
 + (BOOL)hasFollowedOnTwitter;

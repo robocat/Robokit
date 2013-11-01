@@ -41,6 +41,7 @@ NSString * const kRKSocialUpdateCurrentVersionKey = @"cat.robo.kRKSocialUpdateCu
 
 @property (strong, nonatomic) NSString *appId;
 @property (strong, nonatomic) NSString *appName;
+@property (strong, nonatomic) NSString *appVersion;
 @property (strong, nonatomic) NSString *whatsNew;
 @property (assign, nonatomic) RKModalBackgroundStyle backgroundStyle;
 
@@ -78,6 +79,8 @@ NSString * const kRKSocialUpdateCurrentVersionKey = @"cat.robo.kRKSocialUpdateCu
     
 	[[NSUserDefaults standardUserDefaults] setValue:versionString forKey:kUserDefaultAppVersion];
 	[[NSUserDefaults standardUserDefaults] synchronize];
+    
+    [[self sharedInstance] setAppVersion:versionString];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:kRKSocialDidUpdateFromPreviousVersionNotification
                                                         object:nil
@@ -148,6 +151,10 @@ NSString * const kRKSocialUpdateCurrentVersionKey = @"cat.robo.kRKSocialUpdateCu
 	return [[self sharedInstance] appName];
 }
 
++ (NSString *)appVersion {
+    return [[self sharedInstance] appVersion];
+}
+
 + (BOOL)hasLikedOnFacebook {
 	return [[NSUserDefaults standardUserDefaults] boolForKey:RKRobocatViewControllerHaveLikedKey];
 }
@@ -165,10 +172,9 @@ NSString * const kRKSocialUpdateCurrentVersionKey = @"cat.robo.kRKSocialUpdateCu
 }
 
 + (void)likeOnFacebookWithCompletion:(void (^)(BOOL success))completion {
-	if ([[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"fb://profile/235384996484325"]]) {
-		[[NSUserDefaults standardUserDefaults] setBool:YES forKey:RKRobocatViewControllerHaveLikedKey];
-		[[NSUserDefaults standardUserDefaults] synchronize];
-	}
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"fb://profile/235384996484325"]];
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:RKRobocatViewControllerHaveLikedKey];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 	
 	if (completion) completion(YES);
 }

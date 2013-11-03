@@ -46,7 +46,7 @@
 @implementation RKFollowUsViewController
 
 + (RKFollowUsViewController *)followUsViewControllerWithMailchimpId:(NSString *)mailchimpId APIKey:(NSString *)apiKey {
-	RKFollowUsViewController *followUsViewController = [self initialViewControllerFromStoryboardWithName:@"RKFollowUsViewController"];
+	RKFollowUsViewController *followUsViewController = [self rk_initialViewControllerFromStoryboardWithName:@"RKFollowUsViewController"];
 	followUsViewController.mailchimpId = mailchimpId;
 	followUsViewController.mailchimpApiKey = apiKey;
 	return followUsViewController;

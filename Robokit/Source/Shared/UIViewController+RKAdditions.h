@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIViewController (Robokit)
+@interface UIViewController (RKAdditions)
 
 /*!
  * Returns the initial UIViewController of a UIStoryboard
@@ -16,6 +16,6 @@
  * @param storyboardName The name of the storyboard
  * @return The initial UIViewController from the storyboard
  */
-+ (instancetype)initialViewControllerFromStoryboardWithName:(NSString *)storyboardName;
++ (instancetype)rk_initialViewControllerFromStoryboardWithName:(NSString *)storyboardName;
 
 @end

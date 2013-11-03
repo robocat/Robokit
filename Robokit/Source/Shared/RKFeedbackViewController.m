@@ -32,7 +32,7 @@
 @implementation RKFeedbackViewController
 
 + (RKFeedbackViewController *)feedbackViewController {
-    return [self initialViewControllerFromStoryboardWithName:@"RKFeedbackViewController"];
+    return [self rk_initialViewControllerFromStoryboardWithName:@"RKFeedbackViewController"];
 }
 
 - (void)viewDidLoad

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "UIViewController+Robokit.h"
+#import "UIViewController+RKAdditions.h"
 
 @interface RKDialogViewController : UIViewController
 

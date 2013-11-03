@@ -16,7 +16,7 @@
 		7828EE4D1823B7E00091B1E8 /* RKFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7847E6911819FDBE008A034E /* RKFeedbackViewController.m */; };
 		7828EE4E1823B7E00091B1E8 /* RKFollowUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7847E6931819FDBE008A034E /* RKFollowUsViewController.m */; };
 		7828EE4F1823B7E00091B1E8 /* RKRatingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7847E6951819FDBE008A034E /* RKRatingViewController.m */; };
-		7828EE501823B7E00091B1E8 /* UIViewController+Robokit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7847E6861819FD63008A034E /* UIViewController+Robokit.m */; };
+		7828EE501823B7E00091B1E8 /* UIViewController+RKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7847E6861819FD63008A034E /* UIViewController+RKAdditions.m */; };
 		7828EE511823B7E00091B1E8 /* RKSoundPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA679CF181EAAAB008E21A9 /* RKSoundPlayer.m */; };
 		7828EE521823B9140091B1E8 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7847E6751819FCF7008A034E /* libTestFlight.a */; };
 		7828EE531823B9140091B1E8 /* RevMobAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF3F8CD717F8DD130024EA07 /* RevMobAds.framework */; };
@@ -27,7 +27,7 @@
 		7847E6881819FD63008A034E /* RKDispatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 7847E67E1819FD63008A034E /* RKDispatch.m */; };
 		7847E6891819FD63008A034E /* RKLocalization.m in Sources */ = {isa = PBXBuildFile; fileRef = 7847E6801819FD63008A034E /* RKLocalization.m */; };
 		7847E68A1819FD63008A034E /* RKSocial.m in Sources */ = {isa = PBXBuildFile; fileRef = 7847E6831819FD63008A034E /* RKSocial.m */; };
-		7847E68B1819FD63008A034E /* UIViewController+Robokit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7847E6861819FD63008A034E /* UIViewController+Robokit.m */; };
+		7847E68B1819FD63008A034E /* UIViewController+RKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7847E6861819FD63008A034E /* UIViewController+RKAdditions.m */; };
 		7847E68F1819FDB2008A034E /* RKAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7847E68E1819FDB2008A034E /* RKAdView.m */; };
 		7847E6961819FDBE008A034E /* RKFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7847E6911819FDBE008A034E /* RKFeedbackViewController.m */; };
 		7847E6971819FDBE008A034E /* RKFollowUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7847E6931819FDBE008A034E /* RKFollowUsViewController.m */; };
@@ -41,6 +41,7 @@
 		7856842D181EA72800E4710C /* CNBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7856842A181EA72800E4710C /* CNBlurView.m */; };
 		7856842E181EA72800E4710C /* CNNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 7856842C181EA72800E4710C /* CNNavigationBar.m */; };
 		78568430181EAA2200E4710C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7856842F181EAA2200E4710C /* libz.dylib */; };
+		78A52D2D1826AE2C00CCE466 /* UIDevice+RKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A52D2C1826AE2C00CCE466 /* UIDevice+RKAdditions.m */; };
 		78B63E80181BBCBA002C21CB /* RKFeedbackViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 78B63E7E181BBCBA002C21CB /* RKFeedbackViewController.strings */; };
 		FF3E7BE617F899B3004AB9D5 /* RKFollowUsViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = FF3E7BE817F899B3004AB9D5 /* RKFollowUsViewController.strings */; };
 		FF3E7BEB17F89A1A004AB9D5 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FF3E7BEA17F89A1A004AB9D5 /* README.md */; };
@@ -99,8 +100,8 @@
 		7847E6821819FD63008A034E /* RKSocial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKSocial.h; sourceTree = "<group>"; };
 		7847E6831819FD63008A034E /* RKSocial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKSocial.m; sourceTree = "<group>"; };
 		7847E6841819FD63008A034E /* Robokit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Robokit.h; sourceTree = "<group>"; };
-		7847E6851819FD63008A034E /* UIViewController+Robokit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Robokit.h"; sourceTree = "<group>"; };
-		7847E6861819FD63008A034E /* UIViewController+Robokit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Robokit.m"; sourceTree = "<group>"; };
+		7847E6851819FD63008A034E /* UIViewController+RKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+RKAdditions.h"; path = "Shared/UIViewController+RKAdditions.h"; sourceTree = "<group>"; };
+		7847E6861819FD63008A034E /* UIViewController+RKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+RKAdditions.m"; path = "Shared/UIViewController+RKAdditions.m"; sourceTree = "<group>"; };
 		7847E68D1819FDB2008A034E /* RKAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKAdView.h; sourceTree = "<group>"; };
 		7847E68E1819FDB2008A034E /* RKAdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKAdView.m; sourceTree = "<group>"; };
 		7847E6901819FDBE008A034E /* RKFeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKFeedbackViewController.h; sourceTree = "<group>"; };
@@ -126,6 +127,8 @@
 		7856842B181EA72800E4710C /* CNNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNNavigationBar.h; sourceTree = "<group>"; };
 		7856842C181EA72800E4710C /* CNNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNNavigationBar.m; sourceTree = "<group>"; };
 		7856842F181EAA2200E4710C /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		78A52D2B1826AE2C00CCE466 /* UIDevice+RKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIDevice+RKAdditions.h"; path = "Shared/UIDevice+RKAdditions.h"; sourceTree = "<group>"; };
+		78A52D2C1826AE2C00CCE466 /* UIDevice+RKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIDevice+RKAdditions.m"; path = "Shared/UIDevice+RKAdditions.m"; sourceTree = "<group>"; };
 		78B1EA55180410BE00C0FC9E /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/RKAboutRobocatViewController.strings"; sourceTree = "<group>"; };
 		78B1EA56180410BE00C0FC9E /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/RKFollowUsViewController.strings"; sourceTree = "<group>"; };
 		78B1EA57180410BE00C0FC9E /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/RKRatingViewController.strings"; sourceTree = "<group>"; };
@@ -248,6 +251,18 @@
 				783CE1761819D3E40063F3DD /* RKFeedbackViewController.storyboard */,
 			);
 			name = RKFeedbackViewController;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		783EEA801826AD060057602E /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				7847E6851819FD63008A034E /* UIViewController+RKAdditions.h */,
+				7847E6861819FD63008A034E /* UIViewController+RKAdditions.m */,
+				78A52D2B1826AE2C00CCE466 /* UIDevice+RKAdditions.h */,
+				78A52D2C1826AE2C00CCE466 /* UIDevice+RKAdditions.m */,
+			);
+			name = Categories;
 			path = ..;
 			sourceTree = "<group>";
 		};
@@ -435,6 +450,7 @@
 		FFE1DD0A17F5A9810074F75F /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				783EEA801826AD060057602E /* Categories */,
 				7847E6841819FD63008A034E /* Robokit.h */,
 				7847E6811819FD63008A034E /* RKMacros.h */,
 				7847E6821819FD63008A034E /* RKSocial.h */,
@@ -451,8 +467,6 @@
 				7847E6931819FDBE008A034E /* RKFollowUsViewController.m */,
 				7847E6941819FDBE008A034E /* RKRatingViewController.h */,
 				7847E6951819FDBE008A034E /* RKRatingViewController.m */,
-				7847E6851819FD63008A034E /* UIViewController+Robokit.h */,
-				7847E6861819FD63008A034E /* UIViewController+Robokit.m */,
 				FFA679CE181EAAAB008E21A9 /* RKSoundPlayer.h */,
 				FFA679CF181EAAAB008E21A9 /* RKSoundPlayer.m */,
 			);
@@ -638,10 +652,11 @@
 				7847E69D1819FED1008A034E /* RKPurchaseManager.m in Sources */,
 				FFE1DCC617F5A94B0074F75F /* RKAppDelegate.m in Sources */,
 				78568422181EA40000E4710C /* RKCatnipSDK.m in Sources */,
+				78A52D2D1826AE2C00CCE466 /* UIDevice+RKAdditions.m in Sources */,
 				7847E68A1819FD63008A034E /* RKSocial.m in Sources */,
 				7856842E181EA72800E4710C /* CNNavigationBar.m in Sources */,
 				7847E6971819FDBE008A034E /* RKFollowUsViewController.m in Sources */,
-				7847E68B1819FD63008A034E /* UIViewController+Robokit.m in Sources */,
+				7847E68B1819FD63008A034E /* UIViewController+RKAdditions.m in Sources */,
 				7847E6871819FD63008A034E /* RKDialogViewController.m in Sources */,
 				78568428181EA56800E4710C /* RKCatnipStory.m in Sources */,
 				7847E6981819FDBE008A034E /* RKRatingViewController.m in Sources */,
@@ -660,7 +675,7 @@
 				7828EE4D1823B7E00091B1E8 /* RKFeedbackViewController.m in Sources */,
 				7828EE4E1823B7E00091B1E8 /* RKFollowUsViewController.m in Sources */,
 				7828EE4F1823B7E00091B1E8 /* RKRatingViewController.m in Sources */,
-				7828EE501823B7E00091B1E8 /* UIViewController+Robokit.m in Sources */,
+				7828EE501823B7E00091B1E8 /* UIViewController+RKAdditions.m in Sources */,
 				7828EE511823B7E00091B1E8 /* RKSoundPlayer.m in Sources */,
 				FF62914D17F59F970018AD68 /* RKSocialTests.m in Sources */,
 			);

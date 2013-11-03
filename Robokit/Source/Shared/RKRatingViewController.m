@@ -35,7 +35,7 @@
 #pragma mark - View lifecycle
 
 + (RKRatingViewController *)ratingViewController {
-    return [self initialViewControllerFromStoryboardWithName:@"RKRatingViewController"];
+    return [self rk_initialViewControllerFromStoryboardWithName:@"RKRatingViewController"];
 }
 
 - (void)viewDidLoad {

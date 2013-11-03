@@ -37,12 +37,20 @@ NSString * const kRKSocialUpdateCurrentVersionKey = @"cat.robo.kRKSocialUpdateCu
 #define kMailchimpAPIKey @"0707e00bae61425cb207a028f7730a89-us1"
 #define kMailchimpListId @"f864e02a1c"
 
+// User Identity
+
+#define kUserIdentityEmailAddressKey @"kUserIdentityEmailAddressKey"
+#define kUserIdentityTwitterUsernameKey @"kUserIdentityTwitterUsernameKey"
+#define kUserIdentityFacebookUsernameKey @"kUserIdentityFacebookUsernameKey"
+#define kUserIdentityFullNameKey @"kUserIdentityFullNameKey"
+
 @interface RKSocial () <UIAlertViewDelegate>
 
 @property (strong, nonatomic) NSString *appId;
 @property (strong, nonatomic) NSString *appName;
 @property (strong, nonatomic) NSString *appVersion;
 @property (strong, nonatomic) NSString *whatsNew;
+@property (strong, nonatomic) NSString *facebookAppId;
 @property (assign, nonatomic) BOOL isFirstLaunch;
 @property (assign, nonatomic) RKModalBackgroundStyle backgroundStyle;
 
@@ -178,33 +186,49 @@ NSString * const kRKSocialUpdateCurrentVersionKey = @"cat.robo.kRKSocialUpdateCu
 	return [[NSUserDefaults standardUserDefaults] boolForKey:RKRobocatViewControllerHaveRatedKey];
 }
 
-+ (void)likeOnFacebookWithCompletion:(void (^)(BOOL success))completion {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"fb://profile/235384996484325"]];
++ (void)likedOnFacebook {
     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:RKRobocatViewControllerHaveLikedKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
-	
+}
+
++ (void)likeOnFacebookFallbackWithCompletion:(void (^)(BOOL success))completion {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"fb://profile/235384996484325"]];
+    [self likedOnFacebook];
+
 	if (completion) completion(YES);
 }
 
-+ (void)subscribeWithEmail:(NSString *)email completion:(void (^)(BOOL success))completion {
-	if (email == nil || [email isEqualToString:@""]) {
-		completion(NO);
-		return;
-	}
-	
-	NSString *method = @"listSubscribe";
-	NSString *urlString = [NSString stringWithFormat:@"https://us1.api.mailchimp.com/1.2/?output=json&method=%@&apikey=%@", method, kMailchimpAPIKey];
-	urlString = [NSString stringWithFormat:@"%@&send_welcome=false&double_optin=false&id=%@&merge_vars=&email_address=%@", urlString, kMailchimpListId, email];
-	NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
-	
-	[NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
-		if (!error) {
-			[[NSUserDefaults standardUserDefaults] setBool:YES forKey:RKRobocatViewControllerHaveSubscribedKey];
-			[[NSUserDefaults standardUserDefaults] synchronize];
-		}
-		
-		if (completion) completion(error == nil);
-	}];
++ (void)likeOnFacebookWithCompletion:(void (^)(BOOL success))completion {
+    ACAccountStore *accountStore = [[ACAccountStore alloc] init];
+    ACAccountType *accountType = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierFacebook];
+    
+    NSDictionary *facebookOptions = @{
+                                      ACFacebookAppIdKey: [self sharedInstance].facebookAppId,
+                                      ACFacebookAudienceKey: ACFacebookAudienceFriends,
+                                      ACFacebookPermissionsKey: @[@"user_likes"]};
+    
+    [accountStore requestAccessToAccountsWithType:accountType options:facebookOptions completion:^(BOOL granted, NSError *error) {
+        if (!granted || error) {
+            [self likeOnFacebookFallbackWithCompletion:completion];
+            return;
+        }
+        
+        NSArray *accounts = [accountStore accountsWithAccountType:accountType];
+        if ([accounts count] == 0) {
+            [self likeOnFacebookFallbackWithCompletion:completion];
+            return;
+        }
+        
+        ACAccount *facebookAccount = accounts[0];
+        [[NSUserDefaults standardUserDefaults] setObject:facebookAccount.username forKey:kUserIdentityFacebookUsernameKey];
+        [[NSUserDefaults standardUserDefaults] setObject:facebookAccount.userFullName forKey:kUserIdentityFullNameKey];
+        
+        
+        NSURL *likeURL = [NSURL URLWithString:[NSString stringWithFormat:@"https://graph.facebook.com/%@/og.likes?object=", facebookAccount.username]];
+        SLRequest *likeRequest = [SLRequest requestForServiceType:SLServiceTypeFacebook
+                                                    requestMethod:SLRequestMethodPOST
+                                                              URL:likeURL parameters:@{}];
+    }];
 }
 
 + (void)followOnTwitterWithCompletion:(void (^)(BOOL success))completion {
@@ -236,6 +260,8 @@ NSString * const kRKSocialUpdateCurrentVersionKey = @"cat.robo.kRKSocialUpdateCu
 		}
 		
 		ACAccount *twitterAccount = accounts[0];
+        [[NSUserDefaults standardUserDefaults] setObject:twitterAccount.username forKey:kUserIdentityTwitterUsernameKey];
+        [[NSUserDefaults standardUserDefaults] setObject:twitterAccount.userFullName forKey:kUserIdentityFullNameKey];
 		
 		SLRequest *followRequest = [SLRequest requestForServiceType:SLServiceTypeTwitter requestMethod:SLRequestMethodPOST URL:[NSURL URLWithString:@"https://api.twitter.com/1/friendships/create.json"] parameters:@{ @"screen_name" : @"robocat", @"follow" : @"true" }];
 		[followRequest setAccount:twitterAccount];
@@ -250,6 +276,29 @@ NSString * const kRKSocialUpdateCurrentVersionKey = @"cat.robo.kRKSocialUpdateCu
 				if (completion) completion(error == nil);
 			}];
 		}];
+	}];
+}
+
++ (void)subscribeWithEmail:(NSString *)email completion:(void (^)(BOOL success))completion {
+	if (email == nil || [email isEqualToString:@""]) {
+		completion(NO);
+		return;
+	}
+    
+    [[NSUserDefaults standardUserDefaults] setObject:email forKey:kUserIdentityEmailAddressKey];
+	
+	NSString *method = @"listSubscribe";
+	NSString *urlString = [NSString stringWithFormat:@"https://us1.api.mailchimp.com/1.2/?output=json&method=%@&apikey=%@", method, kMailchimpAPIKey];
+	urlString = [NSString stringWithFormat:@"%@&send_welcome=false&double_optin=false&id=%@&merge_vars=&email_address=%@", urlString, kMailchimpListId, email];
+	NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
+	
+	[NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+		if (!error) {
+			[[NSUserDefaults standardUserDefaults] setBool:YES forKey:RKRobocatViewControllerHaveSubscribedKey];
+			[[NSUserDefaults standardUserDefaults] synchronize];
+		}
+		
+		if (completion) completion(error == nil);
 	}];
 }
 

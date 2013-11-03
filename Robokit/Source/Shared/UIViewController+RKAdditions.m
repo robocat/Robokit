@@ -6,11 +6,11 @@
 //  Copyright (c) 2013 Robocat. All rights reserved.
 //
 
-#import "UIViewController+Robokit.h"
+#import "UIViewController+RKAdditions.h"
 
-@implementation UIViewController (Robokit)
+@implementation UIViewController (RKAdditions)
 
-+ (instancetype)initialViewControllerFromStoryboardWithName:(NSString *)storyboardName  {
++ (instancetype)rk_initialViewControllerFromStoryboardWithName:(NSString *)storyboardName  {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle:nil];
 	id viewController = [storyboard instantiateInitialViewController];
 	return viewController;

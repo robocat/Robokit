@@ -191,44 +191,11 @@ NSString * const kRKSocialUpdateCurrentVersionKey = @"cat.robo.kRKSocialUpdateCu
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
-+ (void)likeOnFacebookFallbackWithCompletion:(void (^)(BOOL success))completion {
++ (void)likeOnFacebookWithCompletion:(void (^)(BOOL success))completion {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"fb://profile/235384996484325"]];
     [self likedOnFacebook];
-
+    
 	if (completion) completion(YES);
-}
-
-+ (void)likeOnFacebookWithCompletion:(void (^)(BOOL success))completion {
-    ACAccountStore *accountStore = [[ACAccountStore alloc] init];
-    ACAccountType *accountType = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierFacebook];
-    
-    NSDictionary *facebookOptions = @{
-                                      ACFacebookAppIdKey: [self sharedInstance].facebookAppId,
-                                      ACFacebookAudienceKey: ACFacebookAudienceFriends,
-                                      ACFacebookPermissionsKey: @[@"user_likes"]};
-    
-    [accountStore requestAccessToAccountsWithType:accountType options:facebookOptions completion:^(BOOL granted, NSError *error) {
-        if (!granted || error) {
-            [self likeOnFacebookFallbackWithCompletion:completion];
-            return;
-        }
-        
-        NSArray *accounts = [accountStore accountsWithAccountType:accountType];
-        if ([accounts count] == 0) {
-            [self likeOnFacebookFallbackWithCompletion:completion];
-            return;
-        }
-        
-        ACAccount *facebookAccount = accounts[0];
-        [[NSUserDefaults standardUserDefaults] setObject:facebookAccount.username forKey:kUserIdentityFacebookUsernameKey];
-        [[NSUserDefaults standardUserDefaults] setObject:facebookAccount.userFullName forKey:kUserIdentityFullNameKey];
-        
-        
-        NSURL *likeURL = [NSURL URLWithString:[NSString stringWithFormat:@"https://graph.facebook.com/%@/og.likes?object=", facebookAccount.username]];
-        SLRequest *likeRequest = [SLRequest requestForServiceType:SLServiceTypeFacebook
-                                                    requestMethod:SLRequestMethodPOST
-                                                              URL:likeURL parameters:@{}];
-    }];
 }
 
 + (void)followOnTwitterWithCompletion:(void (^)(BOOL success))completion {

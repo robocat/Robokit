@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		051DA53BE42A423A9E95E797 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C31D1030CF2487D81A88676 /* libPods.a */; };
 		7828EE461823B5110091B1E8 /* RKSocial.m in Sources */ = {isa = PBXBuildFile; fileRef = 7847E6831819FD63008A034E /* RKSocial.m */; };
 		7828EE481823B7A90091B1E8 /* libFlurry_4.2.4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FFB5874D17F9BBE2007D9485 /* libFlurry_4.2.4.a */; };
 		7828EE491823B7C30091B1E8 /* RKDispatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 7847E67E1819FD63008A034E /* RKDispatch.m */; };
@@ -23,25 +24,7 @@
 		7828EE541823B9190091B1E8 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7856842F181EAA2200E4710C /* libz.dylib */; };
 		783CE1771819D3E40063F3DD /* RKFeedbackViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 783CE1761819D3E40063F3DD /* RKFeedbackViewController.storyboard */; };
 		7847E6791819FCF7008A034E /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7847E6751819FCF7008A034E /* libTestFlight.a */; };
-		7847E6871819FD63008A034E /* RKDialogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7847E67C1819FD63008A034E /* RKDialogViewController.m */; };
-		7847E6881819FD63008A034E /* RKDispatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 7847E67E1819FD63008A034E /* RKDispatch.m */; };
-		7847E6891819FD63008A034E /* RKLocalization.m in Sources */ = {isa = PBXBuildFile; fileRef = 7847E6801819FD63008A034E /* RKLocalization.m */; };
-		7847E68A1819FD63008A034E /* RKSocial.m in Sources */ = {isa = PBXBuildFile; fileRef = 7847E6831819FD63008A034E /* RKSocial.m */; };
-		7847E68B1819FD63008A034E /* UIViewController+RKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7847E6861819FD63008A034E /* UIViewController+RKAdditions.m */; };
-		7847E68F1819FDB2008A034E /* RKAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7847E68E1819FDB2008A034E /* RKAdView.m */; };
-		7847E6961819FDBE008A034E /* RKFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7847E6911819FDBE008A034E /* RKFeedbackViewController.m */; };
-		7847E6971819FDBE008A034E /* RKFollowUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7847E6931819FDBE008A034E /* RKFollowUsViewController.m */; };
-		7847E6981819FDBE008A034E /* RKRatingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7847E6951819FDBE008A034E /* RKRatingViewController.m */; };
-		7847E69D1819FED1008A034E /* RKPurchaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7847E69C1819FED1008A034E /* RKPurchaseManager.m */; };
-		7847E6A31819FEEB008A034E /* RKAboutRobocatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7847E6A01819FEEB008A034E /* RKAboutRobocatViewController.m */; };
-		7847E6A41819FEEB008A034E /* RKRobocatNewsletterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7847E6A21819FEEB008A034E /* RKRobocatNewsletterViewController.m */; };
-		78568422181EA40000E4710C /* RKCatnipSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 78568421181EA40000E4710C /* RKCatnipSDK.m */; };
-		78568425181EA41500E4710C /* RKCatnipStoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78568424181EA41500E4710C /* RKCatnipStoryViewController.m */; };
-		78568428181EA56800E4710C /* RKCatnipStory.m in Sources */ = {isa = PBXBuildFile; fileRef = 78568427181EA56800E4710C /* RKCatnipStory.m */; };
-		7856842D181EA72800E4710C /* CNBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7856842A181EA72800E4710C /* CNBlurView.m */; };
-		7856842E181EA72800E4710C /* CNNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 7856842C181EA72800E4710C /* CNNavigationBar.m */; };
 		78568430181EAA2200E4710C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7856842F181EAA2200E4710C /* libz.dylib */; };
-		78A52D2D1826AE2C00CCE466 /* UIDevice+RKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A52D2C1826AE2C00CCE466 /* UIDevice+RKAdditions.m */; };
 		78B63E80181BBCBA002C21CB /* RKFeedbackViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 78B63E7E181BBCBA002C21CB /* RKFeedbackViewController.strings */; };
 		FF3E7BE617F899B3004AB9D5 /* RKFollowUsViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = FF3E7BE817F899B3004AB9D5 /* RKFollowUsViewController.strings */; };
 		FF3E7BEB17F89A1A004AB9D5 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FF3E7BEA17F89A1A004AB9D5 /* README.md */; };
@@ -58,7 +41,6 @@
 		FF62914317F59F970018AD68 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF62912B17F59F970018AD68 /* UIKit.framework */; };
 		FF62914B17F59F970018AD68 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FF62914917F59F970018AD68 /* InfoPlist.strings */; };
 		FF62914D17F59F970018AD68 /* RKSocialTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FF62914C17F59F970018AD68 /* RKSocialTests.m */; };
-		FFA679D0181EAAAB008E21A9 /* RKSoundPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA679CF181EAAAB008E21A9 /* RKSoundPlayer.m */; };
 		FFB5874E17F9BBE2007D9485 /* libFlurry_4.2.4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FFB5874D17F9BBE2007D9485 /* libFlurry_4.2.4.a */; };
 		FFE1DCC617F5A94B0074F75F /* RKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE1DCC517F5A94B0074F75F /* RKAppDelegate.m */; };
 		FFE1DCCA17F5A9540074F75F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE1DCC717F5A9540074F75F /* main.m */; };
@@ -85,6 +67,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5C31D1030CF2487D81A88676 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		783CE1761819D3E40063F3DD /* RKFeedbackViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = RKFeedbackViewController.storyboard; path = Resources/RKFeedbackViewController.storyboard; sourceTree = "<group>"; };
 		7847E6751819FCF7008A034E /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTestFlight.a; path = Frameworks/libTestFlight.a; sourceTree = "<group>"; };
 		7847E6761819FCF7008A034E /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestFlight.h; path = Frameworks/TestFlight.h; sourceTree = "<group>"; };
@@ -116,6 +99,10 @@
 		7847E6A01819FEEB008A034E /* RKAboutRobocatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKAboutRobocatViewController.m; sourceTree = "<group>"; };
 		7847E6A11819FEEB008A034E /* RKRobocatNewsletterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKRobocatNewsletterViewController.h; sourceTree = "<group>"; };
 		7847E6A21819FEEB008A034E /* RKRobocatNewsletterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKRobocatNewsletterViewController.m; sourceTree = "<group>"; };
+		78549A05182BB39F0050898A /* NSString+RKAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSString+RKAdditions.h"; path = "Shared/NSString+RKAdditions.h"; sourceTree = "<group>"; };
+		78549A06182BB39F0050898A /* NSString+RKAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "NSString+RKAdditions.m"; path = "Shared/NSString+RKAdditions.m"; sourceTree = "<group>"; };
+		78549A07182BB3EE0050898A /* NSURLRequest+RKAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSURLRequest+RKAdditions.h"; path = "Shared/NSURLRequest+RKAdditions.h"; sourceTree = "<group>"; };
+		78549A08182BB3EE0050898A /* NSURLRequest+RKAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "NSURLRequest+RKAdditions.m"; path = "Shared/NSURLRequest+RKAdditions.m"; sourceTree = "<group>"; };
 		78568420181EA40000E4710C /* RKCatnipSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKCatnipSDK.h; sourceTree = "<group>"; };
 		78568421181EA40000E4710C /* RKCatnipSDK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKCatnipSDK.m; sourceTree = "<group>"; };
 		78568423181EA41500E4710C /* RKCatnipStoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKCatnipStoryViewController.h; sourceTree = "<group>"; };
@@ -127,8 +114,8 @@
 		7856842B181EA72800E4710C /* CNNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNNavigationBar.h; sourceTree = "<group>"; };
 		7856842C181EA72800E4710C /* CNNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNNavigationBar.m; sourceTree = "<group>"; };
 		7856842F181EAA2200E4710C /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		78A52D2B1826AE2C00CCE466 /* UIDevice+RKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIDevice+RKAdditions.h"; path = "Shared/UIDevice+RKAdditions.h"; sourceTree = "<group>"; };
-		78A52D2C1826AE2C00CCE466 /* UIDevice+RKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIDevice+RKAdditions.m"; path = "Shared/UIDevice+RKAdditions.m"; sourceTree = "<group>"; };
+		78A234E51830D55E00425DAD /* UIDevice+RKAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UIDevice+RKAdditions.h"; path = "Shared/UIDevice+RKAdditions.h"; sourceTree = "<group>"; };
+		78A234E61830D55E00425DAD /* UIDevice+RKAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "UIDevice+RKAdditions.m"; path = "Shared/UIDevice+RKAdditions.m"; sourceTree = "<group>"; };
 		78B1EA55180410BE00C0FC9E /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/RKAboutRobocatViewController.strings"; sourceTree = "<group>"; };
 		78B1EA56180410BE00C0FC9E /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/RKFollowUsViewController.strings"; sourceTree = "<group>"; };
 		78B1EA57180410BE00C0FC9E /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/RKRatingViewController.strings"; sourceTree = "<group>"; };
@@ -146,6 +133,7 @@
 		78B63E7F181BBCBA002C21CB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizations/en.lproj/RKFeedbackViewController.strings; sourceTree = "<group>"; };
 		78B63E81181BBCF0002C21CB /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = Localizations/da.lproj/RKFeedbackViewController.strings; sourceTree = "<group>"; };
 		78B63E83181BBD55002C21CB /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = Localizations/de.lproj/RKFeedbackViewController.strings; sourceTree = "<group>"; };
+		B6A2FD0FAB714D47A4123CFD /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		FF3E7BD717F5CF5A004AB9D5 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/RKRatingViewController.strings; sourceTree = "<group>"; };
 		FF3E7BD817F5D3C6004AB9D5 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/RKRatingViewController.strings; sourceTree = "<group>"; };
 		FF3E7BE717F899B3004AB9D5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/RKFollowUsViewController.strings; sourceTree = "<group>"; };
@@ -224,6 +212,7 @@
 				FF62912C17F59F970018AD68 /* UIKit.framework in Frameworks */,
 				FF62912817F59F970018AD68 /* Foundation.framework in Frameworks */,
 				FF3F8CD817F8DD130024EA07 /* RevMobAds.framework in Frameworks */,
+				051DA53BE42A423A9E95E797 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,10 +246,14 @@
 		783EEA801826AD060057602E /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				78A234E51830D55E00425DAD /* UIDevice+RKAdditions.h */,
+				78A234E61830D55E00425DAD /* UIDevice+RKAdditions.m */,
+				78549A07182BB3EE0050898A /* NSURLRequest+RKAdditions.h */,
+				78549A08182BB3EE0050898A /* NSURLRequest+RKAdditions.m */,
 				7847E6851819FD63008A034E /* UIViewController+RKAdditions.h */,
 				7847E6861819FD63008A034E /* UIViewController+RKAdditions.m */,
-				78A52D2B1826AE2C00CCE466 /* UIDevice+RKAdditions.h */,
-				78A52D2C1826AE2C00CCE466 /* UIDevice+RKAdditions.m */,
+				78549A05182BB39F0050898A /* NSString+RKAdditions.h */,
+				78549A06182BB39F0050898A /* NSString+RKAdditions.m */,
 			);
 			name = Categories;
 			path = ..;
@@ -368,6 +361,7 @@
 				FF62914617F59F970018AD68 /* RobokitTests */,
 				FF62912617F59F970018AD68 /* Frameworks */,
 				FF62912517F59F970018AD68 /* Products */,
+				B6A2FD0FAB714D47A4123CFD /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -390,6 +384,7 @@
 				FF62912917F59F970018AD68 /* CoreGraphics.framework */,
 				FF62912B17F59F970018AD68 /* UIKit.framework */,
 				FF62914017F59F970018AD68 /* XCTest.framework */,
+				5C31D1030CF2487D81A88676 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -513,9 +508,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FF62915017F59F970018AD68 /* Build configuration list for PBXNativeTarget "Robokit" */;
 			buildPhases = (
+				9630C460BD40482C9246D17F /* Check Pods Manifest.lock */,
 				FF62912017F59F970018AD68 /* Sources */,
 				FF62912117F59F970018AD68 /* Frameworks */,
 				FF62912217F59F970018AD68 /* Resources */,
+				BA65F013E67943B2A4DDD3C8 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -634,32 +631,46 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9630C460BD40482C9246D17F /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BA65F013E67943B2A4DDD3C8 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FF62912017F59F970018AD68 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7847E6961819FDBE008A034E /* RKFeedbackViewController.m in Sources */,
 				FFE1DCCA17F5A9540074F75F /* main.m in Sources */,
-				7847E6881819FD63008A034E /* RKDispatch.m in Sources */,
-				FFA679D0181EAAAB008E21A9 /* RKSoundPlayer.m in Sources */,
-				7847E6A41819FEEB008A034E /* RKRobocatNewsletterViewController.m in Sources */,
-				78568425181EA41500E4710C /* RKCatnipStoryViewController.m in Sources */,
-				7847E6891819FD63008A034E /* RKLocalization.m in Sources */,
-				7856842D181EA72800E4710C /* CNBlurView.m in Sources */,
-				7847E68F1819FDB2008A034E /* RKAdView.m in Sources */,
-				7847E6A31819FEEB008A034E /* RKAboutRobocatViewController.m in Sources */,
-				7847E69D1819FED1008A034E /* RKPurchaseManager.m in Sources */,
 				FFE1DCC617F5A94B0074F75F /* RKAppDelegate.m in Sources */,
-				78568422181EA40000E4710C /* RKCatnipSDK.m in Sources */,
-				78A52D2D1826AE2C00CCE466 /* UIDevice+RKAdditions.m in Sources */,
-				7847E68A1819FD63008A034E /* RKSocial.m in Sources */,
-				7856842E181EA72800E4710C /* CNNavigationBar.m in Sources */,
-				7847E6971819FDBE008A034E /* RKFollowUsViewController.m in Sources */,
-				7847E68B1819FD63008A034E /* UIViewController+RKAdditions.m in Sources */,
-				7847E6871819FD63008A034E /* RKDialogViewController.m in Sources */,
-				78568428181EA56800E4710C /* RKCatnipStory.m in Sources */,
-				7847E6981819FDBE008A034E /* RKRatingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -855,6 +866,7 @@
 		};
 		FF62915117F59F970018AD68 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6A2FD0FAB714D47A4123CFD /* Pods.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -878,6 +890,7 @@
 		};
 		FF62915217F59F970018AD68 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6A2FD0FAB714D47A4123CFD /* Pods.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;

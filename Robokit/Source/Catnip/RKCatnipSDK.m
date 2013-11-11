@@ -9,11 +9,21 @@
 #import "RKCatnipSDK.h"
 #import "RKCatnipStory.h"
 #import "RKCatnipStoryViewController.h"
+#import "NSURLRequest+RKAdditions.h"
+
+#import <RSEnvironment/RSEnvironment.h>
 
 #define kCNCatnipSubscriberToken @"kCNCatnipSubscriberToken"
 #define kCNCatnipLastUpdatedKey @"kCNCatnipLastUpdatedKey"
 #define kCNCatnipStoryStatusDictionary @"kCNCatnipStoryStatusDictionary"
-#define kCNBaseURL @"http://catnip.robocatapps.com/v1/"
+//#define kCNBaseURL @"http://catnip.robocatapps.com/v1/"
+#define kCNBaseURL @"http://192.168.1.82.xip.io:3000/v1/"
+
+#define kCNSubscriberInfoPlatformkey @"platform"
+#define kCNSubscriberInfoHardwareNamekey @"hardware"
+#define kCNSubscriberInfoSystemVersionkey @"systemVersion"
+#define kCNSubscriberInfoBundleIdKey @"bundleID"
+#define kCNSubscriberInfoLocaleKey @"locale"
 
 @interface RKCatnipSDK ()<NSURLConnectionDelegate> {
     NSString *_subscriberToken;
@@ -55,6 +65,19 @@
     self.appToken = appToken;
 }
 
+- (NSMutableDictionary *)subscriberInfo {
+    NSMutableDictionary *info = [NSMutableDictionary dictionary];
+    
+    info[kCNSubscriberInfoPlatformkey] = @"ios";
+    info[kCNSubscriberInfoHardwareNamekey] = [RSEnvironment hardware].modelName;
+    info[kCNSubscriberInfoSystemVersionkey] = [[RSEnvironment system].version string];
+    info[kCNSubscriberInfoBundleIdKey] = [RSEnvironment app].bundleID;
+    info[kCNSubscriberInfoLocaleKey] = [[NSLocale currentLocale] localeIdentifier];
+    
+    
+    return info;
+}
+
 - (void)checkForUpdates {
     if (!self.appToken) {
         NSLog(@"CatnipSDK: No application token found! Please configure with [CatnipSDK takeOff:@\"YOUR-APP-TOKEN-HERE\"]");
@@ -63,12 +86,20 @@
         return;
     }
     
+    NSMutableDictionary *info = [self subscriberInfo];
+    NSString *subscriber_token = [self subscriberToken];
+    if (subscriber_token) {
+        info[@"subscriber_token"] = subscriber_token;
+    }
+    info[@"app_token"] = [self appToken];
+    
     NSURL *url = [self catnipURLForString:@"stories"];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    NSURLRequest *request = [NSURLRequest postRequestWithURL:url parameters:info];
+    
     NSLog(@"URL WAS: %@", [url absoluteString]);
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
         if (connectionError) {
-            NSLog(@"CatnipSDK: Connection error when trying to check for updates. %@", [connectionError localizedDescription]);
+            NSLog(@"CatnipSDK: Connection error when trying to check for updates. %@", [connectionError description]);
             [self runCompletion:nil];
             
             return;

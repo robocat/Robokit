@@ -64,6 +64,7 @@ Pod::Spec.new do |s|
   
   s.subspec 'Catnip' do |ss|
     ss.dependency             'Robokit/Shared'
+    ss.dependency	      'RSEnvironment'
     ss.source_files =         'Robokit/Source/Catnip/*.{h,m}'
   end
 

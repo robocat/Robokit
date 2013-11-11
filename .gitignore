@@ -129,3 +129,8 @@ xcuserdata
 # ...none. Everything is now explained.
 
 *.xccheckout
+
+
+Pods
+Pods/*
+Podfile.lock

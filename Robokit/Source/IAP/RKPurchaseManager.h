@@ -58,4 +58,19 @@ extern NSString * const kRKPurchasesManagerErrorKey;
  */
 + (void)restoreAllPurchases;
 
+/*!
+ * Returns wether or not purchases are being simulated / faked.
+ * Simulated purchases can be enabled through the setSimulatedPurchases:
+ * method.
+ * @return YES if purchases are being simulated
+ */
++ (BOOL)isSimulatedPurchases;
+
+/*!
+ * Specify wether or not purchases should be simulated. The Default is NO.
+ * This can be helpfull when running on iOS simulator or TestFlight builds.
+ * @param simulated Indicates wether purchases should be simulated or not
+ */
++ (void)setSimulatedPurchases:(BOOL)simulated;
+
 @end

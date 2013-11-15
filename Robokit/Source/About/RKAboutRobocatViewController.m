@@ -11,6 +11,7 @@
 #import "RKSocial.h"
 #import "Flurry.h"
 #import "UIViewController+RKAdditions.h"
+#import "RKSoundPlayer.h"
 
 @interface RKAboutRobocatViewController ()
 
@@ -90,16 +91,19 @@
 #pragma mark - RSAboutRobocatViewController ()
 
 - (void)haveFollowedOnTwitter {
+    [RKSoundPlayer playSoundForEvent:kRKSoundPlayerFollowedOnTwitterEvent];
     [self.buttonTwitter setBackgroundImage:[UIImage imageNamed:@"Button Blue"] forState:UIControlStateNormal];
     [self.buttonTwitter setTitle:RKLocalizedFromTable(@"RC_ABOUT_BUTTON_FOLLOWED", NSStringFromClass(self.class)) forState:UIControlStateNormal];
 }
 
 - (void)haveLikedOnFacebook {
+    [RKSoundPlayer playSoundForEvent:kRKSoundPlayerLikedOnFacebookEvent];
     [self.buttonFacebook setBackgroundImage:[UIImage imageNamed:@"Button Dark Blue"] forState:UIControlStateNormal];
     [self.buttonFacebook setTitle:RKLocalizedFromTable(@"RC_ABOUT_BUTTON_LIKED", NSStringFromClass(self.class)) forState:UIControlStateNormal];
 }
 
 - (void)haveRated {
+    [RKSoundPlayer playSoundForEvent:kRKSoundPlayerRatedEvent];
     [self.buttonReview setBackgroundImage:[UIImage imageNamed:@"Button Red"] forState:UIControlStateNormal];
 	[self.buttonReview setTitle:RKLocalizedFromTable(@"RC_ABOUT_BUTTON_REVIEWED", NSStringFromClass(self.class)) forState:UIControlStateNormal];
 }
@@ -109,6 +113,7 @@
 
 - (IBAction)review:(id)sender {
 	[Flurry logEvent:@"Did review from About Robocat"];
+    [RKSoundPlayer playSoundForEvent:kRKSoundPlayerButtonClickedEvent];
 	
 	[RKSocial rateAppWithCompletion:^(BOOL success) {
 		if (success) {
@@ -121,6 +126,7 @@
     [self.spinnerView startAnimating];
 	
 	[Flurry logEvent:@"Did follow on Twitter from About Robocat"];
+    [RKSoundPlayer playSoundForEvent:kRKSoundPlayerButtonClickedEvent];
     
     [RKSocial followOnTwitterWithCompletion:^(BOOL success) {
 		[self.spinnerView stopAnimating];
@@ -133,6 +139,7 @@
 
 - (IBAction)facebook:(id)sender {
 	[Flurry logEvent:@"Did like on Facebook from About Robocat"];
+    [RKSoundPlayer playSoundForEvent:kRKSoundPlayerButtonClickedEvent];
 	
 	[RKSocial likeOnFacebookWithCompletion:^(BOOL success) {
 		if (success) {
@@ -143,12 +150,14 @@
 
 - (IBAction)moreApps:(id)sender {
 	[Flurry logEvent:@"Did open 'more apps' from About Robocat"];
+    [RKSoundPlayer playSoundForEvent:kRKSoundPlayerButtonClickedEvent];
 	
 	[RKSocial showMoreAppsFromRobocat];
 }
 
 - (IBAction)dismiss:(id)sender {
 	[Flurry logEvent:@"Did open About Robocat"];
+    [RKSoundPlayer playSoundForEvent:kRKSoundPlayerButtonClickedEvent];
 	
     [self dismissViewControllerAnimated:YES completion:nil];
 }

@@ -9,16 +9,34 @@
 #import "RKSoundPlayer.h"
 #import <AudioToolbox/AudioToolbox.h>
 
+NSString * const kRKSoundPlayerButtonClickedEvent = @"cat.robo.kRKSoundPlayerButtonClickedEvent";
+NSString * const kRKSoundPlayerFollowedOnTwitterEvent = @"cat.robo.kRKSoundPlayerFollowedOnTwitterEvent";
+NSString * const kRKSoundPlayerLikedOnFacebookEvent = @"cat.robo.kRKSoundPlayerLikedOnFacebookEvent";
+NSString * const kRKSoundPlayerRatedEvent = @"cat.robo.kRKSoundPlayerRatedEvent";
+
 void systemSoundCompleted(SystemSoundID ssID, void* clientData);
 
 @interface RKSoundPlayer ()
 
 @property (strong, nonatomic) NSMutableDictionary *callbacks;
+@property (strong, nonatomic) NSMutableDictionary *events;
 @property (assign, nonatomic) BOOL muted;
 
 @end
 
 @implementation RKSoundPlayer
+
+- (instancetype)init {
+    self = [super init];
+    if (!self) {
+        return nil;
+    }
+    
+    _callbacks = [NSMutableDictionary dictionary];
+    _events = [NSMutableDictionary dictionary];
+    
+    return self;
+}
 
 + (RKSoundPlayer *)sharedInstance {
 	static RKSoundPlayer *instance;
@@ -51,6 +69,21 @@ void systemSoundCompleted(SystemSoundID ssID, void* clientData);
 	
 	AudioServicesAddSystemSoundCompletion(soundId, CFRunLoopGetMain(), kCFRunLoopDefaultMode, systemSoundCompleted, NULL);
 	AudioServicesPlaySystemSound(soundId);
+}
+
++ (void)registerSound:(NSString *)soundName forEvent:(NSString *)event {
+    [[self class] sharedInstance].events[event] = soundName;
+}
+
++ (void)playSoundForEvent:(NSString *)event {
+    [[self class] playSoundForEvent:event withCompletion:nil];
+}
+
++ (void)playSoundForEvent:(NSString *)event withCompletion:(void (^)(void))completion {
+    NSString *sound = [[self class] sharedInstance].events[event];
+    if (sound) {
+        [[self class] playSound:sound withCompletion:completion];
+    }
 }
 
 + (BOOL)isMuted {

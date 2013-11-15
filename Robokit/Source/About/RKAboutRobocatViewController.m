@@ -88,6 +88,12 @@
     self.scrollView.scrollEnabled = YES;
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"kRobocatNewsletterSegue"]) {
+        [RKSoundPlayer playSoundForEvent:kRKSoundPlayerButtonClickedEvent];
+    }
+}
+
 #pragma mark - RSAboutRobocatViewController ()
 
 - (void)haveFollowedOnTwitter {

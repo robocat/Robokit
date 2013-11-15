@@ -120,7 +120,6 @@
     [RKSoundPlayer playSoundForEvent:kRKSoundPlayerButtonClickedEvent];
 	[RKSocial rateAppWithCompletion:^(BOOL success) {
 		if (success) {
-            [RKSoundPlayer playSoundForEvent:kRKSoundPlayerRatedEvent];
 			[self haveRated];
 		}
 	}];
@@ -136,7 +135,6 @@
 		[self.spinnerView stopAnimating];
 		
 		if (success) {
-            [RKSoundPlayer playSoundForEvent:kRKSoundPlayerFollowedOnTwitterEvent];
 			[self haveFollowedOnTwitter];
 		}
 	}];
@@ -148,7 +146,6 @@
 	
 	[RKSocial likeOnFacebookWithCompletion:^(BOOL success) {
 		if (success) {
-            [RKSoundPlayer playSoundForEvent:kRKSoundPlayerLikedOnFacebookEvent];
 			[self haveLikedOnFacebook];
 		}
 	}];

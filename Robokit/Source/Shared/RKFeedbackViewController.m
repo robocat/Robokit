@@ -12,6 +12,7 @@
 #import "TestFlight.h"
 #import "RKDispatch.h"
 #import "RKSocial.h"
+#import "RKSoundPlayer.h"
 
 @interface RKFeedbackViewController () <UITextViewDelegate>
 
@@ -75,6 +76,8 @@
 }
 
 - (IBAction)sendFeedback:(id)sender {
+    [RKSoundPlayer playSoundForEvent:kRKSoundPlayerButtonClickedEvent];
+    
     // Do the testflight magick
     if ([self.feedbackTextView.text length] > 0) {
         [Flurry logEvent:@"Send Feedback - Submitted feedback" withParameters:@{@"Feedback": self.feedbackTextView.text}];
@@ -88,6 +91,8 @@
 }
 
 - (IBAction)noThanks:(id)sender {
+    [RKSoundPlayer playSoundForEvent:kRKSoundPlayerButtonClickedEvent];
+    
     [self.feedbackTextView resignFirstResponder];
     
     [self close];

@@ -14,6 +14,7 @@
 #import "RKFeedbackViewController.h"
 #import "RKDispatch.h"
 #import "Flurry.h"
+#import "RKSoundPlayer.h"
 
 NSString * const kRKSocialDidUpdateFromPreviousVersionNotification = @"cat.robo.kRKSocialDidUpdateFromPreviousVersionNotification";
 
@@ -194,6 +195,7 @@ NSString * const kRKSocialUpdateCurrentVersionKey = @"cat.robo.kRKSocialUpdateCu
 + (void)likeOnFacebookWithCompletion:(void (^)(BOOL success))completion {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"fb://profile/235384996484325"]];
     [self likedOnFacebook];
+    [RKSoundPlayer playSoundForEvent:kRKSoundPlayerLikedOnFacebookEvent];
     
 	if (completion) completion(YES);
 }
@@ -207,6 +209,7 @@ NSString * const kRKSocialUpdateCurrentVersionKey = @"cat.robo.kRKSocialUpdateCu
 			[self openTwitterApp];
 			[[NSUserDefaults standardUserDefaults] setBool:YES forKey:RKRobocatViewControllerHaveFollowedKey];
 			[[NSUserDefaults standardUserDefaults] synchronize];
+            [RKSoundPlayer playSoundForEvent:kRKSoundPlayerFollowedOnTwitterEvent];
 			if (completion) completion(YES);
 			return;
 		}
@@ -222,6 +225,7 @@ NSString * const kRKSocialUpdateCurrentVersionKey = @"cat.robo.kRKSocialUpdateCu
 			[self openTwitterApp];
 			[[NSUserDefaults standardUserDefaults] setBool:YES forKey:RKRobocatViewControllerHaveFollowedKey];
 			[[NSUserDefaults standardUserDefaults] synchronize];
+            [RKSoundPlayer playSoundForEvent:kRKSoundPlayerFollowedOnTwitterEvent];
 			if (completion) completion(YES);
 			return;
 		}
@@ -238,6 +242,7 @@ NSString * const kRKSocialUpdateCurrentVersionKey = @"cat.robo.kRKSocialUpdateCu
 				if (!error) {
 					[[NSUserDefaults standardUserDefaults] setBool:YES forKey:RKRobocatViewControllerHaveFollowedKey];
 					[[NSUserDefaults standardUserDefaults] synchronize];
+                    [RKSoundPlayer playSoundForEvent:kRKSoundPlayerFollowedOnTwitterEvent];
 				}
 				
 				if (completion) completion(error == nil);
@@ -274,6 +279,8 @@ NSString * const kRKSocialUpdateCurrentVersionKey = @"cat.robo.kRKSocialUpdateCu
 	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:reviewURL]];
 	[[NSUserDefaults standardUserDefaults] setBool:YES forKey:RKRobocatViewControllerHaveRatedKey];
 	[[NSUserDefaults standardUserDefaults] synchronize];
+    
+    [RKSoundPlayer playSoundForEvent:kRKSoundPlayerRatedEvent];
 	if (completion) completion(YES);
 }
 

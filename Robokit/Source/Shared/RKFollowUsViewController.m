@@ -11,6 +11,7 @@
 #import "RKLocalization.h"
 #import "RKMacros.h"
 #import "Flurry.h"
+#import "RKSoundPlayer.h"
 
 @interface RKFollowUsViewController () <UITextFieldDelegate>
 
@@ -138,6 +139,8 @@
 }
 
 - (IBAction)twitter:(id)sender {
+    [RKSoundPlayer playSoundForEvent:kRKSoundPlayerButtonClickedEvent];
+    
 	[RKSocial followOnTwitterWithCompletion:^(BOOL success) {
 		if (success) {
 			[self didFollow];
@@ -146,6 +149,8 @@
 }
 
 - (IBAction)facebook:(id)sender {
+    [RKSoundPlayer playSoundForEvent:kRKSoundPlayerButtonClickedEvent];
+    
 	[RKSocial likeOnFacebookWithCompletion:^(BOOL success) {
 		if (success) {
 			[self didLike];
@@ -154,6 +159,8 @@
 }
 
 - (IBAction)subscribe:(id)sender {
+    [RKSoundPlayer playSoundForEvent:kRKSoundPlayerButtonClickedEvent];
+    
 	if (![self subscriptionViewIsOpen]) {
 		[self openSubscriptionView];
 	} else {
@@ -162,6 +169,8 @@
 }
 
 - (IBAction)noThanks:(id)sender {
+    [RKSoundPlayer playSoundForEvent:kRKSoundPlayerButtonClickedEvent];
+    
 	[self close];
 }
 

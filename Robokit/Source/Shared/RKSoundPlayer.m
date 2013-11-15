@@ -14,6 +14,7 @@ void systemSoundCompleted(SystemSoundID ssID, void* clientData);
 @interface RKSoundPlayer ()
 
 @property (strong, nonatomic) NSMutableDictionary *callbacks;
+@property (assign, nonatomic) BOOL muted;
 
 @end
 
@@ -35,6 +36,10 @@ void systemSoundCompleted(SystemSoundID ssID, void* clientData);
 }
 
 + (void)playSound:(NSString *)soundName withCompletion:(void (^)(void))completion {
+    if ([self isMuted]) {
+        return;
+    }
+    
 	NSString *path = [[NSBundle mainBundle] pathForResource:soundName ofType:@"caf"];
 	SystemSoundID soundId;
 	AudioServicesCreateSystemSoundID((__bridge CFURLRef)([NSURL fileURLWithPath:path]), &soundId);
@@ -46,6 +51,14 @@ void systemSoundCompleted(SystemSoundID ssID, void* clientData);
 	
 	AudioServicesAddSystemSoundCompletion(soundId, CFRunLoopGetMain(), kCFRunLoopDefaultMode, systemSoundCompleted, NULL);
 	AudioServicesPlaySystemSound(soundId);
+}
+
++ (BOOL)isMuted {
+    return [[self class] sharedInstance].muted;
+}
+
++ (void)setMuted:(BOOL)muted {
+    [[self class] sharedInstance].muted = muted;
 }
 
 @end

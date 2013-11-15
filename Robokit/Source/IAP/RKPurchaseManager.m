@@ -7,9 +7,10 @@
 //
 
 #import "RKPurchaseManager.h"
-#import <StoreKit/StoreKit.h>
-#import <Robokit/UIDevice+RKAdditions.h>
+#import "UIDevice+RKAdditions.h"
 #import "Flurry.h"
+
+#import <StoreKit/StoreKit.h>
 
 NSString * const kRKPurchasesManagerDidLoadProductInfoNotification = @"cat.robo.kRKPurchasesManagerDidLoadProductInfoNotification";
 NSString * const kRKPurchasesManagerDidPurchaseFeatureNotification = @"cat.robo.kRKPurchasesManagerDidPurchaseFeatureNotification";

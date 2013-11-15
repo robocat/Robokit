@@ -13,4 +13,7 @@
 + (void)playSound:(NSString *)soundName;
 + (void)playSound:(NSString *)soundName withCompletion:(void (^)(void))completion;
 
++ (BOOL)isMuted;
++ (void)setMuted:(BOOL)muted;
+
 @end

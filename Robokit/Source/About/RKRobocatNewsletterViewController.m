@@ -59,7 +59,6 @@
 }
 
 - (void)close {
-    [RKSoundPlayer playSoundForEvent:kRKSoundPlayerButtonClickedEvent];
 	[self.emailField resignFirstResponder];
     [self.navigationController popViewControllerAnimated:YES];
 }

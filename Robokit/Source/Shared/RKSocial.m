@@ -270,7 +270,7 @@ NSString * const kRKSocialUpdateCurrentVersionKey = @"cat.robo.kRKSocialUpdateCu
 }
 
 + (void)rateAppWithCompletion:(void (^)(BOOL success))completion {
-	NSString *reviewURL = [NSString stringWithFormat:@"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=%@", self.appId];
+    NSString *reviewURL = [NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id%@", self.appId];
 	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:reviewURL]];
 	[[NSUserDefaults standardUserDefaults] setBool:YES forKey:RKRobocatViewControllerHaveRatedKey];
 	[[NSUserDefaults standardUserDefaults] synchronize];

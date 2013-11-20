@@ -74,41 +74,6 @@ NSString * const kRKSocialUpdateCurrentVersionKey = @"cat.robo.kRKSocialUpdateCu
 	[[self sharedInstance] setWhatsNew:newsString];
 	[[self sharedInstance] setAppId:appId];
 	[[self sharedInstance] setAppName:appName];
-    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    if ([defaults doubleForKey:kFirstUseDate] == 0) {
-		[defaults setDouble:[[NSDate date] timeIntervalSince1970] forKey:kFirstUseDate];
-        [[self sharedInstance] setIsFirstLaunch:YES];
-	}
-	
-	NSString *versionString = [[NSBundle mainBundle] infoDictionary][@"CFBundleVersion"];
-    NSString *previousVersionString = [defaults objectForKey:kUserDefaultAppVersion];
-	
-    if (previousVersionString && ![previousVersionString isEqualToString:versionString]) {
-        [defaults setBool:NO forKey:kRatedCurrentVersion];
-        [defaults setBool:NO forKey:kHaveFollowed];
-        [defaults setDouble:[[NSDate date] timeIntervalSince1970] forKey:kFirstUseDate];
-        [self showWhatsNewPopup];
-    } else if (!previousVersionString) {
-        previousVersionString = @"";
-    }
-    
-	[defaults setValue:versionString forKey:kUserDefaultAppVersion];
-	[defaults synchronize];
-    
-    [[self sharedInstance] setAppVersion:versionString];
-    
-    [[NSNotificationCenter defaultCenter] postNotificationName:kRKSocialDidUpdateFromPreviousVersionNotification
-                                                        object:nil
-                                                      userInfo:@{kRKSocialUpdatePreviousVersionKey: previousVersionString, kRKSocialUpdateCurrentVersionKey: versionString}];
-	
-	[RKDispatch after:5 callback:^{
-		if ([self shouldShowRateView]) {
-			[self showRateThisAppPopup];
-		} else if ([self shouldShowFollowView]) {
-			[self showFollowUsPopup];
-		}
-	}];
 	
 	[[NSNotificationCenter defaultCenter] addObserver:[self sharedInstance] selector:@selector(applicationDidBecomeActive:) name:UIApplicationDidBecomeActiveNotification object:nil];
 	[[NSNotificationCenter defaultCenter] addObserver:[self sharedInstance] selector:@selector(applicationDidEnterBackground:) name:UIApplicationDidEnterBackgroundNotification object:nil];
@@ -368,6 +333,41 @@ NSString * const kRKSocialUpdateCurrentVersionKey = @"cat.robo.kRKSocialUpdateCu
 
 - (void)applicationDidBecomeActive:(NSNotification *)notification {
 	[Flurry logEvent:@"Did open application" timed:YES];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if ([defaults doubleForKey:kFirstUseDate] == 0) {
+		[defaults setDouble:[[NSDate date] timeIntervalSince1970] forKey:kFirstUseDate];
+        [self setIsFirstLaunch:YES];
+	}
+	
+	NSString *versionString = [[NSBundle mainBundle] infoDictionary][@"CFBundleVersion"];
+    NSString *previousVersionString = [defaults objectForKey:kUserDefaultAppVersion];
+	
+    if (previousVersionString && ![previousVersionString isEqualToString:versionString]) {
+        [defaults setBool:NO forKey:kRatedCurrentVersion];
+        [defaults setBool:NO forKey:kHaveFollowed];
+        [defaults setDouble:[[NSDate date] timeIntervalSince1970] forKey:kFirstUseDate];
+        [RKSocial showWhatsNewPopup];
+    } else if (!previousVersionString) {
+        previousVersionString = @"";
+    }
+    
+	[defaults setValue:versionString forKey:kUserDefaultAppVersion];
+	[defaults synchronize];
+    
+    [self setAppVersion:versionString];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:kRKSocialDidUpdateFromPreviousVersionNotification
+                                                        object:nil
+                                                      userInfo:@{kRKSocialUpdatePreviousVersionKey: previousVersionString, kRKSocialUpdateCurrentVersionKey: versionString}];
+	
+	[RKDispatch after:5 callback:^{
+		if ([RKSocial shouldShowRateView]) {
+			[RKSocial showRateThisAppPopup];
+		} else if ([RKSocial shouldShowFollowView]) {
+			[RKSocial showFollowUsPopup];
+		}
+	}];
 }
 
 - (void)applicationDidEnterBackground:(NSNotification *)notification {

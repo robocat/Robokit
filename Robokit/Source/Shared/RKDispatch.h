@@ -17,6 +17,7 @@ typedef enum {
 
 + (void)after:(NSTimeInterval)time callback:(void (^)(void))callback;
 + (void)async:(void (^)(void))callback;
++ (void)async:(void (^)(void))callback after:(NSTimeInterval)time;
 + (void)mainQueue:(void (^)(void))callback;
 + (void)privateQueue:(dispatch_queue_t)queue callback:(void (^)(void))callback;
 + (void)recursiveBlock:(GCDispatchRecursionStatus (^)(void))block;

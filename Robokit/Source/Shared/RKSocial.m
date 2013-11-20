@@ -378,7 +378,9 @@ NSString * const kRKSocialUpdateCurrentVersionKey = @"cat.robo.kRKSocialUpdateCu
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
 	if (buttonIndex == 1) {
-		[RKSocial rateAppWithCompletion:nil];
+		[RKDispatch after:1.0f callback:^{
+            [RKSocial showRateThisAppPopup];
+        }];
 	}
 }
 

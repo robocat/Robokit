@@ -68,12 +68,22 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
 }
 
+- (NSMutableDictionary *)feedbackInfoDictionary {
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    dict[@"locale"] = [[NSLocale currentLocale] localeIdentifier];
+    dict[@"timezone"] = [[NSTimeZone systemTimeZone] description];
+    
+    return dict;
+}
+
 - (IBAction)sendFeedback:(id)sender {
     [RKSoundPlayer playSoundForEvent:kRKSoundPlayerButtonClickedEvent];
     
     // Do the testflight magick
-    if ([self.feedbackTextView.text length] > 0) {
-        [Flurry logEvent:@"Send Feedback - Submitted feedback" withParameters:@{@"Feedback": self.feedbackTextView.text}];
+    if ([self.feedbackTextView.text length] > 0 && ![self.feedbackTextView.text isEqualToString:self.feedbackPlaceholder]) {
+        NSMutableDictionary *params = [self feedbackInfoDictionary];
+        params[@"feedback"] = self.feedbackTextView.text;
+        [Flurry logEvent:@"Send Feedback - Submitted feedback" withParameters:params];
         [TestFlight submitFeedback:self.feedbackTextView.text];
     }
 

@@ -113,3 +113,11 @@ void RKLocalizedButtonFromTableWithFormat(UIButton *button, NSString *str, NSStr
     
     va_end(vars);
 }
+
+@implementation NSString (RKLocalization)
+
+- (NSString *)localizedString {
+	return RKLocalized(self);
+}
+
+@end

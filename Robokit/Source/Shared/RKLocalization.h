@@ -23,3 +23,9 @@ void RKLocalizedButton(UIButton *button, NSString *str);
 void RKLocalizedButtonFromTable(UIButton *button, NSString *str, NSString *table);
 void RKLocalizedButtonWithFormat(UIButton *button, NSString *str, ...);
 void RKLocalizedButtonFromTableWithFormat(UIButton *button, NSString *str, NSString *table, ...);
+
+@interface NSString (RKLocalization)
+
+- (NSString *)localizedString;
+
+@end

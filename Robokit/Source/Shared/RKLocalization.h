@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+void RKLocalizationSetPreferredLanguage(NSString *language);
+
 NSString *RKLocalized(NSString *str);
 NSString *RKLocalizedFromTable(NSString *str, NSString *table);
 

@@ -10,12 +10,17 @@
 
 #import "RKLocalization.h"
 
+void RKLocalizationSetPreferredLanguage(NSString *language) {
+	[[NSUserDefaults standardUserDefaults] setObject:@[ language ] forKey:@"AppleLanguages"];
+	[[NSUserDefaults standardUserDefaults] synchronize];
+}
+
 NSString *RKLocalized(NSString *str) {
 	return RKLocalizedFromTable(str, nil);
 }
 
 NSString *RKLocalizedFromTable(NSString *str, NSString *table) {
-	NSString *languageCode = [[NSUserDefaults standardUserDefaults] objectForKey:@"AppleLanguages"];
+	NSString *languageCode = [[[NSUserDefaults standardUserDefaults] objectForKey:@"AppleLanguages"] firstObject];
 	NSString *bundlePath = [[NSBundle mainBundle] pathForResource:languageCode ofType:@"lproj"];
 	
 	if (!bundlePath) {

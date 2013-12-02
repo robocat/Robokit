@@ -9,6 +9,7 @@
 #import "RKRatingViewController.h"
 #import "Robokit.h"
 #import "Flurry.h"
+#import "RKSoundPlayer.h"
 
 @interface RKRatingViewController ()
 
@@ -101,12 +102,14 @@
 
 - (IBAction)noThanks:(id)sender {
 	[Flurry logEvent:@"Did say no thanks to rate popup"];
+    [RKSoundPlayer playSoundForEvent:kRKSoundPlayerButtonClickedEvent];
 	
 	[self close];
 }
 
 - (IBAction)rate:(id)sender {
 	[Flurry logEvent:@"Did rate app on rate popup" withParameters:@{ @"Number of stars": @( self.starCount ) }];
+    [RKSoundPlayer playSoundForEvent:kRKSoundPlayerButtonClickedEvent];
 	
 	if (self.starCount >= 4) {
 		[RKSocial rateAppWithCompletion:nil];

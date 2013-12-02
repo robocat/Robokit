@@ -11,6 +11,7 @@
 #import "RKSocial.h"
 #import "RKLocalization.h"
 #import "Flurry.h"
+#import "RKSoundPlayer.h"
 
 @interface RKRobocatNewsletterViewController () <UITextFieldDelegate>
 
@@ -50,6 +51,7 @@
 
 - (IBAction)join:(id)sender {
 	[Flurry logEvent:@"Did join newsletter from About Robocat signup"];
+    [RKSoundPlayer playSoundForEvent:kRKSoundPlayerButtonClickedEvent];
 	
     [RKSocial subscribeWithEmail:self.emailField.text completion:^(BOOL success) {
 		[self close];

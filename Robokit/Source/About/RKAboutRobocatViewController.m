@@ -11,6 +11,7 @@
 #import "RKSocial.h"
 #import "Flurry.h"
 #import "UIViewController+RKAdditions.h"
+#import "RKSoundPlayer.h"
 
 @interface RKAboutRobocatViewController ()
 
@@ -87,6 +88,12 @@
     self.scrollView.scrollEnabled = YES;
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"kRobocatNewsletterSegue"]) {
+        [RKSoundPlayer playSoundForEvent:kRKSoundPlayerButtonClickedEvent];
+    }
+}
+
 #pragma mark - RSAboutRobocatViewController ()
 
 - (void)haveFollowedOnTwitter {
@@ -95,6 +102,7 @@
 }
 
 - (void)haveLikedOnFacebook {
+    
     [self.buttonFacebook setBackgroundImage:[UIImage imageNamed:@"Button Dark Blue"] forState:UIControlStateNormal];
     [self.buttonFacebook setTitle:RKLocalizedFromTable(@"RC_ABOUT_BUTTON_LIKED", NSStringFromClass(self.class)) forState:UIControlStateNormal];
 }
@@ -109,7 +117,7 @@
 
 - (IBAction)review:(id)sender {
 	[Flurry logEvent:@"Did review from About Robocat"];
-	
+    [RKSoundPlayer playSoundForEvent:kRKSoundPlayerButtonClickedEvent];
 	[RKSocial rateAppWithCompletion:^(BOOL success) {
 		if (success) {
 			[self haveRated];
@@ -121,6 +129,7 @@
     [self.spinnerView startAnimating];
 	
 	[Flurry logEvent:@"Did follow on Twitter from About Robocat"];
+    [RKSoundPlayer playSoundForEvent:kRKSoundPlayerButtonClickedEvent];
     
     [RKSocial followOnTwitterWithCompletion:^(BOOL success) {
 		[self.spinnerView stopAnimating];
@@ -133,6 +142,7 @@
 
 - (IBAction)facebook:(id)sender {
 	[Flurry logEvent:@"Did like on Facebook from About Robocat"];
+    [RKSoundPlayer playSoundForEvent:kRKSoundPlayerButtonClickedEvent];
 	
 	[RKSocial likeOnFacebookWithCompletion:^(BOOL success) {
 		if (success) {
@@ -143,12 +153,14 @@
 
 - (IBAction)moreApps:(id)sender {
 	[Flurry logEvent:@"Did open 'more apps' from About Robocat"];
+    [RKSoundPlayer playSoundForEvent:kRKSoundPlayerButtonClickedEvent];
 	
 	[RKSocial showMoreAppsFromRobocat];
 }
 
 - (IBAction)dismiss:(id)sender {
 	[Flurry logEvent:@"Did open About Robocat"];
+    [RKSoundPlayer playSoundForEvent:kRKSoundPlayerButtonClickedEvent];
 	
     [self dismissViewControllerAnimated:YES completion:nil];
 }

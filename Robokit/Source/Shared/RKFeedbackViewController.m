@@ -12,6 +12,7 @@
 #import "TestFlight.h"
 #import "RKDispatch.h"
 #import "RKSocial.h"
+#import "RKSoundPlayer.h"
 
 @interface RKFeedbackViewController () <UITextViewDelegate>
 
@@ -64,20 +65,25 @@
     RKLocalizedButtonFromTableWithFormat(self.noThanksButton, @"NO_THANKS_BUTTON", NSStringFromClass(self.class));
     RKLocalizedButtonFromTableWithFormat(self.sendFeedbackButton, @"SEND_FEEDBACK_BUTTON", NSStringFromClass(self.class));
     
-    [[NSNotificationCenter defaultCenter] addObserverForName:UIKeyboardWillShowNotification object:nil queue:nil usingBlock:^(NSNotification *note) {
-        [UIView animateWithDuration:0.3f animations:^{
-            CGSize keyboardSize = [note.userInfo[UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
-            CGFloat offset = (self.view.frame.size.height - keyboardSize.height - self.feedbackView.frame.size.height - 20.0f) / 2;
-            [self.feedbackViewTopSpaceConstraint setConstant:offset];
-            [self.view layoutIfNeeded];
-        }];
-    }];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+}
+
+- (NSMutableDictionary *)feedbackInfoDictionary {
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    dict[@"locale"] = [[NSLocale currentLocale] localeIdentifier];
+    dict[@"timezone"] = [[NSTimeZone systemTimeZone] description];
+    
+    return dict;
 }
 
 - (IBAction)sendFeedback:(id)sender {
+    [RKSoundPlayer playSoundForEvent:kRKSoundPlayerButtonClickedEvent];
+    
     // Do the testflight magick
-    if ([self.feedbackTextView.text length] > 0) {
-        [Flurry logEvent:@"Send Feedback - Submitted feedback" withParameters:@{@"Feedback": self.feedbackTextView.text}];
+    if ([self.feedbackTextView.text length] > 0 && ![self.feedbackTextView.text isEqualToString:self.feedbackPlaceholder]) {
+        NSMutableDictionary *params = [self feedbackInfoDictionary];
+        params[@"feedback"] = self.feedbackTextView.text;
+        [Flurry logEvent:@"Send Feedback - Submitted feedback" withParameters:params];
         [TestFlight submitFeedback:self.feedbackTextView.text];
     }
 
@@ -88,6 +94,8 @@
 }
 
 - (IBAction)noThanks:(id)sender {
+    [RKSoundPlayer playSoundForEvent:kRKSoundPlayerButtonClickedEvent];
+    
     [self.feedbackTextView resignFirstResponder];
     
     [self close];
@@ -101,6 +109,15 @@
         [textView setTextColor:[UIColor blackColor]];
         [textView setFont:[UIFont systemFontOfSize:textView.font.pointSize]];
     }
+}
+
+- (void)keyboardWillShow:(NSNotification *)note {
+    [UIView animateWithDuration:0.3f animations:^{
+        CGSize keyboardSize = [note.userInfo[UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+        CGFloat offset = (self.view.frame.size.height - keyboardSize.height - self.feedbackView.frame.size.height - 20.0f) / 2;
+        [self.feedbackViewTopSpaceConstraint setConstant:offset];
+        [self.view layoutIfNeeded];
+    }];
 }
 
 @end

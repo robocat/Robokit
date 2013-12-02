@@ -8,9 +8,22 @@
 
 #import <Foundation/Foundation.h>
 
+extern NSString * const kRKSoundPlayerButtonClickedEvent;
+extern NSString * const kRKSoundPlayerFollowedOnTwitterEvent;
+extern NSString * const kRKSoundPlayerLikedOnFacebookEvent;
+extern NSString * const kRKSoundPlayerRatedEvent;
+
 @interface RKSoundPlayer : NSObject
 
 + (void)playSound:(NSString *)soundName;
 + (void)playSound:(NSString *)soundName withCompletion:(void (^)(void))completion;
+
++ (void)registerSound:(NSString *)soundName forEvent:(NSString *)event;
+
++ (void)playSoundForEvent:(NSString *)event;
++ (void)playSoundForEvent:(NSString *)event withCompletion:(void (^)(void))completion;
+
++ (BOOL)isMuted;
++ (void)setMuted:(BOOL)muted;
 
 @end

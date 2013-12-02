@@ -20,6 +20,12 @@
 	dispatch_async(dispatch_get_global_queue(0, 0), callback);
 }
 
++ (void)async:(void (^)(void))callback after:(NSTimeInterval)time {
+    [self after:time callback:^{
+        [self async:callback];
+    }];
+}
+
 + (void)mainQueue:(void (^)(void))callback {
 	dispatch_async(dispatch_get_main_queue(), callback);
 }

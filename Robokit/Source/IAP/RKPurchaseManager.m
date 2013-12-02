@@ -7,8 +7,10 @@
 //
 
 #import "RKPurchaseManager.h"
-#import <StoreKit/StoreKit.h>
+#import "UIDevice+RKAdditions.h"
 #import "Flurry.h"
+
+#import <StoreKit/StoreKit.h>
 
 NSString * const kRKPurchasesManagerDidLoadProductInfoNotification = @"cat.robo.kRKPurchasesManagerDidLoadProductInfoNotification";
 NSString * const kRKPurchasesManagerDidPurchaseFeatureNotification = @"cat.robo.kRKPurchasesManagerDidPurchaseFeatureNotification";
@@ -24,10 +26,25 @@ NSString * const kRKPurchasesManagerErrorKey = @"kRKPurchasesManagerErrorKey";
 @interface RKPurchaseManager () <SKRequestDelegate, SKPaymentTransactionObserver>
 
 @property (strong, nonatomic) NSDictionary *products;
+@property (assign, nonatomic) BOOL simulated;
 
 @end
 
 @implementation RKPurchaseManager
+
+- (instancetype)init {
+    self = [super init];
+    if (!self) {
+        return nil;
+    }
+    
+    _simulated = NO;
+    if ([[UIDevice currentDevice] rk_isSimulartor]) {
+        _simulated = YES;
+    }
+    
+    return self;
+}
 
 + (RKPurchaseManager *)sharedInstance {
 	static RKPurchaseManager *instance;
@@ -58,6 +75,10 @@ NSString * const kRKPurchasesManagerErrorKey = @"kRKPurchasesManagerErrorKey";
 }
 
 + (NSString *)priceOfFeature:(NSString *)featureId {
+    if ([self isSimulatedPurchases]) {
+        return @"Simulated";
+    }
+    
 	if (![self isProductsLoaded]) {
 		return @"$??";
 	}
@@ -78,6 +99,11 @@ NSString * const kRKPurchasesManagerErrorKey = @"kRKPurchasesManagerErrorKey";
 }
 
 + (void)purchaseFeature:(NSString *)featureId {
+    if ([self isSimulatedPurchases]) {
+        [self productWasPurchased:featureId];
+        return;
+    }
+    
 	[Flurry logEvent:@"Did attempt to purchase something" withParameters:@{ @"Feature ID": featureId }];
 	
 	if (![SKPaymentQueue canMakePayments]) {
@@ -97,6 +123,14 @@ NSString * const kRKPurchasesManagerErrorKey = @"kRKPurchasesManagerErrorKey";
 
 + (void)restoreAllPurchases {
 	[[SKPaymentQueue defaultQueue] restoreCompletedTransactions];
+}
+
++ (BOOL)isSimulatedPurchases {
+    return [[self class] sharedInstance].simulated;
+}
+
++ (void)setSimulatedPurchases:(BOOL)simulated {
+    [[self class] sharedInstance].simulated = YES;
 }
 
 #pragma mark - Store Kit Callbacks

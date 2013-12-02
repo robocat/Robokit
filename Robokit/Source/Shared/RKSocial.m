@@ -14,6 +14,7 @@
 #import "RKFeedbackViewController.h"
 #import "RKDispatch.h"
 #import "Flurry.h"
+#import "RKSoundPlayer.h"
 
 NSString * const kRKSocialDidUpdateFromPreviousVersionNotification = @"cat.robo.kRKSocialDidUpdateFromPreviousVersionNotification";
 
@@ -73,41 +74,6 @@ NSString * const kRKSocialUpdateCurrentVersionKey = @"cat.robo.kRKSocialUpdateCu
 	[[self sharedInstance] setWhatsNew:newsString];
 	[[self sharedInstance] setAppId:appId];
 	[[self sharedInstance] setAppName:appName];
-    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    if ([defaults doubleForKey:kFirstUseDate] == 0) {
-		[defaults setDouble:[[NSDate date] timeIntervalSince1970] forKey:kFirstUseDate];
-        [[self sharedInstance] setIsFirstLaunch:YES];
-	}
-	
-	NSString *versionString = [[NSBundle mainBundle] infoDictionary][@"CFBundleVersion"];
-    NSString *previousVersionString = [defaults objectForKey:kUserDefaultAppVersion];
-	
-    if (previousVersionString && ![previousVersionString isEqualToString:versionString]) {
-        [defaults setBool:NO forKey:kRatedCurrentVersion];
-        [defaults setBool:NO forKey:kHaveFollowed];
-        [defaults setDouble:[[NSDate date] timeIntervalSince1970] forKey:kFirstUseDate];
-        [self showWhatsNewPopup];
-    } else if (!previousVersionString) {
-        previousVersionString = @"";
-    }
-    
-	[defaults setValue:versionString forKey:kUserDefaultAppVersion];
-	[defaults synchronize];
-    
-    [[self sharedInstance] setAppVersion:versionString];
-    
-    [[NSNotificationCenter defaultCenter] postNotificationName:kRKSocialDidUpdateFromPreviousVersionNotification
-                                                        object:nil
-                                                      userInfo:@{kRKSocialUpdatePreviousVersionKey: previousVersionString, kRKSocialUpdateCurrentVersionKey: versionString}];
-	
-	[RKDispatch after:5 callback:^{
-		if ([self shouldShowRateView]) {
-			[self showRateThisAppPopup];
-		} else if ([self shouldShowFollowView]) {
-			[self showFollowUsPopup];
-		}
-	}];
 	
 	[[NSNotificationCenter defaultCenter] addObserver:[self sharedInstance] selector:@selector(applicationDidBecomeActive:) name:UIApplicationDidBecomeActiveNotification object:nil];
 	[[NSNotificationCenter defaultCenter] addObserver:[self sharedInstance] selector:@selector(applicationDidEnterBackground:) name:UIApplicationDidEnterBackgroundNotification object:nil];
@@ -194,6 +160,7 @@ NSString * const kRKSocialUpdateCurrentVersionKey = @"cat.robo.kRKSocialUpdateCu
 + (void)likeOnFacebookWithCompletion:(void (^)(BOOL success))completion {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"fb://profile/235384996484325"]];
     [self likedOnFacebook];
+    [RKSoundPlayer playSoundForEvent:kRKSoundPlayerLikedOnFacebookEvent];
     
 	if (completion) completion(YES);
 }
@@ -207,6 +174,7 @@ NSString * const kRKSocialUpdateCurrentVersionKey = @"cat.robo.kRKSocialUpdateCu
 			[self openTwitterApp];
 			[[NSUserDefaults standardUserDefaults] setBool:YES forKey:RKRobocatViewControllerHaveFollowedKey];
 			[[NSUserDefaults standardUserDefaults] synchronize];
+            [RKSoundPlayer playSoundForEvent:kRKSoundPlayerFollowedOnTwitterEvent];
 			if (completion) completion(YES);
 			return;
 		}
@@ -222,6 +190,7 @@ NSString * const kRKSocialUpdateCurrentVersionKey = @"cat.robo.kRKSocialUpdateCu
 			[self openTwitterApp];
 			[[NSUserDefaults standardUserDefaults] setBool:YES forKey:RKRobocatViewControllerHaveFollowedKey];
 			[[NSUserDefaults standardUserDefaults] synchronize];
+            [RKSoundPlayer playSoundForEvent:kRKSoundPlayerFollowedOnTwitterEvent];
 			if (completion) completion(YES);
 			return;
 		}
@@ -238,6 +207,7 @@ NSString * const kRKSocialUpdateCurrentVersionKey = @"cat.robo.kRKSocialUpdateCu
 				if (!error) {
 					[[NSUserDefaults standardUserDefaults] setBool:YES forKey:RKRobocatViewControllerHaveFollowedKey];
 					[[NSUserDefaults standardUserDefaults] synchronize];
+                    [RKSoundPlayer playSoundForEvent:kRKSoundPlayerFollowedOnTwitterEvent];
 				}
 				
 				if (completion) completion(error == nil);
@@ -270,10 +240,12 @@ NSString * const kRKSocialUpdateCurrentVersionKey = @"cat.robo.kRKSocialUpdateCu
 }
 
 + (void)rateAppWithCompletion:(void (^)(BOOL success))completion {
-	NSString *reviewURL = [NSString stringWithFormat:@"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=%@", self.appId];
+    NSString *reviewURL = [NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id%@", self.appId];
 	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:reviewURL]];
 	[[NSUserDefaults standardUserDefaults] setBool:YES forKey:RKRobocatViewControllerHaveRatedKey];
 	[[NSUserDefaults standardUserDefaults] synchronize];
+    
+    [RKSoundPlayer playSoundForEvent:kRKSoundPlayerRatedEvent];
 	if (completion) completion(YES);
 }
 
@@ -361,6 +333,41 @@ NSString * const kRKSocialUpdateCurrentVersionKey = @"cat.robo.kRKSocialUpdateCu
 
 - (void)applicationDidBecomeActive:(NSNotification *)notification {
 	[Flurry logEvent:@"Did open application" timed:YES];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if ([defaults doubleForKey:kFirstUseDate] == 0) {
+		[defaults setDouble:[[NSDate date] timeIntervalSince1970] forKey:kFirstUseDate];
+        [self setIsFirstLaunch:YES];
+	}
+	
+	NSString *versionString = [[NSBundle mainBundle] infoDictionary][@"CFBundleVersion"];
+    NSString *previousVersionString = [defaults objectForKey:kUserDefaultAppVersion];
+	
+    if (previousVersionString && ![previousVersionString isEqualToString:versionString]) {
+        [defaults setBool:NO forKey:kRatedCurrentVersion];
+        [defaults setBool:NO forKey:kHaveFollowed];
+        [defaults setDouble:[[NSDate date] timeIntervalSince1970] forKey:kFirstUseDate];
+        [RKSocial showWhatsNewPopup];
+    } else if (!previousVersionString) {
+        previousVersionString = @"";
+    }
+    
+	[defaults setValue:versionString forKey:kUserDefaultAppVersion];
+	[defaults synchronize];
+    
+    [self setAppVersion:versionString];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:kRKSocialDidUpdateFromPreviousVersionNotification
+                                                        object:nil
+                                                      userInfo:@{kRKSocialUpdatePreviousVersionKey: previousVersionString, kRKSocialUpdateCurrentVersionKey: versionString}];
+	
+	[RKDispatch after:5 callback:^{
+		if ([RKSocial shouldShowRateView]) {
+			[RKSocial showRateThisAppPopup];
+		} else if ([RKSocial shouldShowFollowView]) {
+			[RKSocial showFollowUsPopup];
+		}
+	}];
 }
 
 - (void)applicationDidEnterBackground:(NSNotification *)notification {
@@ -371,7 +378,9 @@ NSString * const kRKSocialUpdateCurrentVersionKey = @"cat.robo.kRKSocialUpdateCu
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
 	if (buttonIndex == 1) {
-		[RKSocial rateAppWithCompletion:nil];
+		[RKDispatch after:1.0f callback:^{
+            [RKSocial showRateThisAppPopup];
+        }];
 	}
 }
 

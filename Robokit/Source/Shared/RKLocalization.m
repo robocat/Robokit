@@ -15,6 +15,10 @@ void RKLocalizationSetPreferredLanguage(NSString *language) {
 	[[NSUserDefaults standardUserDefaults] synchronize];
 }
 
+NSString *RKLocalizationPreferredLanguage(void) {
+	return [[[NSUserDefaults standardUserDefaults] objectForKey:@"AppleLanguages"] firstObject];
+}
+
 NSString *RKLocalized(NSString *str) {
 	return RKLocalizedFromTable(str, nil);
 }

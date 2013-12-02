@@ -15,7 +15,7 @@ NSString *RKLocalized(NSString *str) {
 }
 
 NSString *RKLocalizedFromTable(NSString *str, NSString *table) {
-	NSString *languageCode = [[[NSUserDefaults standardUserDefaults] objectForKey:@"AppleLanguages"] firstObject];
+	NSString *languageCode = [[NSUserDefaults standardUserDefaults] objectForKey:@"AppleLanguages"];
 	NSString *bundlePath = [[NSBundle mainBundle] pathForResource:languageCode ofType:@"lproj"];
 	
 	if (!bundlePath) {

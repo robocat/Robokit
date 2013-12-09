@@ -53,6 +53,7 @@ NSString * const kRKSocialUpdateCurrentVersionKey = @"cat.robo.kRKSocialUpdateCu
 @property (strong, nonatomic) NSString *whatsNew;
 @property (strong, nonatomic) NSString *facebookAppId;
 @property (assign, nonatomic) BOOL isFirstLaunch;
+@property (assign, nonatomic) BOOL shouldShowFollowUs;
 @property (assign, nonatomic) RKModalBackgroundStyle backgroundStyle;
 
 @end
@@ -65,6 +66,7 @@ NSString * const kRKSocialUpdateCurrentVersionKey = @"cat.robo.kRKSocialUpdateCu
 	static dispatch_once_t onceToken;
 	dispatch_once(&onceToken, ^{
 		instance = [[RKSocial alloc] init];
+		instance.shouldShowFollowUs = YES;
 	});
 	
 	return instance;
@@ -110,6 +112,8 @@ NSString * const kRKSocialUpdateCurrentVersionKey = @"cat.robo.kRKSocialUpdateCu
 	[[NSUserDefaults standardUserDefaults] setBool:YES forKey:kHaveFollowed];
 	[[NSUserDefaults standardUserDefaults] synchronize];
 	
+	if ([self shouldShowFollowView] == NO) return;
+	
 	__block RKFollowUsViewController *followUsViewController = [RKFollowUsViewController followUsViewControllerWithMailchimpId:kMailchimpListId APIKey:kMailchimpAPIKey];
 	
 	[followUsViewController presentInWindow:[[UIApplication sharedApplication] keyWindow] withCloseHandler:^{
@@ -150,6 +154,10 @@ NSString * const kRKSocialUpdateCurrentVersionKey = @"cat.robo.kRKSocialUpdateCu
 
 + (BOOL)hasRated {
 	return [[NSUserDefaults standardUserDefaults] boolForKey:RKRobocatViewControllerHaveRatedKey];
+}
+
++ (void)setShouldShowFollowUs:(BOOL)shouldShow {
+	[[self sharedInstance] setShouldShowFollowUs:shouldShow];
 }
 
 + (void)likedOnFacebook {

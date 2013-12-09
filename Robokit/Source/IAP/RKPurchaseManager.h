@@ -17,6 +17,8 @@ extern NSString * const kRKPurchasesManagerPurchaseRestoreDidFinish;
 extern NSString * const kRKPurchasesManagerPurchaseRestoreDidFail; // userInfo: kRKPurchasesManagerErrorKey => error as NSError
 
 extern NSString * const kRKPurchasesManagerFeatureIdKey;
+extern NSString * const kRKPurchasesManagerTransactionIdKey;
+extern NSString * const kRKPurchasesManagerPurchaseDateKey;
 extern NSString * const kRKPurchasesManagerErrorKey;
 
 @interface RKPurchaseManager : NSObject

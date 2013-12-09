@@ -37,6 +37,8 @@ typedef NSInteger RKModalBackgroundStyle;
 + (BOOL)hasSubscribed;
 + (BOOL)hasRated;
 
++ (void)setShouldShowFollowUs:(BOOL)shouldShow;
+
 + (void)likeOnFacebookWithCompletion:(void (^)(BOOL success))completion;
 + (void)subscribeWithEmail:(NSString *)email completion:(void (^)(BOOL success))completion;
 + (void)followOnTwitterWithCompletion:(void (^)(BOOL success))completion;

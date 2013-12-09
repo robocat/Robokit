@@ -21,6 +21,8 @@ NSString * const kRKPurchasesManagerPurchaseRestoreDidFinish = @"cat.robo.kRKPur
 NSString * const kRKPurchasesManagerPurchaseRestoreDidFail = @"cat.robo.kRKPurchasesManagerPurchaseRestoreDidFail";
 
 NSString * const kRKPurchasesManagerFeatureIdKey = @"kRKPurchasesManagerFeatureIdKey";
+NSString * const kRKPurchasesManagerTransactionIdKey = @"kRKPurchasesManagerTransactionIdKey";
+NSString * const kRKPurchasesManagerPurchaseDateKey = @"kRKPurchasesManagerPurchaseDateKey";
 NSString * const kRKPurchasesManagerErrorKey = @"kRKPurchasesManagerErrorKey";
 
 @interface RKPurchaseManager () <SKRequestDelegate, SKPaymentTransactionObserver>
@@ -100,7 +102,7 @@ NSString * const kRKPurchasesManagerErrorKey = @"kRKPurchasesManagerErrorKey";
 
 + (void)purchaseFeature:(NSString *)featureId {
     if ([self isSimulatedPurchases]) {
-        [self productWasPurchased:featureId];
+        [self productWasPurchased:featureId transactionId:@"tid" purchaseDate:[NSDate date]];
         return;
     }
     
@@ -135,27 +137,36 @@ NSString * const kRKPurchasesManagerErrorKey = @"kRKPurchasesManagerErrorKey";
 
 #pragma mark - Store Kit Callbacks
 
-+ (void)productWasPurchased:(NSString *)featureId {
++ (void)productWasPurchased:(NSString *)featureId transactionId:(NSString *)transactionId purchaseDate:(NSDate *)purchaseDate {
 	[Flurry logEvent:@"Did actually purchase something" withParameters:@{ @"Feature ID": featureId }];
 	
 	[[NSUserDefaults standardUserDefaults] setBool:YES forKey:featureId];
 	[[NSUserDefaults standardUserDefaults] synchronize];
 	
-	NSDictionary *userInfo = @{ kRKPurchasesManagerFeatureIdKey: featureId };
+	NSDictionary *userInfo = @{ kRKPurchasesManagerFeatureIdKey: featureId,
+								kRKPurchasesManagerTransactionIdKey: transactionId,
+								kRKPurchasesManagerPurchaseDateKey: purchaseDate };
 	[[NSNotificationCenter defaultCenter] postNotificationName:kRKPurchasesManagerDidPurchaseFeatureNotification object:nil userInfo:userInfo];
 }
 
-+ (void)productWasRestored:(NSString *)featureId {
++ (void)productWasRestored:(NSString *)featureId transactionId:(NSString *)transactionId purchaseDate:(NSDate *)purchaseDate {
 	[[NSUserDefaults standardUserDefaults] setBool:YES forKey:featureId];
 	[[NSUserDefaults standardUserDefaults] synchronize];
 	
-	NSDictionary *userInfo = @{ kRKPurchasesManagerFeatureIdKey: featureId };
+	NSDictionary *userInfo = @{ kRKPurchasesManagerFeatureIdKey: featureId,
+								kRKPurchasesManagerTransactionIdKey: transactionId,
+								kRKPurchasesManagerPurchaseDateKey: purchaseDate };
 	[[NSNotificationCenter defaultCenter] postNotificationName:kRKPurchasesManagerDidPurchaseFeatureNotification object:nil userInfo:userInfo];
 }
 
 + (void)productPurchaseFailed:(NSString *)featureId {
 	NSDictionary *userInfo = @{ kRKPurchasesManagerFeatureIdKey: featureId };
 	[[NSNotificationCenter defaultCenter] postNotificationName:kRKPurchasesManagerPurchaseDidFailNotification object:nil userInfo:userInfo];
+}
+
++ (void)productPurchaseCancelled:(NSString *)featureId {
+	NSDictionary *userInfo = @{ kRKPurchasesManagerFeatureIdKey: featureId };
+	[[NSNotificationCenter defaultCenter] postNotificationName:kRKPurchasesManagerPurchaseWasCancelledNotification object:nil userInfo:userInfo];
 }
 
 #pragma mark - Store Kit Payment Transaction observer
@@ -166,18 +177,22 @@ NSString * const kRKPurchasesManagerErrorKey = @"kRKPurchasesManagerErrorKey";
 		
 		if (transaction.transactionState == SKPaymentTransactionStatePurchased) {
 			if (![self.class isFeaturePurchased:featureId]) {
-				[self.class productWasPurchased:featureId];
+				[self.class productWasPurchased:featureId transactionId:transaction.transactionIdentifier purchaseDate:transaction.transactionDate];
 			}
 			
 			[[SKPaymentQueue defaultQueue] finishTransaction:transaction];
 		} else if (transaction.transactionState == SKPaymentTransactionStateRestored) {
 			if (![self.class isFeaturePurchased:featureId]) {
-				[self.class productWasRestored:featureId];
+				[self.class productWasRestored:featureId transactionId:transaction.transactionIdentifier purchaseDate:transaction.transactionDate];
 			}
 			
 			[[SKPaymentQueue defaultQueue] finishTransaction:transaction];
 		} else if (transaction.transactionState == SKPaymentTransactionStateFailed) {
-			[self.class productPurchaseFailed:featureId];
+			if (transaction.error) {
+				[self.class productPurchaseFailed:featureId];
+			} else {
+				[self.class productPurchaseCancelled:featureId];
+			}
 			
 			[[SKPaymentQueue defaultQueue] finishTransaction:transaction];
 		}

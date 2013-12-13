@@ -25,13 +25,11 @@ NSString *RKLocalized(NSString *str) {
 
 NSString *RKLocalizedFromTable(NSString *str, NSString *table) {
 	NSString *languageCode = [[[NSUserDefaults standardUserDefaults] objectForKey:@"AppleLanguages"] firstObject];
-	NSString *bundlePath = [[NSBundle mainBundle] pathForResource:languageCode ofType:@"lproj"];
+	NSBundle *bundle = [NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:languageCode ofType:@"lproj"]];
 	
-	if (!bundlePath) {
-		bundlePath = [[NSBundle mainBundle] pathForResource:@"en" ofType:@"lproj"];
+	if (![bundle load]) {
+		bundle = [NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:@"en" ofType:@"lproj"]];
 	}
-	
-	NSBundle *bundle = [NSBundle bundleWithPath:bundlePath];
 	
 	NSString *string = [bundle localizedStringForKey:str value:NOT_AVAILABLE table:table];
 	

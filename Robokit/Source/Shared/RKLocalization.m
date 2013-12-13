@@ -27,14 +27,10 @@ NSString *RKLocalizedFromTable(NSString *str, NSString *table) {
 	NSString *languageCode = [[[NSUserDefaults standardUserDefaults] objectForKey:@"AppleLanguages"] firstObject];
 	NSBundle *bundle = [NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:languageCode ofType:@"lproj"]];
 	
-	if (![bundle load]) {
-		bundle = [NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:@"en" ofType:@"lproj"]];
-	}
-	
 	NSString *string = [bundle localizedStringForKey:str value:NOT_AVAILABLE table:table];
 	
 	if ([string isEqualToString:NOT_AVAILABLE]) {
-		NSString *path = [bundle pathForResource:@"en" ofType:@"lproj"];
+		NSString *path = [[NSBundle mainBundle] pathForResource:@"en" ofType:@"lproj"];
 		return [[NSBundle bundleWithPath:path] localizedStringForKey:str value:@"---" table:table];
 	}
 	

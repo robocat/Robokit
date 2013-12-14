@@ -29,9 +29,9 @@ NSString *RKLocalizedFromTable(NSString *str, NSString *table) {
 	
 	NSString *string = [bundle localizedStringForKey:str value:NOT_AVAILABLE table:table];
 	
-	if ([string isEqualToString:NOT_AVAILABLE]) {
+	if (!string || [string isEqualToString:NOT_AVAILABLE]) {
 		NSString *path = [[NSBundle mainBundle] pathForResource:@"en" ofType:@"lproj"];
-		return [[NSBundle bundleWithPath:path] localizedStringForKey:str value:@"---" table:table];
+		return [[NSBundle bundleWithPath:path] localizedStringForKey:str value:@"---" table:table]?: @"---";
 	}
 	
     return string;

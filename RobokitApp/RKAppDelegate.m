@@ -10,7 +10,7 @@
 #import "Robokit.h"
 #import "RKAdView.h"
 #import "RKCatnipSDK.h"
-#import "UIApplication+RKShareSheet.h"
+#import "UIApplication+RKAdditions.h"
 
 @implementation RKAppDelegate
 

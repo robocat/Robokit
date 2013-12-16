@@ -20,8 +20,10 @@
 
 @end
 
-@interface UIApplication (RKShareSheet)
+@interface UIApplication (RKAdditions)
 
 - (void)enableShareSheetOnScreenshot;
+
++ (NSString *)rkDeviceTokenFromData:(NSData *)data;
 
 @end

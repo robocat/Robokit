@@ -41,6 +41,7 @@
 		FF62914317F59F970018AD68 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF62912B17F59F970018AD68 /* UIKit.framework */; };
 		FF62914B17F59F970018AD68 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FF62914917F59F970018AD68 /* InfoPlist.strings */; };
 		FF62914D17F59F970018AD68 /* RKSocialTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FF62914C17F59F970018AD68 /* RKSocialTests.m */; };
+		FF99C6B3185F2F5E00E6B260 /* UIApplication+RKShareSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = FF99C6B2185F2F5E00E6B260 /* UIApplication+RKShareSheet.m */; };
 		FFB5874E17F9BBE2007D9485 /* libFlurry_4.2.4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FFB5874D17F9BBE2007D9485 /* libFlurry_4.2.4.a */; };
 		FFE1DCC617F5A94B0074F75F /* RKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE1DCC517F5A94B0074F75F /* RKAppDelegate.m */; };
 		FFE1DCCA17F5A9540074F75F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE1DCC717F5A9540074F75F /* main.m */; };
@@ -153,6 +154,8 @@
 		FF62914817F59F970018AD68 /* RobokitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RobokitTests-Info.plist"; sourceTree = "<group>"; };
 		FF62914A17F59F970018AD68 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FF62914C17F59F970018AD68 /* RKSocialTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RKSocialTests.m; sourceTree = "<group>"; };
+		FF99C6B1185F2F5E00E6B260 /* UIApplication+RKShareSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIApplication+RKShareSheet.h"; path = "Shared/UIApplication+RKShareSheet.h"; sourceTree = "<group>"; };
+		FF99C6B2185F2F5E00E6B260 /* UIApplication+RKShareSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIApplication+RKShareSheet.m"; path = "Shared/UIApplication+RKShareSheet.m"; sourceTree = "<group>"; };
 		FFA679CE181EAAAB008E21A9 /* RKSoundPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKSoundPlayer.h; sourceTree = "<group>"; };
 		FFA679CF181EAAAB008E21A9 /* RKSoundPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKSoundPlayer.m; sourceTree = "<group>"; };
 		FFB5874C17F9BBE2007D9485 /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Flurry.h; path = Frameworks/Flurry.h; sourceTree = "<group>"; };
@@ -254,6 +257,8 @@
 				7847E6861819FD63008A034E /* UIViewController+RKAdditions.m */,
 				78549A05182BB39F0050898A /* NSString+RKAdditions.h */,
 				78549A06182BB39F0050898A /* NSString+RKAdditions.m */,
+				FF99C6B1185F2F5E00E6B260 /* UIApplication+RKShareSheet.h */,
+				FF99C6B2185F2F5E00E6B260 /* UIApplication+RKShareSheet.m */,
 			);
 			name = Categories;
 			path = ..;
@@ -670,6 +675,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFE1DCCA17F5A9540074F75F /* main.m in Sources */,
+				FF99C6B3185F2F5E00E6B260 /* UIApplication+RKShareSheet.m in Sources */,
 				FFE1DCC617F5A94B0074F75F /* RKAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

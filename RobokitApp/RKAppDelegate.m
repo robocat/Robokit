@@ -10,6 +10,7 @@
 #import "Robokit.h"
 #import "RKAdView.h"
 #import "RKCatnipSDK.h"
+#import "UIApplication+RKShareSheet.h"
 
 @implementation RKAppDelegate
 
@@ -17,6 +18,8 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+	
+	[application enableShareSheetOnScreenshot];
 	
 	UIImageView *background = [[UIImageView alloc] initWithFrame:self.window.bounds];
 	background.image = [UIImage imageNamed:@"Background"];

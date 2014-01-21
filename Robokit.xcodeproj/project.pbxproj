@@ -26,6 +26,8 @@
 		7847E6791819FCF7008A034E /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7847E6751819FCF7008A034E /* libTestFlight.a */; };
 		78568430181EAA2200E4710C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7856842F181EAA2200E4710C /* libz.dylib */; };
 		78B63E80181BBCBA002C21CB /* RKFeedbackViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 78B63E7E181BBCBA002C21CB /* RKFeedbackViewController.strings */; };
+		FF075EF5188E8E2F00FEDFDE /* UIButton+RKLocalization.m in Sources */ = {isa = PBXBuildFile; fileRef = FF075EF4188E8E2F00FEDFDE /* UIButton+RKLocalization.m */; };
+		FF075EF8188E8F1000FEDFDE /* UILabel+RKLocalization.m in Sources */ = {isa = PBXBuildFile; fileRef = FF075EF7188E8F1000FEDFDE /* UILabel+RKLocalization.m */; };
 		FF3E7BE617F899B3004AB9D5 /* RKFollowUsViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = FF3E7BE817F899B3004AB9D5 /* RKFollowUsViewController.strings */; };
 		FF3E7BEB17F89A1A004AB9D5 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FF3E7BEA17F89A1A004AB9D5 /* README.md */; };
 		FF3E7BED17F89A1F004AB9D5 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = FF3E7BEC17F89A1F004AB9D5 /* LICENSE */; };
@@ -135,6 +137,10 @@
 		78B63E81181BBCF0002C21CB /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = Localizations/da.lproj/RKFeedbackViewController.strings; sourceTree = "<group>"; };
 		78B63E83181BBD55002C21CB /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = Localizations/de.lproj/RKFeedbackViewController.strings; sourceTree = "<group>"; };
 		B6A2FD0FAB714D47A4123CFD /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		FF075EF3188E8E2F00FEDFDE /* UIButton+RKLocalization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIButton+RKLocalization.h"; path = "Shared/UIButton+RKLocalization.h"; sourceTree = "<group>"; };
+		FF075EF4188E8E2F00FEDFDE /* UIButton+RKLocalization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIButton+RKLocalization.m"; path = "Shared/UIButton+RKLocalization.m"; sourceTree = "<group>"; };
+		FF075EF6188E8F1000FEDFDE /* UILabel+RKLocalization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UILabel+RKLocalization.h"; path = "Shared/UILabel+RKLocalization.h"; sourceTree = "<group>"; };
+		FF075EF7188E8F1000FEDFDE /* UILabel+RKLocalization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UILabel+RKLocalization.m"; path = "Shared/UILabel+RKLocalization.m"; sourceTree = "<group>"; };
 		FF3E7BD717F5CF5A004AB9D5 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/RKRatingViewController.strings; sourceTree = "<group>"; };
 		FF3E7BD817F5D3C6004AB9D5 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/RKRatingViewController.strings; sourceTree = "<group>"; };
 		FF3E7BE717F899B3004AB9D5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/RKFollowUsViewController.strings; sourceTree = "<group>"; };
@@ -249,6 +255,7 @@
 		783EEA801826AD060057602E /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				FF075EF2188E8E1600FEDFDE /* Localization */,
 				78A234E51830D55E00425DAD /* UIDevice+RKAdditions.h */,
 				78A234E61830D55E00425DAD /* UIDevice+RKAdditions.m */,
 				78549A07182BB3EE0050898A /* NSURLRequest+RKAdditions.h */,
@@ -332,6 +339,17 @@
 				78568427181EA56800E4710C /* RKCatnipStory.m */,
 			);
 			path = Catnip;
+			sourceTree = "<group>";
+		};
+		FF075EF2188E8E1600FEDFDE /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				FF075EF3188E8E2F00FEDFDE /* UIButton+RKLocalization.h */,
+				FF075EF4188E8E2F00FEDFDE /* UIButton+RKLocalization.m */,
+				FF075EF6188E8F1000FEDFDE /* UILabel+RKLocalization.h */,
+				FF075EF7188E8F1000FEDFDE /* UILabel+RKLocalization.m */,
+			);
+			name = Localization;
 			sourceTree = "<group>";
 		};
 		FF3F8CD217F8CE910024EA07 /* RKAdView */ = {
@@ -676,7 +694,9 @@
 			files = (
 				FFE1DCCA17F5A9540074F75F /* main.m in Sources */,
 				FF99C6B3185F2F5E00E6B260 /* UIApplication+RKAdditions.m in Sources */,
+				FF075EF8188E8F1000FEDFDE /* UILabel+RKLocalization.m in Sources */,
 				FFE1DCC617F5A94B0074F75F /* RKAppDelegate.m in Sources */,
+				FF075EF5188E8E2F00FEDFDE /* UIButton+RKLocalization.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

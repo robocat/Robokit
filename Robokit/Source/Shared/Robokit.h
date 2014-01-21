@@ -9,6 +9,8 @@
 #import "RKSocial.h"
 #import "RKDispatch.h"
 #import "RKLocalization.h"
+#import "UIButton+RKLocalization.h"
+#import "UILabel+RKLocalization.h"
 #import "RKMacros.h"
 #import "TestFlight.h"
 #import "Flurry.h"

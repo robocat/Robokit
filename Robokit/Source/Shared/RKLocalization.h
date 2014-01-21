@@ -32,3 +32,17 @@ void RKLocalizedButtonFromTableWithFormat(UIButton *button, NSString *str, NSStr
 - (NSString *)localizedString;
 
 @end
+
+@protocol RKLocalizable <NSObject>
+
+- (void)shouldLocalize;
+
+@end
+
+@interface RKLocalization : NSObject
+
++ (void)registerForLocalization:(id<RKLocalizable>)localizableObject;
+
++ (void)changeLocalizationTo:(NSString *)language;
+
+@end

@@ -124,3 +124,44 @@ void RKLocalizedButtonFromTableWithFormat(UIButton *button, NSString *str, NSStr
 }
 
 @end
+
+@interface RKLocalization ()
+
+@property (strong, nonatomic) NSPointerArray *localizables;
+
+@end
+
+@implementation RKLocalization
+
+- (id)init {
+	if ((self = [super init])) {
+		self.localizables = [NSPointerArray weakObjectsPointerArray];
+	}
+	
+	return self;
+}
+
++ (RKLocalization *)sharedInstance {
+	static RKLocalization *instance = nil;
+	
+	static dispatch_once_t onceToken;
+	dispatch_once(&onceToken, ^{
+		instance = [[RKLocalization alloc] init];
+	});
+	
+	return instance;
+}
+
++ (void)registerForLocalization:(id<RKLocalizable>)localizableObject {
+	[[[self sharedInstance] localizables] addPointer:(__bridge void *)(localizableObject)];
+}
+
++ (void)changeLocalizationTo:(NSString *)language {
+	RKLocalizationSetPreferredLanguage(language);
+	
+	for (id<RKLocalizable> localizableObject in [[self sharedInstance] localizables]) {
+		[localizableObject shouldLocalize];
+	}
+}
+
+@end

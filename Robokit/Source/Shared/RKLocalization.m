@@ -154,6 +154,8 @@ void RKLocalizedButtonFromTableWithFormat(UIButton *button, NSString *str, NSStr
 
 + (void)registerForLocalization:(id<RKLocalizable>)localizableObject {
 	[[[self sharedInstance] localizables] addPointer:(__bridge void *)(localizableObject)];
+	
+	[localizableObject shouldLocalize];
 }
 
 + (void)changeLocalizationTo:(NSString *)language {

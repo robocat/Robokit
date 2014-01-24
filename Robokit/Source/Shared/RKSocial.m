@@ -88,6 +88,48 @@ NSString * const kRKSocialUpdateCurrentVersionKey = @"cat.robo.kRKSocialUpdateCu
 	[Flurry startSession:flurryAppId];
 }
 
++ (void)getNewestAppVersionFromAppStoreWithCompletion:(void (^)(NSString *version))completion {
+	NSString *urlString = [NSString stringWithFormat:@"http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/wa/wsLookup?id=%@", [[self sharedInstance] appId]];
+	NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
+	
+	[NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+		if (connectionError) {
+			completion(nil);
+			return;
+		}
+		
+		NSDictionary *info = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+		
+		if (!info) {
+			completion(nil);
+			return;
+		}
+		
+		NSArray *results = info[@"results"];
+		
+		if (!results || ![results isKindOfClass:[NSArray class]]) {
+			completion(nil);
+			return;
+		}
+		
+		NSDictionary *firstResult = [results firstObject];
+		
+		if (!firstResult || ![firstResult isKindOfClass:[NSDictionary class]]) {
+			completion(nil);
+			return;
+		}
+		
+		NSString *version = firstResult[@"version"];
+		
+		if (!version || ![version isKindOfClass:[NSString class]]) {
+			completion(nil);
+			return;
+		}
+		
+		completion(version);
+	}];
+}
+
 + (void)setModalBackgroundStyle:(RKModalBackgroundStyle)backgroundStyle {
     [[[self class] sharedInstance] setBackgroundStyle:backgroundStyle];
 }

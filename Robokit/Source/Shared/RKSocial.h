@@ -25,6 +25,8 @@ typedef NSInteger RKModalBackgroundStyle;
 + (void)initializeSocialFeaturesWithAppId:(NSString *)appId appName:(NSString *)appName newInThisVersion:(NSString *)newsString;
 + (void)initializeFlurryWithAppId:(NSString *)flurryAppId;
 
++ (void)getNewestAppVersionFromAppStoreWithCompletion:(void (^)(NSString *version))completion;
+
 + (void)setModalBackgroundStyle:(RKModalBackgroundStyle)modalBackgroundStyle;
 + (RKModalBackgroundStyle)modalBackgroundStyle;
 

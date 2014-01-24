@@ -46,6 +46,7 @@ typedef NSInteger RKModalBackgroundStyle;
 + (void)followOnTwitterWithCompletion:(void (^)(BOOL success))completion;
 + (void)rateAppWithCompletion:(void (^)(BOOL success))completion;
 + (void)showMoreAppsFromRobocat;
++ (void)openAppStorePageForAppId:(NSString *)appId;
 
 + (void)showRateThisAppPopup;
 + (void)showFollowUsPopup;

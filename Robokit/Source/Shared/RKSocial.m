@@ -304,6 +304,11 @@ NSString * const kRKSocialUpdateCurrentVersionKey = @"cat.robo.kRKSocialUpdateCu
 	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:appsURL]];
 }
 
++ (void)openAppStorePageForAppId:(NSString *)appId {
+	NSString *storeURL = [NSString stringWithFormat:@"http://itunes.com/apps/appname?at=%@", appId];
+	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:storeURL]];
+}
+
 + (void)showSendFeedbackPopup {
     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kHaveFollowed];
 	[[NSUserDefaults standardUserDefaults] synchronize];

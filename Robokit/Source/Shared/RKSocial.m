@@ -304,9 +304,13 @@ NSString * const kRKSocialUpdateCurrentVersionKey = @"cat.robo.kRKSocialUpdateCu
 	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:appsURL]];
 }
 
++ (NSURL *)linkToAppStorePageForAppId:(NSString *)appId {
+	NSString *storeURL = [NSString stringWithFormat:@"https://itunes.apple.com/us/app/thermodo/id%@&mt=8", appId];
+	return [NSURL URLWithString:storeURL];
+}
+
 + (void)openAppStorePageForAppId:(NSString *)appId {
-	NSString *storeURL = [NSString stringWithFormat:@"http://itunes.com/apps/appname?at=%@", appId];
-	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:storeURL]];
+	[[UIApplication sharedApplication] openURL:[self linkToAppStorePageForAppId:appId]];
 }
 
 + (void)showSendFeedbackPopup {

@@ -8,10 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
-#define RK_WEAKIFY() __weak typeof(self) weakSelf = self
-#define RK_STRONGIFY() if (!weakSelf) return; typeof(self) self = weakSelf
-#define RK_STRONGIFY_RETURN(default_return) if (!weakSelf) return default_return; typeof(self) self = weakSelf
-#define RK_STRONGIFY_UNUSED() if (!weakSelf) return
+#define weakify \
+	autoreleasepool {} \
+	#pragma clang diagnostic push \
+	#pragma clang diagnostic ignored "-Wunused-variable" \
+	__weak typeof(self) weakSelf = self \
+	#pragma clang diagnostic pop
+
+#define strongify autoreleasepool {} if (!weakSelf) return; typeof(self) self = weakSelf
+#define strongify_return(default_return) autoreleasepool {} if (!weakSelf) return default_return; typeof(self) self = weakSelf
 
 typedef enum {
 	GCDispatchStop = 0,

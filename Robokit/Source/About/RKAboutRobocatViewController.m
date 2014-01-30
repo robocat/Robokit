@@ -7,36 +7,30 @@
 //
 
 #import "RKAboutRobocatViewController.h"
-#import "RKLocalization.h"
-#import "RKSocial.h"
-#import "Flurry.h"
+#import <Robokit/RKSocial.h>
+#import <Robokit/RKLocalization.h>
+#import <Flurry.h>
 #import "UIViewController+RKAdditions.h"
-#import "RKSoundPlayer.h"
+#import "../Shared/UIButton+RKLocalization.h"
+#import "../Shared/UILabel+RKLocalization.h"
 
-@interface RKAboutRobocatViewController ()
+@interface RKAboutRobocatViewController () <UIScrollViewDelegate, UITextFieldDelegate>
 
-@property (nonatomic, weak) IBOutlet UIScrollView *scrollView;
-
+@property (weak, nonatomic) IBOutlet UIScrollView *scollView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *subscribeViewLeftMarginConstraint;
+@property (weak, nonatomic) IBOutlet UITextField *emailInput;
+@property (weak, nonatomic) IBOutlet UIView *subscribeSuperview;
+@property (weak, nonatomic) IBOutlet UIButton *subscribeButton;
+@property (weak, nonatomic) IBOutlet UIButton *facebookButton;
+@property (weak, nonatomic) IBOutlet UIButton *twitterButton;
+@property (weak, nonatomic) IBOutlet UILabel *aboutLabel;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *closeButton;
-@property (nonatomic, weak) IBOutlet UIButton *buttonReview;
-@property (nonatomic, weak) IBOutlet UIButton *buttonTwitter;
-@property (nonatomic, weak) IBOutlet UIButton *buttonFacebook;
-@property (nonatomic, weak) IBOutlet UIButton *buttonMoreApps;
-@property (nonatomic, weak) IBOutlet UIButton *buttonReceiveNews;
 
-@property (nonatomic, weak) IBOutlet UIActivityIndicatorView *spinnerView;
-@property (nonatomic, weak) IBOutlet UILabel *versionLabel;
-
-- (IBAction)review:(id)sender;
-- (IBAction)twitter:(id)sender;
-- (IBAction)facebook:(id)sender;
-- (IBAction)moreApps:(id)sender;
+@property (assign, nonatomic) BOOL shouldCloseSubscribeView;
 
 @end
 
 @implementation RKAboutRobocatViewController
-
-#pragma mark - UIViewController
 
 + (RKAboutRobocatViewController *)aboutRobocatViewController {
     return [self rk_initialViewControllerFromStoryboardWithName:@"RKAboutRobocatViewController"];
@@ -46,123 +40,159 @@
     [super viewDidLoad];
 	
 	[Flurry logEvent:@"Did open About Robocat" timed:YES];
-    
-    if ([RKSocial hasFollowedOnTwitter]) {
-        [self haveFollowedOnTwitter];
-    }
-    
-    if ([RKSocial hasLikedOnFacebook]) {
-        [self haveLikedOnFacebook];
-    }
 	
-	if ([RKSocial hasRated]) {
-		[self haveRated];
+	self.aboutLabel.text = [NSString stringWithFormat:@"%@ %@\nCopyright © 2014 Robocat\nAll rights reserved", [RKSocial appName], [RKSocial appVersion]];
+	
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidChangeFrame:) name:UIKeyboardDidChangeFrameNotification object:nil];
+	
+	[self.closeButton setTitle:RKLocalized(@"RC_ABOUT_BUTTON_CLOSE")];
+	[self.subscribeButton rkLocalize:@"RC_ABOUT_BUTTON_NEWSLETTER"];
+	[self.facebookButton rkLocalize:@"RC_ABOUT_BUTTON_FACEBOOK"];
+	[self.twitterButton rkLocalize:@"RC_ABOUT_BUTTON_TWITTER"];
+	[self.aboutLabel rkLocalize:@""];
+	
+	if ([RKSocial hasFollowedOnTwitter]) {
+		[self didFollow];
 	}
-    
-    [self.buttonReview.titleLabel setAdjustsFontSizeToFitWidth:YES];
-    [self.buttonTwitter.titleLabel setAdjustsFontSizeToFitWidth:YES];
-    [self.buttonFacebook.titleLabel setAdjustsFontSizeToFitWidth:YES];
-    [self.buttonMoreApps.titleLabel setAdjustsFontSizeToFitWidth:YES];
-    [self.buttonReceiveNews.titleLabel setAdjustsFontSizeToFitWidth:YES];
-    
-	self.closeButton.title = RKLocalizedFromTable(@"RC_ABOUT_BUTTON_CLOSE", NSStringFromClass(self.class));
-    [self.buttonReview setTitle:RKLocalizedFromTable(@"RC_ABOUT_BUTTON_REVIEW", NSStringFromClass(self.class)) forState:UIControlStateNormal];
-    [self.buttonTwitter setTitle:RKLocalizedFromTable(@"RC_ABOUT_BUTTON_TWITTER", NSStringFromClass(self.class)) forState:UIControlStateNormal];
-    [self.buttonFacebook setTitle:RKLocalizedFromTable(@"RC_ABOUT_BUTTON_FACEBOOK", NSStringFromClass(self.class)) forState:UIControlStateNormal];
-    [self.buttonMoreApps setTitle:RKLocalizedFromTable(@"RC_ABOUT_BUTTON_MORE_APPS", NSStringFromClass(self.class)) forState:UIControlStateNormal];
-    [self.buttonReceiveNews setTitle:RKLocalizedFromTable(@"RC_ABOUT_BUTTON_NEWSLETTER", NSStringFromClass(self.class)) forState:UIControlStateNormal];
-    
-    [self.versionLabel setText:[NSString stringWithFormat:@"%@ %@\nCopyright © 2013 Robocat\nAll rights reserved", [[NSBundle mainBundle] infoDictionary][@"CFBundleDisplayName"], [[NSBundle mainBundle] infoDictionary][@"CFBundleShortVersionString"]]];
 	
-	[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
+	if ([RKSocial hasLikedOnFacebook]) {
+		[self didLike];
+	}
+	
+	if ([RKSocial hasSubscribed]) {
+		[self didSubscribe];
+	}
 }
 
-- (UIStatusBarStyle)preferredStatusBarStyle {
-	return UIStatusBarStyleLightContent;
+- (void)keyboardWillShow:(NSNotification *)notification {
+	CGRect keyboardFrame = [notification.userInfo[UIKeyboardFrameBeginUserInfoKey] CGRectValue];
+	[self.scollView scrollRectToVisible:CGRectMake(0, self.subscribeSuperview.frame.origin.y, 320, self.subscribeSuperview.frame.size.height + keyboardFrame.size.height + 20) animated:YES];
 }
 
-- (void)viewDidLayoutSubviews {
-    [super viewDidLayoutSubviews];
-    
-    self.scrollView.contentSize = CGSizeMake(320.0f, 664.0f);
-    self.scrollView.scrollEnabled = YES;
+- (void)keyboardDidShow:(NSNotification *)notification {
+	self.shouldCloseSubscribeView = YES;
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"kRobocatNewsletterSegue"]) {
-        [RKSoundPlayer playSoundForEvent:kRKSoundPlayerButtonClickedEvent];
-    }
+- (void)keyboardDidChangeFrame:(NSNotification *)notification {
+	CGRect keyboardFrame = [notification.userInfo[UIKeyboardFrameBeginUserInfoKey] CGRectValue];
+	[self.scollView scrollRectToVisible:CGRectMake(0, self.subscribeSuperview.frame.origin.y, 320, self.subscribeSuperview.frame.size.height + keyboardFrame.size.height + 20) animated:YES];
 }
 
-#pragma mark - RSAboutRobocatViewController ()
-
-- (void)haveFollowedOnTwitter {
-    [self.buttonTwitter setBackgroundImage:[UIImage imageNamed:@"Button Blue"] forState:UIControlStateNormal];
-    [self.buttonTwitter setTitle:RKLocalizedFromTable(@"RC_ABOUT_BUTTON_FOLLOWED", NSStringFromClass(self.class)) forState:UIControlStateNormal];
-}
-
-- (void)haveLikedOnFacebook {
-    
-    [self.buttonFacebook setBackgroundImage:[UIImage imageNamed:@"Button Dark Blue"] forState:UIControlStateNormal];
-    [self.buttonFacebook setTitle:RKLocalizedFromTable(@"RC_ABOUT_BUTTON_LIKED", NSStringFromClass(self.class)) forState:UIControlStateNormal];
-}
-
-- (void)haveRated {
-    [self.buttonReview setBackgroundImage:[UIImage imageNamed:@"Button Red"] forState:UIControlStateNormal];
-	[self.buttonReview setTitle:RKLocalizedFromTable(@"RC_ABOUT_BUTTON_REVIEWED", NSStringFromClass(self.class)) forState:UIControlStateNormal];
-}
-
-
-#pragma mark - Actions
-
-- (IBAction)review:(id)sender {
-	[Flurry logEvent:@"Did review from About Robocat"];
-    [RKSoundPlayer playSoundForEvent:kRKSoundPlayerButtonClickedEvent];
-	[RKSocial rateAppWithCompletion:^(BOOL success) {
-		if (success) {
-			[self haveRated];
-		}
+- (void)openSubscribeView {
+	self.subscribeViewLeftMarginConstraint.constant = -320;
+	
+	[UIView animateWithDuration:.3 animations:^{
+		[self.view layoutIfNeeded];
 	}];
+	
+	[self.emailInput becomeFirstResponder];
+	self.emailInput.text = @"";
 }
 
-- (IBAction)twitter:(id)sender {
-    [self.spinnerView startAnimating];
+- (void)closeSubscribeView {
+	self.subscribeViewLeftMarginConstraint.constant = 0;
 	
+	[UIView animateWithDuration:.3 animations:^{
+		[self.view layoutIfNeeded];
+	}];
+	
+	[self.emailInput resignFirstResponder];
+	self.shouldCloseSubscribeView = NO;
+}
+
+- (void)didLike {
+	[self.facebookButton setBackgroundImage:[self.facebookButton backgroundImageForState:UIControlStateHighlighted] forState:UIControlStateNormal];
+	[self.facebookButton setTitleColor:[self.facebookButton titleColorForState:UIControlStateHighlighted] forState:UIControlStateNormal];
+	[self.facebookButton setTitle:@"Liked on Facebook!" forState:UIControlStateNormal];
+}
+
+- (void)didFollow {
+	[self.twitterButton setBackgroundImage:[self.twitterButton backgroundImageForState:UIControlStateHighlighted] forState:UIControlStateNormal];
+	[self.twitterButton setTitleColor:[self.twitterButton titleColorForState:UIControlStateHighlighted] forState:UIControlStateNormal];
+	[self.twitterButton setTitle:@"Followed on Twitter!" forState:UIControlStateNormal];
+}
+
+- (void)didSubscribe {
+	[self.subscribeButton setBackgroundImage:[self.subscribeButton backgroundImageForState:UIControlStateHighlighted] forState:UIControlStateNormal];
+	[self.subscribeButton setTitleColor:[self.subscribeButton titleColorForState:UIControlStateHighlighted] forState:UIControlStateNormal];
+	[self.subscribeButton setTitle:@"Subscribed!" forState:UIControlStateNormal];
+}
+
+#pragma mark - Interface actions
+
+- (IBAction)support:(id)sender {
+	[Flurry logEvent:@"Did request support from About Robocat"];
+	
+	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"mailto://support@robo.cat"]];
+}
+
+- (IBAction)visitWebsite:(id)sender {
+	[Flurry logEvent:@"Did visit website from About Robocat"];
+	
+	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://robo.cat"]];
+}
+
+- (IBAction)followOnTwitter:(id)sender {
 	[Flurry logEvent:@"Did follow on Twitter from About Robocat"];
-    [RKSoundPlayer playSoundForEvent:kRKSoundPlayerButtonClickedEvent];
-    
-    [RKSocial followOnTwitterWithCompletion:^(BOOL success) {
-		[self.spinnerView stopAnimating];
-		
-		if (success) {
-			[self haveFollowedOnTwitter];
-		}
+	
+	[RKSocial followOnTwitterWithCompletion:^(BOOL success) {
+		if (success) [self didFollow];
 	}];
 }
 
-- (IBAction)facebook:(id)sender {
+- (IBAction)likeOnFacebook:(id)sender {
 	[Flurry logEvent:@"Did like on Facebook from About Robocat"];
-    [RKSoundPlayer playSoundForEvent:kRKSoundPlayerButtonClickedEvent];
 	
 	[RKSocial likeOnFacebookWithCompletion:^(BOOL success) {
-		if (success) {
-			[self haveLikedOnFacebook];
-		}
+		if (success) [self didLike];
 	}];
 }
 
-- (IBAction)moreApps:(id)sender {
+- (IBAction)ourApps:(id)sender {
 	[Flurry logEvent:@"Did open 'more apps' from About Robocat"];
-    [RKSoundPlayer playSoundForEvent:kRKSoundPlayerButtonClickedEvent];
-	
 	[RKSocial showMoreAppsFromRobocat];
+}
+
+- (IBAction)subscribe:(id)sender {
+	[self openSubscribeView];
+}
+
+- (IBAction)cancel:(id)sender {
+	[self closeSubscribeView];
+}
+
+- (IBAction)doSubscribe:(id)sender {
+	[Flurry logEvent:@"Did subscribe to newsletter About Robocat"];
+	
+	[RKSocial subscribeWithEmail:self.emailInput.text completion:^(BOOL success) {
+		if (success) [self didSubscribe];
+	}];
+	
+	[self closeSubscribeView];
 }
 
 - (IBAction)dismiss:(id)sender {
 	[Flurry logEvent:@"Did open About Robocat"];
-    [RKSoundPlayer playSoundForEvent:kRKSoundPlayerButtonClickedEvent];
 	
-    [self dismissViewControllerAnimated:YES completion:nil];
+	[self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - Scroll view delegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+	if (self.shouldCloseSubscribeView) {
+		[self closeSubscribeView];
+	}
+}
+
+#pragma mark - Text field delegate
+
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField {
+	[self closeSubscribeView];
+	
+	return YES;
 }
 
 @end

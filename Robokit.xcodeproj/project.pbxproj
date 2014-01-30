@@ -48,7 +48,6 @@
 		FFE1DCC617F5A94B0074F75F /* RKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE1DCC517F5A94B0074F75F /* RKAppDelegate.m */; };
 		FFE1DCCA17F5A9540074F75F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE1DCC717F5A9540074F75F /* main.m */; };
 		FFE1DCFD17F5A97B0074F75F /* RKAboutRobocatViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFE1DCE517F5A97B0074F75F /* RKAboutRobocatViewController.storyboard */; };
-		FFE1DCFE17F5A97B0074F75F /* RKAboutRobocatViewController.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFE1DCE617F5A97B0074F75F /* RKAboutRobocatViewController.xcassets */; };
 		FFE1DCFF17F5A97B0074F75F /* RKFollowUsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFE1DCE717F5A97B0074F75F /* RKFollowUsViewController.storyboard */; };
 		FFE1DD0017F5A97B0074F75F /* RKFollowUsViewController.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFE1DCE817F5A97B0074F75F /* RKFollowUsViewController.xcassets */; };
 		FFE1DD0117F5A97B0074F75F /* RKRatingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFE1DCE917F5A97B0074F75F /* RKRatingViewController.storyboard */; };
@@ -57,6 +56,7 @@
 		FFE1DD1617F5AC180074F75F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFE1DD1517F5AC180074F75F /* Images.xcassets */; };
 		FFE1DD2F17F5AD130074F75F /* RKRatingViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = FFE1DD1817F5AD130074F75F /* RKRatingViewController.strings */; };
 		FFE1DD3017F5AD130074F75F /* RKAboutRobocatViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = FFE1DD1A17F5AD130074F75F /* RKAboutRobocatViewController.strings */; };
+		FFEA4CBF18990AE300E8B7BF /* RKAboutRobocatViewController.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFEA4CBE18990AE300E8B7BF /* RKAboutRobocatViewController.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -177,7 +177,6 @@
 		FFE1DCC817F5A9540074F75F /* Robokit-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Robokit-Info.plist"; path = "RobokitApp/Robokit-Info.plist"; sourceTree = SOURCE_ROOT; };
 		FFE1DCC917F5A9540074F75F /* Robokit-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Robokit-Prefix.pch"; path = "RobokitApp/Robokit-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		FFE1DCE517F5A97B0074F75F /* RKAboutRobocatViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = RKAboutRobocatViewController.storyboard; path = Resources/RKAboutRobocatViewController.storyboard; sourceTree = "<group>"; };
-		FFE1DCE617F5A97B0074F75F /* RKAboutRobocatViewController.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = RKAboutRobocatViewController.xcassets; path = Resources/RKAboutRobocatViewController.xcassets; sourceTree = "<group>"; };
 		FFE1DCE717F5A97B0074F75F /* RKFollowUsViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = RKFollowUsViewController.storyboard; path = Resources/RKFollowUsViewController.storyboard; sourceTree = "<group>"; };
 		FFE1DCE817F5A97B0074F75F /* RKFollowUsViewController.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = RKFollowUsViewController.xcassets; path = Resources/RKFollowUsViewController.xcassets; sourceTree = "<group>"; };
 		FFE1DCE917F5A97B0074F75F /* RKRatingViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = RKRatingViewController.storyboard; path = Resources/RKRatingViewController.storyboard; sourceTree = "<group>"; };
@@ -205,6 +204,7 @@
 		FFE1DD2C17F5AD130074F75F /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/RKRatingViewController.strings; sourceTree = "<group>"; };
 		FFE1DD2D17F5AD130074F75F /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/RKRatingViewController.strings; sourceTree = "<group>"; };
 		FFE1DD2E17F5AD130074F75F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/RKRatingViewController.strings"; sourceTree = "<group>"; };
+		FFEA4CBE18990AE300E8B7BF /* RKAboutRobocatViewController.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = RKAboutRobocatViewController.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -517,7 +517,7 @@
 			isa = PBXGroup;
 			children = (
 				FFE1DCE517F5A97B0074F75F /* RKAboutRobocatViewController.storyboard */,
-				FFE1DCE617F5A97B0074F75F /* RKAboutRobocatViewController.xcassets */,
+				FFEA4CBE18990AE300E8B7BF /* RKAboutRobocatViewController.xcassets */,
 				FFE1DD1A17F5AD130074F75F /* RKAboutRobocatViewController.strings */,
 			);
 			name = RKAboutRobocatViewController;
@@ -626,8 +626,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFE1DD1617F5AC180074F75F /* Images.xcassets in Resources */,
-				FFE1DCFE17F5A97B0074F75F /* RKAboutRobocatViewController.xcassets in Resources */,
 				78B63E80181BBCBA002C21CB /* RKFeedbackViewController.strings in Resources */,
+				FFEA4CBF18990AE300E8B7BF /* RKAboutRobocatViewController.xcassets in Resources */,
 				FF3E7BED17F89A1F004AB9D5 /* LICENSE in Resources */,
 				FFE1DD0117F5A97B0074F75F /* RKRatingViewController.storyboard in Resources */,
 				FF3F8CD417F8CEB30024EA07 /* RKAdView.xcassets in Resources */,

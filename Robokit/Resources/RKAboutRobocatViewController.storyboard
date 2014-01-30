@@ -13,17 +13,17 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="IKz-sW-h7F" kind="relationship" relationship="rootViewController" id="2FV-x1-fC7"/>
+                        <segue destination="IKz-sW-h7F" kind="relationship" relationship="rootViewController" id="rh1-Dp-Zur"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7a2-sE-9jb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-8" y="81"/>
         </scene>
-        <!--Robocat View Controller - Robocat-->
+        <!--About Robocat View Controller - Robocat-->
         <scene sceneID="rcB-NI-OGz">
             <objects>
-                <viewController id="IKz-sW-h7F" customClass="THERobocatViewController" sceneMemberID="viewController">
+                <viewController id="IKz-sW-h7F" customClass="RKAboutRobocatViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pZ2-mO-Prp"/>
                         <viewControllerLayoutGuide type="bottom" id="KhD-tD-haQ"/>
@@ -37,7 +37,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Robocat Logo" translatesAutoresizingMaskIntoConstraints="NO" id="xIL-ZH-RFc">
-                                        <rect key="frame" x="233" y="107" width="175" height="191"/>
+                                        <rect key="frame" x="233" y="20" width="175" height="191"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="191" id="dCe-Zm-9xB"/>
@@ -45,7 +45,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="LJ4-2m-xwe">
-                                        <rect key="frame" x="20" y="298" width="280" height="168"/>
+                                        <rect key="frame" x="20" y="211" width="280" height="168"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="168" id="Oez-4M-cxZ"/>
@@ -83,7 +83,7 @@ DQ
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LjB-bL-Wby">
-                                        <rect key="frame" x="0.0" y="585" width="160" height="116"/>
+                                        <rect key="frame" x="0.0" y="498" width="160" height="116"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="160" id="0V7-7b-9yu"/>
@@ -99,11 +99,11 @@ DQ
                                             <color key="titleColor" red="0.1215686351" green="0.2117647231" blue="0.38431376220000002" alpha="1" colorSpace="deviceRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="likeOnFacebook:" destination="IKz-sW-h7F" eventType="touchUpInside" id="UvL-0a-xIN"/>
+                                            <action selector="likeOnFacebook:" destination="IKz-sW-h7F" eventType="touchUpInside" id="5qr-gP-fws"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Adf-iV-vah">
-                                        <rect key="frame" x="160" y="585" width="160" height="116"/>
+                                        <rect key="frame" x="160" y="498" width="160" height="116"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="116" id="5JO-hX-PcY"/>
@@ -119,11 +119,11 @@ DQ
                                             <color key="titleColor" red="0.070588238540000001" green="0.48627454040000001" blue="0.65882354970000001" alpha="1" colorSpace="deviceRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="followOnTwitter:" destination="IKz-sW-h7F" eventType="touchUpInside" id="2uS-MG-m2T"/>
+                                            <action selector="followOnTwitter:" destination="IKz-sW-h7F" eventType="touchUpInside" id="juc-pk-OIG"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CvB-0u-Cdc">
-                                        <rect key="frame" x="0.0" y="701" width="160" height="116"/>
+                                        <rect key="frame" x="0.0" y="614" width="160" height="116"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="116" id="SN4-RQ-eP2"/>
@@ -139,11 +139,11 @@ DQ
                                             <color key="titleColor" red="0.2196078598" green="0.58431375029999999" blue="0.1176470667" alpha="1" colorSpace="deviceRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="visitWebsite:" destination="IKz-sW-h7F" eventType="touchUpInside" id="XIX-Rp-cek"/>
+                                            <action selector="visitWebsite:" destination="IKz-sW-h7F" eventType="touchUpInside" id="GFN-1c-MaK"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TDJ-FG-Guq">
-                                        <rect key="frame" x="160" y="701" width="160" height="116"/>
+                                        <rect key="frame" x="160" y="614" width="160" height="116"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="116" id="ScJ-Tw-DYV"/>
@@ -159,23 +159,23 @@ DQ
                                             <color key="titleColor" red="0.65882354970000001" green="0.17254902420000001" blue="0.18431372939999999" alpha="1" colorSpace="deviceRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="support:" destination="IKz-sW-h7F" eventType="touchUpInside" id="3aD-u9-Fp6"/>
+                                            <action selector="support:" destination="IKz-sW-h7F" eventType="touchUpInside" id="Yx0-mF-Xcw"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="jcx-zF-idA">
-                                        <rect key="frame" x="20" y="832" width="280" height="44"/>
+                                        <rect key="frame" x="20" y="745" width="280" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="3X9-V8-FWk"/>
                                         </constraints>
-                                        <string key="text">Thermodo 1.0
+                                        <string key="text">Appname 1.0
 Copyright © 2013 Robocat
 All rights reserved</string>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nVg-7a-l9D">
-                                        <rect key="frame" x="0.0" y="469" width="640" height="116"/>
+                                        <rect key="frame" x="0.0" y="382" width="640" height="116"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="94J-0R-AeI">
@@ -195,7 +195,7 @@ All rights reserved</string>
                                                     <color key="titleColor" red="0.54509806630000002" green="0.35686275360000003" blue="0.090196080509999998" alpha="1" colorSpace="deviceRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="ourApps:" destination="IKz-sW-h7F" eventType="touchUpInside" id="F2s-Ge-F6e"/>
+                                                    <action selector="ourApps:" destination="IKz-sW-h7F" eventType="touchUpInside" id="ATi-KG-Ab0"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QS6-KV-amS">
@@ -215,7 +215,7 @@ All rights reserved</string>
                                                     <color key="titleColor" red="0.43137258290000002" green="0.270588249" blue="0.062745101750000004" alpha="1" colorSpace="deviceRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="subscribe:" destination="IKz-sW-h7F" eventType="touchUpInside" id="Jjz-r9-L4u"/>
+                                                    <action selector="subscribe:" destination="IKz-sW-h7F" eventType="touchUpInside" id="Xcv-aX-8DY"/>
                                                 </connections>
                                             </button>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email@whatever.com" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k7f-ix-Nwx">
@@ -238,7 +238,7 @@ All rights reserved</string>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="cancel:" destination="IKz-sW-h7F" eventType="touchUpInside" id="lf2-t8-cIH"/>
+                                                    <action selector="cancel:" destination="IKz-sW-h7F" eventType="touchUpInside" id="05Y-Bl-oqp"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LeT-56-2U0">
@@ -252,7 +252,7 @@ All rights reserved</string>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="doSubscribe:" destination="IKz-sW-h7F" eventType="touchUpInside" id="Co1-h5-7Vt"/>
+                                                    <action selector="doSubscribe:" destination="IKz-sW-h7F" eventType="touchUpInside" id="AYw-BU-aut"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -295,7 +295,7 @@ All rights reserved</string>
                                     <constraint firstItem="CvB-0u-Cdc" firstAttribute="leading" secondItem="TUz-td-fpM" secondAttribute="leading" id="hoR-iC-BmS"/>
                                     <constraint firstItem="nVg-7a-l9D" firstAttribute="top" secondItem="LJ4-2m-xwe" secondAttribute="bottom" constant="3" id="kRi-2g-nwn"/>
                                     <constraint firstItem="LjB-bL-Wby" firstAttribute="leading" secondItem="TUz-td-fpM" secondAttribute="leading" id="kpW-y4-bDx"/>
-                                    <constraint firstItem="xIL-ZH-RFc" firstAttribute="top" secondItem="TUz-td-fpM" secondAttribute="top" constant="107" id="q9m-Zi-zw8"/>
+                                    <constraint firstItem="xIL-ZH-RFc" firstAttribute="top" secondItem="TUz-td-fpM" secondAttribute="top" constant="20" id="q9m-Zi-zw8"/>
                                     <constraint firstItem="CvB-0u-Cdc" firstAttribute="top" secondItem="LjB-bL-Wby" secondAttribute="bottom" id="sYn-99-HJo"/>
                                     <constraint firstItem="CvB-0u-Cdc" firstAttribute="centerY" secondItem="TDJ-FG-Guq" secondAttribute="centerY" id="tWr-vm-BUs"/>
                                     <constraint firstItem="Adf-iV-vah" firstAttribute="leading" secondItem="LjB-bL-Wby" secondAttribute="trailing" id="vGO-9C-CeY"/>
@@ -314,19 +314,24 @@ All rights reserved</string>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Robocat" id="UQ3-ht-ylC">
-                        <barButtonItem key="leftBarButtonItem" title="Done" id="5av-hu-hOs"/>
+                        <barButtonItem key="leftBarButtonItem" title="Done" id="5av-hu-hOs">
+                            <connections>
+                                <action selector="dismiss:" destination="IKz-sW-h7F" id="fAI-gO-3Hr"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <outlet property="aboutLabel" destination="jcx-zF-idA" id="xnt-e0-QH9"/>
-                        <outlet property="emailInput" destination="k7f-ix-Nwx" id="s9T-ZL-qWD"/>
-                        <outlet property="facebookButton" destination="LjB-bL-Wby" id="cnb-qK-vMW"/>
-                        <outlet property="scollView" destination="TUz-td-fpM" id="s8d-ZC-c5X"/>
-                        <outlet property="subscribeButton" destination="QS6-KV-amS" id="EoS-Yz-FP1"/>
-                        <outlet property="subscribeSuperview" destination="nVg-7a-l9D" id="Yau-cz-eAh"/>
-                        <outlet property="subscribeViewLeftMarginConstraint" destination="9TH-Z1-TOM" id="fZg-xf-wdj"/>
-                        <outlet property="twitterButton" destination="Adf-iV-vah" id="yPv-TD-eez"/>
+                        <outlet property="aboutLabel" destination="jcx-zF-idA" id="aMx-4J-ohr"/>
+                        <outlet property="closeButton" destination="5av-hu-hOs" id="101-Nf-0Q7"/>
+                        <outlet property="emailInput" destination="k7f-ix-Nwx" id="IF9-r0-aFC"/>
+                        <outlet property="facebookButton" destination="LjB-bL-Wby" id="ZUO-km-NI9"/>
+                        <outlet property="scollView" destination="TUz-td-fpM" id="9aS-pr-Z8U"/>
+                        <outlet property="subscribeButton" destination="QS6-KV-amS" id="2B6-Kf-muE"/>
+                        <outlet property="subscribeSuperview" destination="nVg-7a-l9D" id="4ZF-FO-WoX"/>
+                        <outlet property="subscribeViewLeftMarginConstraint" destination="9TH-Z1-TOM" id="064-4o-gLn"/>
+                        <outlet property="twitterButton" destination="Adf-iV-vah" id="qUF-Xd-FmN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fuf-zb-yQO" userLabel="First Responder" sceneMemberID="firstResponder"/>

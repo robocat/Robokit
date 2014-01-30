@@ -57,14 +57,15 @@ Pod::Spec.new do |s|
     ss.source_files =         'Robokit/Source/About/*.{h,m}'
     ss.resources = [
                               'Robokit/Resources/RKAboutRobocatViewController.storyboard',
-                              'Robokit/Resources/RKAboutRobocatViewController.xcassets/**/*' ]
+                              'Robokit/Resources/RKAboutRobocatViewController.xcassets/**/*',
+							  'Robokit/Resources/RKAboutRobocatViewController.strings' ]
                               'Robokit/Frameworks/RevMobAds.framework/*'
     ss.preserve_paths =       'Robokit/Resources/RKAboutRobocatViewController.xcassets/*'
   end
   
   s.subspec 'Catnip' do |ss|
     ss.dependency             'Robokit/Shared'
-    ss.dependency	      'RSEnvironment'
+    ss.dependency	          'RSEnvironment'
     ss.source_files =         'Robokit/Source/Catnip/*.{h,m}'
   end
 

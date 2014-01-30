@@ -10,13 +10,13 @@
 
 #define weakify \
 	autoreleasepool {} \
-	#pragma clang diagnostic push \
-	#pragma clang diagnostic ignored "-Wunused-variable" \
-	__weak typeof(self) weakSelf = self \
-	#pragma clang diagnostic pop
+	_Pragma("clang diagnostic push") \
+	_Pragma("clang diagnostic ignored \"-Wunused-variable\"") \
+	__weak typeof(self) weakSelf = self; \
+	_Pragma("clang diagnostic pop")
 
-#define strongify autoreleasepool {} if (!weakSelf) return; typeof(self) self = weakSelf
-#define strongify_return(default_return) autoreleasepool {} if (!weakSelf) return default_return; typeof(self) self = weakSelf
+#define strongify autoreleasepool {} if (!weakSelf) return; typeof(self) self = weakSelf;
+#define strongify_return(default_return) autoreleasepool {} if (!weakSelf) return default_return; typeof(self) self = weakSelf;
 
 typedef enum {
 	GCDispatchStop = 0,

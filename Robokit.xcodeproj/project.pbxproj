@@ -11,7 +11,6 @@
 		7828EE461823B5110091B1E8 /* RKSocial.m in Sources */ = {isa = PBXBuildFile; fileRef = 7847E6831819FD63008A034E /* RKSocial.m */; };
 		7828EE481823B7A90091B1E8 /* libFlurry_4.2.4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FFB5874D17F9BBE2007D9485 /* libFlurry_4.2.4.a */; };
 		7828EE491823B7C30091B1E8 /* RKDispatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 7847E67E1819FD63008A034E /* RKDispatch.m */; };
-		7828EE4A1823B7E00091B1E8 /* RKMacros.h in Sources */ = {isa = PBXBuildFile; fileRef = 7847E6811819FD63008A034E /* RKMacros.h */; };
 		7828EE4B1823B7E00091B1E8 /* RKLocalization.m in Sources */ = {isa = PBXBuildFile; fileRef = 7847E6801819FD63008A034E /* RKLocalization.m */; };
 		7828EE4C1823B7E00091B1E8 /* RKDialogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7847E67C1819FD63008A034E /* RKDialogViewController.m */; };
 		7828EE4D1823B7E00091B1E8 /* RKFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7847E6911819FDBE008A034E /* RKFeedbackViewController.m */; };
@@ -56,7 +55,7 @@
 		FFE1DD1617F5AC180074F75F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFE1DD1517F5AC180074F75F /* Images.xcassets */; };
 		FFE1DD2F17F5AD130074F75F /* RKRatingViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = FFE1DD1817F5AD130074F75F /* RKRatingViewController.strings */; };
 		FFE1DD3017F5AD130074F75F /* RKAboutRobocatViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = FFE1DD1A17F5AD130074F75F /* RKAboutRobocatViewController.strings */; };
-		FFEA4CBF18990AE300E8B7BF /* RKAboutRobocatViewController.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFEA4CBE18990AE300E8B7BF /* RKAboutRobocatViewController.xcassets */; };
+		FFEA4CC2189A6F7700E8B7BF /* RKAboutRobocatViewController.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFEA4CC1189A6F7700E8B7BF /* RKAboutRobocatViewController.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -204,7 +203,7 @@
 		FFE1DD2C17F5AD130074F75F /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/RKRatingViewController.strings; sourceTree = "<group>"; };
 		FFE1DD2D17F5AD130074F75F /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/RKRatingViewController.strings; sourceTree = "<group>"; };
 		FFE1DD2E17F5AD130074F75F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/RKRatingViewController.strings"; sourceTree = "<group>"; };
-		FFEA4CBE18990AE300E8B7BF /* RKAboutRobocatViewController.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = RKAboutRobocatViewController.xcassets; sourceTree = "<group>"; };
+		FFEA4CC1189A6F7700E8B7BF /* RKAboutRobocatViewController.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = RKAboutRobocatViewController.xcassets; path = Resources/RKAboutRobocatViewController.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -517,7 +516,7 @@
 			isa = PBXGroup;
 			children = (
 				FFE1DCE517F5A97B0074F75F /* RKAboutRobocatViewController.storyboard */,
-				FFEA4CBE18990AE300E8B7BF /* RKAboutRobocatViewController.xcassets */,
+				FFEA4CC1189A6F7700E8B7BF /* RKAboutRobocatViewController.xcassets */,
 				FFE1DD1A17F5AD130074F75F /* RKAboutRobocatViewController.strings */,
 			);
 			name = RKAboutRobocatViewController;
@@ -627,7 +626,7 @@
 			files = (
 				FFE1DD1617F5AC180074F75F /* Images.xcassets in Resources */,
 				78B63E80181BBCBA002C21CB /* RKFeedbackViewController.strings in Resources */,
-				FFEA4CBF18990AE300E8B7BF /* RKAboutRobocatViewController.xcassets in Resources */,
+				FFEA4CC2189A6F7700E8B7BF /* RKAboutRobocatViewController.xcassets in Resources */,
 				FF3E7BED17F89A1F004AB9D5 /* LICENSE in Resources */,
 				FFE1DD0117F5A97B0074F75F /* RKRatingViewController.storyboard in Resources */,
 				FF3F8CD417F8CEB30024EA07 /* RKAdView.xcassets in Resources */,
@@ -706,7 +705,6 @@
 			files = (
 				7828EE491823B7C30091B1E8 /* RKDispatch.m in Sources */,
 				7828EE461823B5110091B1E8 /* RKSocial.m in Sources */,
-				7828EE4A1823B7E00091B1E8 /* RKMacros.h in Sources */,
 				7828EE4B1823B7E00091B1E8 /* RKLocalization.m in Sources */,
 				7828EE4C1823B7E00091B1E8 /* RKDialogViewController.m in Sources */,
 				7828EE4D1823B7E00091B1E8 /* RKFeedbackViewController.m in Sources */,

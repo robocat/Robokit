@@ -10,6 +10,8 @@
 
 @interface RKAboutRobocatViewController : UIViewController
 
+@property (strong, nonatomic) NSString *supportEmail;
+
 + (RKAboutRobocatViewController *)aboutRobocatViewController;
 
 @end

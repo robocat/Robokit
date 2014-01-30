@@ -33,7 +33,15 @@
 @implementation RKAboutRobocatViewController
 
 + (RKAboutRobocatViewController *)aboutRobocatViewController {
-    return [self rk_initialViewControllerFromStoryboardWithName:@"RKAboutRobocatViewController"];
+	return [self rk_initialViewControllerFromStoryboardWithName:@"RKAboutRobocatViewController"];
+}
+
+- (id)init {
+	if ((self = [super init])) {
+		self.supportEmail = @"support@robo.cat";
+	}
+	
+	return self;
 }
 
 - (void)viewDidLoad {
@@ -46,12 +54,6 @@
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidChangeFrame:) name:UIKeyboardDidChangeFrameNotification object:nil];
-	
-	[self.closeButton setTitle:RKLocalized(@"RC_ABOUT_BUTTON_CLOSE")];
-	[self.subscribeButton rkLocalize:@"RC_ABOUT_BUTTON_NEWSLETTER"];
-	[self.facebookButton rkLocalize:@"RC_ABOUT_BUTTON_FACEBOOK"];
-	[self.twitterButton rkLocalize:@"RC_ABOUT_BUTTON_TWITTER"];
-	[self.aboutLabel rkLocalize:@""];
 	
 	if ([RKSocial hasFollowedOnTwitter]) {
 		[self didFollow];
@@ -125,7 +127,7 @@
 - (IBAction)support:(id)sender {
 	[Flurry logEvent:@"Did request support from About Robocat"];
 	
-	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"mailto://support@robo.cat"]];
+	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.supportEmail]];
 }
 
 - (IBAction)visitWebsite:(id)sender {

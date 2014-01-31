@@ -130,7 +130,14 @@ xcuserdata
 
 *.xccheckout
 
-
+###
+# CocoaPods
+#
 Pods
 Pods/*
 Podfile.lock
+
+###
+# AppCode
+#
+.idea/

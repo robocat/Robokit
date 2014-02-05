@@ -127,7 +127,10 @@
 - (IBAction)support:(id)sender {
 	[Flurry logEvent:@"Did request support from About Robocat"];
 	
-	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.supportEmail]];
+    NSString *mailString = [NSString stringWithFormat:@"mailto:%@?subject=Support %@ (%@)", self.supportEmail, [RKSocial appName], [RKSocial appVersion]];
+	NSURL *mailURL = [NSURL URLWithString:[mailString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+	
+	[[UIApplication sharedApplication] openURL:mailURL];
 }
 
 - (IBAction)visitWebsite:(id)sender {

@@ -9,7 +9,7 @@
 #import "RKPurchaseManager.h"
 #import "UIDevice+RKAdditions.h"
 #import "Flurry.h"
-
+#import "RKMacros.h"
 #import <StoreKit/StoreKit.h>
 
 NSString * const kRKPurchasesManagerDidLoadProductInfoNotification = @"cat.robo.kRKPurchasesManagerDidLoadProductInfoNotification";
@@ -128,6 +128,8 @@ NSString * const kRKPurchasesManagerErrorKey = @"kRKPurchasesManagerErrorKey";
 }
 
 + (BOOL)isSimulatedPurchases {
+	if (RK_IS_SIMULATOR) return YES;
+	
     return [[self class] sharedInstance].simulated;
 }
 

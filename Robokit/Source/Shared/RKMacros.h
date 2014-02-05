@@ -11,6 +11,7 @@
 #define RK_IS_IPHONE_5 (RK_IS_IPHONE && UIScreen.mainScreen.bounds.size.height > 480)
 #define RK_IS_RETINA ([[UIScreen mainScreen] respondsToSelector:@selector(scale)] == YES && [[UIScreen mainScreen] scale] == 2.00)
 #define RK_IS_IOS_7 SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")
+#define RK_IS_SIMULATOR (TARGET_IPHONE_SIMULATOR)
 
 #define RK_SYSTEM_VERSION_EQUAL_TO(v)                  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame)
 #define RK_SYSTEM_VERSION_GREATER_THAN(v)              ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedDescending)

@@ -184,6 +184,10 @@ NSString * const kRKSocialUpdateCurrentVersionKey = @"cat.robo.kRKSocialUpdateCu
     return [[self sharedInstance] appVersion];
 }
 
++ (NSString *)supportEmailAddress {
+    return [[self sharedInstance] supportEmailAddress];
+}
+
 + (BOOL)hasLikedOnFacebook {
 	return [[NSUserDefaults standardUserDefaults] boolForKey:RKRobocatViewControllerHaveLikedKey];
 }

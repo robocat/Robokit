@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.authors = { 'Ulrik Flænø Damm' => 'ulrik@robo.cat', 'Kristian Andersen' => 'kristian@robo.cat' }
   s.source = { :git => 'https://github.com/robocat/Robokit.git', :branch => :master }
 
-  s.platform = :ios, "7.0"
+  s.platform = :ios, "6.0"
   s.requires_arc = true
   
   s.subspec 'Shared' do |ss|

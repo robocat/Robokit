@@ -58,16 +58,18 @@
 	self.rateView.clipsToBounds = YES;
 	self.rateView.layer.cornerRadius = 10;
 	
-	UIInterpolatingMotionEffect *motionEffectx = [[UIInterpolatingMotionEffect alloc] initWithKeyPath:@"center.x" type:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];
-	motionEffectx.minimumRelativeValue = @( -20 );
-	motionEffectx.maximumRelativeValue = @(  20 );
-	[self.rateView addMotionEffect:motionEffectx];
+    if (RK_IS_IOS_7) {
+        UIInterpolatingMotionEffect *motionEffectx = [[UIInterpolatingMotionEffect alloc] initWithKeyPath:@"center.x" type:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];
+        motionEffectx.minimumRelativeValue = @( -20 );
+        motionEffectx.maximumRelativeValue = @(  20 );
+        [self.rateView addMotionEffect:motionEffectx];
 	
-	UIInterpolatingMotionEffect *motionEffecty = [[UIInterpolatingMotionEffect alloc] initWithKeyPath:@"center.y" type:UIInterpolatingMotionEffectTypeTiltAlongVerticalAxis];
-	motionEffecty.minimumRelativeValue = @( -20 );
-	motionEffecty.maximumRelativeValue = @(  20 );
-	[self.rateView addMotionEffect:motionEffecty];
-	
+        UIInterpolatingMotionEffect *motionEffecty = [[UIInterpolatingMotionEffect alloc] initWithKeyPath:@"center.y" type:UIInterpolatingMotionEffectTypeTiltAlongVerticalAxis];
+        motionEffecty.minimumRelativeValue = @( -20 );
+        motionEffecty.maximumRelativeValue = @(  20 );
+        [self.rateView addMotionEffect:motionEffecty];
+	}
+    
 	UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(didPan:)];
 	[self.starsView addGestureRecognizer:panGesture];
 	

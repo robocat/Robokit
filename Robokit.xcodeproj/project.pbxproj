@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		051DA53BE42A423A9E95E797 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C31D1030CF2487D81A88676 /* libPods.a */; };
+		3E20D2DA18A9321C00C2AA9A /* libFlurry_4.3.2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E20D2D918A9321C00C2AA9A /* libFlurry_4.3.2.a */; };
+		3E20D2DB18A9321C00C2AA9A /* libFlurry_4.3.2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E20D2D918A9321C00C2AA9A /* libFlurry_4.3.2.a */; };
 		7828EE461823B5110091B1E8 /* RKSocial.m in Sources */ = {isa = PBXBuildFile; fileRef = 7847E6831819FD63008A034E /* RKSocial.m */; };
-		7828EE481823B7A90091B1E8 /* libFlurry_4.2.4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FFB5874D17F9BBE2007D9485 /* libFlurry_4.2.4.a */; };
 		7828EE491823B7C30091B1E8 /* RKDispatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 7847E67E1819FD63008A034E /* RKDispatch.m */; };
 		7828EE4B1823B7E00091B1E8 /* RKLocalization.m in Sources */ = {isa = PBXBuildFile; fileRef = 7847E6801819FD63008A034E /* RKLocalization.m */; };
 		7828EE4C1823B7E00091B1E8 /* RKDialogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7847E67C1819FD63008A034E /* RKDialogViewController.m */; };
@@ -43,7 +44,6 @@
 		FF62914B17F59F970018AD68 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FF62914917F59F970018AD68 /* InfoPlist.strings */; };
 		FF62914D17F59F970018AD68 /* RKSocialTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FF62914C17F59F970018AD68 /* RKSocialTests.m */; };
 		FF99C6B3185F2F5E00E6B260 /* UIApplication+RKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FF99C6B2185F2F5E00E6B260 /* UIApplication+RKAdditions.m */; };
-		FFB5874E17F9BBE2007D9485 /* libFlurry_4.2.4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FFB5874D17F9BBE2007D9485 /* libFlurry_4.2.4.a */; };
 		FFE1DCC617F5A94B0074F75F /* RKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE1DCC517F5A94B0074F75F /* RKAppDelegate.m */; };
 		FFE1DCCA17F5A9540074F75F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE1DCC717F5A9540074F75F /* main.m */; };
 		FFE1DCFD17F5A97B0074F75F /* RKAboutRobocatViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFE1DCE517F5A97B0074F75F /* RKAboutRobocatViewController.storyboard */; };
@@ -69,6 +69,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3E20D2D918A9321C00C2AA9A /* libFlurry_4.3.2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFlurry_4.3.2.a; path = Frameworks/libFlurry_4.3.2.a; sourceTree = "<group>"; };
 		5C31D1030CF2487D81A88676 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		783CE1761819D3E40063F3DD /* RKFeedbackViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = RKFeedbackViewController.storyboard; path = Resources/RKFeedbackViewController.storyboard; sourceTree = "<group>"; };
 		7847E6751819FCF7008A034E /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTestFlight.a; path = Frameworks/libTestFlight.a; sourceTree = "<group>"; };
@@ -164,7 +165,6 @@
 		FFA679CE181EAAAB008E21A9 /* RKSoundPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKSoundPlayer.h; sourceTree = "<group>"; };
 		FFA679CF181EAAAB008E21A9 /* RKSoundPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKSoundPlayer.m; sourceTree = "<group>"; };
 		FFB5874C17F9BBE2007D9485 /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Flurry.h; path = Frameworks/Flurry.h; sourceTree = "<group>"; };
-		FFB5874D17F9BBE2007D9485 /* libFlurry_4.2.4.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFlurry_4.2.4.a; path = Frameworks/libFlurry_4.2.4.a; sourceTree = "<group>"; };
 		FFB5874F17F9C818007D9485 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/RKAboutRobocatViewController.strings; sourceTree = "<group>"; };
 		FFB5875017F9C818007D9485 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/RKFollowUsViewController.strings; sourceTree = "<group>"; };
 		FFB5875117F9C818007D9485 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/RKRatingViewController.strings; sourceTree = "<group>"; };
@@ -212,8 +212,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				78568430181EAA2200E4710C /* libz.dylib in Frameworks */,
+				3E20D2DA18A9321C00C2AA9A /* libFlurry_4.3.2.a in Frameworks */,
 				FF3F8CDC17F8EC430024EA07 /* AdSupport.framework in Frameworks */,
-				FFB5874E17F9BBE2007D9485 /* libFlurry_4.2.4.a in Frameworks */,
 				FF3F8CDA17F8DDEC0024EA07 /* SystemConfiguration.framework in Frameworks */,
 				7847E6791819FCF7008A034E /* libTestFlight.a in Frameworks */,
 				FF62912A17F59F970018AD68 /* CoreGraphics.framework in Frameworks */,
@@ -232,9 +232,9 @@
 				FF62914117F59F970018AD68 /* XCTest.framework in Frameworks */,
 				FF62914317F59F970018AD68 /* UIKit.framework in Frameworks */,
 				FF62914217F59F970018AD68 /* Foundation.framework in Frameworks */,
-				7828EE481823B7A90091B1E8 /* libFlurry_4.2.4.a in Frameworks */,
 				7828EE521823B9140091B1E8 /* libTestFlight.a in Frameworks */,
 				7828EE531823B9140091B1E8 /* RevMobAds.framework in Frameworks */,
+				3E20D2DB18A9321C00C2AA9A /* libFlurry_4.3.2.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,7 +367,7 @@
 				7847E6771819FCF7008A034E /* TestFlight+AsyncLogging.h */,
 				7847E6781819FCF7008A034E /* TestFlight+ManualSessions.h */,
 				FFB5874C17F9BBE2007D9485 /* Flurry.h */,
-				FFB5874D17F9BBE2007D9485 /* libFlurry_4.2.4.a */,
+				3E20D2D918A9321C00C2AA9A /* libFlurry_4.3.2.a */,
 				7847E6751819FCF7008A034E /* libTestFlight.a */,
 				FF3F8CD717F8DD130024EA07 /* RevMobAds.framework */,
 			);
@@ -906,6 +906,7 @@
 					"$(inherited)",
 					./Robokit,
 					./Robokit/Frameworks,
+					"/Users/willi/Work/!Robocat/Robokit/Robokit/Frameworks",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -930,6 +931,7 @@
 					"$(inherited)",
 					./Robokit,
 					./Robokit/Frameworks,
+					"/Users/willi/Work/!Robocat/Robokit/Robokit/Frameworks",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -965,6 +967,7 @@
 					./Robokit/,
 					./Robokit/Frameworks/,
 					/Users/ksma/Robocat/Robokit/Robokit/Frameworks,
+					"/Users/willi/Work/!Robocat/Robokit/Robokit/Frameworks",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -997,6 +1000,7 @@
 					./Robokit/,
 					./Robokit/Frameworks/,
 					/Users/ksma/Robocat/Robokit/Robokit/Frameworks,
+					"/Users/willi/Work/!Robocat/Robokit/Robokit/Frameworks",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";

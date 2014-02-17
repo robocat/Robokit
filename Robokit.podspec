@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.authors = { 'Ulrik Flænø Damm' => 'ulrik@robo.cat', 'Kristian Andersen' => 'kristian@robo.cat' }
   s.source = { :git => 'https://github.com/robocat/Robokit.git', :branch => :master }
 
-  s.platform = :ios, "7.0"
+  s.platform = :ios, "6.0"
   s.requires_arc = true
   
   s.subspec 'Shared' do |ss|
@@ -24,9 +24,9 @@ Pod::Spec.new do |s|
     ss.frameworks =           'Accounts',
                               'Social',
                               'UIKit'
-    ss.vendored_libraries =   'Robokit/Frameworks/libFlurry_4.2.4.a', 'Robokit/Frameworks/libTestFlight.a'
+    ss.vendored_libraries =   'Robokit/Frameworks/libFlurry_4.3.2.a', 'Robokit/Frameworks/libTestFlight.a'
     ss.library = 'z'
-    ss.preserve_paths =       'Robokit/Frameworks/libFlurry_4.2.4.a', 'Robokit/Frameworks/libTestFlight.a'
+    ss.preserve_paths =       'Robokit/Frameworks/libFlurry_4.3.2.a', 'Robokit/Frameworks/libTestFlight.a'
   end
   
   s.subspec 'IAP' do |ss|

@@ -50,6 +50,7 @@ NSString * const kRKSocialUpdateCurrentVersionKey = @"cat.robo.kRKSocialUpdateCu
 @property (strong, nonatomic) NSString *appId;
 @property (strong, nonatomic) NSString *appName;
 @property (strong, nonatomic) NSString *appVersion;
+@property (strong, nonatomic) NSString *supportEmailAddress;
 @property (strong, nonatomic) NSString *whatsNew;
 @property (strong, nonatomic) NSString *facebookAppId;
 @property (assign, nonatomic) BOOL isFirstLaunch;
@@ -76,6 +77,7 @@ NSString * const kRKSocialUpdateCurrentVersionKey = @"cat.robo.kRKSocialUpdateCu
 	[[self sharedInstance] setWhatsNew:newsString];
 	[[self sharedInstance] setAppId:appId];
 	[[self sharedInstance] setAppName:appName];
+    [[self sharedInstance] setSupportEmailAddress:@"support@robo.cat"];
 	
 	[[NSNotificationCenter defaultCenter] addObserver:[self sharedInstance] selector:@selector(applicationDidBecomeActive:) name:UIApplicationDidBecomeActiveNotification object:nil];
 	[[NSNotificationCenter defaultCenter] addObserver:[self sharedInstance] selector:@selector(applicationDidEnterBackground:) name:UIApplicationDidEnterBackgroundNotification object:nil];
@@ -182,6 +184,10 @@ NSString * const kRKSocialUpdateCurrentVersionKey = @"cat.robo.kRKSocialUpdateCu
     return [[self sharedInstance] appVersion];
 }
 
++ (NSString *)supportEmailAddress {
+    return [[self sharedInstance] supportEmailAddress];
+}
+
 + (BOOL)hasLikedOnFacebook {
 	return [[NSUserDefaults standardUserDefaults] boolForKey:RKRobocatViewControllerHaveLikedKey];
 }
@@ -200,6 +206,10 @@ NSString * const kRKSocialUpdateCurrentVersionKey = @"cat.robo.kRKSocialUpdateCu
 
 + (void)setShouldShowFollowUs:(BOOL)shouldShow {
 	[[self sharedInstance] setShouldShowFollowUs:shouldShow];
+}
+
++ (void)setSupportEmailAddress:(NSString *)supportEmailAddress {
+    [[self sharedInstance] setSupportEmailAddress:supportEmailAddress];
 }
 
 + (void)likedOnFacebook {

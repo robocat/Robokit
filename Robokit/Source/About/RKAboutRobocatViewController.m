@@ -37,9 +37,7 @@
 }
 
 - (id)init {
-	if ((self = [super init])) {
-		self.supportEmail = @"support@robo.cat";
-	}
+    self = [super init];
 	
 	return self;
 }
@@ -127,7 +125,7 @@
 - (IBAction)support:(id)sender {
 	[Flurry logEvent:@"Did request support from About Robocat"];
 	
-    NSString *mailString = [NSString stringWithFormat:@"mailto:%@?subject=Support %@ (%@)", self.supportEmail, [RKSocial appName], [RKSocial appVersion]];
+    NSString *mailString = [NSString stringWithFormat:@"mailto:%@?subject=Support %@ (%@)", [RKSocial supportEmailAddress], [RKSocial appName], [RKSocial appVersion]];
 	NSURL *mailURL = [NSURL URLWithString:[mailString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
 	
 	[[UIApplication sharedApplication] openURL:mailURL];

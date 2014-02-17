@@ -27,6 +27,8 @@
 #define RGBA(r, g, b, a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
 #endif
 
+#define RK_APP_VERSION ([[NSBundle mainBundle] infoDictionary][@"CFBundleVersion"])
+
 #ifndef MAIN_QUEUE_ONLY
 #define MAIN_QUEUE_ONLY \
 _Pragma("clang diagnostic push") \

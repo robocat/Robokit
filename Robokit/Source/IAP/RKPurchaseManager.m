@@ -144,21 +144,37 @@ NSString * const kRKPurchasesManagerErrorKey = @"kRKPurchasesManagerErrorKey";
 	
 	[[NSUserDefaults standardUserDefaults] setBool:YES forKey:featureId];
 	[[NSUserDefaults standardUserDefaults] synchronize];
+    
+    NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
+    if (featureId) {
+        userInfo[kRKPurchasesManagerFeatureIdKey] = featureId;
+    }
+    if (transactionId) {
+        userInfo[kRKPurchasesManagerTransactionIdKey] = transactionId;
+    }
+    if (purchaseDate) {
+        userInfo[kRKPurchasesManagerPurchaseDateKey] = purchaseDate;
+    }
 	
-	NSDictionary *userInfo = @{ kRKPurchasesManagerFeatureIdKey: featureId,
-								kRKPurchasesManagerTransactionIdKey: transactionId,
-								kRKPurchasesManagerPurchaseDateKey: purchaseDate };
-	[[NSNotificationCenter defaultCenter] postNotificationName:kRKPurchasesManagerDidPurchaseFeatureNotification object:nil userInfo:userInfo];
+	[[NSNotificationCenter defaultCenter] postNotificationName:kRKPurchasesManagerDidPurchaseFeatureNotification object:nil userInfo:[userInfo copy]];
 }
 
 + (void)productWasRestored:(NSString *)featureId transactionId:(NSString *)transactionId purchaseDate:(NSDate *)purchaseDate {
 	[[NSUserDefaults standardUserDefaults] setBool:YES forKey:featureId];
 	[[NSUserDefaults standardUserDefaults] synchronize];
 	
-	NSDictionary *userInfo = @{ kRKPurchasesManagerFeatureIdKey: featureId,
-								kRKPurchasesManagerTransactionIdKey: transactionId,
-								kRKPurchasesManagerPurchaseDateKey: purchaseDate };
-	[[NSNotificationCenter defaultCenter] postNotificationName:kRKPurchasesManagerDidPurchaseFeatureNotification object:nil userInfo:userInfo];
+	NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
+    if (featureId) {
+        userInfo[kRKPurchasesManagerFeatureIdKey] = featureId;
+    }
+    if (transactionId) {
+        userInfo[kRKPurchasesManagerTransactionIdKey] = transactionId;
+    }
+    if (purchaseDate) {
+        userInfo[kRKPurchasesManagerPurchaseDateKey] = purchaseDate;
+    }
+    
+	[[NSNotificationCenter defaultCenter] postNotificationName:kRKPurchasesManagerDidPurchaseFeatureNotification object:nil userInfo:[userInfo copy]];
 }
 
 + (void)productPurchaseFailed:(NSString *)featureId {

@@ -15,8 +15,14 @@ void RKLocalizationSetPreferredLanguage(NSString *language) {
 	[[NSUserDefaults standardUserDefaults] synchronize];
 }
 
+NSString *RKLocalizationNameForPrefferedLanguage(void) {
+    return RKLocalizationNameForLanguage(RKLocalizationPreferredLanguage());
+}
+
 NSString *RKLocalizationNameForLanguage(NSString *language) {
-    return [[NSLocale localeWithLocaleIdentifier:language] displayNameForKey:NSLocaleIdentifier value:language];
+    NSString *languageName = [[NSLocale localeWithLocaleIdentifier:language] displayNameForKey:NSLocaleIdentifier value:language];
+    languageName = [languageName stringByReplacingCharactersInRange:NSMakeRange(0, 1) withString:[[languageName uppercaseString] substringToIndex:1]];
+    return languageName;
 }
 
 NSString *RKLocalizationPreferredLanguage(void) {

@@ -53,26 +53,36 @@ void systemSoundCompleted(SystemSoundID ssID, void* clientData);
 	[self playSound:soundName withCompletion:nil];
 }
 
-+ (void)playSound:(NSString *)soundName withCompletion:(void (^)(void))completion {
-    if ([self isMuted]) {
-        return;
-    }
-    
-	NSString *path = [[NSBundle mainBundle] pathForResource:soundName ofType:@"caf"];
-	SystemSoundID soundId;
-	AudioServicesCreateSystemSoundID((__bridge CFURLRef)([NSURL fileURLWithPath:path]), &soundId);
-	
-	if (completion) {
-		void (^completionBlock)(void) = [completion copy];
-		self.sharedInstance.callbacks[[NSString stringWithFormat:@"%i", (unsigned int)soundId]] = completionBlock;
-	}
-	
-	AudioServicesAddSystemSoundCompletion(soundId, CFRunLoopGetMain(), kCFRunLoopDefaultMode, systemSoundCompleted, NULL);
-	AudioServicesPlaySystemSound(soundId);
++ (void)playSound:(NSString *)soundName obeyMuted:(BOOL)obey {
+    [self playSound:soundName obeyMuted:obey withCompletion:nil];
 }
 
+
++ (void)playSound:(NSString *)soundName withCompletion:(void (^)(void))completion {
+    [self playSound:soundName obeyMuted:YES withCompletion:completion];
+}
+
++ (void)playSound:(NSString *)soundName obeyMuted:(BOOL)obey withCompletion:(void (^)(void))completion {
+    if ([self isMuted] && obey) {
+        return;
+    }
+
+    NSString *path = [[NSBundle mainBundle] pathForResource:soundName ofType:@"caf"];
+    SystemSoundID soundId;
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)([NSURL fileURLWithPath:path]), &soundId);
+
+    if (completion) {
+        void (^completionBlock)(void) = [completion copy];
+        self.sharedInstance.callbacks[[NSString stringWithFormat:@"%i", (unsigned int)soundId]] = completionBlock;
+    }
+
+    AudioServicesAddSystemSoundCompletion(soundId, CFRunLoopGetMain(), kCFRunLoopDefaultMode, systemSoundCompleted, NULL);
+    AudioServicesPlaySystemSound(soundId);
+}
+
+
 + (void)registerSound:(NSString *)soundName forEvent:(NSString *)event {
-    [[self class] sharedInstance].events[event] = soundName;
+    [self sharedInstance].events[event] = soundName;
 }
 
 + (void)playSoundForEvent:(NSString *)event {
@@ -80,18 +90,18 @@ void systemSoundCompleted(SystemSoundID ssID, void* clientData);
 }
 
 + (void)playSoundForEvent:(NSString *)event withCompletion:(void (^)(void))completion {
-    NSString *sound = [[self class] sharedInstance].events[event];
+    NSString *sound = [self sharedInstance].events[event];
     if (sound) {
         [[self class] playSound:sound withCompletion:completion];
     }
 }
 
 + (BOOL)isMuted {
-    return [[self class] sharedInstance].muted;
+    return [self sharedInstance].muted;
 }
 
 + (void)setMuted:(BOOL)muted {
-    [[self class] sharedInstance].muted = muted;
+    [self sharedInstance].muted = muted;
 }
 
 @end

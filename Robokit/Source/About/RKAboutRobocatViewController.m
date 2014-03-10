@@ -179,7 +179,11 @@
 - (IBAction)dismiss:(id)sender {
 	[Flurry logEvent:@"Did open About Robocat"];
 	
-	[self dismissViewControllerAnimated:YES completion:nil];
+    if ([self.navigationController isModalInPopover]) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    } else {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 #pragma mark - Scroll view delegate

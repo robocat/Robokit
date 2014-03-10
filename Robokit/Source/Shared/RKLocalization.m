@@ -1,6 +1,6 @@
 //
 //  RKLocalization.m
-//  Ultraviolet2
+//  RoboKit
 //
 //  Created by Ulrik Damm on 26/9/13.
 //  Copyright (c) 2013 Robocat. All rights reserved.
@@ -13,6 +13,10 @@
 void RKLocalizationSetPreferredLanguage(NSString *language) {
 	[[NSUserDefaults standardUserDefaults] setObject:@[ language ] forKey:@"AppleLanguages"];
 	[[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+NSString *RKLocalizationNameForLanguage(NSString *language) {
+    return [[NSLocale localeWithLocaleIdentifier:language] displayNameForKey:NSLocaleIdentifier value:language];
 }
 
 NSString *RKLocalizationPreferredLanguage(void) {

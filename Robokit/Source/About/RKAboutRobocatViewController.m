@@ -7,24 +7,35 @@
 //
 
 #import "RKAboutRobocatViewController.h"
-#import <Robokit/RKSocial.h>
-#import <Robokit/RKLocalization.h>
-#import <Flurry.h>
 #import "UIViewController+RKAdditions.h"
 #import "../Shared/UIButton+RKLocalization.h"
 #import "../Shared/UILabel+RKLocalization.h"
 
-@interface RKAboutRobocatViewController () <UIScrollViewDelegate, UITextFieldDelegate>
+#import <Robokit/RKSocial.h>
+#import <Robokit/RKLocalization.h>
+#import <Flurry.h>
+
+@interface RKAboutRobocatViewController () <UIScrollViewDelegate, UITextFieldDelegate, RKLocalizable>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scollView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *subscribeViewLeftMarginConstraint;
 @property (weak, nonatomic) IBOutlet UITextField *emailInput;
 @property (weak, nonatomic) IBOutlet UIView *subscribeSuperview;
+
+@property (weak, nonatomic) IBOutlet UILabel *aboutTitleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *aboutTextLabel;
+@property (weak, nonatomic) IBOutlet UILabel *aboutLabel;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *closeButton;
+
+@property (weak, nonatomic) IBOutlet UIButton *ourAppsButton;
 @property (weak, nonatomic) IBOutlet UIButton *subscribeButton;
 @property (weak, nonatomic) IBOutlet UIButton *facebookButton;
 @property (weak, nonatomic) IBOutlet UIButton *twitterButton;
-@property (weak, nonatomic) IBOutlet UILabel *aboutLabel;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *closeButton;
+@property (weak, nonatomic) IBOutlet UIButton *websitebutton;
+@property (weak, nonatomic) IBOutlet UIButton *supportButton;
+
+@property (weak, nonatomic) IBOutlet UIButton *newsletterCancelbutton;
+@property (weak, nonatomic) IBOutlet UIButton *newsletterSubscribebutton;
 
 @property (assign, nonatomic) BOOL shouldCloseSubscribeView;
 
@@ -64,6 +75,27 @@
 	if ([RKSocial hasSubscribed]) {
 		[self didSubscribe];
 	}
+    
+    [RKLocalization registerForLocalization:self];
+}
+
+- (void)shouldLocalize {
+    NSString *clstring = NSStringFromClass([self class]);
+
+    RKLocalizedButtonFromTable(self.ourAppsButton, @"RC_ABOUT_BUTTON_OUR_APPS", clstring);
+    RKLocalizedButtonFromTable(self.subscribeButton, @"RC_ABOUT_BUTTON_SUBSCRIBE", clstring);
+    RKLocalizedButtonFromTable(self.facebookButton, @"RC_ABOUT_BUTTON_LIKE", clstring);
+    RKLocalizedButtonFromTable(self.twitterButton, @"RC_ABOUT_BUTTON_FOLLOW", clstring);
+    RKLocalizedButtonFromTable(self.websitebutton, @"RC_ABOUT_BUTTON_WEBSITE", clstring);
+    RKLocalizedButtonFromTable(self.supportButton, @"RC_ABOUT_BUTTON_SUPPORT", clstring);
+
+    RKLocalizedLabelFromTable(self.aboutTitleLabel, @"RC_ABOUT_WHO_WE_ARE_TITLE", clstring);
+    RKLocalizedLabelFromTable(self.aboutTextLabel, @"RC_ABOUT_WHO_WE_ARE_TEXT", clstring);
+
+    RKLocalizedButtonFromTable(self.newsletterCancelbutton, @"RC_ABOUT_NEWSLETTER_CANCEL", clstring);
+    RKLocalizedButtonFromTable(self.newsletterSubscribebutton, @"RC_ABOUT_BUTTON_SUBSCRIBE", clstring);
+
+    [self.closeButton setTitle:RKLocalizedFromTable(@"RC_ABOUT_BUTTON_CLOSE", clstring)];
 }
 
 - (void)keyboardWillShow:(NSNotification *)notification {

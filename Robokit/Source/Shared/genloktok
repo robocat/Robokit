@@ -1,0 +1,51 @@
+#!/usr/bin/ruby
+
+require 'set'
+
+strings = {}
+
+default_language = "en"
+
+Dir.glob("*.lproj/*.strings").each do |filename|
+  lang = filename[/[^\.]*/]
+  
+  File.open(filename, "r:UTF-8") do |f|
+    contents = f.read
+    contents.scan(/\"([^\"]*)\"\s=\s\"([^\"]*)\";/) do |key, value|
+      strings[key] ||= {}
+      strings[key][lang] = value
+    end
+  end
+end
+
+f = File.open("RKLocalizableStrings.h", "w")
+f.write("// Header automatically generated. Do not edit.\n")
+f.write("// Generated on #{ Date.new }                  \n")
+f.write("                                               \n")
+f.write("#ifndef LOCALIZABLE_STRINGS_DEFINES            \n")
+f.write("#define LOCALIZABLE_STRINGS_DEFINES            \n")
+f.write("                                               \n")
+
+strings.each do |key, value|
+  f.write("/*!\n")
+  
+  value.each do |lang, desc|
+    if (lang == default_language) then
+      f.write(" * \"#{ desc }\"\n\n")
+    end
+  end
+  
+  f.write(" * All translations:\n\n")
+  
+  value.each do |lang, desc|
+    f.write(" * @b #{ lang }@: \"#{ desc }\"\n\n")
+  end
+  
+  f.write(" */\n")
+  f.write("static NSString * const #{key.gsub("%", "").gsub("@", "X")} = @\"#{ key }\";\n\n")
+end
+
+f.write("                                               \n")
+f.write("#endif                                         \n")
+
+f.close()

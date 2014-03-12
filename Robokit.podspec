@@ -11,6 +11,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   
   s.subspec 'Shared' do |ss|
+    ss.dependency             'FlurrySDK'
     ss.source_files =         'Robokit/Source/Shared/*.{h,m}','Robokit/Frameworks/*.h'
     ss.resources =            [ 'Robokit/Localizations/**',
                                 'Robokit/Resources/RKRatingViewController.xcassets/**/*',
@@ -24,9 +25,9 @@ Pod::Spec.new do |s|
     ss.frameworks =           'Accounts',
                               'Social',
                               'UIKit'
-    ss.vendored_libraries =   'Robokit/Frameworks/libFlurry_4.3.2.a', 'Robokit/Frameworks/libTestFlight.a'
+    ss.vendored_libraries =   'Robokit/Frameworks/libTestFlight.a'
     ss.library = 'z'
-    ss.preserve_paths =       'Robokit/Frameworks/libFlurry_4.3.2.a', 'Robokit/Frameworks/libTestFlight.a'
+    ss.preserve_paths =       'Robokit/Frameworks/libTestFlight.a'
   end
   
   s.subspec 'IAP' do |ss|

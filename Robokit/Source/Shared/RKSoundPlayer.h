@@ -16,7 +16,9 @@ extern NSString * const kRKSoundPlayerRatedEvent;
 @interface RKSoundPlayer : NSObject
 
 + (void)playSound:(NSString *)soundName;
++ (void)playSound:(NSString *)soundName obeyMuted:(BOOL)obey;
 + (void)playSound:(NSString *)soundName withCompletion:(void (^)(void))completion;
++ (void)playSound:(NSString *)soundName obeyMuted:(BOOL)obey withCompletion:(void (^)(void))completion;
 
 + (void)registerSound:(NSString *)soundName forEvent:(NSString *)event;
 

@@ -11,6 +11,9 @@
 void RKLocalizationSetPreferredLanguage(NSString *language);
 NSString *RKLocalizationPreferredLanguage(void);
 
+NSString *RKLocalizationNameForLanguage(NSString *language);
+NSString *RKLocalizationNameForPrefferedLanguage(void);
+
 NSString *RKLocalized(NSString *str);
 NSString *RKLocalizedFromTable(NSString *str, NSString *table);
 

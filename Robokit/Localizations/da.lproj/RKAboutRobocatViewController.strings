@@ -6,18 +6,16 @@
  Copyright (c) 2013 Robocat. All rights reserved.
  */
 
-"RC_ABOUT_BUTTON_CLOSE" = "Luk";
+"RC_ABOUT_BUTTON_CLOSE" = "Færdig";
 
-"RC_ABOUT_BUTTON_REVIEW" = "Anmeld på App Storen";
-"RC_ABOUT_BUTTON_TWITTER" = "Følg os på Twitter";
-"RC_ABOUT_BUTTON_FACEBOOK" = "Synes om os på Facebook";
-"RC_ABOUT_BUTTON_MORE_APPS" = "Flere apps";
-"RC_ABOUT_BUTTON_NEWSLETTER" = "Få nyheder fra Robocat";
+"RC_ABOUT_WHO_WE_ARE_TITLE" = "Robocat is a team of builders from Copenhagen";
+"RC_ABOUT_WHO_WE_ARE_TEXT" = "We’re a small team that dream up and build unique products for mobile devices. Explore more of our adventures and hook up with us on social networks or subscribe to our cool newsletter.";
 
-"RC_ABOUT_BUTTON_FOLLOWED" = "Følger @Robocat";
-"RC_ABOUT_BUTTON_LIKED" = "Syntes om på Facebook";
-"RC_ABOUT_BUTTON_REVIEWED" = "Anmeldt";
+"RC_ABOUT_BUTTON_OUR_APPS" = "Vores apps";
+"RC_ABOUT_BUTTON_SUBSCRIBE" = "Abonnér";
+"RC_ABOUT_BUTTON_LIKE" = "Syns om Robocat";
+"RC_ABOUT_BUTTON_FOLLOW" = "Følg @Robocat";
+"RC_ABOUT_BUTTON_WEBSITE" = "Besøg website";
+"RC_ABOUT_BUTTON_SUPPORT" = "Support";
 
-"RC_NEWSLETTER_EMAIL_INPUT" = "Din email addresse";
-"RC_NEWSLETTER_DISCLAIMER" = "Indtast din email for at modtage Robocat nyhedsbrevet. Vi sender kun nogle få gange om året, og du kan afmelde dig hvornår du vil.";
-"RC_NEWSLETTER_BUTTON_JOIN" = "Tilmeld";
+"RC_ABOUT_NEWSLETTER_CANCEL" = "Annuller";

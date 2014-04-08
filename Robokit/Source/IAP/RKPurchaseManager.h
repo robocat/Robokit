@@ -56,6 +56,13 @@ extern NSString * const kRKPurchasesManagerErrorKey;
 + (NSString *)priceOfFeature:(NSString *)featureId;
 
 /*!
+ * Returns the price of the specified feature in hundreds of the local currency (cent, øre, etc.)
+ * @param featureId The IAP id;
+ * @return The price in units (e.g. 99, 700, etc.)
+ */
++ (NSInteger)priceUnitsOfFeature:(NSString *)featureId;
+
+/*!
  * Restore all previously purchased features. Will call the purchased feature notification for all restored features, and call the did restore notification when done, or the restore failed notification on failure.
  */
 + (void)restoreAllPurchases;

@@ -100,6 +100,11 @@ NSString * const kRKPurchasesManagerErrorKey = @"kRKPurchasesManagerErrorKey";
 	return formattedString;
 }
 
++ (NSInteger)priceUnitsOfFeature:(NSString *)featureId {
+	SKProduct *product = [[self sharedInstance] products][featureId];
+	return [[product.price decimalNumberByMultiplyingBy:[NSDecimalNumber decimalNumberWithString:@"100"]] integerValue];
+}
+
 + (void)purchaseFeature:(NSString *)featureId {
     if ([self isSimulatedPurchases]) {
         [self productWasPurchased:featureId transactionId:@"tid" purchaseDate:[NSDate date]];

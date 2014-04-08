@@ -75,4 +75,9 @@ extern NSString * const kRKPurchasesManagerErrorKey;
  */
 + (void)setSimulatedPurchases:(BOOL)simulated;
 
+/*!
+ * Gets the currency code for a feature, e.g. "USD", "DKK"
+ */
++ (NSString *)currencyCodeForFeature:(NSString *)featureId;
+
 @end

@@ -137,6 +137,13 @@ NSString * const kRKPurchasesManagerErrorKey = @"kRKPurchasesManagerErrorKey";
     [[self class] sharedInstance].simulated = YES;
 }
 
++ (NSString *)localizedCurrencyStringForFeature:(NSString *)featureId {
+	SKProduct *product = [[[self class] sharedInstance] products][featureId];
+	NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+	formatter.locale = product.priceLocale;
+	return [formatter currencyCode];
+}
+
 #pragma mark - Store Kit Callbacks
 
 + (void)productWasPurchased:(NSString *)featureId transactionId:(NSString *)transactionId purchaseDate:(NSDate *)purchaseDate {

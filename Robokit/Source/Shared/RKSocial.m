@@ -204,11 +204,11 @@ NSString * const kRKSocialUpdateCurrentVersionKey = @"cat.robo.kRKSocialUpdateCu
 	return [[NSUserDefaults standardUserDefaults] boolForKey:RKRobocatViewControllerHaveRatedKey];
 }
 
-+ (void)setShouldShowFollowUs:(BOOL)shouldShow {
++ (void)setShouldAutomaticalluShowFollowUs:(BOOL)shouldShow {
 	[[self sharedInstance] setShouldAutomaticallyShowFollowUs:shouldShow];
 }
 
-+ (void)setShouldShowRateUs:(BOOL)shouldShow {
++ (void)setShouldAutomaticalluShowRateUs:(BOOL)shouldShow {
 	[[self sharedInstance] setShouldAutomaticallyShowRateUs:shouldShow];
 }
 

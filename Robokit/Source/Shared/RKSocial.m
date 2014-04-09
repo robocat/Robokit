@@ -55,6 +55,7 @@ NSString * const kRKSocialUpdateCurrentVersionKey = @"cat.robo.kRKSocialUpdateCu
 @property (strong, nonatomic) NSString *facebookAppId;
 @property (assign, nonatomic) BOOL isFirstLaunch;
 @property (assign, nonatomic) BOOL shouldShowFollowUs;
+@property (assign, nonatomic) BOOL shouldShowRateUs;
 @property (assign, nonatomic) RKModalBackgroundStyle backgroundStyle;
 
 @end
@@ -68,6 +69,7 @@ NSString * const kRKSocialUpdateCurrentVersionKey = @"cat.robo.kRKSocialUpdateCu
 	dispatch_once(&onceToken, ^{
 		instance = [[RKSocial alloc] init];
 		instance.shouldShowFollowUs = YES;
+		instance.shouldShowRateUs = YES;
 	});
 	
 	return instance;
@@ -208,6 +210,10 @@ NSString * const kRKSocialUpdateCurrentVersionKey = @"cat.robo.kRKSocialUpdateCu
 	[[self sharedInstance] setShouldShowFollowUs:shouldShow];
 }
 
++ (void)setShouldShowRateUs:(BOOL)shouldShow {
+	[[self sharedInstance] setShouldShowRateUs:shouldShow];
+}
+
 + (void)setSupportEmailAddress:(NSString *)supportEmailAddress {
     [[self sharedInstance] setSupportEmailAddress:supportEmailAddress];
 }
@@ -335,13 +341,17 @@ NSString * const kRKSocialUpdateCurrentVersionKey = @"cat.robo.kRKSocialUpdateCu
 }
 
 + (BOOL)shouldShowRateView {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     if ([[self sharedInstance] isFirstLaunch]) {
         return NO;
     }
     
 	if ([defaults boolForKey:kRatedCurrentVersion]) {
+		return NO;
+	}
+	
+	if (![[[self class] sharedInstance] shouldShowRateUs]) {
 		return NO;
 	}
 	
@@ -370,6 +380,10 @@ NSString * const kRKSocialUpdateCurrentVersionKey = @"cat.robo.kRKSocialUpdateCu
 	
 	if ([defaults objectForKey:kRatedCurrentVersionDate] == nil) {
 		[defaults setDouble:[[NSDate date] timeIntervalSince1970] forKey:kRatedCurrentVersionDate];
+		return NO;
+	}
+	
+	if (![[[self class] sharedInstance] shouldShowFollowUs]) {
 		return NO;
 	}
 	

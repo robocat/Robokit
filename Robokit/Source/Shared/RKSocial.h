@@ -41,6 +41,7 @@ typedef NSInteger RKModalBackgroundStyle;
 + (BOOL)hasRated;
 
 + (void)setShouldShowFollowUs:(BOOL)shouldShow;
++ (void)setShouldShowRateUs:(BOOL)shouldShow;
 + (void)setSupportEmailAddress:(NSString *)supportEmailAddress;
 
 + (void)likeOnFacebookWithCompletion:(void (^)(BOOL success))completion;

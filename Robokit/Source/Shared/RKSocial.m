@@ -158,8 +158,6 @@ NSString * const kRKSocialUpdateCurrentVersionKey = @"cat.robo.kRKSocialUpdateCu
 	[[NSUserDefaults standardUserDefaults] setBool:YES forKey:kHaveFollowed];
 	[[NSUserDefaults standardUserDefaults] synchronize];
 	
-	if ([self shouldShowFollowView] == NO) return;
-	
 	__block RKFollowUsViewController *followUsViewController = [RKFollowUsViewController followUsViewControllerWithMailchimpId:kMailchimpListId APIKey:kMailchimpAPIKey];
 	
 	[followUsViewController presentInWindow:[[UIApplication sharedApplication] keyWindow] withCloseHandler:^{

@@ -22,13 +22,6 @@
     [NSUserDefaults resetStandardUserDefaults];
 }
 
-- (void)testSetsCurrentVersionOnFirstLaunch {
-    [RKSocial initializeFlurryWithAppId:@"cat.robo.Robokit"];
-
-    NSString *versionString = [[NSBundle mainBundle] infoDictionary][@"CFBundleVersion"];
-    XCTAssertNotEqual(versionString, [RKSocial appVersion], @"Did not set version string after first launch");
-}
-
 - (void)testUpdatesCurrentVersionOnUpgrade {
     NSString *previousVersion = @"0.1";
     [[NSUserDefaults standardUserDefaults] setObject:previousVersion forKey:@"kUserDefaultAppVersion"];

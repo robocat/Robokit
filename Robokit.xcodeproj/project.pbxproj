@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		051DA53BE42A423A9E95E797 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C31D1030CF2487D81A88676 /* libPods.a */; };
+		3260F670AD6EF0670FE67627 /* TestAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3260F5FB290BE64CAA3D1CBF /* TestAboutViewController.m */; };
 		7828EE521823B9140091B1E8 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7847E6751819FCF7008A034E /* libTestFlight.a */; };
 		7828EE531823B9140091B1E8 /* RevMobAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF3F8CD717F8DD130024EA07 /* RevMobAds.framework */; };
 		7828EE541823B9190091B1E8 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7856842F181EAA2200E4710C /* libz.dylib */; };
@@ -17,6 +18,8 @@
 		78AA649718F6E4380028DA0C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78AA649618F6E4370028DA0C /* libPods.a */; };
 		78AA649818F6EA020028DA0C /* RKSocialTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FF62914C17F59F970018AD68 /* RKSocialTests.m */; };
 		78B63E80181BBCBA002C21CB /* RKFeedbackViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 78B63E7E181BBCBA002C21CB /* RKFeedbackViewController.strings */; };
+		78EF54F518F6F508004C5DD7 /* RKAboutRobocatViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFE1DCE517F5A97B0074F75F /* RKAboutRobocatViewController.storyboard */; };
+		78EF54F618F6F512004C5DD7 /* RKAboutRobocatViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = FFE1DD1A17F5AD130074F75F /* RKAboutRobocatViewController.strings */; };
 		FF075EF5188E8E2F00FEDFDE /* UIButton+RKLocalization.m in Sources */ = {isa = PBXBuildFile; fileRef = FF075EF4188E8E2F00FEDFDE /* UIButton+RKLocalization.m */; };
 		FF075EF8188E8F1000FEDFDE /* UILabel+RKLocalization.m in Sources */ = {isa = PBXBuildFile; fileRef = FF075EF7188E8F1000FEDFDE /* UILabel+RKLocalization.m */; };
 		FF3E7BE617F899B3004AB9D5 /* RKFollowUsViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = FF3E7BE817F899B3004AB9D5 /* RKFollowUsViewController.strings */; };
@@ -59,6 +62,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3260F5FB290BE64CAA3D1CBF /* TestAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestAboutViewController.m; sourceTree = "<group>"; };
 		3E20D2D918A9321C00C2AA9A /* libFlurry_4.3.2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFlurry_4.3.2.a; path = Frameworks/libFlurry_4.3.2.a; sourceTree = "<group>"; };
 		5C31D1030CF2487D81A88676 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		783CE1761819D3E40063F3DD /* RKFeedbackViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = RKFeedbackViewController.storyboard; path = Resources/RKFeedbackViewController.storyboard; sourceTree = "<group>"; };
@@ -401,6 +405,7 @@
 			children = (
 				FF62914C17F59F970018AD68 /* RKSocialTests.m */,
 				FF62914717F59F970018AD68 /* Supporting Files */,
+				3260F5FB290BE64CAA3D1CBF /* TestAboutViewController.m */,
 			);
 			path = RobokitTests;
 			sourceTree = "<group>";
@@ -610,6 +615,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78EF54F618F6F512004C5DD7 /* RKAboutRobocatViewController.strings in Resources */,
+				78EF54F518F6F508004C5DD7 /* RKAboutRobocatViewController.storyboard in Resources */,
 				FF62914B17F59F970018AD68 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -667,6 +674,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78AA649818F6EA020028DA0C /* RKSocialTests.m in Sources */,
+				3260F670AD6EF0670FE67627 /* TestAboutViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

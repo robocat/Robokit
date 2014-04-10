@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		051DA53BE42A423A9E95E797 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C31D1030CF2487D81A88676 /* libPods.a */; };
-		3E20D2DB18A9321C00C2AA9A /* libFlurry_4.3.2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E20D2D918A9321C00C2AA9A /* libFlurry_4.3.2.a */; };
 		7828EE461823B5110091B1E8 /* RKSocial.m in Sources */ = {isa = PBXBuildFile; fileRef = 7847E6831819FD63008A034E /* RKSocial.m */; };
 		7828EE491823B7C30091B1E8 /* RKDispatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 7847E67E1819FD63008A034E /* RKDispatch.m */; };
 		7828EE4B1823B7E00091B1E8 /* RKLocalization.m in Sources */ = {isa = PBXBuildFile; fileRef = 7847E6801819FD63008A034E /* RKLocalization.m */; };
@@ -24,6 +23,7 @@
 		783CE1771819D3E40063F3DD /* RKFeedbackViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 783CE1761819D3E40063F3DD /* RKFeedbackViewController.storyboard */; };
 		7847E6791819FCF7008A034E /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7847E6751819FCF7008A034E /* libTestFlight.a */; };
 		78568430181EAA2200E4710C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7856842F181EAA2200E4710C /* libz.dylib */; };
+		78AA649718F6E4380028DA0C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78AA649618F6E4370028DA0C /* libPods.a */; };
 		78B63E80181BBCBA002C21CB /* RKFeedbackViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 78B63E7E181BBCBA002C21CB /* RKFeedbackViewController.strings */; };
 		FF075EF5188E8E2F00FEDFDE /* UIButton+RKLocalization.m in Sources */ = {isa = PBXBuildFile; fileRef = FF075EF4188E8E2F00FEDFDE /* UIButton+RKLocalization.m */; };
 		FF075EF8188E8F1000FEDFDE /* UILabel+RKLocalization.m in Sources */ = {isa = PBXBuildFile; fileRef = FF075EF7188E8F1000FEDFDE /* UILabel+RKLocalization.m */; };
@@ -108,6 +108,7 @@
 		7856842F181EAA2200E4710C /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		78A234E51830D55E00425DAD /* UIDevice+RKAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UIDevice+RKAdditions.h"; path = "Shared/UIDevice+RKAdditions.h"; sourceTree = "<group>"; };
 		78A234E61830D55E00425DAD /* UIDevice+RKAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "UIDevice+RKAdditions.m"; path = "Shared/UIDevice+RKAdditions.m"; sourceTree = "<group>"; };
+		78AA649618F6E4370028DA0C /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
 		78B1EA55180410BE00C0FC9E /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/RKAboutRobocatViewController.strings"; sourceTree = "<group>"; };
 		78B1EA56180410BE00C0FC9E /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/RKFollowUsViewController.strings"; sourceTree = "<group>"; };
 		78B1EA57180410BE00C0FC9E /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/RKRatingViewController.strings"; sourceTree = "<group>"; };
@@ -216,13 +217,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78AA649718F6E4380028DA0C /* libPods.a in Frameworks */,
 				7828EE541823B9190091B1E8 /* libz.dylib in Frameworks */,
 				FF62914117F59F970018AD68 /* XCTest.framework in Frameworks */,
 				FF62914317F59F970018AD68 /* UIKit.framework in Frameworks */,
 				FF62914217F59F970018AD68 /* Foundation.framework in Frameworks */,
 				7828EE521823B9140091B1E8 /* libTestFlight.a in Frameworks */,
 				7828EE531823B9140091B1E8 /* RevMobAds.framework in Frameworks */,
-				3E20D2DB18A9321C00C2AA9A /* libFlurry_4.3.2.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,6 +370,7 @@
 		FF62912617F59F970018AD68 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				78AA649618F6E4370028DA0C /* libPods.a */,
 				7856842F181EAA2200E4710C /* libz.dylib */,
 				FF3F8CDB17F8EC430024EA07 /* AdSupport.framework */,
 				FF3F8CD917F8DDEC0024EA07 /* SystemConfiguration.framework */,
@@ -875,8 +877,8 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					./Robokit,
+					./Pods/FlurrySDK/Flurry,
 					./Robokit/Frameworks,
-					"/Users/willi/Work/!Robocat/Robokit/Robokit/Frameworks",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -900,8 +902,8 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					./Robokit,
+					./Pods/FlurrySDK/Flurry,
 					./Robokit/Frameworks,
-					"/Users/willi/Work/!Robocat/Robokit/Robokit/Frameworks",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -933,12 +935,13 @@
 				);
 				INFOPLIST_FILE = "RobokitTests/RobokitTests-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
 					"$(inherited)",
 					./Robokit/,
 					./Robokit/Frameworks/,
-					/Users/ksma/Robocat/Robokit/Robokit/Frameworks,
-					"/Users/willi/Work/!Robocat/Robokit/Robokit/Frameworks",
+					./Pods/FlurrySDK/Flurry,
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -966,11 +969,11 @@
 				);
 				INFOPLIST_FILE = "RobokitTests/RobokitTests-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
 					"$(inherited)",
 					./Robokit/,
 					./Robokit/Frameworks/,
-					/Users/ksma/Robocat/Robokit/Robokit/Frameworks,
-					"/Users/willi/Work/!Robocat/Robokit/Robokit/Frameworks",
+					./Pods/FlurrySDK/Flurry,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";

@@ -7,12 +7,13 @@
 //
 
 #import "RKFeedbackViewController.h"
-#import "Flurry.h"
 #import "RKLocalization.h"
 #import "TestFlight.h"
 #import "RKDispatch.h"
 #import "RKSocial.h"
 #import "RKSoundPlayer.h"
+
+#import <FlurrySDK/Flurry.h>
 
 @interface RKFeedbackViewController () <UITextViewDelegate>
 

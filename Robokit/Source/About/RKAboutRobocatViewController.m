@@ -8,8 +8,6 @@
 
 #import "RKAboutRobocatViewController.h"
 #import "UIViewController+RKAdditions.h"
-#import "../Shared/UIButton+RKLocalization.h"
-#import "../Shared/UILabel+RKLocalization.h"
 
 #import <Robokit/RKSocial.h>
 #import <Robokit/RKLocalization.h>
@@ -17,7 +15,7 @@
 
 @interface RKAboutRobocatViewController () <UIScrollViewDelegate, UITextFieldDelegate, RKLocalizable>
 
-@property (weak, nonatomic) IBOutlet UIScrollView *scollView;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *subscribeViewLeftMarginConstraint;
 @property (weak, nonatomic) IBOutlet UITextField *emailInput;
 @property (weak, nonatomic) IBOutlet UIView *subscribeSuperview;
@@ -31,11 +29,11 @@
 @property (weak, nonatomic) IBOutlet UIButton *subscribeButton;
 @property (weak, nonatomic) IBOutlet UIButton *facebookButton;
 @property (weak, nonatomic) IBOutlet UIButton *twitterButton;
-@property (weak, nonatomic) IBOutlet UIButton *websitebutton;
+@property (weak, nonatomic) IBOutlet UIButton *websiteButton;
 @property (weak, nonatomic) IBOutlet UIButton *supportButton;
 
-@property (weak, nonatomic) IBOutlet UIButton *newsletterCancelbutton;
-@property (weak, nonatomic) IBOutlet UIButton *newsletterSubscribebutton;
+@property (weak, nonatomic) IBOutlet UIButton *newsletterCancelButton;
+@property (weak, nonatomic) IBOutlet UIButton *newsletterSubscribeButton;
 
 @property (assign, nonatomic) BOOL shouldCloseSubscribeView;
 
@@ -86,21 +84,21 @@
     RKLocalizedButtonFromTable(self.subscribeButton, @"RC_ABOUT_BUTTON_SUBSCRIBE", clstring);
     RKLocalizedButtonFromTable(self.facebookButton, @"RC_ABOUT_BUTTON_LIKE", clstring);
     RKLocalizedButtonFromTable(self.twitterButton, @"RC_ABOUT_BUTTON_FOLLOW", clstring);
-    RKLocalizedButtonFromTable(self.websitebutton, @"RC_ABOUT_BUTTON_WEBSITE", clstring);
+    RKLocalizedButtonFromTable(self.websiteButton, @"RC_ABOUT_BUTTON_WEBSITE", clstring);
     RKLocalizedButtonFromTable(self.supportButton, @"RC_ABOUT_BUTTON_SUPPORT", clstring);
 
     RKLocalizedLabelFromTable(self.aboutTitleLabel, @"RC_ABOUT_WHO_WE_ARE_TITLE", clstring);
     RKLocalizedLabelFromTable(self.aboutTextLabel, @"RC_ABOUT_WHO_WE_ARE_TEXT", clstring);
 
-    RKLocalizedButtonFromTable(self.newsletterCancelbutton, @"RC_ABOUT_NEWSLETTER_CANCEL", clstring);
-    RKLocalizedButtonFromTable(self.newsletterSubscribebutton, @"RC_ABOUT_BUTTON_SUBSCRIBE", clstring);
+    RKLocalizedButtonFromTable(self.newsletterCancelButton, @"RC_ABOUT_NEWSLETTER_CANCEL", clstring);
+    RKLocalizedButtonFromTable(self.newsletterSubscribeButton, @"RC_ABOUT_BUTTON_SUBSCRIBE", clstring);
 
     [self.closeButton setTitle:RKLocalizedFromTable(@"RC_ABOUT_BUTTON_CLOSE", clstring)];
 }
 
 - (void)keyboardWillShow:(NSNotification *)notification {
 	CGRect keyboardFrame = [notification.userInfo[UIKeyboardFrameBeginUserInfoKey] CGRectValue];
-	[self.scollView scrollRectToVisible:CGRectMake(0, self.subscribeSuperview.frame.origin.y, 320, self.subscribeSuperview.frame.size.height + keyboardFrame.size.height + 20) animated:YES];
+	[self.scrollView scrollRectToVisible:CGRectMake(0, self.subscribeSuperview.frame.origin.y, 320, self.subscribeSuperview.frame.size.height + keyboardFrame.size.height + 20) animated:YES];
 }
 
 - (void)keyboardDidShow:(NSNotification *)notification {
@@ -109,7 +107,7 @@
 
 - (void)keyboardDidChangeFrame:(NSNotification *)notification {
 	CGRect keyboardFrame = [notification.userInfo[UIKeyboardFrameBeginUserInfoKey] CGRectValue];
-	[self.scollView scrollRectToVisible:CGRectMake(0, self.subscribeSuperview.frame.origin.y, 320, self.subscribeSuperview.frame.size.height + keyboardFrame.size.height + 20) animated:YES];
+	[self.scrollView scrollRectToVisible:CGRectMake(0, self.subscribeSuperview.frame.origin.y, 320, self.subscribeSuperview.frame.size.height + keyboardFrame.size.height + 20) animated:YES];
 }
 
 - (void)openSubscribeView {

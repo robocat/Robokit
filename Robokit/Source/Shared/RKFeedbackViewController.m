@@ -9,7 +9,6 @@
 #import "RKFeedbackViewController.h"
 #import "RKLocalization.h"
 #import "TestFlight.h"
-#import "RKDispatch.h"
 #import "RKSocial.h"
 #import "RKSoundPlayer.h"
 

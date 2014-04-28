@@ -9,11 +9,9 @@
 /* Begin PBXBuildFile section */
 		051DA53BE42A423A9E95E797 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C31D1030CF2487D81A88676 /* libPods.a */; };
 		3260F670AD6EF0670FE67627 /* TestAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3260F5FB290BE64CAA3D1CBF /* TestAboutViewController.m */; };
-		7828EE521823B9140091B1E8 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7847E6751819FCF7008A034E /* libTestFlight.a */; };
 		7828EE531823B9140091B1E8 /* RevMobAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF3F8CD717F8DD130024EA07 /* RevMobAds.framework */; };
 		7828EE541823B9190091B1E8 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7856842F181EAA2200E4710C /* libz.dylib */; };
 		783CE1771819D3E40063F3DD /* RKFeedbackViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 783CE1761819D3E40063F3DD /* RKFeedbackViewController.storyboard */; };
-		7847E6791819FCF7008A034E /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7847E6751819FCF7008A034E /* libTestFlight.a */; };
 		78568430181EAA2200E4710C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7856842F181EAA2200E4710C /* libz.dylib */; };
 		78AA649718F6E4380028DA0C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78AA649618F6E4370028DA0C /* libPods.a */; };
 		78AA649818F6EA020028DA0C /* RKSocialTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FF62914C17F59F970018AD68 /* RKSocialTests.m */; };
@@ -63,13 +61,8 @@
 
 /* Begin PBXFileReference section */
 		3260F5FB290BE64CAA3D1CBF /* TestAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestAboutViewController.m; sourceTree = "<group>"; };
-		3E20D2D918A9321C00C2AA9A /* libFlurry_4.3.2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFlurry_4.3.2.a; path = Frameworks/libFlurry_4.3.2.a; sourceTree = "<group>"; };
 		5C31D1030CF2487D81A88676 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		783CE1761819D3E40063F3DD /* RKFeedbackViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = RKFeedbackViewController.storyboard; path = Resources/RKFeedbackViewController.storyboard; sourceTree = "<group>"; };
-		7847E6751819FCF7008A034E /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTestFlight.a; path = Frameworks/libTestFlight.a; sourceTree = "<group>"; };
-		7847E6761819FCF7008A034E /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestFlight.h; path = Frameworks/TestFlight.h; sourceTree = "<group>"; };
-		7847E6771819FCF7008A034E /* TestFlight+AsyncLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "TestFlight+AsyncLogging.h"; path = "Frameworks/TestFlight+AsyncLogging.h"; sourceTree = "<group>"; };
-		7847E6781819FCF7008A034E /* TestFlight+ManualSessions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "TestFlight+ManualSessions.h"; path = "Frameworks/TestFlight+ManualSessions.h"; sourceTree = "<group>"; };
 		7847E67B1819FD63008A034E /* RKDialogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKDialogViewController.h; sourceTree = "<group>"; };
 		7847E67C1819FD63008A034E /* RKDialogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKDialogViewController.m; sourceTree = "<group>"; };
 		7847E67D1819FD63008A034E /* RKDispatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKDispatch.h; sourceTree = "<group>"; };
@@ -149,7 +142,6 @@
 		FF99C6B2185F2F5E00E6B260 /* UIApplication+RKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIApplication+RKAdditions.m"; path = "Shared/UIApplication+RKAdditions.m"; sourceTree = "<group>"; };
 		FFA679CE181EAAAB008E21A9 /* RKSoundPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKSoundPlayer.h; sourceTree = "<group>"; };
 		FFA679CF181EAAAB008E21A9 /* RKSoundPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKSoundPlayer.m; sourceTree = "<group>"; };
-		FFB5874C17F9BBE2007D9485 /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Flurry.h; path = Frameworks/Flurry.h; sourceTree = "<group>"; };
 		FFB5874F17F9C818007D9485 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/RKAboutRobocatViewController.strings; sourceTree = "<group>"; };
 		FFB5875017F9C818007D9485 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/RKFollowUsViewController.strings; sourceTree = "<group>"; };
 		FFB5875117F9C818007D9485 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/RKRatingViewController.strings; sourceTree = "<group>"; };
@@ -199,7 +191,6 @@
 				78568430181EAA2200E4710C /* libz.dylib in Frameworks */,
 				FF3F8CDC17F8EC430024EA07 /* AdSupport.framework in Frameworks */,
 				FF3F8CDA17F8DDEC0024EA07 /* SystemConfiguration.framework in Frameworks */,
-				7847E6791819FCF7008A034E /* libTestFlight.a in Frameworks */,
 				FF62912A17F59F970018AD68 /* CoreGraphics.framework in Frameworks */,
 				FF62912C17F59F970018AD68 /* UIKit.framework in Frameworks */,
 				FF62912817F59F970018AD68 /* Foundation.framework in Frameworks */,
@@ -216,7 +207,6 @@
 				FF62914117F59F970018AD68 /* XCTest.framework in Frameworks */,
 				FF62914317F59F970018AD68 /* UIKit.framework in Frameworks */,
 				FF62914217F59F970018AD68 /* Foundation.framework in Frameworks */,
-				7828EE521823B9140091B1E8 /* libTestFlight.a in Frameworks */,
 				7828EE531823B9140091B1E8 /* RevMobAds.framework in Frameworks */,
 				78AA649718F6E4380028DA0C /* libPods.a in Frameworks */,
 			);
@@ -329,12 +319,6 @@
 		FF3F8CD617F8DD0B0024EA07 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7847E6761819FCF7008A034E /* TestFlight.h */,
-				7847E6771819FCF7008A034E /* TestFlight+AsyncLogging.h */,
-				7847E6781819FCF7008A034E /* TestFlight+ManualSessions.h */,
-				FFB5874C17F9BBE2007D9485 /* Flurry.h */,
-				3E20D2D918A9321C00C2AA9A /* libFlurry_4.3.2.a */,
-				7847E6751819FCF7008A034E /* libTestFlight.a */,
 				FF3F8CD717F8DD130024EA07 /* RevMobAds.framework */,
 			);
 			name = Frameworks;

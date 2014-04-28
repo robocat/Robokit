@@ -12,6 +12,5 @@
 #import "UIButton+RKLocalization.h"
 #import "UILabel+RKLocalization.h"
 #import "RKMacros.h"
-#import "TestFlight.h"
 
 #import <FlurrySDK/Flurry.h>

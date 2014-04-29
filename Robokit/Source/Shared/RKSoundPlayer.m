@@ -74,7 +74,7 @@ void systemSoundCompleted(SystemSoundID ssID, void* clientData);
 
     NSString *path = [[NSBundle mainBundle] pathForResource:soundName ofType:@"caf"];
     if (!path) {
-        NSLog(@"RKSoundPlayer: Invalid sound path four sound: ", soundName);
+        NSLog(@"RKSoundPlayer: Invalid sound path four sound: %@", soundName);
         return;
     }
     

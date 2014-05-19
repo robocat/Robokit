@@ -15,7 +15,14 @@
 	__weak typeof(self) weakSelf = self; \
 	_Pragma("clang diagnostic pop")
 
-#define strongify autoreleasepool {} if (!weakSelf) return; typeof(self) self = weakSelf;
+#define strongify \
+	autoreleasepool {} \
+	_Pragma("clang diagnostic push") \
+	_Pragma("clang diagnostic ignored \"-Wunused-variable\"") \
+	if (!weakSelf) return; \
+	typeof(self) self = weakSelf; \
+	_Pragma("clang diagnostic pop")
+
 #define strongify_return(default_return) autoreleasepool {} if (!weakSelf) return default_return; typeof(self) self = weakSelf;
 
 typedef enum {

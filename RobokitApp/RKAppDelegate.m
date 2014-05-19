@@ -9,7 +9,6 @@
 #import "RKAppDelegate.h"
 #import "Robokit.h"
 #import "RKAdView.h"
-#import "RKCatnipSDK.h"
 #import "RKAboutRobocatViewController.h"
 #import "UIApplication+RKAdditions.h"
 
@@ -37,16 +36,10 @@
 	
 	[RKSocial initializeSocialFeaturesWithAppId:@"" appName:@"Test app" newInThisVersion:@"· news"];
 	[RKAdView initializeAdsWithRevMobAppId:@"52308b3d41cc3374b0000003" testingMode:YES];
-    [[RKCatnipSDK sharedSDK] takeOff:@"9205e40339b200fb867f5f1c77d0f612"];
 	
 	RKAdView *adView = [[RKAdView alloc] initWithFrame:CGRectMake(0, self.window.frame.size.height - 50, 320, 50)];
 	[self.window.rootViewController.view addSubview:adView];
 	[adView loadAd];
-	
-//	[RKSocial showFollowUsPopup];
-//    [RKSocial showRateThisAppPopup];
-	[[RKCatnipSDK sharedSDK] checkForUpdates];
-    
     
     return YES;
 }

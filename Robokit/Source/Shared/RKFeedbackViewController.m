@@ -7,12 +7,11 @@
 //
 
 #import "RKFeedbackViewController.h"
-#import "Flurry.h"
 #import "RKLocalization.h"
-#import "TestFlight.h"
-#import "RKDispatch.h"
 #import "RKSocial.h"
 #import "RKSoundPlayer.h"
+
+#import <FlurrySDK/Flurry.h>
 
 @interface RKFeedbackViewController () <UITextViewDelegate>
 
@@ -84,7 +83,6 @@
         NSMutableDictionary *params = [self feedbackInfoDictionary];
         params[@"feedback"] = self.feedbackTextView.text;
         [Flurry logEvent:@"Send Feedback - Submitted feedback" withParameters:params];
-        [TestFlight submitFeedback:self.feedbackTextView.text];
     }
 
     [Flurry logEvent:@"Send Feedback - Pressed No Thanks"];

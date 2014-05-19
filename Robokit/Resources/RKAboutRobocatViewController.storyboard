@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Nzw-te-0vn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Nzw-te-0vn">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -308,6 +308,7 @@ All rights reserved</string>
                     </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="640" height="1000"/>
                     <connections>
                         <outlet property="aboutLabel" destination="jcx-zF-idA" id="aMx-4J-ohr"/>
                         <outlet property="aboutTextLabel" destination="AQG-4r-gBc" id="leK-O0-Xd6"/>
@@ -315,16 +316,16 @@ All rights reserved</string>
                         <outlet property="closeButton" destination="5av-hu-hOs" id="101-Nf-0Q7"/>
                         <outlet property="emailInput" destination="k7f-ix-Nwx" id="IF9-r0-aFC"/>
                         <outlet property="facebookButton" destination="LjB-bL-Wby" id="ZUO-km-NI9"/>
-                        <outlet property="newsletterCancelbutton" destination="exP-II-ika" id="9Ah-qU-jnA"/>
-                        <outlet property="newsletterSubscribebutton" destination="LeT-56-2U0" id="8KG-hW-rNx"/>
+                        <outlet property="newsletterCancelButton" destination="exP-II-ika" id="9Ah-qU-jnA"/>
+                        <outlet property="newsletterSubscribeButton" destination="LeT-56-2U0" id="8KG-hW-rNx"/>
                         <outlet property="ourAppsButton" destination="94J-0R-AeI" id="kLd-GA-psF"/>
-                        <outlet property="scollView" destination="TUz-td-fpM" id="9aS-pr-Z8U"/>
+                        <outlet property="scrollView" destination="TUz-td-fpM" id="9aS-pr-Z8U"/>
                         <outlet property="subscribeButton" destination="QS6-KV-amS" id="2B6-Kf-muE"/>
                         <outlet property="subscribeSuperview" destination="nVg-7a-l9D" id="4ZF-FO-WoX"/>
                         <outlet property="subscribeViewLeftMarginConstraint" destination="9TH-Z1-TOM" id="064-4o-gLn"/>
                         <outlet property="supportButton" destination="TDJ-FG-Guq" id="d19-eY-NAk"/>
                         <outlet property="twitterButton" destination="Adf-iV-vah" id="qUF-Xd-FmN"/>
-                        <outlet property="websitebutton" destination="CvB-0u-Cdc" id="vtk-1o-9qu"/>
+                        <outlet property="websiteButton" destination="CvB-0u-Cdc" id="vtk-1o-9qu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fuf-zb-yQO" userLabel="First Responder" sceneMemberID="firstResponder"/>

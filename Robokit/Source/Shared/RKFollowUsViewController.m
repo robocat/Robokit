@@ -10,8 +10,9 @@
 #import "RKSocial.h"
 #import "RKLocalization.h"
 #import "RKMacros.h"
-#import "Flurry.h"
 #import "RKSoundPlayer.h"
+
+#import <FlurrySDK/Flurry.h>
 
 @interface RKFollowUsViewController () <UITextFieldDelegate>
 

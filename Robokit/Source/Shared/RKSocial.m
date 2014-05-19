@@ -7,14 +7,17 @@
 //
 
 #import "RKSocial.h"
-#import <Accounts/Accounts.h>
-#import <Social/Social.h>
+
 #import "RKRatingViewController.h"
 #import "RKFollowUsViewController.h"
 #import "RKFeedbackViewController.h"
 #import "RKDispatch.h"
-#import "Flurry.h"
 #import "RKSoundPlayer.h"
+
+#import <Accounts/Accounts.h>
+#import <Social/Social.h>
+#import <FlurrySDK/Flurry.h>
+
 
 NSString * const kRKSocialDidUpdateFromPreviousVersionNotification = @"cat.robo.kRKSocialDidUpdateFromPreviousVersionNotification";
 

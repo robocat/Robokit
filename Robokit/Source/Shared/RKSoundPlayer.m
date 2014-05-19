@@ -67,7 +67,17 @@ void systemSoundCompleted(SystemSoundID ssID, void* clientData);
         return;
     }
 
+    if (!soundName) {
+        NSLog(@"RKSoundPlayer: Invalid soundname: nil");
+        return;
+    }
+
     NSString *path = [[NSBundle mainBundle] pathForResource:soundName ofType:@"caf"];
+    if (!path) {
+        NSLog(@"RKSoundPlayer: Invalid sound path four sound: %@", soundName);
+        return;
+    }
+    
     SystemSoundID soundId;
     AudioServicesCreateSystemSoundID((__bridge CFURLRef)([NSURL fileURLWithPath:path]), &soundId);
 

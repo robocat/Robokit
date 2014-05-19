@@ -8,7 +8,6 @@
 
 #import "RKRatingViewController.h"
 #import "Robokit.h"
-#import "Flurry.h"
 #import "RKSoundPlayer.h"
 
 @interface RKRatingViewController ()

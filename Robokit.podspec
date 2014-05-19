@@ -25,9 +25,6 @@ Pod::Spec.new do |s|
     ss.frameworks =           'Accounts',
                               'Social',
                               'UIKit'
-    ss.vendored_libraries =   'Robokit/Frameworks/libTestFlight.a'
-    ss.library = 'z'
-    ss.preserve_paths =       'Robokit/Frameworks/libTestFlight.a'
   end
   
   s.subspec 'IAP' do |ss|
@@ -63,11 +60,4 @@ Pod::Spec.new do |s|
                               'Robokit/Frameworks/RevMobAds.framework/*'
     ss.preserve_paths =       'Robokit/Resources/RKAboutRobocatViewController.xcassets/*'
   end
-  
-  s.subspec 'Catnip' do |ss|
-    ss.dependency             'Robokit/Shared'
-    ss.dependency	          'RSEnvironment'
-    ss.source_files =         'Robokit/Source/Catnip/*.{h,m}'
-  end
-
 end

@@ -218,10 +218,10 @@ NSString * const kRKPurchasesManagerErrorKey = @"kRKPurchasesManagerErrorKey";
 			
 			[[SKPaymentQueue defaultQueue] finishTransaction:transaction];
 		} else if (transaction.transactionState == SKPaymentTransactionStateFailed) {
-			if (transaction.error && ([transaction.error.domain isEqualToString:SKErrorDomain] && transaction.error.code == SKErrorPaymentCancelled)) {
-				[self.class productPurchaseFailed:featureId];
-			} else {
+			if ([transaction.error.domain isEqualToString:SKErrorDomain] && transaction.error.code == SKErrorPaymentCancelled) {
 				[self.class productPurchaseCancelled:featureId];
+			} else {
+				[self.class productPurchaseFailed:featureId];
 			}
 			
 			[[SKPaymentQueue defaultQueue] finishTransaction:transaction];

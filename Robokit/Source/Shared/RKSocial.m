@@ -264,7 +264,10 @@ NSString * const kRKSocialUpdateCurrentVersionKey = @"cat.robo.kRKSocialUpdateCu
 		
 		ACAccount *twitterAccount = accounts[0];
         [[NSUserDefaults standardUserDefaults] setObject:twitterAccount.username forKey:kUserIdentityTwitterUsernameKey];
-        [[NSUserDefaults standardUserDefaults] setObject:twitterAccount.userFullName forKey:kUserIdentityFullNameKey];
+        
+        if ([twitterAccount respondsToSelector:@selector(userFullName)]) {
+            [[NSUserDefaults standardUserDefaults] setObject:twitterAccount.userFullName forKey:kUserIdentityFullNameKey];
+        }
 		
 		SLRequest *followRequest = [SLRequest requestForServiceType:SLServiceTypeTwitter requestMethod:SLRequestMethodPOST URL:[NSURL URLWithString:@"https://api.twitter.com/1/friendships/create.json"] parameters:@{ @"screen_name" : @"robocat", @"follow" : @"true" }];
 		[followRequest setAccount:twitterAccount];

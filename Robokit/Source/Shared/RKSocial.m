@@ -48,6 +48,9 @@ NSString * const kRKSocialUpdateCurrentVersionKey = @"cat.robo.kRKSocialUpdateCu
 #define kUserIdentityFacebookUsernameKey @"kUserIdentityFacebookUsernameKey"
 #define kUserIdentityFullNameKey @"kUserIdentityFullNameKey"
 
+#define kWhatsNewVersionFormatBuild @"%{build}"
+#define kWhatsNewVersionFormatShortVersion @"%{version}"
+
 @interface RKSocial () <UIAlertViewDelegate>
 
 @property (strong, nonatomic) NSString *appId;
@@ -59,11 +62,20 @@ NSString * const kRKSocialUpdateCurrentVersionKey = @"cat.robo.kRKSocialUpdateCu
 @property (assign, nonatomic) BOOL isFirstLaunch;
 @property (assign, nonatomic) BOOL shouldAutomaticallyShowFollowUs;
 @property (assign, nonatomic) BOOL shouldAutomaticallyShowRateUs;
+@property (strong, nonatomic) NSString *versionFormatInWhatsNewPopup;
 @property (assign, nonatomic) RKModalBackgroundStyle backgroundStyle;
 
 @end
 
 @implementation RKSocial
+
+- (id)init {
+    if (self = [super init]) {
+        self.versionFormatInWhatsNewPopup = [NSString stringWithFormat:@"%@", kWhatsNewVersionFormatBuild];
+    }
+    
+    return self;
+}
 
 + (RKSocial *)sharedInstance {
 	static RKSocial *instance;
@@ -169,10 +181,31 @@ NSString * const kRKSocialUpdateCurrentVersionKey = @"cat.robo.kRKSocialUpdateCu
 }
 
 + (void)showWhatsNewPopup {
-	NSString *versionString = [[NSBundle mainBundle] infoDictionary][@"CFBundleVersion"];
-	NSString *title = [NSString stringWithFormat:@"What's New in %@ %@?", [[self sharedInstance] appName], versionString];
-	
+    NSMutableString *title = [NSMutableString stringWithFormat:@"What's New in %@", [[self sharedInstance] appName]];;
+    
+    NSString *versionString = [self whatsNewVersionString];
+    if (versionString) {
+        [title appendFormat:@" %@", versionString];
+    }
+    
+    [title appendString:@"?"];
+    
 	[[[UIAlertView alloc] initWithTitle:title message:[[self sharedInstance] whatsNew] delegate:[self sharedInstance] cancelButtonTitle:@"Continue" otherButtonTitles:@"Rate ★", nil] show];
+}
+
++ (NSString *)whatsNewVersionString {
+    NSString *format = [[self sharedInstance] versionFormatInWhatsNewPopup];
+    if (!format || [format length] == 0) {
+        return nil;
+    }
+    
+    NSString *build = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"];
+    NSString *version = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+    
+    NSMutableString *result = [NSMutableString stringWithString:format];
+    [result replaceOccurrencesOfString:kWhatsNewVersionFormatBuild withString:build options:kNilOptions range:NSMakeRange(0, [result length])];
+    [result replaceOccurrencesOfString:kWhatsNewVersionFormatShortVersion withString:version options:kNilOptions range:NSMakeRange(0, [result length])];
+    return [NSString stringWithString:result];
 }
 
 + (NSString *)appId {
@@ -217,6 +250,10 @@ NSString * const kRKSocialUpdateCurrentVersionKey = @"cat.robo.kRKSocialUpdateCu
 
 + (void)setSupportEmailAddress:(NSString *)supportEmailAddress {
     [[self sharedInstance] setSupportEmailAddress:supportEmailAddress];
+}
+
++ (void)setVersionFormatInWhatsNewPopup:(NSString *)versionFormat {
+    [[self sharedInstance] setVersionFormatInWhatsNewPopup:versionFormat];
 }
 
 + (void)likedOnFacebook {

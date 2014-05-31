@@ -43,6 +43,7 @@ typedef NSInteger RKModalBackgroundStyle;
 + (void)setShouldAutomaticallyShowFollowUs:(BOOL)shouldShow;
 + (void)setShouldAutomaticallyShowRateUs:(BOOL)shouldShow;
 + (void)setSupportEmailAddress:(NSString *)supportEmailAddress;
++ (void)setVersionFormatInWhatsNewPopup:(NSString *)versionFormat; /* %{build} is replaced with the build number, %{version} is replaced with the short version */
 
 + (void)likeOnFacebookWithCompletion:(void (^)(BOOL success))completion;
 + (void)subscribeWithEmail:(NSString *)email completion:(void (^)(BOOL success))completion;

@@ -75,6 +75,10 @@
 	}
     
     [RKLocalization registerForLocalization:self];
+	
+	if (![self.navigationController isModalInPopover]) {
+		self.navigationItem.rightBarButtonItem = nil;
+	}
 }
 
 - (void)shouldLocalize {

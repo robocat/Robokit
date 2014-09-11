@@ -56,6 +56,7 @@ NSString * const kRKSocialUpdateCurrentVersionKey = @"cat.robo.kRKSocialUpdateCu
 @property (strong, nonatomic) NSString *appId;
 @property (strong, nonatomic) NSString *appName;
 @property (strong, nonatomic) NSString *appVersion;
+@property (strong, nonatomic) NSString *appBuildVersion;
 @property (strong, nonatomic) NSString *supportEmailAddress;
 @property (strong, nonatomic) NSString *whatsNew;
 @property (strong, nonatomic) NSString *facebookAppId;
@@ -456,7 +457,8 @@ NSString * const kRKSocialUpdateCurrentVersionKey = @"cat.robo.kRKSocialUpdateCu
         [self setIsFirstLaunch:YES];
 	}
 	
-	NSString *versionString = [[NSBundle mainBundle] infoDictionary][@"CFBundleVersion"];
+	NSString *versionString = [[NSBundle mainBundle] infoDictionary][@"CFBundleShortVersionString"];
+	NSString *buildVersionString = [[NSBundle mainBundle] infoDictionary][@"CFBundleVersion"];
     NSString *previousVersionString = [defaults objectForKey:kUserDefaultAppVersion];
 	
     if (previousVersionString && ![previousVersionString isEqualToString:versionString]) {
@@ -472,6 +474,7 @@ NSString * const kRKSocialUpdateCurrentVersionKey = @"cat.robo.kRKSocialUpdateCu
 	[defaults synchronize];
     
     [self setAppVersion:versionString];
+	[self setAppBuildVersion:buildVersionString];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:kRKSocialDidUpdateFromPreviousVersionNotification
                                                         object:nil

@@ -24,7 +24,7 @@
         <!--Robocat-->
         <scene sceneID="rcB-NI-OGz">
             <objects>
-                <viewController id="IKz-sW-h7F" customClass="RKAboutRobocatViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RKAboutRobocatViewController" id="IKz-sW-h7F" customClass="RKAboutRobocatViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pZ2-mO-Prp"/>
                         <viewControllerLayoutGuide type="bottom" id="KhD-tD-haQ"/>

@@ -221,6 +221,10 @@ NSString * const kRKSocialUpdateCurrentVersionKey = @"cat.robo.kRKSocialUpdateCu
     return [[self sharedInstance] appVersion];
 }
 
++ (NSString *)appBuildVersion {
+	return [[self sharedInstance] appBuildVersion];
+}
+
 + (NSString *)supportEmailAddress {
     return [[self sharedInstance] supportEmailAddress];
 }

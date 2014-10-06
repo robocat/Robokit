@@ -117,32 +117,16 @@
                                                     <constraint firstItem="exP-II-ika" firstAttribute="leading" secondItem="n5n-m7-mkg" secondAttribute="leading" constant="20" id="tWe-kE-L62"/>
                                                 </constraints>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="94J-0R-AeI">
-                                                <rect key="frame" x="0.0" y="0.0" width="160" height="116"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="116" id="k9O-pb-aNv"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
-                                                <inset key="titleEdgeInsets" minX="0.0" minY="60" maxX="0.0" maxY="0.0"/>
-                                                <state key="normal" title="Our apps" backgroundImage="about robocat our apps">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <state key="highlighted" backgroundImage="about robocat our apps pressed">
-                                                    <color key="titleColor" red="0.54509806630000002" green="0.35686275360000003" blue="0.090196080509999998" alpha="1" colorSpace="deviceRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="ourApps:" destination="IKz-sW-h7F" eventType="touchUpInside" id="ATi-KG-Ab0"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QS6-KV-amS">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QS6-KV-amS" userLabel="Newsletter Button">
                                                 <rect key="frame" x="160" y="0.0" width="160" height="116"/>
+                                                <color key="backgroundColor" red="0.94107431173324585" green="0.94123542308807373" blue="0.94106405973434448" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="116" id="jLF-Im-Ilb"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 <inset key="titleEdgeInsets" minX="0.0" minY="60" maxX="0.0" maxY="0.0"/>
-                                                <state key="normal" title="Subscribe" backgroundImage="about robocat subscribe">
+                                                <state key="normal" image="rk_about_subscribe">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -153,9 +137,42 @@
                                                     <action selector="subscribe:" destination="IKz-sW-h7F" eventType="touchUpInside" id="Xcv-aX-8DY"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="94J-0R-AeI" userLabel="Apps Button">
+                                                <rect key="frame" x="0.0" y="0.0" width="160" height="116"/>
+                                                <color key="backgroundColor" red="0.86265379190444946" green="0.86279916763305664" blue="0.86263328790664673" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="116" id="k9O-pb-aNv"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                <inset key="titleEdgeInsets" minX="0.0" minY="60" maxX="0.0" maxY="0.0"/>
+                                                <state key="normal" image="rk_about_apps">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="highlighted" backgroundImage="about robocat our apps pressed">
+                                                    <color key="titleColor" red="0.54509806630000002" green="0.35686275360000003" blue="0.090196080509999998" alpha="1" colorSpace="deviceRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="ourApps:" destination="IKz-sW-h7F" eventType="touchUpInside" id="ATi-KG-Ab0"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Our Apps" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NEO-a9-TyL">
+                                                <rect key="frame" x="0.0" y="78" width="160" height="18"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subscribe" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PQp-f0-vEl">
+                                                <rect key="frame" x="207" y="78" width="66" height="18"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" red="0.9215686917" green="0.9215686917" blue="0.9215686917" alpha="1" colorSpace="deviceRGB"/>
                                         <constraints>
+                                            <constraint firstItem="QS6-KV-amS" firstAttribute="centerX" secondItem="PQp-f0-vEl" secondAttribute="centerX" id="3Sk-fN-b26"/>
                                             <constraint firstItem="n5n-m7-mkg" firstAttribute="leading" secondItem="QS6-KV-amS" secondAttribute="trailing" id="8n5-Nv-GgG"/>
                                             <constraint firstItem="QS6-KV-amS" firstAttribute="top" secondItem="nVg-7a-l9D" secondAttribute="top" id="FjF-0o-x10"/>
                                             <constraint firstAttribute="bottom" secondItem="QS6-KV-amS" secondAttribute="bottom" id="Hja-of-QdM"/>
@@ -163,22 +180,28 @@
                                             <constraint firstAttribute="trailing" secondItem="n5n-m7-mkg" secondAttribute="trailing" id="QxG-TT-eZv"/>
                                             <constraint firstItem="94J-0R-AeI" firstAttribute="width" secondItem="nVg-7a-l9D" secondAttribute="width" multiplier="0.25" id="YJZ-t5-wdi"/>
                                             <constraint firstItem="n5n-m7-mkg" firstAttribute="top" secondItem="nVg-7a-l9D" secondAttribute="top" id="YXZ-Lc-Rbg"/>
+                                            <constraint firstItem="NEO-a9-TyL" firstAttribute="centerX" secondItem="94J-0R-AeI" secondAttribute="centerX" id="ZNr-Rj-GUh"/>
                                             <constraint firstAttribute="bottom" secondItem="n5n-m7-mkg" secondAttribute="bottom" id="aFq-UP-Tru"/>
                                             <constraint firstAttribute="bottom" secondItem="94J-0R-AeI" secondAttribute="bottom" id="cOW-RT-hx9"/>
+                                            <constraint firstItem="QS6-KV-amS" firstAttribute="bottom" secondItem="PQp-f0-vEl" secondAttribute="bottom" constant="20" id="flA-eY-CvC"/>
                                             <constraint firstItem="n5n-m7-mkg" firstAttribute="width" secondItem="nVg-7a-l9D" secondAttribute="width" multiplier="0.5" id="ib8-Db-bmY"/>
+                                            <constraint firstItem="NEO-a9-TyL" firstAttribute="bottom" secondItem="94J-0R-AeI" secondAttribute="bottom" constant="-20" id="m50-yX-Ud9"/>
+                                            <constraint firstItem="NEO-a9-TyL" firstAttribute="width" secondItem="94J-0R-AeI" secondAttribute="width" id="mnt-Xo-gTg"/>
                                             <constraint firstItem="QS6-KV-amS" firstAttribute="width" secondItem="94J-0R-AeI" secondAttribute="width" id="nbW-a0-l3Q"/>
                                             <constraint firstItem="94J-0R-AeI" firstAttribute="leading" secondItem="nVg-7a-l9D" secondAttribute="leading" id="peF-yd-s1G"/>
                                             <constraint firstItem="QS6-KV-amS" firstAttribute="leading" secondItem="94J-0R-AeI" secondAttribute="trailing" id="sOj-YS-hBH"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LjB-bL-Wby">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LjB-bL-Wby" userLabel="Facebook Button">
                                         <rect key="frame" x="0.0" y="498" width="160" height="116"/>
+                                        <color key="backgroundColor" red="0.94499856233596802" green="0.94515699148178101" blue="0.94497627019882202" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="116" id="cet-d2-M5I"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <inset key="titleEdgeInsets" minX="0.0" minY="60" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="Like Robocat" backgroundImage="about robocat like">
+                                        <state key="normal" image="rk_about_facebook">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -189,14 +212,36 @@
                                             <action selector="likeOnFacebook:" destination="IKz-sW-h7F" eventType="touchUpInside" id="5qr-gP-fws"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CvB-0u-Cdc">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Adf-iV-vah" userLabel="Twitter Button">
+                                        <rect key="frame" x="160" y="498" width="160" height="116"/>
+                                        <color key="backgroundColor" red="0.9724467396736145" green="0.97260957956314087" blue="0.97242385149002075" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="116" id="5JO-hX-PcY"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <inset key="titleEdgeInsets" minX="0.0" minY="60" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" image="rk_about_twitter">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted" backgroundImage="about robocat twitter pressed">
+                                            <color key="titleColor" red="0.070588238540000001" green="0.48627454040000001" blue="0.65882354970000001" alpha="1" colorSpace="deviceRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="followOnTwitter:" destination="IKz-sW-h7F" eventType="touchUpInside" id="juc-pk-OIG"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CvB-0u-Cdc" userLabel="Website Button">
                                         <rect key="frame" x="0.0" y="614" width="160" height="116"/>
+                                        <color key="backgroundColor" red="0.97244364023208618" green="0.97260981798171997" blue="0.97243314981460571" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="116" id="SN4-RQ-eP2"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <inset key="titleEdgeInsets" minX="0.0" minY="60" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="Visit website" backgroundImage="about robocat website">
+                                        <state key="normal" image="rk_about_website">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -207,14 +252,16 @@
                                             <action selector="visitWebsite:" destination="IKz-sW-h7F" eventType="touchUpInside" id="GFN-1c-MaK"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TDJ-FG-Guq">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TDJ-FG-Guq" userLabel="Support Button">
                                         <rect key="frame" x="160" y="614" width="160" height="116"/>
+                                        <color key="backgroundColor" red="0.98420697450637817" green="0.98437517881393433" blue="0.98419648408889771" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="116" id="ScJ-Tw-DYV"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <inset key="titleEdgeInsets" minX="0.0" minY="60" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="Support" backgroundImage="about robocat support">
+                                        <state key="normal" image="rk_about_support">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -236,35 +283,46 @@ All rights reserved</string>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Adf-iV-vah">
-                                        <rect key="frame" x="160" y="498" width="160" height="116"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="116" id="5JO-hX-PcY"/>
-                                        </constraints>
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Like Robocat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oyv-W9-5FK">
+                                        <rect key="frame" x="37" y="576" width="86" height="18"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
-                                        <inset key="titleEdgeInsets" minX="0.0" minY="60" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="Follow @Robocat" backgroundImage="about robocat twitter">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="highlighted" backgroundImage="about robocat twitter pressed">
-                                            <color key="titleColor" red="0.070588238540000001" green="0.48627454040000001" blue="0.65882354970000001" alpha="1" colorSpace="deviceRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="followOnTwitter:" destination="IKz-sW-h7F" eventType="touchUpInside" id="juc-pk-OIG"/>
-                                        </connections>
-                                    </button>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Follow @Robocat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yMo-vB-cj3">
+                                        <rect key="frame" x="184" y="576" width="113" height="18"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Visit Website" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="et1-pe-wPP">
+                                        <rect key="frame" x="39" y="692" width="83" height="18"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Support" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TTN-Kn-jOb">
+                                        <rect key="frame" x="199" y="692" width="83" height="18"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="LjB-bL-Wby" firstAttribute="leading" secondItem="TUz-td-fpM" secondAttribute="leading" id="1j0-XF-T4p"/>
                                     <constraint firstItem="Adf-iV-vah" firstAttribute="width" secondItem="94J-0R-AeI" secondAttribute="width" id="25f-ee-sfa"/>
+                                    <constraint firstItem="oyv-W9-5FK" firstAttribute="bottom" secondItem="LjB-bL-Wby" secondAttribute="bottom" constant="-20" id="4pH-td-dFl"/>
+                                    <constraint firstItem="TDJ-FG-Guq" firstAttribute="centerX" secondItem="TTN-Kn-jOb" secondAttribute="centerX" constant="-0.5" id="8A4-ry-e8y"/>
                                     <constraint firstItem="nVg-7a-l9D" firstAttribute="leading" secondItem="TUz-td-fpM" secondAttribute="leading" id="9TH-Z1-TOM"/>
                                     <constraint firstItem="nVg-7a-l9D" firstAttribute="width" secondItem="TUz-td-fpM" secondAttribute="width" multiplier="2" id="BeM-Og-t2R"/>
+                                    <constraint firstItem="oyv-W9-5FK" firstAttribute="centerX" secondItem="LjB-bL-Wby" secondAttribute="centerX" id="ClK-8h-NIZ"/>
                                     <constraint firstItem="TDJ-FG-Guq" firstAttribute="width" secondItem="94J-0R-AeI" secondAttribute="width" id="Cnd-X0-MZa"/>
                                     <constraint firstItem="LjB-bL-Wby" firstAttribute="centerY" secondItem="Adf-iV-vah" secondAttribute="centerY" id="DxF-EF-YzA"/>
                                     <constraint firstItem="TDJ-FG-Guq" firstAttribute="leading" secondItem="CvB-0u-Cdc" secondAttribute="trailing" id="E91-0l-Fjq"/>
+                                    <constraint firstItem="et1-pe-wPP" firstAttribute="bottom" secondItem="CvB-0u-Cdc" secondAttribute="bottom" constant="-20" id="Fwy-EI-NdH"/>
                                     <constraint firstItem="LjB-bL-Wby" firstAttribute="width" secondItem="94J-0R-AeI" secondAttribute="width" id="H6w-Or-bs3"/>
+                                    <constraint firstItem="TDJ-FG-Guq" firstAttribute="bottom" secondItem="TTN-Kn-jOb" secondAttribute="bottom" constant="20" id="IJI-cy-EkT"/>
                                     <constraint firstAttribute="centerX" secondItem="ccx-Dq-gzj" secondAttribute="centerX" id="JAp-K2-onF"/>
                                     <constraint firstItem="94J-0R-AeI" firstAttribute="width" secondItem="CvB-0u-Cdc" secondAttribute="width" id="QU4-2f-itH"/>
                                     <constraint firstItem="LjB-bL-Wby" firstAttribute="width" secondItem="94J-0R-AeI" secondAttribute="width" id="Rpx-Rw-LcP"/>
@@ -275,13 +333,16 @@ All rights reserved</string>
                                     <constraint firstItem="AQG-4r-gBc" firstAttribute="top" secondItem="ccx-Dq-gzj" secondAttribute="bottom" constant="5" id="YxO-lk-7uy"/>
                                     <constraint firstItem="Adf-iV-vah" firstAttribute="leading" secondItem="LjB-bL-Wby" secondAttribute="trailing" id="abV-rM-zOQ"/>
                                     <constraint firstAttribute="bottom" secondItem="jcx-zF-idA" secondAttribute="bottom" constant="15" id="dBg-6C-H0Y"/>
+                                    <constraint firstItem="yMo-vB-cj3" firstAttribute="centerX" secondItem="Adf-iV-vah" secondAttribute="centerX" id="dY9-iw-uAs"/>
                                     <constraint firstAttribute="centerX" secondItem="AQG-4r-gBc" secondAttribute="centerX" id="gDA-5R-ju2"/>
+                                    <constraint firstItem="yMo-vB-cj3" firstAttribute="bottom" secondItem="Adf-iV-vah" secondAttribute="bottom" constant="-20" id="gHS-XO-CGU"/>
                                     <constraint firstAttribute="centerX" secondItem="jcx-zF-idA" secondAttribute="centerX" id="hEV-qL-npL"/>
                                     <constraint firstItem="CvB-0u-Cdc" firstAttribute="leading" secondItem="TUz-td-fpM" secondAttribute="leading" id="jMX-Ev-ViG"/>
                                     <constraint firstItem="xIL-ZH-RFc" firstAttribute="top" secondItem="TUz-td-fpM" secondAttribute="top" constant="20" id="q9m-Zi-zw8"/>
                                     <constraint firstItem="CvB-0u-Cdc" firstAttribute="top" secondItem="LjB-bL-Wby" secondAttribute="bottom" id="sYn-99-HJo"/>
                                     <constraint firstItem="CvB-0u-Cdc" firstAttribute="centerY" secondItem="TDJ-FG-Guq" secondAttribute="centerY" id="tWr-vm-BUs"/>
                                     <constraint firstItem="94J-0R-AeI" firstAttribute="top" secondItem="AQG-4r-gBc" secondAttribute="bottom" constant="11" id="xG4-cz-haf"/>
+                                    <constraint firstItem="et1-pe-wPP" firstAttribute="centerX" secondItem="CvB-0u-Cdc" secondAttribute="centerX" id="ztR-Ro-4Ej"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="delegate" destination="IKz-sW-h7F" id="WRH-D6-6LL"/>
@@ -313,16 +374,22 @@ All rights reserved</string>
                         <outlet property="closeButton" destination="5av-hu-hOs" id="101-Nf-0Q7"/>
                         <outlet property="emailInput" destination="k7f-ix-Nwx" id="IF9-r0-aFC"/>
                         <outlet property="facebookButton" destination="LjB-bL-Wby" id="ZUO-km-NI9"/>
+                        <outlet property="facebookLabel" destination="oyv-W9-5FK" id="f20-c8-arH"/>
                         <outlet property="newsletterCancelButton" destination="exP-II-ika" id="9Ah-qU-jnA"/>
                         <outlet property="newsletterSubscribeButton" destination="LeT-56-2U0" id="8KG-hW-rNx"/>
                         <outlet property="ourAppsButton" destination="94J-0R-AeI" id="kLd-GA-psF"/>
+                        <outlet property="ourAppsLabel" destination="NEO-a9-TyL" id="lLm-gj-1Gy"/>
                         <outlet property="scrollView" destination="TUz-td-fpM" id="9aS-pr-Z8U"/>
                         <outlet property="subscribeButton" destination="QS6-KV-amS" id="2B6-Kf-muE"/>
+                        <outlet property="subscribeLabel" destination="PQp-f0-vEl" id="O3x-zy-R4M"/>
                         <outlet property="subscribeSuperview" destination="nVg-7a-l9D" id="4ZF-FO-WoX"/>
                         <outlet property="subscribeViewLeftMarginConstraint" destination="9TH-Z1-TOM" id="064-4o-gLn"/>
                         <outlet property="supportButton" destination="TDJ-FG-Guq" id="d19-eY-NAk"/>
+                        <outlet property="supportLabel" destination="TTN-Kn-jOb" id="Vz7-N8-oat"/>
                         <outlet property="twitterButton" destination="Adf-iV-vah" id="qUF-Xd-FmN"/>
+                        <outlet property="twitterLabel" destination="yMo-vB-cj3" id="8al-mi-g2s"/>
                         <outlet property="websiteButton" destination="CvB-0u-Cdc" id="vtk-1o-9qu"/>
+                        <outlet property="websiteLabel" destination="et1-pe-wPP" id="h2I-ZB-VW0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fuf-zb-yQO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -332,18 +399,18 @@ All rights reserved</string>
     </scenes>
     <resources>
         <image name="RobocatLogo" width="175" height="191"/>
-        <image name="about robocat like" width="160" height="116"/>
         <image name="about robocat like pressed" width="160" height="116"/>
-        <image name="about robocat our apps" width="160" height="116"/>
         <image name="about robocat our apps pressed" width="160" height="116"/>
-        <image name="about robocat subscribe" width="160" height="116"/>
         <image name="about robocat subscribe pressed" width="160" height="116"/>
-        <image name="about robocat support" width="160" height="116"/>
         <image name="about robocat support pressed" width="160" height="116"/>
-        <image name="about robocat twitter" width="160" height="116"/>
         <image name="about robocat twitter pressed" width="160" height="116"/>
-        <image name="about robocat website" width="160" height="116"/>
         <image name="about robocat website pressed" width="160" height="116"/>
+        <image name="rk_about_apps" width="32" height="31"/>
+        <image name="rk_about_facebook" width="14" height="30"/>
+        <image name="rk_about_subscribe" width="27" height="27"/>
+        <image name="rk_about_support" width="27" height="23"/>
+        <image name="rk_about_twitter" width="33" height="27"/>
+        <image name="rk_about_website" width="29" height="30"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

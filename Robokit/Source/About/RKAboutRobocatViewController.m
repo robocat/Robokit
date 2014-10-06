@@ -33,6 +33,13 @@
 @property (weak, nonatomic) IBOutlet UIButton *websiteButton;
 @property (weak, nonatomic) IBOutlet UIButton *supportButton;
 
+@property (weak, nonatomic) IBOutlet UILabel *ourAppsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *subscribeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *facebookLabel;
+@property (weak, nonatomic) IBOutlet UILabel *twitterLabel;
+@property (weak, nonatomic) IBOutlet UILabel *websiteLabel;
+@property (weak, nonatomic) IBOutlet UILabel *supportLabel;
+
 @property (weak, nonatomic) IBOutlet UIButton *newsletterCancelButton;
 @property (weak, nonatomic) IBOutlet UIButton *newsletterSubscribeButton;
 
@@ -58,6 +65,8 @@
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidChangeFrame:) name:UIKeyboardDidChangeFrameNotification object:nil];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
 	
+	[RKLocalization registerForLocalization:self];
+	
 	if ([RKSocial hasFollowedOnTwitter]) {
 		[self didFollow];
 	}
@@ -69,8 +78,6 @@
 	if ([RKSocial hasSubscribed]) {
 		[self didSubscribe];
 	}
-    
-    [RKLocalization registerForLocalization:self];
 	
 	if (![self.navigationController isModalInPopover]) {
 		self.navigationItem.rightBarButtonItem = nil;
@@ -78,14 +85,15 @@
 }
 
 - (void)shouldLocalize {
+	
     NSString *clstring = NSStringFromClass([self class]);
 
-    RKLocalizedButtonFromTable(self.ourAppsButton, @"RC_ABOUT_BUTTON_OUR_APPS", clstring);
-    RKLocalizedButtonFromTable(self.subscribeButton, @"RC_ABOUT_BUTTON_SUBSCRIBE", clstring);
-    RKLocalizedButtonFromTable(self.facebookButton, @"RC_ABOUT_BUTTON_LIKE", clstring);
-    RKLocalizedButtonFromTable(self.twitterButton, @"RC_ABOUT_BUTTON_FOLLOW", clstring);
-    RKLocalizedButtonFromTable(self.websiteButton, @"RC_ABOUT_BUTTON_WEBSITE", clstring);
-    RKLocalizedButtonFromTable(self.supportButton, @"RC_ABOUT_BUTTON_SUPPORT", clstring);
+    RKLocalizedLabelFromTable(self.ourAppsLabel, @"RC_ABOUT_BUTTON_OUR_APPS", clstring);
+    RKLocalizedLabelFromTable(self.subscribeLabel, @"RC_ABOUT_BUTTON_SUBSCRIBE", clstring);
+    RKLocalizedLabelFromTable(self.facebookLabel, @"RC_ABOUT_BUTTON_LIKE", clstring);
+    RKLocalizedLabelFromTable(self.twitterLabel, @"RC_ABOUT_BUTTON_FOLLOW", clstring);
+    RKLocalizedLabelFromTable(self.websiteLabel, @"RC_ABOUT_BUTTON_WEBSITE", clstring);
+    RKLocalizedLabelFromTable(self.supportLabel, @"RC_ABOUT_BUTTON_SUPPORT", clstring);
 
     RKLocalizedLabelFromTable(self.aboutTitleLabel, @"RC_ABOUT_WHO_WE_ARE_TITLE", clstring);
     RKLocalizedLabelFromTable(self.aboutTextLabel, @"RC_ABOUT_WHO_WE_ARE_TEXT", clstring);
@@ -152,21 +160,30 @@
 }
 
 - (void)didLike {
-	[self.facebookButton setBackgroundImage:[self.facebookButton backgroundImageForState:UIControlStateHighlighted] forState:UIControlStateNormal];
-	[self.facebookButton setTitleColor:[self.facebookButton titleColorForState:UIControlStateHighlighted] forState:UIControlStateNormal];
-	[self.facebookButton setTitle:@"Liked on Facebook!" forState:UIControlStateNormal];
+	[self.facebookLabel setText:@"Liked on Facebook!"];
+	[self.facebookButton setBackgroundColor:[UIColor colorWithRed:59/255.0 green:89/255.0 blue:152/255.0 alpha:1.0]];
+	
+	UIColor *tintColor = [UIColor colorWithRed:30/255.0 green:53/255.0 blue:100/255.0 alpha:1.0];
+	[self.facebookButton setTintColor:tintColor];
+	[self.facebookLabel setTextColor:tintColor];
 }
 
 - (void)didFollow {
-	[self.twitterButton setBackgroundImage:[self.twitterButton backgroundImageForState:UIControlStateHighlighted] forState:UIControlStateNormal];
-	[self.twitterButton setTitleColor:[self.twitterButton titleColorForState:UIControlStateHighlighted] forState:UIControlStateNormal];
-	[self.twitterButton setTitle:@"Followed on Twitter!" forState:UIControlStateNormal];
+	[self.twitterLabel setText:@"Followed on Twitter!"];
+	[self.twitterButton setBackgroundColor:[UIColor colorWithRed:0.0 green:172/255.0 blue:237/255.0 alpha:1.0]];
+	
+	UIColor *tintColor = [UIColor colorWithRed:0.0 green:123/255.0 blue:170/255.0 alpha:1.0];
+	[self.twitterButton setTintColor:tintColor];
+	[self.twitterLabel setTextColor:tintColor];
 }
 
 - (void)didSubscribe {
-	[self.subscribeButton setBackgroundImage:[self.subscribeButton backgroundImageForState:UIControlStateHighlighted] forState:UIControlStateNormal];
-	[self.subscribeButton setTitleColor:[self.subscribeButton titleColorForState:UIControlStateHighlighted] forState:UIControlStateNormal];
-	[self.subscribeButton setTitle:@"Subscribed!" forState:UIControlStateNormal];
+	[self.subscribeLabel setText:@"Subscribed!"];
+	[self.subscribeButton setBackgroundColor:[UIColor colorWithRed:201/255.0 green:151/255.0 blue:19/255.0 alpha:1.0]];
+	
+	UIColor *tintColor = [UIColor colorWithRed:140/255.0 green:92/255.0 blue:9/255.0 alpha:1.0];
+	[self.subscribeButton setTintColor:tintColor];
+	[self.subscribeLabel setTextColor:tintColor];
 }
 
 #pragma mark - Interface actions
@@ -178,12 +195,22 @@
 	NSURL *mailURL = [NSURL URLWithString:[mailString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
 	
 	[[UIApplication sharedApplication] openURL:mailURL];
+	
+	[self.supportButton setBackgroundColor:[UIColor colorWithRed:1.0 green:80/255.0 blue:80/255.0 alpha:1.0]];
+	UIColor *tintColor = [UIColor colorWithRed:170/255.0 green:43/255.0 blue:43/255.0 alpha:1.0];
+	[self.supportButton setTintColor:tintColor];
+	[self.supportLabel setTextColor:tintColor];
 }
 
 - (IBAction)visitWebsite:(id)sender {
 	[Flurry logEvent:@"Did visit website from About Robocat"];
 	
 	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://robo.cat"]];
+	
+	[self.websiteButton setBackgroundColor:[UIColor colorWithRed:151/255.0 green:246/255.0 blue:35/255.0 alpha:1.0]];
+	UIColor *tintColor = [UIColor colorWithRed:52/255.0 green:150/255.0 blue:14/255.0 alpha:1.0];
+	[self.websiteButton setTintColor:tintColor];
+	[self.websiteLabel setTextColor:tintColor];
 }
 
 - (IBAction)followOnTwitter:(id)sender {
@@ -205,6 +232,10 @@
 - (IBAction)ourApps:(id)sender {
 	[Flurry logEvent:@"Did open 'more apps' from About Robocat"];
 	[RKSocial showMoreAppsFromRobocat];
+	[self.ourAppsButton setBackgroundColor:[UIColor colorWithRed:243/255.0 green:224/255.0 blue:55/255.0 alpha:1.0]];
+	UIColor *tintColor = [UIColor colorWithRed:140/255.0 green:92/255.0 blue:9/255.0 alpha:1.0];
+	[self.ourAppsButton setTintColor:tintColor];
+	[self.ourAppsLabel setTextColor:tintColor];
 }
 
 - (IBAction)subscribe:(id)sender {

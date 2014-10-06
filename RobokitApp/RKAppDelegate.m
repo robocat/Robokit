@@ -40,6 +40,9 @@
 	RKAdView *adView = [[RKAdView alloc] initWithFrame:CGRectMake(0, self.window.frame.size.height - 50, 320, 50)];
 	[self.window.rootViewController.view addSubview:adView];
 	[adView loadAd];
+	
+	RKAboutRobocatViewController *aboutvc = [RKAboutRobocatViewController aboutRobocatViewController];
+	[self.window.rootViewController presentViewController:aboutvc animated:YES completion:nil];
     
     return YES;
 }

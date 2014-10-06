@@ -16,6 +16,7 @@
 @interface RKAboutRobocatViewController () <UIScrollViewDelegate, UITextFieldDelegate, RKLocalizable>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *scrollViewWidthConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *subscribeViewLeftMarginConstraint;
 @property (weak, nonatomic) IBOutlet UITextField *emailInput;
 @property (weak, nonatomic) IBOutlet UIView *subscribeSuperview;
@@ -45,12 +46,6 @@
 	return [self rk_initialViewControllerFromStoryboardWithName:@"RKAboutRobocatViewController"];
 }
 
-- (id)init {
-    self = [super init];
-	
-	return self;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
@@ -61,6 +56,7 @@
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidChangeFrame:) name:UIKeyboardDidChangeFrameNotification object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
 	
 	if ([RKSocial hasFollowedOnTwitter]) {
 		[self didFollow];
@@ -101,8 +97,28 @@
 }
 
 - (void)keyboardWillShow:(NSNotification *)notification {
-	CGRect keyboardFrame = [notification.userInfo[UIKeyboardFrameBeginUserInfoKey] CGRectValue];
-	[self.scrollView scrollRectToVisible:CGRectMake(0, self.subscribeSuperview.frame.origin.y, 320, self.subscribeSuperview.frame.size.height + keyboardFrame.size.height + 20) animated:YES];
+	NSDictionary *info = [notification userInfo];
+	CGSize keyboardSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+	
+	UIEdgeInsets contentInsets = UIEdgeInsetsMake(0, 0, keyboardSize.height, 0);
+	self.scrollView.contentInset = contentInsets;
+	self.scrollView.scrollIndicatorInsets = contentInsets;
+	
+	// If active text field is hidden by keyboard, scroll it so it's visible
+	// Your application might not need or want this behavior.
+	CGRect targetFrame = self.view.frame;
+	targetFrame.size.height -= keyboardSize.height;
+	
+	CGRect inputFrame = [self.emailInput convertRect:self.emailInput.frame toView:self.scrollView];
+	
+	if (!CGRectContainsPoint(targetFrame, inputFrame.origin) ) {
+		CGPoint scrollPoint = CGPointMake(0, inputFrame.origin.y - keyboardSize.height);
+		[self.scrollView setContentOffset:scrollPoint animated:YES];
+	}
+}
+
+- (void)keyboardWillHide:(NSNotification *)notification {
+	[self.scrollView scrollRectToVisible:CGRectZero animated:YES];
 }
 
 - (void)keyboardDidShow:(NSNotification *)notification {
@@ -110,12 +126,11 @@
 }
 
 - (void)keyboardDidChangeFrame:(NSNotification *)notification {
-	CGRect keyboardFrame = [notification.userInfo[UIKeyboardFrameBeginUserInfoKey] CGRectValue];
-	[self.scrollView scrollRectToVisible:CGRectMake(0, self.subscribeSuperview.frame.origin.y, 320, self.subscribeSuperview.frame.size.height + keyboardFrame.size.height + 20) animated:YES];
+	
 }
 
 - (void)openSubscribeView {
-	self.subscribeViewLeftMarginConstraint.constant = -320;
+	self.subscribeViewLeftMarginConstraint.constant = -self.subscribeSuperview.frame.size.width / 2;
 	
 	[UIView animateWithDuration:.3 animations:^{
 		[self.view layoutIfNeeded];

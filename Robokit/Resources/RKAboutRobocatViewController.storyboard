@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A343f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Nzw-te-0vn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6249" systemVersion="14A379a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Nzw-te-0vn">
     <dependencies>
-        <deployment defaultVersion="1792" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6243"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -19,7 +20,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7a2-sE-9jb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-155" y="-49"/>
+            <point key="canvasLocation" x="-224" y="-245"/>
         </scene>
         <!--Robocat-->
         <scene sceneID="rcB-NI-OGz">
@@ -30,201 +31,19 @@
                         <viewControllerLayoutGuide type="bottom" id="KhD-tD-haQ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="fpo-yO-DPy">
-                        <rect key="frame" x="0.0" y="0.0" width="640" height="1000"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1000"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TUz-td-fpM">
-                                <rect key="frame" x="0.0" y="0.0" width="640" height="1000"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TUz-td-fpM">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="1000"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RobocatLogo" translatesAutoresizingMaskIntoConstraints="NO" id="xIL-ZH-RFc">
-                                        <rect key="frame" x="233" y="20" width="175" height="191"/>
+                                        <rect key="frame" x="73" y="20" width="175" height="191"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="191" id="dCe-Zm-9xB"/>
                                             <constraint firstAttribute="width" constant="175" id="e2k-zH-mbX"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LjB-bL-Wby">
-                                        <rect key="frame" x="0.0" y="498" width="160" height="116"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="160" id="0V7-7b-9yu"/>
-                                            <constraint firstAttribute="height" constant="116" id="cet-d2-M5I"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
-                                        <inset key="titleEdgeInsets" minX="0.0" minY="60" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="Like Robocat" backgroundImage="about robocat like">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="highlighted" backgroundImage="about robocat like pressed">
-                                            <color key="titleColor" red="0.1215686351" green="0.2117647231" blue="0.38431376220000002" alpha="1" colorSpace="deviceRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="likeOnFacebook:" destination="IKz-sW-h7F" eventType="touchUpInside" id="5qr-gP-fws"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Adf-iV-vah">
-                                        <rect key="frame" x="160" y="498" width="160" height="116"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="116" id="5JO-hX-PcY"/>
-                                            <constraint firstAttribute="width" constant="160" id="6pm-B4-KqQ"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
-                                        <inset key="titleEdgeInsets" minX="0.0" minY="60" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="Follow @Robocat" backgroundImage="about robocat twitter">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="highlighted" backgroundImage="about robocat twitter pressed">
-                                            <color key="titleColor" red="0.070588238540000001" green="0.48627454040000001" blue="0.65882354970000001" alpha="1" colorSpace="deviceRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="followOnTwitter:" destination="IKz-sW-h7F" eventType="touchUpInside" id="juc-pk-OIG"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CvB-0u-Cdc">
-                                        <rect key="frame" x="0.0" y="614" width="160" height="116"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="116" id="SN4-RQ-eP2"/>
-                                            <constraint firstAttribute="width" constant="160" id="pLc-9D-BAX"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
-                                        <inset key="titleEdgeInsets" minX="0.0" minY="60" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="Visit website" backgroundImage="about robocat website">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="highlighted" backgroundImage="about robocat website pressed">
-                                            <color key="titleColor" red="0.2196078598" green="0.58431375029999999" blue="0.1176470667" alpha="1" colorSpace="deviceRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="visitWebsite:" destination="IKz-sW-h7F" eventType="touchUpInside" id="GFN-1c-MaK"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TDJ-FG-Guq">
-                                        <rect key="frame" x="160" y="614" width="160" height="116"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="116" id="ScJ-Tw-DYV"/>
-                                            <constraint firstAttribute="width" constant="160" id="YyK-1I-W5h"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
-                                        <inset key="titleEdgeInsets" minX="0.0" minY="60" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="Support" backgroundImage="about robocat support">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="highlighted" backgroundImage="about robocat support pressed">
-                                            <color key="titleColor" red="0.65882354970000001" green="0.17254902420000001" blue="0.18431372939999999" alpha="1" colorSpace="deviceRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="support:" destination="IKz-sW-h7F" eventType="touchUpInside" id="Yx0-mF-Xcw"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="jcx-zF-idA">
-                                        <rect key="frame" x="20" y="745" width="280" height="44"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="3X9-V8-FWk"/>
-                                        </constraints>
-                                        <string key="text">Appname 1.0
-Copyright © 2013 Robocat
-All rights reserved</string>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nVg-7a-l9D">
-                                        <rect key="frame" x="0.0" y="382" width="640" height="116"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="94J-0R-AeI">
-                                                <rect key="frame" x="0.0" y="0.0" width="160" height="116"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="160" id="Ouh-rZ-Lud"/>
-                                                    <constraint firstAttribute="height" constant="116" id="k9O-pb-aNv"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
-                                                <inset key="titleEdgeInsets" minX="0.0" minY="60" maxX="0.0" maxY="0.0"/>
-                                                <state key="normal" title="Our apps" backgroundImage="about robocat our apps">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <state key="highlighted" backgroundImage="about robocat our apps pressed">
-                                                    <color key="titleColor" red="0.54509806630000002" green="0.35686275360000003" blue="0.090196080509999998" alpha="1" colorSpace="deviceRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="ourApps:" destination="IKz-sW-h7F" eventType="touchUpInside" id="ATi-KG-Ab0"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QS6-KV-amS">
-                                                <rect key="frame" x="160" y="0.0" width="160" height="116"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="160" id="XmF-wx-ruo"/>
-                                                    <constraint firstAttribute="height" constant="116" id="jLF-Im-Ilb"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
-                                                <inset key="titleEdgeInsets" minX="0.0" minY="60" maxX="0.0" maxY="0.0"/>
-                                                <state key="normal" title="Subscribe" backgroundImage="about robocat subscribe">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <state key="highlighted" backgroundImage="about robocat subscribe pressed">
-                                                    <color key="titleColor" red="0.43137258290000002" green="0.270588249" blue="0.062745101750000004" alpha="1" colorSpace="deviceRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="subscribe:" destination="IKz-sW-h7F" eventType="touchUpInside" id="Xcv-aX-8DY"/>
-                                                </connections>
-                                            </button>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email@whatever.com" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k7f-ix-Nwx">
-                                                <rect key="frame" x="340" y="20" width="280" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="GwM-zf-il4"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
-                                            </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="exP-II-ika">
-                                                <rect key="frame" x="340" y="66" width="74" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="74" id="cqf-fX-ivQ"/>
-                                                    <constraint firstAttribute="height" constant="30" id="jCw-NO-sen"/>
-                                                </constraints>
-                                                <state key="normal" title="Cancel">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="cancel:" destination="IKz-sW-h7F" eventType="touchUpInside" id="05Y-Bl-oqp"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LeT-56-2U0">
-                                                <rect key="frame" x="528" y="66" width="92" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="92" id="3LV-v9-w1p"/>
-                                                    <constraint firstAttribute="height" constant="30" id="D7T-fY-jMa"/>
-                                                </constraints>
-                                                <state key="normal" title="Subscribe">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="doSubscribe:" destination="IKz-sW-h7F" eventType="touchUpInside" id="AYw-BU-aut"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" red="0.9215686917" green="0.9215686917" blue="0.9215686917" alpha="1" colorSpace="deviceRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="k7f-ix-Nwx" secondAttribute="trailing" constant="20" id="3hu-3x-eoX"/>
-                                            <constraint firstItem="k7f-ix-Nwx" firstAttribute="top" secondItem="nVg-7a-l9D" secondAttribute="top" constant="20" id="DxG-Uy-biI"/>
-                                            <constraint firstItem="k7f-ix-Nwx" firstAttribute="leading" secondItem="QS6-KV-amS" secondAttribute="trailing" constant="20" id="Hfa-p3-rZS"/>
-                                            <constraint firstAttribute="bottom" secondItem="94J-0R-AeI" secondAttribute="bottom" id="JUe-AU-swJ"/>
-                                            <constraint firstItem="94J-0R-AeI" firstAttribute="top" secondItem="nVg-7a-l9D" secondAttribute="top" id="Oel-xr-ufL"/>
-                                            <constraint firstAttribute="height" constant="116" id="Z4p-gb-7oe"/>
-                                            <constraint firstItem="LeT-56-2U0" firstAttribute="top" secondItem="k7f-ix-Nwx" secondAttribute="bottom" constant="16" id="bB1-O8-Oj0"/>
-                                            <constraint firstItem="QS6-KV-amS" firstAttribute="top" secondItem="nVg-7a-l9D" secondAttribute="top" id="bZW-pt-G9e"/>
-                                            <constraint firstAttribute="bottom" secondItem="QS6-KV-amS" secondAttribute="bottom" id="baO-1V-mIk"/>
-                                            <constraint firstItem="exP-II-ika" firstAttribute="leading" secondItem="QS6-KV-amS" secondAttribute="trailing" constant="20" id="dbv-43-Y6x"/>
-                                            <constraint firstAttribute="trailing" secondItem="LeT-56-2U0" secondAttribute="trailing" constant="20" id="k4g-18-jeu"/>
-                                            <constraint firstAttribute="width" constant="640" id="rHY-Fp-zo8"/>
-                                            <constraint firstItem="QS6-KV-amS" firstAttribute="leading" secondItem="94J-0R-AeI" secondAttribute="trailing" id="t4R-XL-hen"/>
-                                            <constraint firstItem="exP-II-ika" firstAttribute="top" secondItem="k7f-ix-Nwx" secondAttribute="bottom" constant="16" id="tcj-oP-AwB"/>
-                                            <constraint firstItem="94J-0R-AeI" firstAttribute="leading" secondItem="nVg-7a-l9D" secondAttribute="leading" id="zw3-ht-YR8"/>
-                                        </constraints>
-                                    </view>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Robocat is a team of builders from Copenhagen" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="ccx-Dq-gzj">
                                         <rect key="frame" x="20" y="217" width="280" height="62"/>
                                         <constraints>
@@ -246,30 +65,222 @@ All rights reserved</string>
                                         <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nVg-7a-l9D" userLabel="Subscribe Row">
+                                        <rect key="frame" x="0.0" y="382" width="640" height="116"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n5n-m7-mkg" userLabel="Subscribe View">
+                                                <rect key="frame" x="320" y="0.0" width="320" height="116"/>
+                                                <subviews>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email@whatever.com" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k7f-ix-Nwx">
+                                                        <rect key="frame" x="20" y="20" width="280" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="GwM-zf-il4"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                                    </textField>
+                                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LeT-56-2U0">
+                                                        <rect key="frame" x="208" y="66" width="92" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="92" id="3LV-v9-w1p"/>
+                                                            <constraint firstAttribute="height" constant="30" id="D7T-fY-jMa"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Subscribe">
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="doSubscribe:" destination="IKz-sW-h7F" eventType="touchUpInside" id="AYw-BU-aut"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="exP-II-ika">
+                                                        <rect key="frame" x="20" y="66" width="74" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="74" id="cqf-fX-ivQ"/>
+                                                            <constraint firstAttribute="height" constant="30" id="jCw-NO-sen"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Cancel">
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="cancel:" destination="IKz-sW-h7F" eventType="touchUpInside" id="05Y-Bl-oqp"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="exP-II-ika" firstAttribute="top" secondItem="k7f-ix-Nwx" secondAttribute="bottom" constant="16" id="HF2-iE-0H5"/>
+                                                    <constraint firstAttribute="trailing" secondItem="LeT-56-2U0" secondAttribute="trailing" constant="20" id="IL0-i9-IWi"/>
+                                                    <constraint firstItem="k7f-ix-Nwx" firstAttribute="top" secondItem="n5n-m7-mkg" secondAttribute="top" constant="20" id="IVF-lq-NpQ"/>
+                                                    <constraint firstItem="LeT-56-2U0" firstAttribute="top" secondItem="k7f-ix-Nwx" secondAttribute="bottom" constant="16" id="V5B-Xx-IGo"/>
+                                                    <constraint firstItem="k7f-ix-Nwx" firstAttribute="leading" secondItem="n5n-m7-mkg" secondAttribute="leading" constant="20" id="jyB-Ab-fvw"/>
+                                                    <constraint firstAttribute="trailing" secondItem="k7f-ix-Nwx" secondAttribute="trailing" constant="20" id="qjX-vb-mar"/>
+                                                    <constraint firstItem="exP-II-ika" firstAttribute="leading" secondItem="n5n-m7-mkg" secondAttribute="leading" constant="20" id="tWe-kE-L62"/>
+                                                </constraints>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="94J-0R-AeI">
+                                                <rect key="frame" x="0.0" y="0.0" width="160" height="116"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="116" id="k9O-pb-aNv"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                                <inset key="titleEdgeInsets" minX="0.0" minY="60" maxX="0.0" maxY="0.0"/>
+                                                <state key="normal" title="Our apps" backgroundImage="about robocat our apps">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="highlighted" backgroundImage="about robocat our apps pressed">
+                                                    <color key="titleColor" red="0.54509806630000002" green="0.35686275360000003" blue="0.090196080509999998" alpha="1" colorSpace="deviceRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="ourApps:" destination="IKz-sW-h7F" eventType="touchUpInside" id="ATi-KG-Ab0"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QS6-KV-amS">
+                                                <rect key="frame" x="160" y="0.0" width="160" height="116"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="116" id="jLF-Im-Ilb"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                                <inset key="titleEdgeInsets" minX="0.0" minY="60" maxX="0.0" maxY="0.0"/>
+                                                <state key="normal" title="Subscribe" backgroundImage="about robocat subscribe">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="highlighted" backgroundImage="about robocat subscribe pressed">
+                                                    <color key="titleColor" red="0.43137258290000002" green="0.270588249" blue="0.062745101750000004" alpha="1" colorSpace="deviceRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="subscribe:" destination="IKz-sW-h7F" eventType="touchUpInside" id="Xcv-aX-8DY"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.9215686917" green="0.9215686917" blue="0.9215686917" alpha="1" colorSpace="deviceRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="n5n-m7-mkg" firstAttribute="leading" secondItem="QS6-KV-amS" secondAttribute="trailing" id="8n5-Nv-GgG"/>
+                                            <constraint firstItem="QS6-KV-amS" firstAttribute="top" secondItem="nVg-7a-l9D" secondAttribute="top" id="FjF-0o-x10"/>
+                                            <constraint firstAttribute="bottom" secondItem="QS6-KV-amS" secondAttribute="bottom" id="Hja-of-QdM"/>
+                                            <constraint firstItem="94J-0R-AeI" firstAttribute="top" secondItem="nVg-7a-l9D" secondAttribute="top" id="Jmb-pF-HVb"/>
+                                            <constraint firstAttribute="trailing" secondItem="n5n-m7-mkg" secondAttribute="trailing" id="QxG-TT-eZv"/>
+                                            <constraint firstItem="94J-0R-AeI" firstAttribute="width" secondItem="nVg-7a-l9D" secondAttribute="width" multiplier="0.25" id="YJZ-t5-wdi"/>
+                                            <constraint firstItem="n5n-m7-mkg" firstAttribute="top" secondItem="nVg-7a-l9D" secondAttribute="top" id="YXZ-Lc-Rbg"/>
+                                            <constraint firstAttribute="bottom" secondItem="n5n-m7-mkg" secondAttribute="bottom" id="aFq-UP-Tru"/>
+                                            <constraint firstAttribute="bottom" secondItem="94J-0R-AeI" secondAttribute="bottom" id="cOW-RT-hx9"/>
+                                            <constraint firstItem="n5n-m7-mkg" firstAttribute="width" secondItem="nVg-7a-l9D" secondAttribute="width" multiplier="0.5" id="ib8-Db-bmY"/>
+                                            <constraint firstItem="QS6-KV-amS" firstAttribute="width" secondItem="94J-0R-AeI" secondAttribute="width" id="nbW-a0-l3Q"/>
+                                            <constraint firstItem="94J-0R-AeI" firstAttribute="leading" secondItem="nVg-7a-l9D" secondAttribute="leading" id="peF-yd-s1G"/>
+                                            <constraint firstItem="QS6-KV-amS" firstAttribute="leading" secondItem="94J-0R-AeI" secondAttribute="trailing" id="sOj-YS-hBH"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LjB-bL-Wby">
+                                        <rect key="frame" x="0.0" y="498" width="160" height="116"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="116" id="cet-d2-M5I"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                        <inset key="titleEdgeInsets" minX="0.0" minY="60" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Like Robocat" backgroundImage="about robocat like">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted" backgroundImage="about robocat like pressed">
+                                            <color key="titleColor" red="0.1215686351" green="0.2117647231" blue="0.38431376220000002" alpha="1" colorSpace="deviceRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="likeOnFacebook:" destination="IKz-sW-h7F" eventType="touchUpInside" id="5qr-gP-fws"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CvB-0u-Cdc">
+                                        <rect key="frame" x="0.0" y="614" width="160" height="116"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="116" id="SN4-RQ-eP2"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                        <inset key="titleEdgeInsets" minX="0.0" minY="60" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Visit website" backgroundImage="about robocat website">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted" backgroundImage="about robocat website pressed">
+                                            <color key="titleColor" red="0.2196078598" green="0.58431375029999999" blue="0.1176470667" alpha="1" colorSpace="deviceRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="visitWebsite:" destination="IKz-sW-h7F" eventType="touchUpInside" id="GFN-1c-MaK"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TDJ-FG-Guq">
+                                        <rect key="frame" x="160" y="614" width="160" height="116"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="116" id="ScJ-Tw-DYV"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                        <inset key="titleEdgeInsets" minX="0.0" minY="60" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Support" backgroundImage="about robocat support">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted" backgroundImage="about robocat support pressed">
+                                            <color key="titleColor" red="0.65882354970000001" green="0.17254902420000001" blue="0.18431372939999999" alpha="1" colorSpace="deviceRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="support:" destination="IKz-sW-h7F" eventType="touchUpInside" id="Yx0-mF-Xcw"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="jcx-zF-idA">
+                                        <rect key="frame" x="94" y="745" width="133" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="3X9-V8-FWk"/>
+                                        </constraints>
+                                        <string key="text">Appname 1.0
+Copyright © 2013 Robocat
+All rights reserved</string>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Adf-iV-vah">
+                                        <rect key="frame" x="160" y="498" width="160" height="116"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="116" id="5JO-hX-PcY"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                        <inset key="titleEdgeInsets" minX="0.0" minY="60" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Follow @Robocat" backgroundImage="about robocat twitter">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted" backgroundImage="about robocat twitter pressed">
+                                            <color key="titleColor" red="0.070588238540000001" green="0.48627454040000001" blue="0.65882354970000001" alpha="1" colorSpace="deviceRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="followOnTwitter:" destination="IKz-sW-h7F" eventType="touchUpInside" id="juc-pk-OIG"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="TDJ-FG-Guq" secondAttribute="trailing" id="0hc-U0-s5d"/>
-                                    <constraint firstItem="AQG-4r-gBc" firstAttribute="leading" secondItem="TUz-td-fpM" secondAttribute="leading" constant="20" id="9HC-Zj-Es1"/>
+                                    <constraint firstItem="LjB-bL-Wby" firstAttribute="leading" secondItem="TUz-td-fpM" secondAttribute="leading" id="1j0-XF-T4p"/>
+                                    <constraint firstItem="Adf-iV-vah" firstAttribute="width" secondItem="94J-0R-AeI" secondAttribute="width" id="25f-ee-sfa"/>
                                     <constraint firstItem="nVg-7a-l9D" firstAttribute="leading" secondItem="TUz-td-fpM" secondAttribute="leading" id="9TH-Z1-TOM"/>
+                                    <constraint firstItem="nVg-7a-l9D" firstAttribute="width" secondItem="TUz-td-fpM" secondAttribute="width" multiplier="2" id="BeM-Og-t2R"/>
+                                    <constraint firstItem="TDJ-FG-Guq" firstAttribute="width" secondItem="94J-0R-AeI" secondAttribute="width" id="Cnd-X0-MZa"/>
                                     <constraint firstItem="LjB-bL-Wby" firstAttribute="centerY" secondItem="Adf-iV-vah" secondAttribute="centerY" id="DxF-EF-YzA"/>
                                     <constraint firstItem="TDJ-FG-Guq" firstAttribute="leading" secondItem="CvB-0u-Cdc" secondAttribute="trailing" id="E91-0l-Fjq"/>
-                                    <constraint firstAttribute="trailing" secondItem="Adf-iV-vah" secondAttribute="trailing" id="Gpy-NP-ZhD"/>
-                                    <constraint firstItem="jcx-zF-idA" firstAttribute="leading" secondItem="TUz-td-fpM" secondAttribute="leading" constant="20" id="K4U-yD-wIA"/>
-                                    <constraint firstAttribute="trailing" secondItem="jcx-zF-idA" secondAttribute="trailing" constant="20" id="Leu-sW-1oN"/>
+                                    <constraint firstItem="LjB-bL-Wby" firstAttribute="width" secondItem="94J-0R-AeI" secondAttribute="width" id="H6w-Or-bs3"/>
+                                    <constraint firstAttribute="centerX" secondItem="ccx-Dq-gzj" secondAttribute="centerX" id="JAp-K2-onF"/>
+                                    <constraint firstItem="94J-0R-AeI" firstAttribute="width" secondItem="CvB-0u-Cdc" secondAttribute="width" id="QU4-2f-itH"/>
+                                    <constraint firstItem="LjB-bL-Wby" firstAttribute="width" secondItem="94J-0R-AeI" secondAttribute="width" id="Rpx-Rw-LcP"/>
                                     <constraint firstItem="Adf-iV-vah" firstAttribute="top" secondItem="nVg-7a-l9D" secondAttribute="bottom" id="ShB-VZ-bej"/>
                                     <constraint firstAttribute="centerX" secondItem="xIL-ZH-RFc" secondAttribute="centerX" id="U93-RI-ZID"/>
                                     <constraint firstItem="xIL-ZH-RFc" firstAttribute="top" secondItem="ccx-Dq-gzj" secondAttribute="top" constant="-197" id="WKM-34-Ur6"/>
                                     <constraint firstItem="jcx-zF-idA" firstAttribute="top" secondItem="CvB-0u-Cdc" secondAttribute="bottom" constant="15" id="YX4-3v-ib7"/>
                                     <constraint firstItem="AQG-4r-gBc" firstAttribute="top" secondItem="ccx-Dq-gzj" secondAttribute="bottom" constant="5" id="YxO-lk-7uy"/>
+                                    <constraint firstItem="Adf-iV-vah" firstAttribute="leading" secondItem="LjB-bL-Wby" secondAttribute="trailing" id="abV-rM-zOQ"/>
                                     <constraint firstAttribute="bottom" secondItem="jcx-zF-idA" secondAttribute="bottom" constant="15" id="dBg-6C-H0Y"/>
-                                    <constraint firstItem="CvB-0u-Cdc" firstAttribute="leading" secondItem="TUz-td-fpM" secondAttribute="leading" id="hoR-iC-BmS"/>
-                                    <constraint firstItem="LjB-bL-Wby" firstAttribute="leading" secondItem="TUz-td-fpM" secondAttribute="leading" id="kpW-y4-bDx"/>
+                                    <constraint firstAttribute="centerX" secondItem="AQG-4r-gBc" secondAttribute="centerX" id="gDA-5R-ju2"/>
+                                    <constraint firstAttribute="centerX" secondItem="jcx-zF-idA" secondAttribute="centerX" id="hEV-qL-npL"/>
+                                    <constraint firstItem="CvB-0u-Cdc" firstAttribute="leading" secondItem="TUz-td-fpM" secondAttribute="leading" id="jMX-Ev-ViG"/>
                                     <constraint firstItem="xIL-ZH-RFc" firstAttribute="top" secondItem="TUz-td-fpM" secondAttribute="top" constant="20" id="q9m-Zi-zw8"/>
                                     <constraint firstItem="CvB-0u-Cdc" firstAttribute="top" secondItem="LjB-bL-Wby" secondAttribute="bottom" id="sYn-99-HJo"/>
                                     <constraint firstItem="CvB-0u-Cdc" firstAttribute="centerY" secondItem="TDJ-FG-Guq" secondAttribute="centerY" id="tWr-vm-BUs"/>
-                                    <constraint firstItem="ccx-Dq-gzj" firstAttribute="leading" secondItem="TUz-td-fpM" secondAttribute="leading" constant="20" id="tu0-rT-ks9"/>
-                                    <constraint firstItem="Adf-iV-vah" firstAttribute="leading" secondItem="LjB-bL-Wby" secondAttribute="trailing" id="vGO-9C-CeY"/>
                                     <constraint firstItem="94J-0R-AeI" firstAttribute="top" secondItem="AQG-4r-gBc" secondAttribute="bottom" constant="11" id="xG4-cz-haf"/>
                                 </constraints>
                                 <connections>
@@ -294,7 +305,7 @@ All rights reserved</string>
                     </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="640" height="1000"/>
+                    <size key="freeformSize" width="320" height="1000"/>
                     <connections>
                         <outlet property="aboutLabel" destination="jcx-zF-idA" id="aMx-4J-ohr"/>
                         <outlet property="aboutTextLabel" destination="AQG-4r-gBc" id="leK-O0-Xd6"/>
@@ -316,7 +327,7 @@ All rights reserved</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fuf-zb-yQO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="459" y="-135"/>
+            <point key="canvasLocation" x="524" y="-72"/>
         </scene>
     </scenes>
     <resources>

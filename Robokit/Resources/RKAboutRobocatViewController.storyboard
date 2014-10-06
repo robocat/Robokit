@@ -37,13 +37,6 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TUz-td-fpM">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="1000"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RobocatLogo" translatesAutoresizingMaskIntoConstraints="NO" id="xIL-ZH-RFc">
-                                        <rect key="frame" x="73" y="20" width="175" height="191"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="191" id="dCe-Zm-9xB"/>
-                                            <constraint firstAttribute="width" constant="175" id="e2k-zH-mbX"/>
-                                        </constraints>
-                                    </imageView>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Robocat is a team of builders from Copenhagen" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="ccx-Dq-gzj">
                                         <rect key="frame" x="20" y="217" width="280" height="62"/>
                                         <constraints>
@@ -307,6 +300,13 @@ All rights reserved</string>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rk_about_bigcat" translatesAutoresizingMaskIntoConstraints="NO" id="xIL-ZH-RFc">
+                                        <rect key="frame" x="102" y="79" width="117" height="130"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="191" id="dCe-Zm-9xB"/>
+                                            <constraint firstAttribute="width" constant="175" id="e2k-zH-mbX"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -398,7 +398,6 @@ All rights reserved</string>
         </scene>
     </scenes>
     <resources>
-        <image name="RobocatLogo" width="175" height="191"/>
         <image name="about robocat like pressed" width="160" height="116"/>
         <image name="about robocat our apps pressed" width="160" height="116"/>
         <image name="about robocat subscribe pressed" width="160" height="116"/>
@@ -406,6 +405,7 @@ All rights reserved</string>
         <image name="about robocat twitter pressed" width="160" height="116"/>
         <image name="about robocat website pressed" width="160" height="116"/>
         <image name="rk_about_apps" width="32" height="31"/>
+        <image name="rk_about_bigcat" width="117" height="130"/>
         <image name="rk_about_facebook" width="14" height="30"/>
         <image name="rk_about_subscribe" width="27" height="27"/>
         <image name="rk_about_support" width="27" height="23"/>

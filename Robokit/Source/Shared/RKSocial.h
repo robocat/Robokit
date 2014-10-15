@@ -35,6 +35,7 @@ typedef NSInteger RKModalBackgroundStyle;
 + (NSString *)appVersion;
 + (NSString *)appBuildVersion;
 + (NSString *)supportEmailAddress;
++ (BOOL)isFirstLaunch;
 
 + (BOOL)hasLikedOnFacebook;
 + (BOOL)hasFollowedOnTwitter;

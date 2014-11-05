@@ -45,15 +45,28 @@
 
 @property (assign, nonatomic) BOOL shouldCloseSubscribeView;
 
+@property (copy, nonatomic) void(^dismissAction)(RKAboutRobocatViewController *);
+
 @end
 
 @implementation RKAboutRobocatViewController
 
 + (RKAboutRobocatViewController *)aboutRobocatViewController {
     RKAboutRobocatViewController *vc = [self rk_initialViewControllerFromStoryboardWithName:@"RKAboutRobocatViewController"];
+    vc.dismissAction = ^(RKAboutRobocatViewController *viewController){
+        [viewController dismissViewControllerAnimated:true completion:nil];
+    };
     vc.showsDoneButton = YES;
     
 	return vc;
+}
+
++ (RKAboutRobocatViewController *)aboutRobocatViewControllerWithDismissAction:(void (^)(RKAboutRobocatViewController *))action {
+    RKAboutRobocatViewController *vc = [self rk_initialViewControllerFromStoryboardWithName:@"RKAboutRobocatViewController"];
+    vc.dismissAction = action;
+    vc.showsDoneButton = YES;
+    
+    return vc;
 }
 
 - (void)viewDidLoad {
@@ -260,11 +273,7 @@
 - (IBAction)dismiss:(id)sender {
 	[Flurry logEvent:@"Did open About Robocat"];
 	
-    if ([self.navigationController isModalInPopover]) {
-        [self dismissViewControllerAnimated:YES completion:nil];
-    } else {
-        [self.navigationController popViewControllerAnimated:YES];
-    }
+    self.dismissAction(self);
 }
 
 #pragma mark - Scroll view delegate

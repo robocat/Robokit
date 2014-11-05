@@ -14,5 +14,6 @@
 @property (assign, nonatomic) BOOL showsDoneButton;
 
 + (RKAboutRobocatViewController *)aboutRobocatViewController;
++ (RKAboutRobocatViewController *)aboutRobocatViewControllerWithDismissAction:(void (^)(RKAboutRobocatViewController *))action;
 
 @end

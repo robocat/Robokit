@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface RKAboutRobocatViewController : UIViewController
+@property (copy, nonatomic) void(^dismissAction)(RKAboutRobocatViewController *);
 
 // Default is YES
 @property (assign, nonatomic) BOOL showsDoneButton;

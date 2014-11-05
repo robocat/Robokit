@@ -45,28 +45,28 @@
 
 @property (assign, nonatomic) BOOL shouldCloseSubscribeView;
 
-@property (copy, nonatomic) void(^dismissAction)(RKAboutRobocatViewController *);
-
 @end
 
 @implementation RKAboutRobocatViewController
 
-+ (RKAboutRobocatViewController *)aboutRobocatViewController {
-    RKAboutRobocatViewController *vc = [self rk_initialViewControllerFromStoryboardWithName:@"RKAboutRobocatViewController"];
-    vc.dismissAction = ^(RKAboutRobocatViewController *viewController){
++ (UINavigationController *)aboutRobocatViewController {
+    UINavigationController *navigationVC = [self rk_initialViewControllerFromStoryboardWithName:@"RKAboutRobocatViewController"];
+    RKAboutRobocatViewController *aboutVC = (RKAboutRobocatViewController *)navigationVC.topViewController;
+    aboutVC.dismissAction = ^(RKAboutRobocatViewController *viewController){
         [viewController dismissViewControllerAnimated:true completion:nil];
     };
-    vc.showsDoneButton = YES;
+    aboutVC.showsDoneButton = YES;
     
-	return vc;
+    return navigationVC;
 }
 
-+ (RKAboutRobocatViewController *)aboutRobocatViewControllerWithDismissAction:(void (^)(RKAboutRobocatViewController *))action {
-    RKAboutRobocatViewController *vc = [self rk_initialViewControllerFromStoryboardWithName:@"RKAboutRobocatViewController"];
-    vc.dismissAction = action;
-    vc.showsDoneButton = YES;
++ (UINavigationController *)aboutRobocatViewControllerWithDismissAction:(void (^)(RKAboutRobocatViewController *))action {
+    UINavigationController *navigationVC = [self rk_initialViewControllerFromStoryboardWithName:@"RKAboutRobocatViewController"];
+    RKAboutRobocatViewController *aboutVC = (RKAboutRobocatViewController *)navigationVC.topViewController;
+    aboutVC.dismissAction = action;
+    aboutVC.showsDoneButton = YES;
     
-    return vc;
+    return navigationVC;
 }
 
 - (void)viewDidLoad {

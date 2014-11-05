@@ -10,6 +10,9 @@
 
 @interface RKAboutRobocatViewController : UIViewController
 
+// Default is YES
+@property (assign, nonatomic) BOOL showsDoneButton;
+
 + (RKAboutRobocatViewController *)aboutRobocatViewController;
 
 @end

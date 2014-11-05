@@ -50,7 +50,10 @@
 @implementation RKAboutRobocatViewController
 
 + (RKAboutRobocatViewController *)aboutRobocatViewController {
-	return [self rk_initialViewControllerFromStoryboardWithName:@"RKAboutRobocatViewController"];
+    RKAboutRobocatViewController *vc = [self rk_initialViewControllerFromStoryboardWithName:@"RKAboutRobocatViewController"];
+    vc.showsDoneButton = YES;
+    
+	return vc;
 }
 
 - (void)viewDidLoad {
@@ -79,7 +82,7 @@
 		[self didSubscribe];
 	}
 	
-	if (![self.navigationController isModalInPopover]) {
+	if (!self.showsDoneButton) {
 		self.navigationItem.rightBarButtonItem = nil;
 	}
 }
@@ -100,8 +103,6 @@
 
     RKLocalizedButtonFromTable(self.newsletterCancelButton, @"RC_ABOUT_NEWSLETTER_CANCEL", clstring);
     RKLocalizedButtonFromTable(self.newsletterSubscribeButton, @"RC_ABOUT_BUTTON_SUBSCRIBE", clstring);
-
-    [self.closeButton setTitle:RKLocalizedFromTable(@"RC_ABOUT_BUTTON_CLOSE", clstring)];
 }
 
 - (void)keyboardWillShow:(NSNotification *)notification {

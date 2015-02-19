@@ -104,7 +104,7 @@ NSString * const kRKSocialUpdateCurrentVersionKey = @"cat.robo.kRKSocialUpdateCu
 
 + (void)initializeFlurryWithAppId:(NSString *)flurryAppId {
 	[Flurry setAppVersion:[[NSBundle mainBundle] infoDictionary][@"CFBundleVersion"]];
-	[Flurry setSecureTransportEnabled:YES];
+//	[Flurry setSecureTransportEnabled:YES];
 	[Flurry startSession:flurryAppId];
 }
 

@@ -116,16 +116,23 @@ NSString * const kRKPurchasesManagerErrorKey = @"kRKPurchasesManagerErrorKey";
 	if (![SKPaymentQueue canMakePayments]) {
 		NSDictionary *userInfo = @{ kRKPurchasesManagerFeatureIdKey: featureId };
 		[[NSNotificationCenter defaultCenter] postNotificationName:kRKPurchasesManagerPurchaseNotAvailableNotification object:nil userInfo:userInfo];
+		return;
 	}
 	
 	if ([[[self sharedInstance] products] count] == 0) {
 		NSDictionary *userInfo = @{ kRKPurchasesManagerFeatureIdKey: featureId };
-		[[NSNotificationCenter defaultCenter] postNotificationName:kRKPurchasesManagerPurchaseDidFailNotification object:nil userInfo:userInfo];
+		[[NSNotificationCenter defaultCenter] postNotificationName:kRKPurchasesManagerPurchaseWasCancelledNotification object:nil userInfo:userInfo];
 		return;
 	}
 	
 	SKProduct *product = [[self sharedInstance] products][featureId];
-	[[SKPaymentQueue defaultQueue] addPayment:[SKPayment paymentWithProduct:product]];
+	
+	if (product) {
+		[[SKPaymentQueue defaultQueue] addPayment:[SKPayment paymentWithProduct:product]];
+	} else {
+		NSDictionary *userInfo = @{ kRKPurchasesManagerFeatureIdKey: featureId };
+		[[NSNotificationCenter defaultCenter] postNotificationName:kRKPurchasesManagerPurchaseWasCancelledNotification object:nil userInfo:userInfo];
+	}
 }
 
 + (void)restoreAllPurchases {

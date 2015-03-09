@@ -1,6 +1,7 @@
+# coding: utf-8
 Pod::Spec.new do |s|
   s.name = 'Robokit'
-  s.version = '1.1.13’
+  s.version = '1.1.13'
   s.license = { :type => 'MIT', :file => 'LICENSE' }
   s.summary = 'The shared Robocat iOS toolkit'
   s.homepage = 'robo.cat'

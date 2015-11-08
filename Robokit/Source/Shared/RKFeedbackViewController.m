@@ -11,7 +11,7 @@
 #import "RKSocial.h"
 #import "RKSoundPlayer.h"
 
-#import <FlurrySDK/Flurry.h>
+#import "Flurry.h"
 
 @interface RKFeedbackViewController () <UITextViewDelegate>
 

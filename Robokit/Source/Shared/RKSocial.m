@@ -16,7 +16,7 @@
 
 #import <Accounts/Accounts.h>
 #import <Social/Social.h>
-#import <FlurrySDK/Flurry.h>
+#import "Flurry.h"
 
 
 NSString * const kRKSocialDidUpdateFromPreviousVersionNotification = @"cat.robo.kRKSocialDidUpdateFromPreviousVersionNotification";

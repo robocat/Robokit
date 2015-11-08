@@ -13,4 +13,4 @@
 #import "UILabel+RKLocalization.h"
 #import "RKMacros.h"
 
-#import <FlurrySDK/Flurry.h>
+#import "Flurry.h"

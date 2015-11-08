@@ -10,9 +10,9 @@ Pod::Spec.new do |s|
 
   s.platform = :ios, "6.0"
   s.requires_arc = true
-  
+
   s.subspec 'Shared' do |ss|
-    ss.dependency             'FlurrySDK'
+    ss.dependency             'Flurry-iOS-SDK'
     ss.source_files =         'Robokit/Source/Shared/*.{h,m}','Robokit/Frameworks/*.h'
     ss.resources =            [ 'Robokit/Localizations/**',
                                 'Robokit/Resources/RKRatingViewController.xcassets/**/*',
@@ -20,17 +20,17 @@ Pod::Spec.new do |s|
                                 'Robokit/Resources/RKFollowUsViewController.xcassets/**/*',
                                 'Robokit/Resources/RKFollowUsViewController.storyboard',
                                 'Robokit/Resources/RKFeedbackViewController.storyboard' ]
-                                
+
     ss.preserve_paths =       'Robokit/Resources/RKRatingViewController.xcassets/*',
                               'Robokit/Resources/RKFollowUsViewController.xcassets/*'
     ss.frameworks =           'Accounts',
                               'Social',
                               'UIKit'
   end
-  
+
   s.subspec 'IAP' do |ss|
     ss.dependency             'Robokit/Shared'
-    
+
     ss.source_files =         'Robokit/Source/IAP/*.{h,m}'
     ss.frameworks =           'StoreKit'
   end
